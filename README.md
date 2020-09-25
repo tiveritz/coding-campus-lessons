@@ -32,3 +32,12 @@ Check out all the training lessons of the part-time coding campus 2020/2021.
 
 ## Executing
 Use the Main.java file and call the Day class + method.
+
+###### Example
+```java
+public class Main {
+ public static void main(String[] args) {
+  Day04.SelectionSort();
+ }
+}
+```
