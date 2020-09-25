@@ -31,13 +31,13 @@ Check out all the training lessons of the part-time coding campus 2020/2021.
   * BusinessResults()
 
 ## Executing
-Use the Main.java file and call the Day class + method.
+Use the Main.java file and call the method with month.day.method().
 
 ###### Example
 ```java
 public class Main {
  public static void main(String[] args) {
-  Day04.SelectionSort();
+  sept.ay04.SelectionSort();
  }
 }
 ```
