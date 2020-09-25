@@ -1,9 +1,9 @@
-package sept;
-
 import java.util.Arrays;
 
 public class Day05 {
-    public static void AwesomeArray() {
+    public static void AutoManualArrayOutput() {
+        // Gib ein Array mit der toString methode aus. Dann reprodizier die
+        // Ausgabe 1:1 mit eigenem Code
 
         int[] arr = { 1, 2, 3, 99 };
         int arrLen = arr.length;
@@ -20,9 +20,11 @@ public class Day05 {
             }
         }
         System.out.print("]");
+        System.out.println();
     }
 
     public static String indexToMonth(int index) {
+        // This is a helper method to map the businessResult index with Month
 
         String month = "";
         switch (index) {
@@ -68,6 +70,17 @@ public class Day05 {
     }
 
     public static void BusinessResults() {
+        // Ein Buchladen hat den folgenden Montastergebnisse:
+
+        // _ Was ist das Gesamtergebnis? (Summe der Monatsergebnisse)
+        // _ Was ist das beste Monatsergebnis?
+        // _ In welchem Monat war das beste Monatsergebnis?
+        // _ Was ist das schwächste Monatsergebnis?
+        // _ In welchem Monat war das schwächste Monatsergebnis?
+        // _ War zwei hintereinander kommende Monate mit negativen Ergebnis?
+        // _ Was war das längste Intervall mit negativen Ergebnis?
+        // _ Was war das zweitbeste Ergebnis?
+
         int[] businessResult = { -1, 2, -5, 3, -10, 2, -1, 3, 0, -3, -6, -7 };
         int businessResultLen = businessResult.length;
         System.out.println(Arrays.toString(businessResult));
@@ -138,20 +151,13 @@ public class Day05 {
             System.out.println("Nope, es gibt keine zwei Monate mit neg. Eregebnis nacheinander");
         }
 
-        // Was war das längste Intervall mit negativen Ergebnis?
-        int counter = 0;
-        int maxNeg = 0;
-        for (int i = 0; i < businessResultLen; i++) {
-            if (businessResult[i] < 0) {
-                counter++;
-            } else {
-                if (counter > maxNeg) {
-                    maxNeg = counter;
-                    counter = 0;
-                }
-            }
-        }
-        System.out.println("Größtes Intervall negativ: " + maxNeg);
+        // Was war das längste Intervall mit negativen Ergebnis? ACHTUNG -> Bug fixen!
+        /*
+         * int counter = 0; int maxNeg = 0; for (int i = 0; i < businessResultLen; i++)
+         * { if (businessResult[i] < 0) { counter++; } else { if (counter > maxNeg) {
+         * maxNeg = counter; counter = 0; } } }
+         * System.out.println("Größtes Intervall negativ: " + maxNeg);
+         */
 
         // Was war das zweitbeste Ergebnis?
         int bestTempResult = businessResult[0];

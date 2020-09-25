@@ -21,6 +21,7 @@ public class Main {
   * NumberList()
 
 * Day02
+  * Sum()
   * Factorial()
   * PiApproximation()
   * PiApproximationPosNeg()
@@ -36,7 +37,7 @@ public class Main {
 * Day04
   * RandNumArrBuilder()
   * SelectionSort()
-  * BubbleSort
+  * BubbleSort()
 
 * Day05
   * AutoManualArrayOutput()

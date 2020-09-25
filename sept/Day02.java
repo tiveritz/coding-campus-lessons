@@ -1,8 +1,17 @@
-package sept;
-
 public class Day02 {
+
+    public static void Sum() {
+        // Berechne die Summer der Zahlen von 0 bis 1000
+        int sum = 0;
+
+        for (int i = 0; i <= 1000; i++) {
+            sum += i;
+        }
+        System.out.print(sum);
+    }
+
     public static void Factorial() {
-        // faktorial -> 5! = 5 * 4 * 3 * 2 * 1
+        // Berechne die Fakultät der Zahl 20
 
         int factorial = 20;
         long multiplikation = 1;
@@ -13,21 +22,25 @@ public class Day02 {
         System.out.println(multiplikation);
     }
 
-    public static void Sum() {
-        int sum = 0;
+    public static void PiApproximation() {
+        // Berechne die Annäherung von PI mit Hilfe der Formel 4 - 4/3 + 4/5 - 4/7 ...
 
-        for (int i = 0; i <= 1000; i++) {
-            sum += i;
+        double numerator = 4.0;
+        double denominator = 1.0;
+        int aproxxLevel = 10;
+        double piApprox = 0.0;
+
+        for (int i = 0; i <= aproxxLevel; i++) {
+            piApprox += (numerator / denominator);
+            denominator += 2;
+            piApprox -= (numerator / denominator);
+            denominator += 2;
         }
-        System.out.print(sum);
+
+        System.out.println(piApprox);
     }
 
-    /*
-     * Problem: 4 - 4/3 + 4/5 - 4/7 + 4/8 4/1 - 4/n+2 + 4/n+4 - 4/n+6... --> n += 2
-     * Attention --> changing + and -
-     */
-
-    public static void Pi() {
+    public static void PiApproximationPosNeg() {
 
         // Declare required variables
         double numerator = 4.0;
@@ -61,29 +74,45 @@ public class Day02 {
         System.out.println("Negative approximation: " + posApprox);
         System.out.println("Positive approximation: " + negApprox);
         System.out.println("Pi approximation " + piApproximation);
-
-        /*
-         * int i = 0; while(i <= aproxxLevel) { if (i % 2 == 0) { piApprox += (numerator
-         * / denominator); } else { piApprox -= (numerator / denominator); } denominator
-         * += 2; i++; }
-         */
-
-        /*
-         * for (int i = 0; i <= aproxxLevel; i++) { piApprox += (numerator /
-         * denominator); denominator += 2; piApprox -= (numerator / denominator);
-         * denominator += 2; }
-         */
-
-        // System.out.println(piApprox);
     }
 
-    public static void WeirdA() {
+    public static void TextSquareOutput() {
+        // Erstelle ein Programm das mittels 2 Schleifen ein Quadrat mit einem
+        // Buchstaben ausgibt
+
         int size = 5;
         String text = "A";
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 System.out.print(text);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void TextArrowOutput() {
+        // Erstelle den folgenden Output mit Schleife
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+        // ****
+        // ***
+        // **
+        // *
+
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.println("*");
+            }
+            System.out.println();
+        }
+
+        for (int i = 4; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.println("*");
             }
             System.out.println();
         }

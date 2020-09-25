@@ -1,12 +1,20 @@
-package sept;
-
 public class Day01 {
-      public static void F1() {
-            // System.out.println("Hello World!");
-            // double myfloat = 1.2;
-            // int myint = 2;
-            // System.out.println(myfloat);
-            // System.out.println(myint);
+      public static void HelloWorld() {
+            // Erste Deklarationen und Ausgaben mit Java
+
+            System.out.println("Hello World!");
+
+            String myString = "Hi";
+            double myDouble = 1.2;
+            int myInt = 2;
+            System.out.println(myString);
+            System.out.println(myDouble);
+            System.out.println(myInt);
+      }
+
+      public static void NumberList() {
+            // Ordne die Zeilen so an, das die Ergebnisse genau in dieser
+            // Reihenfolge ausgegeben werden: 8, 8, 81, 81, 9, 9, 7, 7
 
             int neueZahl = 7;
 
@@ -18,11 +26,5 @@ public class Day01 {
             System.out.println(neueZahl--);
             System.out.println(--neueZahl);
             System.out.println(neueZahl);
-
-            /*
-             * int i = 0; int j = 20;
-             * 
-             * while(i < j) { if (i%2 == 0) { System.out.println(i); } i++; }
-             */
       }
 }

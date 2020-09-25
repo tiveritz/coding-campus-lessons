@@ -1,9 +1,7 @@
-package sept;
-
 public class Day03 {
 
     public static void SimpleMultiplication() {
-        // Simple Multiplikation
+        // # Gib das kleine Einmaleins aus
 
         int multResult = 0;
 
@@ -17,6 +15,8 @@ public class Day03 {
     }
 
     public static void Primes() {
+        // Gib alle Primzahlen von 0 bis 100 aus
+
         boolean isPrime = true;
         int primes = 100;
 
@@ -35,6 +35,8 @@ public class Day03 {
     }
 
     public static void Palindrom() {
+        // Prüfe, ob ein gegebenes Wort ein Palindrom ist
+
         String word = "anna";
         boolean isPalin = true;
         int lenWord = word.length();
@@ -48,7 +50,9 @@ public class Day03 {
         System.out.println(isPalin);
     }
 
-    public static void Arrays() {
+    public static void HelloWorldArray() {
+        // Hello World Arrays
+
         String[] letters = { "A", "B", "C", "D", "E" };
         int[] numbers = { 1, 3, 5, 6, 3, 5 };
 

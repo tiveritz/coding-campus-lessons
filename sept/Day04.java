@@ -1,28 +1,22 @@
-package sept;
-
 public class Day04 {
-    public static int[] ArrBuilder() {
-
-        int[] arr = { 6, 2, 7, 4, 5, 9, 11, 1, 12 };
-        // int [] arr = new int[10];
-
-        /*
-         * for(int i = 0; i < arr.length; i++) { arr[i] = (int)(Math.random() * 100); }
-         */
+    public static int[] RandNumArrBuilder() {
+        // Das ist keine Übung, kann aber für Tests ganz hilfreich sein
+        int[] arr = new int[10];
 
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+            arr[i] = (int) (Math.random() * 100);
         }
-        System.out.println();
 
         return arr;
     }
 
     public static void SelectionSort() {
+        // Informiere dich über den SelectionSort Sortieralgorithmus und setze
+        // sie in Java um.
+        // Vergleiche auch die Komplexität, indem du bei jedem Zugriff auf das
+        // Array einen Counter erhöhst und diesen am Ende mit ausgiebst.
 
-        System.out.println("SelectionSort:");
-
-        // Declare and array
+        // Declare the array
         int[] arr = { 6, 23, 78, 34, 89, 2, 56, 78, 6, 30, 27, 81, 7, 7, 84, 20 };
 
         // Declare variables
@@ -68,10 +62,12 @@ public class Day04 {
     }
 
     public static void BubbleSort() {
+        // Informiere dich über den BubbleSort Sortieralgorithmus und setze
+        // sie in Java um.
+        // Vergleiche auch die Komplexität, indem du bei jedem Zugriff auf das
+        // Array einen Counter erhöhst und diesen am Ende mit ausgiebst.
 
-        System.out.println("BubbleSort:");
-
-        // Declare and array
+        // Declare the array
         int[] arr = { 6, 23, 78, 34, 89, 2, 56, 78, 6, 30, 27, 81, 7, 7, 84, 20 };
 
         // Declare variables
