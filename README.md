@@ -37,7 +37,7 @@ Use the Main.java file and call the method with month.day.method().
 ```java
 public class Main {
  public static void main(String[] args) {
-  sept.ay04.SelectionSort();
+  sept.Day04.SelectionSort();
  }
 }
 ```
