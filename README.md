@@ -5,32 +5,30 @@ Check out all the training lessons of the part-time coding campus 2020/2021.
 
 ###### September
 * Day01
-
-⋅⋅⋅ HelloWorld()
-⋅⋅⋅ NumberList()
+  * HelloWorld()
+  * NumberList()
 
 * Day02
-
-⋅⋅⋅ Factorial()
-⋅⋅⋅ PiApproximation()
-⋅⋅⋅ PiApproximationPosNeg()
-⋅⋅⋅ TextSquareOutput()
-⋅⋅⋅ TextArrowOutput()
+  * Factorial()
+  * PiApproximation()
+  * PiApproximationPosNeg()
+  * TextSquareOutput()
+  * TextArrowOutput()
 
 * Day03
-
-⋅⋅⋅ SimpleMultiplication()
-⋅⋅⋅ Primes()
-⋅⋅⋅ Palindrom()
-⋅⋅⋅ HelloWorldArray()
+  * SimpleMultiplication()
+  * Primes()
+  * Palindrom()
+  * HelloWorldArray()
 
 * Day04
-
-⋅⋅⋅ RandNumArrBuilder()
-⋅⋅⋅ SelectionSort()
-⋅⋅⋅ BubbleSort
+  * RandNumArrBuilder()
+  * SelectionSort()
+  * BubbleSort
 
 * Day05
+  * AutoManualArrayOutput()
+  * BusinessResults()
 
-⋅⋅⋅ AutoManualArrayOutput()
-⋅⋅⋅ BusinessResults()
+## Executing
+Use the Main.java file and call the Day class + method.
