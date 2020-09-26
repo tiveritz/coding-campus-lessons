@@ -1,6 +1,10 @@
 import java.util.Arrays;
 
 public class Day06 {
+
+    static int compareCounter = 0;
+    static int swapCounter = 0;
+
     public static void helloWorldRecursion(int n) {
         // Recherchiere Recursion in Java
 
@@ -28,46 +32,37 @@ public class Day06 {
         // elements and put in A[p..r]
 
         // Declare the array
-        // int[] arr = { 6, 23, 78, 34, 89, 2, 56, 78, 6, 30, 27, 81, 7, 7, 84, 20 };
-        int[] arr = { 9, 2, 3, 3, 8, 6, 7, 4, 6, 1, 9, 0, 4 };
+        int[] arr = { 6, 23, 78, 34, 89, 2, 56, 78, 6, 30, 27, 81, 7, 7, 84, 20 };
+        // System.out.println(Arrays.toString(arr));
 
-        // recursive method MergeSort (array)
-        // If array > 0 Split the array in half (Left | Right)
-        // call MergeSort (Left half)
-        // call MergeSort (Right half)
-        // then merge the sub arrays
-        //
-        // Method merge arrays (that is not easy in java)
-        // Declare left helper array
-        // Declare right helper array
-        // Fill the two helper arrays
-        // Get larger element and fill into arr
+        int[] sortedArray = mergeSortAlgor(arr);
+        System.out.println(Arrays.toString(sortedArray));
 
-        mergeSortAlgor(arr);
+        // Print counter
+        System.out.println("Comparisons: " + compareCounter);
+        System.out.println("Swaps: " + swapCounter);
+
     }
 
-    // difficult -> use left and right length as method arguments in order for the
-    // recursion to work
-    //
-    static void mergeSortAlgor(int[] arr) {
-        // if (left < right) {
-        // int half = (left + right) / 2;
-        //
-        // mergeSortAlgor(arr, left, half);
-        // mergeSortAlgor(arr, half + 1, right);
-        //
-        // int test = half + 1;
-        // System.out.println("Array Algorythmus " + left + " - " + half + " | " + test
-        // + " - " + right);
-        //
-        // } <-- versteh ich nicht
+    static int[] mergeSortAlgor(int[] arr) {
 
-        // neuer ansatz: Schritt eins: arrays aufsplitten (mit recursion) bis nur noch
-        // sub arrays mit 1 element vorhanden sind
+        // This works recursively
+        //
+        // If passed array == 1 return unchanged array
+        // If array > 0 sort the array and return the sorted array
+        // Sorting:
+        // Split the passed arra in half (left / right)
+        // Sort left and right array (recursion) and overwrite current arrays
 
+        // Declare length variable and helper array (sorted array)
         int arrLen = arr.length;
+        int[] sorted = arr;
 
+        // Check if array length > 1. If not return array without change.
+        // An array of 1 is already considered sorted
         if (arrLen > 1) {
+            // Determine indexes of left and right half. This depends if array
+            // has a even or odd number of elements
             int riHalf = 0;
             int leHalf = arrLen / 2;
 
@@ -77,9 +72,11 @@ public class Day06 {
                 riHalf = (arrLen / 2) + 1;
             }
 
+            // Declare left and right helper arrays
             int[] left = new int[leHalf];
             int[] right = new int[riHalf];
 
+            // Fill the helper arrays with elements
             for (int i = 0; i < leHalf; i++) {
                 left[i] = arr[i];
             }
@@ -90,13 +87,49 @@ public class Day06 {
                 riIndex++;
             }
 
-            System.out.println(Arrays.toString(left));
-            System.out.println(Arrays.toString(right));
+            // Sort helper arrays -> This is recursion. If list has only one
+            // element the same list is returned
+            left = mergeSortAlgor(left);
+            right = mergeSortAlgor(right);
 
-            mergeSortAlgor(left);
-            mergeSortAlgor(right);
+            // Merge left and right arrays
+            int i = 0;
+            int j = 0;
+            int k = 0;
 
+            // Do that for length of sorted array
+            while (k < sorted.length) {
+                // Check for index boundries
+                if (i < left.length && j < right.length) {
+                    compareCounter += 1;
+                    if (left[i] < right[j]) {
+                        sorted[k] = left[i];
+                        swapCounter += 1;
+                        i += 1;
+                    } else {
+                        sorted[k] = right[j];
+                        swapCounter += 1;
+                        j += 1;
+                    }
+                } else { // That means there are still values left in the arrays
+                    if (i == left.length) {
+                        sorted[k] = right[j];
+                        swapCounter += 1;
+                        j += 1;
+                    } else {
+                        sorted[k] = left[i];
+                        swapCounter += 1;
+                        i += 1;
+                    }
+                }
+                k += 1;
+            }
+
+            // System.out.println(Arrays.toString(left));
+            // System.out.println(Arrays.toString(right));
         }
+
+        return sorted;
     }
 
 }

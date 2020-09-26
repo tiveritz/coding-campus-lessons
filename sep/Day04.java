@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Day04 {
     public static int[] randNumArrBuilder() {
         // Das ist keine Übung, kann aber für Tests ganz hilfreich sein
@@ -52,9 +54,7 @@ public class Day04 {
         }
 
         // Print sorted array
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
+        System.out.print(Arrays.toString(arr));
 
         // Print counter
         System.out.println("\nComparisons: " + compareCounter);
@@ -93,9 +93,7 @@ public class Day04 {
         }
 
         // Print sorted array
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
+        System.out.print(Arrays.toString(arr));
 
         // Print counter
         System.out.println();
