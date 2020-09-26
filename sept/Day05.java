@@ -115,13 +115,13 @@ public class Day05 {
         System.out.println("Monat mit dem besten Ergebins: " + bestMonth);
 
         // Was ist das schwächste Monatsergebnis?
-        int worst = 0;
+        int worstResult = 0;
         for (int i = 0; i < businessResultLen; i++) {
-            if (businessResult[i] < worst) {
-                worst = businessResult[i];
+            if (businessResult[i] < worstResult) {
+                worstResult = businessResult[i];
             }
         }
-        System.out.println("Schlechtestes Ergebnis: " + worst);
+        System.out.println("Schlechtestes Ergebnis: " + worstResult);
 
         // In welchem Monat war das schwächste Monatsergebnis?
         int tempWorstResult = 0;
@@ -168,16 +168,11 @@ public class Day05 {
         System.out.println("Größtes Intervall negativ: " + maxNeg);
 
         // Was war das zweitbeste Ergebnis?
-        int bestTempResult = businessResult[0];
-        int secondBestResult = businessResult[0];
+        // höchste ist, falches ergebns
+        int secondBestResult = worstResult;
 
         for (int i = 0; i < businessResultLen; i++) {
-            if (businessResult[i] > bestTempResult) {
-                bestTempResult = businessResult[i];
-            }
-        }
-        for (int i = 0; i < businessResultLen; i++) {
-            if (businessResult[i] > secondBestResult && businessResult[i] < bestTempResult) {
+            if (businessResult[i] > secondBestResult && businessResult[i] < bestResult) {
                 secondBestResult = businessResult[i];
             }
         }
