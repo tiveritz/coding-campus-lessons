@@ -61,4 +61,4 @@ public class Main {
 
 * Day06
   * helloWorldRecursion()
-  * mergeSort();
+  * mergeSort()
