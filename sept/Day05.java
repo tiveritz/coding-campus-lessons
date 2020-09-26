@@ -152,12 +152,21 @@ public class Day05 {
         }
 
         // Was war das längste Intervall mit negativen Ergebnis? ACHTUNG -> Bug fixen!
-        /*
-         * int counter = 0; int maxNeg = 0; for (int i = 0; i < businessResultLen; i++)
-         * { if (businessResult[i] < 0) { counter++; } else { if (counter > maxNeg) {
-         * maxNeg = counter; counter = 0; } } }
-         * System.out.println("Größtes Intervall negativ: " + maxNeg);
-         */
+
+        int counter = 0;
+        int maxNeg = 0;
+
+        for (int i = 0; i < businessResultLen; i++) {
+            if (businessResult[i] < 0) {
+                counter++;
+                if (counter > maxNeg) {
+                    maxNeg = counter;
+                }
+            } else {
+                counter = 0;
+            }
+        }
+        System.out.println("Größtes Intervall negativ: " + maxNeg);
 
         // Was war das zweitbeste Ergebnis?
         int bestTempResult = businessResult[0];

@@ -9,7 +9,7 @@ public class Main {
         // Day02.PiApproximation();
         // Day02.PiApproximationPosNeg();
         // Day02.TextSquareOutput();
-        // Day02.TextArrowOutput(); !!! BUG
+        // Day02.TextArrowOutput();
         // Day03.SimpleMultiplication();
         // Day03.Primes();
         // Day03.Palindrom();
