@@ -2,7 +2,7 @@
 Check out all the training lessons of the part-time coding campus 2020/2021.
 
 ## Executing
-Use the Main.java file and call the method with day.method(). All the available
+Use the Main.java file and call the method with day.methodName(). All the available
 methods are commented out in the Main.java.
 
 ###### Example
@@ -12,14 +12,14 @@ public class Main {
 
         // September -----------------------------------------------------------
 
-        // Day01.HelloWorld();
-        // Day01.NumberList();
-        // Day02.Factorial();
-        // Day02.PiApproximation();
-        // Day02.PiApproximationPosNeg();
-        // Day02.TextSquareOutput();
-        // Day02.TextArrowOutput();
-        // Day03.SimpleMultiplication();
+        // Day01.helloWorld();
+        // Day01.numberList();
+        // Day02.factorial();
+        // Day02.piApproximation();
+        // Day02.piApproximationPosNeg();
+        // Day02.textSquareOutput();
+        // Day02.textArrowOutput();
+        // Day03.simpleMultiplication();
         .
         .
         .
@@ -33,31 +33,31 @@ public class Main {
 
 ###### September
 * Day01
-  * HelloWorld()
-  * NumberList()
+  * helloWorld()
+  * numberList()
 
 * Day02
-  * Sum()
-  * Factorial()
-  * PiApproximation()
-  * PiApproximationPosNeg()
-  * TextSquareOutput()
-  * TextArrowOutput()
+  * sum()
+  * factorial()
+  * piApproximation()
+  * piApproximationPosNeg()
+  * textSquareOutput()
+  * textArrowOutput()
 
 * Day03
-  * SimpleMultiplication()
-  * Primes()
-  * Palindrom()
-  * HelloWorldArray()
+  * simpleMultiplication()
+  * primes()
+  * palindrom()
+  * helloWorldArray()
 
 * Day04
-  * RandNumArrBuilder()
-  * SelectionSort()
-  * BubbleSort()
+  * randNumArrBuilder()
+  * selectionSort()
+  * bubbleSort()
 
 * Day05
-  * AutoManualArrayOutput()
-  * BusinessResults()
+  * autoManualArrayOutput()
+  * businessResults()
 
 * Day06
-  * HelloWorldRecursion();
+  * helloWorldRecursion();
