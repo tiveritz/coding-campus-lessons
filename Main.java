@@ -20,7 +20,7 @@ public class Main {
         // Day05.autoManualArrayOutput();
         // Day05.businessResults();
         // Day06.helloWorldRecursion(5);
-        Day06.mergeSort();
+        // Day06.mergeSort();
 
     }
 }

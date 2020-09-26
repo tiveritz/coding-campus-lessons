@@ -28,12 +28,15 @@ public class Day06 {
         // Declare the array
         int[] arr = { 6, 23, 78, 34, 89, 2, 56, 78, 6, 30, 27, 81, 7, 7, 84, 20 };
 
-        /*
-         * Use a recursive method MergeSort (array) If array > 0 Split the array in half
-         * (Left | Right) call MergeSort (Left half) call MergeSort (Right half) then
-         * merge the sub arrays
-         * 
-         */
+        // recursive method MergeSort (array) If array > 0 Split the array in half (Left
+        // | Right) call MergeSort (Left half) call MergeSort (Right half)
+        // then merge
+        // the sub arrays
+        //
+        // Method merge arrays (that is not easy in java)
+        //
+        //
+        //
 
         System.out.println("Hello World Merge Sort");
     }

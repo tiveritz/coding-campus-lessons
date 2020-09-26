@@ -137,22 +137,21 @@ public class Day05 {
         System.out.println("Monat mit dem besten Ergebins: " + worstMonth);
 
         // War zwei hintereinander kommende Monate mit negativen Ergebnis?
-        boolean isTwoBadMonth = false;
+        boolean hasTwoNegMonthInRow = false;
         for (int i = 0; i < businessResultLen - 1; i++) {
             if ((businessResult[i] < 0) && (businessResult[i + 1] < 0)) {
-                isTwoBadMonth = true;
+                hasTwoNegMonthInRow = true;
                 break;
             }
         }
 
-        if (isTwoBadMonth) {
+        if (hasTwoNegMonthInRow) {
             System.out.println("Ja, es gibt zwei Monate mit neg. Eregebnis nacheinander");
         } else {
             System.out.println("Nope, es gibt keine zwei Monate mit neg. Eregebnis nacheinander");
         }
 
-        // Was war das längste Intervall mit negativen Ergebnis? ACHTUNG -> Bug fixen!
-
+        // Was war das längste Intervall mit negativen Ergebnis?
         int counter = 0;
         int maxNeg = 0;
 
