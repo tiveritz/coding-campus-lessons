@@ -10,7 +10,7 @@ methods are commented out in the Main.java.
 public class Main {
     public static void main(String[] args) {
 
-        // September -----------------------------------------------------------
+        // September
 
         // Day01.helloWorld();
         // Day01.numberList();
