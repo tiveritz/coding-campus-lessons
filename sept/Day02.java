@@ -103,17 +103,47 @@ public class Day02 {
         // **
         // *
 
-        for (int i = 1; i <= 5; i++) {
+        int arrowLen = 5;
+        String arrowText = "*";
+
+        for (int i = 1; i <= arrowLen; i++) {
             for (int j = 1; j <= i; j++) {
-                System.out.print("*");
+                System.out.print(arrowText);
             }
             System.out.println();
         }
 
-        for (int i = 4; i >= 1; i--) {
+        for (int i = arrowLen - 1; i >= 1; i--) {
             for (int j = 1; j <= i; j++) {
-                System.out.print("*");
+                System.out.print(arrowText);
             }
+            System.out.println();
+        }
+
+        // Solution with single while loop
+
+        int counter = 1;
+        boolean isRising = true;
+        boolean Looping = true;
+
+        while (Looping) {
+            // Build string with counter
+            for (int i = 1; i <= counter; i++) {
+                System.out.print(arrowText);
+            }
+
+            if (counter == arrowLen) {
+                isRising = false;
+            } else if (isRising == false && counter == 1) {
+                Looping = false;
+            }
+
+            if (isRising) {
+                counter++;
+            } else {
+                counter--;
+            }
+
             System.out.println();
         }
     }
