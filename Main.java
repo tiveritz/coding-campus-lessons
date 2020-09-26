@@ -19,6 +19,7 @@ public class Main {
         // Day04.BubbleSort();
         // Day05.AutoManualArrayOutput();
         // Day05.BusinessResults();
+        Day06.HelloWorldRecursion(5);
 
     }
 }

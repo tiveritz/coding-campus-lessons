@@ -58,3 +58,6 @@ public class Main {
 * Day05
   * AutoManualArrayOutput()
   * BusinessResults()
+
+* Day06
+  * HelloWorldRecursion();
