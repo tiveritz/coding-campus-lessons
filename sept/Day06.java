@@ -68,26 +68,24 @@ public class Day06 {
         int arrLen = arr.length;
 
         if (arrLen > 1) {
-            int leHalf = 0;
             int riHalf = 0;
+            int leHalf = arrLen / 2;
 
             if (arrLen % 2 == 0) {
-                leHalf = arrLen / 2;
                 riHalf = arrLen / 2;
             } else {
-                leHalf = arrLen / 2;
                 riHalf = (arrLen / 2) + 1;
             }
-            int half = arrLen / 2;
+
             int[] left = new int[leHalf];
             int[] right = new int[riHalf];
 
-            for (int i = 0; i < half; i++) {
+            for (int i = 0; i < leHalf; i++) {
                 left[i] = arr[i];
             }
 
             int riIndex = 0;
-            for (int j = half; j < arrLen; j++) {
+            for (int j = leHalf; j < arrLen; j++) {
                 right[riIndex] = arr[j];
                 riIndex++;
             }

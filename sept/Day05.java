@@ -81,7 +81,7 @@ public class Day05 {
         // _ Was war das längste Intervall mit negativen Ergebnis?
         // _ Was war das zweitbeste Ergebnis?
 
-        int[] businessResult = { -1, 2, -5, 3, -10, 2, -1, 3, 0, -3, -6, -7 };
+        int[] businessResult = { 1, 2, -5, 3, 10, -2, -1, -3, 0, 3, 6, 7 };
         int businessResultLen = businessResult.length;
         System.out.println(Arrays.toString(businessResult));
 
@@ -170,6 +170,7 @@ public class Day05 {
         // Was war das zweitbeste Ergebnis?
         int bestTempResult = businessResult[0];
         int secondBestResult = businessResult[0];
+
         for (int i = 0; i < businessResultLen; i++) {
             if (businessResult[i] > bestTempResult) {
                 bestTempResult = businessResult[i];
