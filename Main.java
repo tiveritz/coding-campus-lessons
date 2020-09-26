@@ -3,23 +3,24 @@ public class Main {
 
         // September -----------------------------------------------------------
 
-        // Day01.HelloWorld();
-        // Day01.NumberList();
-        // Day02.Factorial();
-        // Day02.PiApproximation();
-        // Day02.PiApproximationPosNeg();
-        // Day02.TextSquareOutput();
-        // Day02.TextArrowOutput();
-        // Day03.SimpleMultiplication();
-        // Day03.Primes();
-        // Day03.Palindrom();
-        // Day03.HelloWorldArray();
-        // Day04.RandNumArrBuilder();
-        // Day04.SelectionSort();
-        // Day04.BubbleSort();
-        // Day05.AutoManualArrayOutput();
-        // Day05.BusinessResults();
-        Day06.HelloWorldRecursion(5);
+        // Day01.helloWorld();
+        // Day01.numberList();
+        // Day02.factorial();
+        // Day02.piApproximation();
+        // Day02.piApproximationPosNeg();
+        // Day02.textSquareOutput();
+        // Day02.textArrowOutput();
+        // Day03.simpleMultiplication();
+        // Day03.primes();
+        // Day03.palindrom();
+        // Day03.helloWorldArray();
+        // Day04.randNumArrBuilder();
+        // Day04.selectionSort();
+        // Day04.bubbleSort();
+        // Day05.autoManualArrayOutput();
+        // Day05.businessResults();
+        // Day06.helloWorldRecursion(5);
+        Day06.mergeSort();
 
     }
 }

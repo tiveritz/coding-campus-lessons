@@ -1,6 +1,6 @@
 public class Day03 {
 
-    public static void SimpleMultiplication() {
+    public static void simpleMultiplication() {
         // # Gib das kleine Einmaleins aus
 
         int multResult = 0;
@@ -14,7 +14,7 @@ public class Day03 {
         }
     }
 
-    public static void Primes() {
+    public static void primes() {
         // Gib alle Primzahlen von 0 bis 100 aus
 
         boolean isPrime = true;
@@ -34,7 +34,7 @@ public class Day03 {
         }
     }
 
-    public static void Palindrom() {
+    public static void palindrom() {
         // Prüfe, ob ein gegebenes Wort ein Palindrom ist
 
         String word = "anna";
@@ -50,7 +50,7 @@ public class Day03 {
         System.out.println(isPalin);
     }
 
-    public static void HelloWorldArray() {
+    public static void helloWorldArray() {
         // Hello World Arrays
 
         String[] letters = { "A", "B", "C", "D", "E" };

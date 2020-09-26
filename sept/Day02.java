@@ -1,6 +1,6 @@
 public class Day02 {
 
-    public static void Sum() {
+    public static void sum() {
         // Berechne die Summer der Zahlen von 0 bis 1000
         int sum = 0;
 
@@ -10,7 +10,7 @@ public class Day02 {
         System.out.print(sum);
     }
 
-    public static void Factorial() {
+    public static void factorial() {
         // Berechne die Fakultät der Zahl 20
 
         int factorial = 20;
@@ -22,7 +22,7 @@ public class Day02 {
         System.out.println(multiplikation);
     }
 
-    public static void PiApproximation() {
+    public static void piApproximation() {
         // Berechne die Annäherung von PI mit Hilfe der Formel 4 - 4/3 + 4/5 - 4/7 ...
 
         double numerator = 4.0;
@@ -40,7 +40,7 @@ public class Day02 {
         System.out.println(piApprox);
     }
 
-    public static void PiApproximationPosNeg() {
+    public static void piApproximationPosNeg() {
 
         // Declare required variables
         double numerator = 4.0;
@@ -76,7 +76,7 @@ public class Day02 {
         System.out.println("Pi approximation " + piApproximation);
     }
 
-    public static void TextSquareOutput() {
+    public static void textSquareOutput() {
         // Erstelle ein Programm das mittels 2 Schleifen ein Quadrat mit einem
         // Buchstaben ausgibt
 
@@ -91,7 +91,7 @@ public class Day02 {
         }
     }
 
-    public static void TextArrowOutput() {
+    public static void textArrowOutput() {
         // Erstelle den folgenden Output mit Schleife
         // *
         // **

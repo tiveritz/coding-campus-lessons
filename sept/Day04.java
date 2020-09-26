@@ -1,5 +1,5 @@
 public class Day04 {
-    public static int[] RandNumArrBuilder() {
+    public static int[] randNumArrBuilder() {
         // Das ist keine Übung, kann aber für Tests ganz hilfreich sein
         int[] arr = new int[10];
 
@@ -10,7 +10,7 @@ public class Day04 {
         return arr;
     }
 
-    public static void SelectionSort() {
+    public static void selectionSort() {
         // Informiere dich über den SelectionSort Sortieralgorithmus und setze
         // sie in Java um.
         // Vergleiche auch die Komplexität, indem du bei jedem Zugriff auf das
@@ -61,7 +61,7 @@ public class Day04 {
         System.out.println("Swaps: " + swapCounter);
     }
 
-    public static void BubbleSort() {
+    public static void bubbleSort() {
         // Informiere dich über den BubbleSort Sortieralgorithmus und setze
         // sie in Java um.
         // Vergleiche auch die Komplexität, indem du bei jedem Zugriff auf das

@@ -1,5 +1,5 @@
 public class Day01 {
-      public static void HelloWorld() {
+      public static void helloWorld() {
             // Erste Deklarationen und Ausgaben mit Java
 
             System.out.println("Hello World!");
@@ -12,7 +12,7 @@ public class Day01 {
             System.out.println(myInt);
       }
 
-      public static void NumberList() {
+      public static void numberList() {
             // Ordne die Zeilen so an, das die Ergebnisse genau in dieser
             // Reihenfolge ausgegeben werden: 8, 8, 81, 81, 9, 9, 7, 7
 

@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Day05 {
-    public static void AutoManualArrayOutput() {
+    public static void autoManualArrayOutput() {
         // Gib ein Array mit der toString methode aus. Dann reprodizier die
         // Ausgabe 1:1 mit eigenem Code
 
@@ -69,7 +69,7 @@ public class Day05 {
         return month;
     }
 
-    public static void BusinessResults() {
+    public static void businessResults() {
         // Ein Buchladen hat den folgenden Montastergebnisse:
 
         // _ Was ist das Gesamtergebnis? (Summe der Monatsergebnisse)
