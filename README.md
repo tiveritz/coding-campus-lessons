@@ -2,7 +2,7 @@
 Check out all the training lessons of the part-time coding campus 2020/2021.
 
 ## Executing
-Use the Main.java file and call the method with day.methodName(). All the available
+Use the Main.java file and call the method with Day00.methodName(). All the available
 methods are commented out in the Main.java.
 
 ###### Example
