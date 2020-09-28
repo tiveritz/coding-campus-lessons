@@ -34,7 +34,7 @@ public class Day04 {
         for (int i = 0; i < arrLen - 1; i++) {
             toSwap = false;
             smallestElem = arr[i];
-            compareCounter += 1;
+
             for (int j = i + 1; j < arrLen; j++) {
                 compareCounter += 1;
                 // check if actual element is smaller as smallest known element
