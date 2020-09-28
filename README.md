@@ -1,5 +1,7 @@
 # coding-campus-lessons
-Check out all the training lessons of the part-time coding campus 2020/2021.
+Check out all the Java training lessons of the part-time coding campus 2020/2021.
+
+Want to see how this looks in Python > [coding-campus-lessons-in-python](https://github.com/tiveritz/coding-campus-lessons-in-python)
 
 ## Executing
 Use the Main.java file and call the method with Day00.methodName(). All the available
