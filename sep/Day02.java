@@ -134,7 +134,8 @@ public class Day02 {
 
             if (counter == arrowLen) {
                 isRising = false;
-            } else if (isRising == false && counter == 1) {
+            }
+            if (counter == 0) {
                 Looping = false;
             }
 
