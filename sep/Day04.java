@@ -77,7 +77,7 @@ public class Day04 {
         boolean swap = true;
         int arrLen = arr.length;
 
-        while (swap == true) {
+        while (swap) {
             swap = false;
             for (int i = 1; i < arrLen; i++) {
                 compareCounter += 1;
