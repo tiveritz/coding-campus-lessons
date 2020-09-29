@@ -56,7 +56,7 @@ float .......... 4 bytes, fractional numbers, 6 to 7 decimal digits
 double ......... 8 bytes, fractional numbers, 15 decimal digts
 
 other:
-boolean ........ 1 bit, True or False
+boolean ........ 1 bit, true or false
 char ........... 2 bytes, single character 'A' or 'c' (ASCII values)
 
 not a data type
@@ -108,21 +108,21 @@ void -> nothing gets returned
 
 CONDITIONAL STATEMENT ----------------------------------------------------------
 if (condition) {
-    // executes if condition is True
+    // executes if condition is true
 }
 
 if (condition) {
-    // executes if condition is True
+    // executes if condition is true
 } else {
-    // executes if condition is False
+    // executes if condition is false
 }
 
 if (condition) {
-    // executes if condition is True
+    // executes if condition is true
 } else if (other condition) {
-    // executes if other condition is True
+    // executes if other condition is true
 } else {
-    // executes if no previous conditions are True
+    // executes if no previous conditions are true
 }
 
 {}... scope of if statement
