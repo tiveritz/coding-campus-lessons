@@ -45,7 +45,6 @@ LOGICAL OPERATORS --------------------------------------------------------------
 ! .... logical NOT
 
 JAVA PRIMITIVE DATA TYPES ------------------------------------------------------
-Naming convention: camelCase (helloWorld, isActive, distanceToMoon)
 
 int group:
 byte ........... 1 byte, whole numbers -128 to 127
@@ -109,9 +108,31 @@ primitive types (int, boolean, double)
 Arrays, Strings...
 void -> nothing gets returned
 
---------------------------------------------------------------------------------
-CONDITIONAL STATEMENT
+CONDITIONAL STATEMENT ----------------------------------------------------------
 
 if (condition) {
     // Executes if condition is True
 }
+
+if (condition) {
+    // Executes if condition is True
+} else {
+    // Executes if condition is False
+}
+
+if (condition) {
+    // Executes if condition is True
+} else if (other condition) {
+    // Executes if other condition is True
+} else {
+    // Executes if no previous conditions are True
+}
+
+{}... scope of if statement
+
+NAMING CONVENTIONS -------------------------------------------------------------
+variables ... lowerCamelCase (helloWorld, isActive, distanceToMARS)
+constants ... UPPERCASE_WITH_UNDERLINE (HOURS_PER_DAY, PI, DISTANCE_TO_DSCHIBUTI)
+class ....... CamelCase (Main, MyClass, )
+method ...... lowerCamelCase (primes, helloWorld, numberList)
+package ..... lowercase (eng, dist, src)
