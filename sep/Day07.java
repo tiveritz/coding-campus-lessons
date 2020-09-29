@@ -13,7 +13,6 @@ public class Day07 {
         boolean isDivHundr = false;
         boolean isDivFourhundr = false;
 
-
         for (int year = firstYear; year <= lastYear; year++) {
             isDivFour = false;
             isDivHundr = false;
