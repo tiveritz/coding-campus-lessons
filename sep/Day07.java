@@ -4,32 +4,32 @@ public class Day07 {
         // Rules for leap years:
         // #1 Year number must be divisibly by four
         // #2 Not divisibly by 100
-        // #3 End-of-centory years must be divisible by 400
+        // #3 End-of-century years must be divisible by 400
 
         int firstYear = 1800;
         int lastYear = 2100;
 
-        boolean isDivFour = false;
-        boolean isDivHundr = false;
-        boolean isDivFourhundr = false;
+        boolean isDivBy4 = false;
+        boolean isDivBy100 = false;
+        boolean isDivBy400 = false;
 
         for (int year = firstYear; year <= lastYear; year++) {
-            isDivFour = false;
-            isDivHundr = false;
-            isDivFourhundr = false;
+            isDivBy4 = false;
+            isDivBy100 = false;
+            isDivBy400 = false;
 
             if (year % 4 == 0) {
-                isDivFour = true;
+                isDivBy4 = true;
             }
             if (year % 100 == 0) {
-                isDivHundr = true;
+                isDivBy100 = true;
             }
             if (year % 400 == 0) {
-                isDivFourhundr = true;
+                isDivBy400 = true;
             }
 
             // Check for all conditions and output year
-            if ((isDivFour && !isDivHundr) || isDivFourhundr) {
+            if (isDivBy4 && (!isDivBy100 || isDivBy400)) {
                 System.out.println(year);
             }
         }
