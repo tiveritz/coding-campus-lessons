@@ -7,7 +7,7 @@ println.............................. method
 System.out.println("Hello World");... statement
 
 --------------------------------------------------------------------------------
-JAVA DATA TYPES
+JAVA PRIMITIVE DATA TYPES
 Naming convention: camelCase (helloWorld, isActive, distanceToMoon)
 
 int group:
@@ -42,7 +42,7 @@ class................. class keyword
 Main.................. class name
 
 public static void main(String[] args)...Required method of every Java program
-public..... method access keyword
+public..... access modifier (or method access keyword)
 static..... memory management keyword
 void....... return type
 main....... method name
@@ -51,6 +51,25 @@ args....... method argument data name
 
 --------------------------------------------------------------------------------
 JAVA METHOD DECLARATION
-      public static void helloWorld() {
+public static void helloWorld() {
 
-      }
+}
+
+public....... access modifier
+static....... memory management keyword (static -> doesn't belong to a specific object)
+void......... return type (void -> returns no value)
+helloWorld... method name
+()........... method arguments (can be empty -> "method takes no arguments")
+
+method access keyword or access modifier
+private..... access only within the class
+default..... access only within the package
+protected... access within the package and outside the package through child class
+public...... access from everywhere
+
+package..... folder in filesystem
+
+return type
+primitive types (int, boolean, double)
+Arrays, Strings ...
+void -> nothing gets returned
