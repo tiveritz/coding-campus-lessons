@@ -45,7 +45,6 @@ LOGICAL OPERATORS --------------------------------------------------------------
 ! .... logical NOT
 
 JAVA PRIMITIVE DATA TYPES ------------------------------------------------------
-
 int group:
 byte ........... 1 byte, whole numbers -128 to 127
 short .......... 2 bytes, whole numbers -32768 to 32767
@@ -64,7 +63,6 @@ not a data type
 String ......... "Hello World" (String is a class)
 
 JAVA MAIN PROGRAM DECLARATION --------------------------------------------------
-
 public class Main {
     public static void main(String[] args) {
 
@@ -109,7 +107,6 @@ Arrays, Strings...
 void -> nothing gets returned
 
 CONDITIONAL STATEMENT ----------------------------------------------------------
-
 if (condition) {
     // executes if condition is True
 }
@@ -138,7 +135,6 @@ method ...... lowerCamelCase (primes, helloWorld, numberList)
 package ..... lowercase (eng, dist, src)
 
 LOOPS --------------------------------------------------------------------------
-
 while (condition) {
     // executes as long as condition is true
 }
