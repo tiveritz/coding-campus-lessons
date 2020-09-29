@@ -15,12 +15,10 @@ public class Day07 {
 
 
         for (int year = firstYear; year <= lastYear; year++) {
-            // reset conditions
             isDivFour = false;
             isDivHundr = false;
             isDivFourhundr = false;
 
-            // check conditions
             if (year % 4 == 0) {
                 isDivFour = true;
             }
