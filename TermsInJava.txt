@@ -1,0 +1,56 @@
+A JAVA STATEMENT
+System.out.println("Hello World");
+System............................... class
+out.................................. stream
+println.............................. method
+"Hello World"........................ method argument
+System.out.println("Hello World");... statement
+
+--------------------------------------------------------------------------------
+JAVA DATA TYPES
+Naming convention: camelCase (helloWorld, isActive, distanceToMoon)
+
+int group:
+byte........... 1 byte, whole numbers -128 to 127
+short.......... 2 bytes, whole numbers -32768 to 32767
+int............ 4 bytes, whole numbers -2147483648 to 2147483647
+long........... 8 bytes, very big whole numbers
+
+float group:
+float.......... 4 bytes, fractional numbers, 6 to 7 decimal digits
+double......... 8 bytes, fractional numbers, 15 decimal digts
+
+other:
+boolean........ 1 bit, True or False
+char........... 2 bytes, single character 'A' or 'c' (ASCII values)
+
+not a data type
+String......... "Hello World" (String is a class)
+
+--------------------------------------------------------------------------------
+JAVA MAIN PROGRAM DECLARATION
+
+public class Main {
+    public static void main(String[] args) {
+
+    }
+}
+
+public class Main{}... class declaration
+public................ class access keyword
+class................. class keyword
+Main.................. class name
+
+public static void main(String[] args)...Required method of every Java program
+public..... method access keyword
+static..... memory management keyword
+void....... return type
+main....... method name
+String[]... method argument data type
+args....... method argument data name
+
+--------------------------------------------------------------------------------
+JAVA METHOD DECLARATION
+      public static void helloWorld() {
+
+      }
