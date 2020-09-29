@@ -111,28 +111,42 @@ void -> nothing gets returned
 CONDITIONAL STATEMENT ----------------------------------------------------------
 
 if (condition) {
-    // Executes if condition is True
+    // executes if condition is True
 }
 
 if (condition) {
-    // Executes if condition is True
+    // executes if condition is True
 } else {
-    // Executes if condition is False
+    // executes if condition is False
 }
 
 if (condition) {
-    // Executes if condition is True
+    // executes if condition is True
 } else if (other condition) {
-    // Executes if other condition is True
+    // executes if other condition is True
 } else {
-    // Executes if no previous conditions are True
+    // executes if no previous conditions are True
 }
 
 {}... scope of if statement
 
 NAMING CONVENTIONS -------------------------------------------------------------
-variables ... lowerCamelCase (helloWorld, isActive, distanceToMARS)
+variables ... lowerCamelCase (helloWorld, isActive, distanceToMars)
 constants ... UPPERCASE_WITH_UNDERLINE (HOURS_PER_DAY, PI, DISTANCE_TO_DSCHIBUTI)
 class ....... CamelCase (Main, MyClass, )
 method ...... lowerCamelCase (primes, helloWorld, numberList)
 package ..... lowercase (eng, dist, src)
+
+LOOPS --------------------------------------------------------------------------
+
+while (condition) {
+    // executes as long as condition is true
+}
+
+for (variable_type variable_name = variable_value; end condition; increment) {
+    // executes as long as end condition is met
+}
+
+for (variable_type variable_name : iterable) {
+    // executes for every element in iterable
+}
