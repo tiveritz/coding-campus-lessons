@@ -22,6 +22,7 @@ public class Main {
         // Day06.helloWorldRecursion(5);
         // Day06.mergeSort();
         // Day07.leapYear();
+        // Day08.sortNamesArray();
 
     }
 }
