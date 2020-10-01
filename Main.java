@@ -23,11 +23,11 @@ public class Main {
         // Day05.autoManualArrayOutput();
         // Day05.businessResults();
         // Day06.helloWorldRecursion(5);
-        Day06.mergeSort();
+        // Day06.mergeSort();
         // Day07.leapYear();
         
         // October
-        Day08.sortNamesArray();
+        // Day08.sortNamesArray();
 
     }
 }
