@@ -1,4 +1,4 @@
-package sept;
+package sep;
 
 public class Day01 {
       public static void helloWorld() {

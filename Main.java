@@ -1,5 +1,5 @@
 import oct.*;
-import sept.*;
+import sep.*;
 
 public class Main {
     public static void main(String[] args) {
