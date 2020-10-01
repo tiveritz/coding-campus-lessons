@@ -23,14 +23,9 @@ public class Day08 {
         System.out.println(Arrays.toString(names));
 
         // 1. Wie viele Elemente sind in der Liste?
-        int elemInArr = 0;
-        for (String element : names) {
-            elemInArr++;
-        }
+        System.out.println("1. Elemente in Array: " + names.length);
 
-        System.out.println("Elemente in Array: " + elemInArr);
-
-        // 2. Was ist das kürzeste Element? (Pos + Name)
+        // 2.1 Was ist das kürzeste Element? (Pos + Name)
         String shortestElem = names[0];
         int shortestElemIndex = 0;
 
@@ -41,11 +36,11 @@ public class Day08 {
             }
         }
 
-        System.out.println("Shortest Element: " + shortestElem +
+        System.out.println("2.1 Shortest Element: " + shortestElem +
                            " at index " + shortestElemIndex
                            );
 
-        // 3. Was ist das längste Element? (Pos + Name)
+        // 2.2. Was ist das längste Element? (Pos + Name)
         String longestElem = names[0];
         int longestElemIndex = 0;
 
@@ -56,11 +51,11 @@ public class Day08 {
           }
         }
 
-        System.out.println("Longest Element: " + longestElem +
+        System.out.println("2.2 Longest Element: " + longestElem +
                            " at index " + longestElemIndex
                            );
         
-        // 4. Was ist alphabetisch das erste Element? (Pos + Name)
+        // 3.1. Was ist alphabetisch das erste Element? (Pos + Name)
         String abcFirstElem = names[0];
         int abcFirstElemIndex = 0;
 
@@ -71,11 +66,11 @@ public class Day08 {
             }
         }
         
-        System.out.println("Alphabetically first Element: " + abcFirstElem +
+        System.out.println("3.1 Alphabetically first Element: " + abcFirstElem +
                            " at index " + abcFirstElemIndex
                            );
         
-        // 5. Was ist alphabetisch das letzte Element? (Pos + Name)
+        // 3.2. Was ist alphabetisch das letzte Element? (Pos + Name)
         String abcLastElem = names[0];
         int abcLastElemIndex = 0;
 
@@ -86,11 +81,11 @@ public class Day08 {
             }
         }
         
-        System.out.println("Alphabetically last Element: " + abcLastElem +
+        System.out.println("3.2 Alphabetically last Element: " + abcLastElem +
                            " at index " + abcLastElemIndex
                            );
         
-        // 6. Gibt es ein Element 2 Mal?
+        // 4.1. Gibt es ein Element 2 Mal?
         boolean duplicate = false;
 
         for (int i = 0; i < names.length; i++) {
@@ -109,18 +104,18 @@ public class Day08 {
         }
 
         if (duplicate) {
-            System.out.println("There is at least one duplicate");
+            System.out.println("4.1 There is at least one duplicate");
         } else {
-            System.out.println("There are no duplicates");
+            System.out.println("4.1 There are no duplicates");
         }
     
-        // 7. Welche Elemente gibt es doppelt?
+        // 4.2. Welche Elemente gibt es doppelt?
         for (int i = 0; i < names.length; i++) {
             for(int j = 0; j < names.length; j++) {
                 if (i == j) {
                     continue;
                 } else if (names[i].compareTo(names[j]) == 0) {
-                    System.out.println("Duplicate found: " + names[i]);
+                    System.out.println("4.2 Duplicate found: " + names[i]);
                 }
             }
         }
