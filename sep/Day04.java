@@ -72,15 +72,15 @@ public class Day04 {
         int swapCounter = 0;
         int arrLen = arr.length;
         
-        for (int element = 0; element < arrLen; element++) {
-            for (int i = 0; i < arrLen-1-i; i++) {
+        for (int i = 0; i < arrLen; i++) {
+            for (int j = 0; j < arrLen-1-i; j++) {
                 compareCounter += 1;
-                if (arr[i] > arr[i + 1]) {
+                if (arr[j] > arr[j + 1]) {
                     swapCounter += 1;
                     
-                    temp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = temp;
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
         }
