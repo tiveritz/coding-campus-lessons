@@ -18,10 +18,8 @@ public class Day04 {
         // Vergleiche auch die Komplexität, indem du bei jedem Zugriff auf das
         // Array einen Counter erhöhst und diesen am Ende mit ausgiebst.
 
-        // Declare the array
         int[] arr = { 6, 23, 78, 34, 89, 2, 56, 78, 6, 30, 27, 81, 7, 7, 84, 20 };
 
-        // Declare variables
         int compareCounter = 0;
         int swapCounter = 0;
         int smallestElem = 0;
@@ -30,7 +28,6 @@ public class Day04 {
         int arrLen = arr.length;
         boolean toSwap = false;
 
-        // Selection sort
         for (int i = 0; i < arrLen - 1; i++) {
             toSwap = false;
             smallestElem = arr[i];
@@ -67,17 +64,15 @@ public class Day04 {
         // Vergleiche auch die Komplexität, indem du bei jedem Zugriff auf das
         // Array einen Counter erhöhst und diesen am Ende mit ausgiebst.
 
-        // Declare the array
         // int[] arr = { 6, 23, 78, 34, 89, 2, 56, 78, 6, 30, 27, 81, 7, 7, 84, 20 };
         int[] arr = { 99,88,77,66,55,44,33,22,11,9,8,7,6,5,4,3,2,1,0,-1,-2,-3,-4,-5 };
 
-        // Declare variables
         int temp = 0;
         int compareCounter = 0;
         int swapCounter = 0;
         int arrLen = arr.length;
         
-        for( int element = 0; element < arrLen; element++) {
+        for (int element = 0; element < arrLen; element++) {
             for (int i = 0; i < arrLen-1; i++) {
                 compareCounter += 1;
                 if (arr[i] > arr[i + 1]) {
