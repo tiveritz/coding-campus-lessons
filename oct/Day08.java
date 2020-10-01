@@ -19,6 +19,7 @@ public class Day08 {
                           "Delta",
                           "Quatar",
                           "Austrian",
+                          //"Äustrian",
                           "Quatar",
                           };
 
@@ -123,19 +124,38 @@ public class Day08 {
         }
 
         // 8. Sortiere alphabetisch absteigend.
-        String temp = "";
+        String[] namesSorted = names;
         
-        for (int i = 0; i < names.length; i++) {
-            for (int j = 0; j < names.length-1-i; j++) {
-                if (names[j].compareTo(names[j + 1]) < 0) {
-                    temp = names[j];
-                    names[j] = names[j + 1];
-                    names[j + 1] = temp;
+        for (int i = 0; i < namesSorted.length; i++) {
+            for (int j = 0; j < namesSorted.length-1-i; j++) {
+                if (namesSorted[j].compareTo(namesSorted[j + 1]) < 0) {
+                    String temp = namesSorted[j];
+                    namesSorted[j] = namesSorted[j + 1];
+                    namesSorted[j + 1] = temp;
                 }
             }
         }
 
-        System.out.println(Arrays.toString(names));
-            
+        System.out.println(Arrays.toString(namesSorted));
+        
+        // Zusatzaufgabe
+        // Primäre Sortierung nach Elementlänge absteigend
+        // Secundäre Sortierung alphabetisch aufsteigend
+        String[] namesDoubleSorted = names;
+        
+        for (int i = 0; i < namesDoubleSorted.length; i++) {
+            for (int j = 0; j < namesDoubleSorted.length-1-i; j++) {
+                if (namesDoubleSorted[j].length() <= namesDoubleSorted[j + 1].length()) {
+                     if (namesSorted[j].compareTo(namesSorted[j + 1]) > 0) {
+                        String temp = namesDoubleSorted[j];
+                        namesDoubleSorted[j] = namesDoubleSorted[j + 1];
+                        namesDoubleSorted[j + 1] = temp;
+                    }
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(namesDoubleSorted));
+
     }
 }
