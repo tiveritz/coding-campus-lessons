@@ -75,9 +75,25 @@ public class Day04 {
         int temp = 0;
         int compareCounter = 0;
         int swapCounter = 0;
-        boolean swap = true;
         int arrLen = arr.length;
-
+        
+        for( int element = 0; element < arrLen; element++) {
+            for (int i = 0; i < arrLen-1; i++) {
+                compareCounter += 1;
+                if (arr[i] > arr[i + 1]) {
+                    swapCounter += 1;
+                    
+                    temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                }
+            }
+        }
+        
+        // Alternative with while (is more efficient when last parts of array
+        // already sorted)
+        /*
+        boolean swap = true;
         while (swap) {
             swap = false;
             for (int i = 0; i < arrLen-1; i++) {
@@ -92,6 +108,7 @@ public class Day04 {
                 }
             }
         }
+        */
 
         // Print sorted array
         System.out.print(Arrays.toString(arr));
