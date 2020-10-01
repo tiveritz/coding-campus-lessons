@@ -74,9 +74,9 @@ public class Day04 {
         
         for (int i = 0; i < arrLen; i++) {
             for (int j = 0; j < arrLen-1-i; j++) {
-                compareCounter += 1;
+                compareCounter++;
                 if (arr[j] > arr[j + 1]) {
-                    swapCounter += 1;
+                    swapCounter++;
                     
                     temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -87,15 +87,16 @@ public class Day04 {
         
         // Alternative with while (is more efficient when last parts of array
         // already sorted)
+        
         /*
         boolean swap = true;
         while (swap) {
             swap = false;
-            for (int i = 0; i < arrLen-1; i++) {
-                compareCounter += 1;
+            for (int i = 0; i < arrLen-1-i; i++) {
+                compareCounter++;
                 if (arr[i] > arr[i + 1]) {
                     swap = true;
-                    swapCounter += 1;
+                    swapCounter++;
 
                     temp = arr[i];
                     arr[i] = arr[i + 1];
