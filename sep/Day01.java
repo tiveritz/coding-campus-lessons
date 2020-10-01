@@ -1,3 +1,5 @@
+package sep;
+
 public class Day01 {
       public static void helloWorld() {
             // Erste Deklarationen und Ausgaben mit Java

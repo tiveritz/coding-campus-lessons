@@ -1,3 +1,5 @@
+package oct;
+
 import java.util.Arrays;
 
 public class Day08 {

@@ -1,3 +1,5 @@
+package sep;
+
 public class Day02 {
 
     public static void sum() {

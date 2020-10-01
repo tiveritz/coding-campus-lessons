@@ -1,3 +1,5 @@
+package sep;
+
 public class Day03 {
 
     public static void simpleMultiplication() {

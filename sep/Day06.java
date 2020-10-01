@@ -1,3 +1,5 @@
+package sep;
+
 import java.util.Arrays;
 
 public class Day06 {

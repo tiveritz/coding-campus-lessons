@@ -1,3 +1,6 @@
+import sep.*;
+import oct.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -22,6 +25,8 @@ public class Main {
         // Day06.helloWorldRecursion(5);
         // Day06.mergeSort();
         // Day07.leapYear();
+        
+        // October
         // Day08.sortNamesArray();
 
     }

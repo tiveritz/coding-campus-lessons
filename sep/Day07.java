@@ -1,3 +1,5 @@
+package sep;
+
 public class Day07 {
     public static void leapYear() {
         // Output all leap years from 1990 until 2040
