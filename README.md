@@ -69,5 +69,5 @@ public class Main {
   * leapYear()
 
 ###### October
-* Day01
+* Day08
   * sortNamesArray()
