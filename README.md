@@ -64,3 +64,10 @@ public class Main {
 * Day06
   * helloWorldRecursion()
   * mergeSort()
+
+* Day07
+  * leapYear()
+
+###### October
+* Day01
+  * sortNamesArray()
