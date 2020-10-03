@@ -6,7 +6,7 @@ System.out.println("Hello World");
 System ............................... class
 out .................................. stream
 println .............................. method
-"Hello World" ........................ method argument
+"Hello World" ........................ method parameter
 System.out.println("Hello World"); ... statement
 
 int myNumber = 8; ................... statement
@@ -79,8 +79,8 @@ public ..... access modifier (or method access keyword)
 static ..... memory management keyword
 void ....... return type
 main ....... method name
-String[] ... method argument data type
-args ....... method argument data name
+String[] ... method parameter data type
+args ....... method parameter data name
 
 JAVA METHOD DECLARATION --------------------------------------------------------
 public static void helloWorld() {
@@ -91,7 +91,7 @@ public ....... access modifier
 static ....... memory management keyword (static -> doesn't belong to a specific object)
 void ......... return type (void -> returns no value)
 helloWorld ... method name
-() ........... method arguments (can be empty -> "method takes no arguments")
+() ........... method parameters (can be empty -> "method takes no parameters")
 
 method access keyword or access modifier
 private ..... access only within the class
