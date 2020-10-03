@@ -28,7 +28,8 @@ public class Main {
         
         // October
         // Day08.sortNamesArray();
-        // Day09.helloWorldFunctions();
+        // Day09Part01.helloWorldFunctions();
+        // Day09Part02.functionCallFromOtherClass();
 
     }
 }
