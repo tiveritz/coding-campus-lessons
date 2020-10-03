@@ -22,12 +22,12 @@ public class Day09Part02 {
      * Ineger for ending value (not included)
      */
     public static void recursionCounter(int start, int end) {
-        int increment = start;
-
-        if (increment < end) {
-            System.out.println(increment);
-            increment++;
-            recursionCounter(increment, end); // This is where the magic happens
+        int counter = start;
+        System.out.println(counter);
+        
+        if (counter < end-1) {
+            counter++;
+            recursionCounter(counter, end);
         }
     }
 }
