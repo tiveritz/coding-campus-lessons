@@ -19,8 +19,11 @@ public class Day08 {
                           "Delta",
                           "Quatar",
                           "Austrian",
-                          //"Äustrian",
                           "Quatar",
+                          // Für Zusatzaufgabe 2
+                          "Äustrian",
+                          "Ünited",
+                          "Öustrian",
                           };
 
         System.out.println(Arrays.toString(names));
@@ -138,7 +141,7 @@ public class Day08 {
 
         System.out.println(Arrays.toString(namesSorted));
         
-        // Zusatzaufgabe
+        // Zusatzaufgabe 1
         // Primäre Sortierung nach Elementlänge absteigend
         // Secundäre Sortierung alphabetisch aufsteigend
         String[] namesDoubleSorted = names;
@@ -157,5 +160,30 @@ public class Day08 {
 
         System.out.println(Arrays.toString(namesDoubleSorted));
 
+        // Zusatzaufgabe 2
+        // Berücksichtige Umlaute bei der Sortierung
+        String[] namesWiUml = names;
+        
+        for (int i = 0; i < namesWiUml.length; i++) {
+            for (int j = 0; j < namesWiUml.length-1-i; j++) {
+                String s1 = namesWiUml[j]
+                    .toLowerCase()
+                    .replace("ä", "a")
+                    .replace("ö", "o")
+                    .replace("ü", "u");
+                String s2 = namesWiUml[j + 1]
+                    .toLowerCase()
+                    .replace("ä", "a")
+                    .replace("ö", "o")
+                    .replace("ü", "u");
+                if (s1.compareTo(s2) < 0) {
+                    String temp = namesWiUml[j];
+                    namesWiUml[j] = namesWiUml[j + 1];
+                    namesWiUml[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(namesWiUml));
     }
 }
