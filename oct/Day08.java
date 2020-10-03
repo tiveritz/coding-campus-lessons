@@ -21,9 +21,9 @@ public class Day08 {
                           "Austrian",
                           "Quatar",
                           // Für Zusatzaufgabe 2
-                          "Äustrian",
-                          "Ünited",
-                          "Öustrian",
+                          // "Äustrian",
+                          // "Ünited",
+                          // "Öustrian",
                           };
 
         System.out.println(Arrays.toString(names));
@@ -127,7 +127,7 @@ public class Day08 {
         }
 
         // 8. Sortiere alphabetisch absteigend.
-        String[] namesSorted = names;
+        String[] namesSorted = Arrays.copyOf(names, names.length);
         
         for (int i = 0; i < namesSorted.length; i++) {
             for (int j = 0; j < namesSorted.length-1-i; j++) {
@@ -144,7 +144,7 @@ public class Day08 {
         // Zusatzaufgabe 1
         // Primäre Sortierung nach Elementlänge absteigend
         // Secundäre Sortierung alphabetisch aufsteigend
-        String[] namesDoubleSorted = names;
+        String[] namesDoubleSorted = Arrays.copyOf(names, names.length);
         
         for (int i = 0; i < namesDoubleSorted.length; i++) {
             for (int j = 0; j < namesDoubleSorted.length-1-i; j++) {
