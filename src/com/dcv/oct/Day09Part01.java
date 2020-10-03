@@ -8,8 +8,8 @@ public class Day09Part01 {
         
         //function call. Note the passed parameter (myArray)
         int[] sortedArray = bubbleSort(myArray);
-        //System.out.println("Sorted Array");
-        //System.out.println(Arrays.toString(sortedArray));
+        System.out.println("Sorted Array");
+        System.out.println(Arrays.toString(sortedArray));
 
         // Original Array remained untouched
         System.out.println("Test if original array remains untouched");
