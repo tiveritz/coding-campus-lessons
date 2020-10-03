@@ -1,11 +1,10 @@
-import oct.*;
-import sep.*;
+import src.oct.*;
+import src.sep.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        // September
-
+        // Septemb
         // Day01.helloWorld();
         // Day01.numberList();
         // Day02.factorial();
