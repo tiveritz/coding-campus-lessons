@@ -1,4 +1,4 @@
-package src.sep;
+package src.com.dcv.sep;
 
 public class Day03 {
 
