@@ -69,6 +69,7 @@ public class Day04 {
         int[] arr = { 6, 23, 78, 34, 89, 2, 56, 78, 6, 30, 27, 81, 7, 7, 84, 20 };
         // int[] arr = { 99,88,77,66,55,44,33,22,11,9,8,7,6,5,4,3,2,1,0,-1,-2,-3,-4,-5 };
 
+        // -> This is the easier version but not 100% correct bubbleSort
         int temp = 0;
         int compareCounter = 0;
         int swapCounter = 0;
@@ -87,6 +88,7 @@ public class Day04 {
             }
         }
         
+        // -> This is the real bubbleSort
         // Alternative with while (is more efficient when last parts of array
         // already sorted)
         
