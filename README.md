@@ -34,36 +34,45 @@ public class Main {
 ## Content
 
 ###### September
-* Day01.helloWorld()
-* Day01.numberList()
+* Day01
+  * Day01.helloWorld()
+  * Day01.numberList()
 
-* Day02.sum()
-* Day02.factorial()
-* Day02.piApproximation()
-* Day02.piApproximationPosNeg()
-* Day02.textSquareOutput()
-* Day02.textArrowOutput()
+* Day02
+  * Day02.sum()
+  * Day02.factorial()
+  * Day02.piApproximation()
+  * Day02.piApproximationPosNeg()
+  * Day02.textSquareOutput()
+  * Day02.textArrowOutput()
 
-* Day03.simpleMultiplication()
-* Day03.primes()
-* Day03.palindrom()
-* Day03.helloWorldArray()
+* Day03
+  * Day03.simpleMultiplication()
+  * Day03.primes()
+  * Day03.palindrom()
+  * Day03.helloWorldArray()
 
-* Day04.randNumArrBuilder()
-* Day04.selectionSort()
-* Day04.bubbleSort()
+* Day04
+  * Day04.randNumArrBuilder()
+  * Day04.selectionSort()
+  * Day04.bubbleSort()
 
-* Day05.autoManualArrayOutput()
-* Day05.businessResults()
+* Day05
+  * Day05.autoManualArrayOutput()
+  * Day05.businessResults()
 
-* Day06.helloWorldRecursion(int)
-* Day06.mergeSort()
+* Day06
+  * Day06.helloWorldRecursion(int)
+  * Day06.mergeSort()
 
-* Day07.leapYear()
+* Day07
+  * Day07.leapYear()
 
 ###### October
-* Day08.sortNamesArray()
+* Day08
+  * Day08.sortNamesArray()
 
-* Day09.helloWorldFunctions()
-* Day09Part02.functionCallFromOtherClass();
-* Day09Part02.recursionCounter(int, int)
+* Day09
+  * Day09.helloWorldFunctions()
+  * Day09Part02.functionCallFromOtherClass();
+  * Day09Part02.recursionCounter(int, int)
