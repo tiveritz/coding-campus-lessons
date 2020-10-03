@@ -5,7 +5,12 @@ import java.util.Arrays;
 public class Day09 {
     public static void helloWorldFunctions() {
         int[] myArray = { 6, 23, 78, 34, 89, 2, 56, 78, 6, 30, 27, 81, 7, 7, 84, 20 };
-        bubbleSort(myArray); //function call. Note the passed parameter (arr)
+
+        // Make copy of current array -> otherwise the original will be overwritten
+        int[] myArraySort = Arrays.copyOf(myArray, myArray.length);
+
+        bubbleSort(myArraySort); //function call. Note the passed parameter (myArraySort)
+        System.out.println(Arrays.toString(myArray)); // Original Array remains untouched
     }
 
     // This is the function which sortes the array which was given as parameter
