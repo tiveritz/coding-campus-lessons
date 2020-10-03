@@ -1,4 +1,4 @@
-package oct;
+package src.oct;
 
 import java.util.Arrays;
 

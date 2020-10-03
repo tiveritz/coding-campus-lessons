@@ -62,7 +62,7 @@ public class Main {
   * Day05.businessResults()
 
 * Day06
-  * Day06.helloWorldRecursion()
+  * Day06.helloWorldRecursion(int)
   * Day06.mergeSort()
 
 * Day07
@@ -75,4 +75,4 @@ public class Main {
 * Day09
   * Day09.helloWorldFunctions()
   * Day09Part02.functionCallFromOtherClass();
-  * Day09Part02.recursionCounter(4, 10)
+  * Day09Part02.recursionCounter(int, int)

@@ -1,4 +1,4 @@
-package sep;
+package src.sep;
 
 public class Day07 {
     public static void leapYear() {

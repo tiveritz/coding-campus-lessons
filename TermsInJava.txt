@@ -146,3 +146,6 @@ for (variable_type variable_name = variable_value; end condition; increment) {
 for (variable_type variable_name : iterable) {
     // executes for every element in iterable
 }
+
+TODO ---------------------------------------------------------------------------
+Scope

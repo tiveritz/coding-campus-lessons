@@ -1,4 +1,4 @@
-package sep;
+package src.sep;
 
 public class Day01 {
       public static void helloWorld() {

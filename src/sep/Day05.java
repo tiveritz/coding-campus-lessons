@@ -1,4 +1,4 @@
-package sep;
+package src.sep;
 
 import java.util.Arrays;
 
