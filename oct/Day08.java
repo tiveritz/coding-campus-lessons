@@ -162,7 +162,7 @@ public class Day08 {
 
         // Zusatzaufgabe 2
         // Berücksichtige Umlaute bei der Sortierung
-        String[] namesWiUml = names;
+        String[] namesWiUml = Arrays.copyOf(names, names.length);
         
         for (int i = 0; i < namesWiUml.length; i++) {
             for (int j = 0; j < namesWiUml.length-1-i; j++) {
