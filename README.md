@@ -76,3 +76,6 @@ public class Main {
   * Day09.helloWorldFunctions()
   * Day09Part02.functionCallFromOtherClass();
   * Day09Part02.recursionCounter(int, int)
+
+* Day10
+  * Day10.pascal(5)
