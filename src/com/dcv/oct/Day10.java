@@ -1,7 +1,5 @@
 package src.com.dcv.oct;
 
-import java.util.Arrays;
-
 public class Day10 {
     // gib das pascal'sche dreieck aus
     // 1
@@ -34,19 +32,12 @@ public class Day10 {
 
         long[][] cache = new long[rows][rows];
         
-        // Print empty two-dimensional array
-        /*
-        for (long[] arr : cache) {
-            System.out.prlongln(Arrays.toString(arr));
-        }
-        */
-
         for (int row = 1; row <= rows; row++) {
             for (int col = 1; col <= row; col++ ) {
                 long res = pascalCalcCaching(row, col, cache);
                 System.out.print(res + " ");
             }
-        System.out.println();
+            System.out.println();
         }
     }
 
