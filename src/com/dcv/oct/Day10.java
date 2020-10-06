@@ -32,33 +32,32 @@ public class Day10 {
 
     public static void pascalWithCaching(int rows) {
 
-        int[][] cache = new int[rows][rows];
+        long[][] cache = new long[rows][rows];
         
         // Print empty two-dimensional array
         /*
-        for (int[] arr : cache) {
-            System.out.println(Arrays.toString(arr));
+        for (long[] arr : cache) {
+            System.out.prlongln(Arrays.toString(arr));
         }
         */
 
         for (int row = 1; row <= rows; row++) {
             for (int col = 1; col <= row; col++ ) {
-                int res = pascalCalcCaching(row, col, cache);
+                long res = pascalCalcCaching(row, col, cache);
                 System.out.print(res + " ");
             }
         System.out.println();
         }
     }
 
-    public static int pascalCalcCaching(int row, int col, int[][] cache) {
+    public static long pascalCalcCaching(int row, int col, long[][] cache) {
         if (cache[row - 1][col - 1] != 0) {
             return cache[row - 1][col - 1];
         }
         if (col == 1 || col == row) {
-            cache[row - 1][col - 1] = 1;
             return 1;
         }
-        int res = pascalCalcCaching(row-1, col-1, cache) + pascalCalcCaching(row-1, col, cache);
+        long res = pascalCalcCaching(row-1, col-1, cache) + pascalCalcCaching(row-1, col, cache);
         cache[row - 1][col - 1] = res;
         return res;
     }
