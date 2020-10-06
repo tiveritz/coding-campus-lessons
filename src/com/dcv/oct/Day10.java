@@ -1,6 +1,15 @@
 package src.com.dcv.oct;
 
+import java.util.Arrays;
+
 public class Day10 {
+    // gib das pascal'sche dreieck aus
+    // 1
+    // 1 1
+    // 1 2 1
+    // 1 3 3 1
+    // 1 4 6 4 1
+    // 1 5 10 10 5 1
     public static void pascal(int rows) {
 
         for (int row = 1; row <= rows+1; row++) {
@@ -15,9 +24,42 @@ public class Day10 {
     public static int pascalCalc(int row, int col) {
         if (col == 1 || col == row) {
             return 1;
-        } else {
-            int res = pascalCalc(row-1, col-1) + pascalCalc(row-1, col);
-            return res;
         }
+        return pascalCalc(row-1, col-1) + pascalCalc(row-1, col);
+    }
+
+    // Zusatzaufgabe: bau ein caching ein, um die codeausführungen zu beschleunigen
+
+    public static void pascalWithCaching(int rows) {
+
+        int[][] cache = new int[rows][rows];
+        
+        // Print empty two-dimensional array
+        /*
+        for (int[] arr : cache) {
+            System.out.println(Arrays.toString(arr));
+        }
+        */
+
+        for (int row = 1; row <= rows; row++) {
+            for (int col = 1; col <= row; col++ ) {
+                int res = pascalCalcCaching(row, col, cache);
+                System.out.print(res + " ");
+            }
+        System.out.println();
+        }
+    }
+
+    public static int pascalCalcCaching(int row, int col, int[][] cache) {
+        if (cache[row - 1][col - 1] != 0) {
+            return cache[row - 1][col - 1];
+        }
+        if (col == 1 || col == row) {
+            cache[row - 1][col - 1] = 1;
+            return 1;
+        }
+        int res = pascalCalcCaching(row-1, col-1, cache) + pascalCalcCaching(row-1, col, cache);
+        cache[row - 1][col - 1] = res;
+        return res;
     }
 }
