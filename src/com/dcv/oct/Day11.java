@@ -54,4 +54,15 @@ public class Day11 {
         }
         return result;
     }
+
+    // Version mit steigender i Schleife
+    public static long facultyWithoutRecursion2(int n) {
+        long result = 1;
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+
 }
