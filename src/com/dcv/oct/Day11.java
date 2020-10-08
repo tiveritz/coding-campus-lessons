@@ -20,8 +20,11 @@ public class Day11 {
         // Now with vector
         Vector<Integer> vec = new Vector<Integer>();
 
-        vec.add(199);
-        vec.add(200);
+        for (int i = 0; i <= 8; i++) {
+            vec.add(i);
+        }
+
+        vec.remove(3);
 
         for (int element : vec) {
             System.out.print(element + " ");
