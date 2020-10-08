@@ -108,4 +108,19 @@ public class Day11Part02 {
             System.out.println(oneWord);
         }
     }
+
+    public static void checkIBAN() {
+        String testIBAN1 = "AT12 1234 1234 1234 1234";
+        String testIBAN2 = "AT62 6541 6985 555 0001";
+        String testIBAN3 = "DE55 2258 2258 2258 2211";
+        String testIBAN4 = "DE112 2254 2251 2251 222";
+
+        String pattern = "[A-Z]{2}[0-9]{2}(?: [0-9]{4}){4}";
+
+        System.out.println(testIBAN1 + " is a valid postal code? " + testIBAN1.matches(pattern));
+        System.out.println(testIBAN2 + " is a valid postal code? " + testIBAN2.matches(pattern));
+        System.out.println(testIBAN3 + " is a valid postal code? " + testIBAN3.matches(pattern));
+        System.out.println(testIBAN4 + " is a valid postal code? " + testIBAN4.matches(pattern));
+        
+    }
 }
