@@ -48,10 +48,10 @@ public class Day11 {
 
     // Dieselbe Aufgabe nur ohne Rekursion:
     public static long facultyWithoutRecursion(int n) {
-        long result = 1;
-        for (int i = n; i >= 1; i--) {
-            result *= i;
+        long result = n;
+        for (int i = n; i > 1; i--) {
+            result *= (i - 1);
         }
         return result;
-    } 
+    }
 }
