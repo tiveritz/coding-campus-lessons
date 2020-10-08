@@ -149,3 +149,6 @@ for (variable_type variable_name : iterable) {
 
 TODO ---------------------------------------------------------------------------
 Scope
+Wrapper classes -> extend functionality of primitive data types
+Wrapper classe is primitive data type with methods as extension. also can be 
+used in Vector <  > -> Vector = collector (not collection)

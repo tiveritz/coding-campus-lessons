@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         // October
+        Day11.collectionExample();
         // Day10Part02.bowling();
         // Day10Part02.stringToNumber();
         // Day10Part02.numberToGrade();
