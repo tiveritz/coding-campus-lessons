@@ -7,7 +7,9 @@ public class Main {
     public static void main(String[] args) {
 
         // October
-        Day11.collectionExample();
+        System.out.println(Day11.facultyWithoutRecursion(5));
+        // System.out.println(Day11.recursionFaculty(5));
+        // Day11.collectionExample();
         // Day10Part02.bowling();
         // Day10Part02.stringToNumber();
         // Day10Part02.numberToGrade();

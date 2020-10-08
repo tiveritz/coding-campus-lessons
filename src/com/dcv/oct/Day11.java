@@ -31,5 +31,27 @@ public class Day11 {
             System.out.print(element + " ");
         }
     }
-    
+
+    // Berechne die Fakultät einer gegebenen Zahl
+    // Beispiel 5! sollte 120 ausgeben
+    // Mathematisches Problem: 5! = 5 * 4!
+    public static long recursionFaculty(int n) {
+        System.out.println("faculty " + n + " begin");
+        long result = 1;
+        if (n > 1) {
+            result = n * recursionFaculty(n - 1);
+        }
+        System.out.println("faculty " + n + " end");
+
+        return result;
+    }
+
+    // Dieselbe Aufgabe nur ohne Rekursion:
+    public static long facultyWithoutRecursion(int n) {
+        long result = 1;
+        for (int i = n; i >= 1; i--) {
+            result *= i;
+        }
+        return result;
+    } 
 }
