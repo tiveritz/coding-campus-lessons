@@ -35,9 +35,11 @@ public class Main {
 
 ###### October
 
-* Day10
+* Day11
   * Day11.collectionExample();
   * System.out.println(Day11.recursionFaculty(5));
+
+* Day10
   * Day10Part02.bowling();
   * Day10Part02.stringToNumber();
   * Day10Part02.numberToGrade();
