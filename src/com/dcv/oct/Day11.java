@@ -5,6 +5,7 @@ import java.util.Vector;
 
 public class Day11 {
 
+    // Wiederholung Wrapperklassen:
     // Ein Beispiel für Wrapperklassen -> Für Vektoren muss die Wrapperklasse
     // Integer verwendet werden, int würde Fehler auswerfen
     public static void collectionExample() {

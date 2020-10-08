@@ -128,10 +128,10 @@ if (condition) {
 {}... scope of if statement
 
 NAMING CONVENTIONS -------------------------------------------------------------
-variables ... lowerCamelCase (helloWorld, isActive, distanceToMars)
+variables ... camelCase (helloWorld, isActive, distanceToMars)
 constants ... UPPERCASE_WITH_UNDERLINE (HOURS_PER_DAY, PI, DISTANCE_TO_DSCHIBUTI)
-class ....... CamelCase (Main, MyClass, )
-method ...... lowerCamelCase (primes, helloWorld, numberList)
+class ....... PascalCase (Main, MyClass, )
+method ...... camelCase (primes, helloWorld, numberList)
 package ..... lowercase (eng, dist, src)
 
 LOOPS --------------------------------------------------------------------------
