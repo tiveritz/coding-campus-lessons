@@ -10,6 +10,11 @@ public class Day11Part02 {
         // equals()
         // concat()
         // contains()
+        // toLowerCase()
+        // toUpperCase()
+        // startsWith()
+        // endsWith()
+        // 
 
         System.out.println("helloWorld.compareTo(\"Apfelsaft\"): " + helloWorld.compareTo("Apfelsaft"));
         System.out.println("helloWorld.compareTo(\"Zugführer\"): " + helloWorld.compareTo("Zugführer"));
@@ -25,5 +30,17 @@ public class Day11Part02 {
         
         System.out.println("helloWorld.contains(\"Apfelsaft\"): " + helloWorld.contains("Apfelsaft"));
         System.out.println("helloWorld.contains(\"Worl\"): " + helloWorld.contains("Worl"));
+        
+        System.out.println("helloWorld.startsWith(\"Hell\"): " + helloWorld.startsWith("Hell"));
+        System.out.println("helloWorld.startsWith(\"ld\"): " + helloWorld.startsWith("ld"));
+        
+        System.out.println("helloWorld.endsWith(\"Hell\"): " + helloWorld.endsWith("Hell"));
+        System.out.println("helloWorld.endsWith(\"ld\"): " + helloWorld.endsWith("ld"));
+
+        System.out.println("helloWorld.toLowerCase(\"Worl\"): " + helloWorld.toLowerCase());
+        System.out.println("helloWorld.toUpperCase(\"Worl\"): " + helloWorld.toUpperCase());
+        
+        System.out.printf("%5d%n", 100);
+        System.out.printf("%05d%n", 100);
     }
 }
