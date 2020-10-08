@@ -120,7 +120,6 @@ public class Day11Part02 {
         System.out.println(testIBAN1 + " is a valid postal code? " + testIBAN1.matches(pattern));
         System.out.println(testIBAN2 + " is a valid postal code? " + testIBAN2.matches(pattern));
         System.out.println(testIBAN3 + " is a valid postal code? " + testIBAN3.matches(pattern));
-        System.out.println(testIBAN4 + " is a valid postal code? " + testIBAN4.matches(pattern));
-        
+        System.out.println(testIBAN4 + " is a valid postal code? " + testIBAN4.matches(pattern));   
     }
 }

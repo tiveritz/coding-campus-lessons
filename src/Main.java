@@ -8,7 +8,7 @@ public class Main {
 
         // October
 
-        Day11Part02.checkIBAN();
+        // Day11Part02.checkIBAN();
         // Day11Part02.helloWorldString();
         // System.out.println(Day11Part01.facultyWithoutRecursion2(5));
         // System.out.println(Day11Part01.facultyWithoutRecursion(5));
