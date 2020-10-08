@@ -4,7 +4,10 @@ Check out all the Java training lessons of the part-time coding campus 2020/2021
 Want to see how this looks in Python > [coding-campus-lessons-in-python](https://github.com/tiveritz/coding-campus-lessons-in-python)
 
 ## Executing
-Use the Main.java file and call the method with Day00.methodName(). Some methods require a method parameter. All the available
+Use the Main.java file and call the method with Day00.methodName().
+Some methods require a method parameter.
+Some methods return a value and print method must be used.
+All the available
 methods are commented out in the Main.java.
 
 ###### Example
@@ -33,6 +36,8 @@ public class Main {
 ###### October
 
 * Day10
+  * Day11.collectionExample();
+  * System.out.println(Day11.recursionFaculty(5));
   * Day10Part02.bowling();
   * Day10Part02.stringToNumber();
   * Day10Part02.numberToGrade();
