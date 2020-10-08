@@ -3,7 +3,7 @@ package src.com.dcv.oct;
 import java.util.Arrays;
 import java.util.Vector;
 
-public class Day11 {
+public class Day11Part01 {
 
     // Wiederholung Wrapperklassen:
     // Ein Beispiel für Wrapperklassen -> Für Vektoren muss die Wrapperklasse
@@ -63,6 +63,4 @@ public class Day11 {
         }
         return result;
     }
-
-
 }

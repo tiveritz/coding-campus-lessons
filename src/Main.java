@@ -7,10 +7,12 @@ public class Main {
     public static void main(String[] args) {
 
         // October
-        System.out.println(Day11.facultyWithoutRecursion2(5));
-        // System.out.println(Day11.facultyWithoutRecursion(5));
-        // System.out.println(Day11.recursionFaculty(5));
-        // Day11.collectionExample();
+
+        Day11Part02.helloWorldString();
+        // System.out.println(Day11Part01.facultyWithoutRecursion2(5));
+        // System.out.println(Day11Part01.facultyWithoutRecursion(5));
+        // System.out.println(Day11Part01.recursionFaculty(5));
+        // Day11Part01.collectionExample();
         // Day10Part02.bowling();
         // Day10Part02.stringToNumber();
         // Day10Part02.numberToGrade();
