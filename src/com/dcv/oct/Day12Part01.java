@@ -1,12 +1,17 @@
 package src.com.dcv.oct;
 
+import java.util.Arrays;
+
 public class Day12Part01 {
     public static void stringOperationsRepetition() {
         System.out.println("Hello".charAt(1));
         System.out.println("Hello".substring(3));
         System.out.println("Hello".substring(1, 4));
         System.out.println("Hello".contains("ll"));
-        System.out.println("Hello".contains("L"));
+        System.out.println("Hello".contains("LL"));
+
+        String[] array = "das ist ein test".split(" ");
+        System.out.println(Arrays.toString(array));
 
         // Numerischen Wert von einem Buchstaben ausgeben
         System.out.println((int) 'l');
