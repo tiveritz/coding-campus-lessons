@@ -8,6 +8,9 @@ public class Main {
 
         // October
 
+        Day12Part02.textAnalysis();
+        // Day12Part01.substringFunction("What up my glip glops", 11, 20);
+        // Day12Part01.stringOperationsRepetition();
         // Day11Part02.checkIBAN();
         // Day11Part02.helloWorldString();
         // System.out.println(Day11Part01.facultyWithoutRecursion2(5));

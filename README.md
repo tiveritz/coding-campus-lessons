@@ -35,6 +35,9 @@ public class Main {
 
 ###### October
 
+* Day12
+  * Day12Part01.stringOperationsRepetition();
+
 * Day11
   * Day11.collectionExample();
   * System.out.println(Day11.recursionFaculty(5));
