@@ -1,5 +1,4 @@
-
-Welcome to Java
+# Java
 Java is a object-orientated, class-based cross-platform general-purpose high-level programming language.
 object-orientated.... programming paradigm based on the concept of objects. Data in the form of properties, code in the form of methods.
 class-based.......... inheritance over classes of objects
@@ -7,7 +6,7 @@ cross-platform....... works on multiple operating systems
 general-purpose...... used by different applications (desktop, mobile, games, web server, web applications)
 high-level........... independent of a particular type of computer, easier to understand and write because closer to human language
 
-A JAVA STATEMENT ---------------------------------------------------------------
+###### A JAVA STATEMENT
 System.out.println("Hello World");
 System ............................... class
 out .................................. stream
@@ -17,27 +16,27 @@ System.out.println("Hello World"); ... statement
 
 int myNumber = 8; ................... statement
 
-PRIMITIVE OPERATORS ------------------------------------------------------------
+###### PRIMITIVE OPERATORS
 + ... addition
 - ... subtraction
 * ... multiplication
 / ... division
 % ... modulo
 
-ASSIGNMENT OPERATORS -----------------------------------------------------------
+###### ASSIGNMENT OPERATORS
 = ........ assignment
 a += b ... a = a + b
 a -= b ... a = a - b
 a /= b ... a = a / b
 a %= b ... a = a % b
 
-UNARY OPERATORS ----------------------------------------------------------------
+###### UNARY OPERATORS
 ++i ... prefix increase
 --i ... prefix decrease
 i++ ... postfix increase
 i-- ... postfix decrease
 
-COMPARISON OPERATOR ------------------------------------------------------------
+###### COMPARISON OPERATOR
 == ... equals to
 != ... not equals to
 <= ... smaller than or equal to
@@ -45,12 +44,12 @@ COMPARISON OPERATOR ------------------------------------------------------------
 < .... smaller than
 > .... bigger than
 
-LOGICAL OPERATORS --------------------------------------------------------------
+###### LOGICAL OPERATORS
 && ... logical AND
 || ... logical OR
 ! .... logical NOT
 
-JAVA PRIMITIVE DATA TYPES ------------------------------------------------------
+###### JAVA PRIMITIVE DATA TYPES
 int group:
 byte ........... 1 byte, whole numbers -128 to 127
 short .......... 2 bytes, whole numbers -32768 to 32767
@@ -68,7 +67,7 @@ char ........... 2 bytes, single character 'A' or 'c' (ASCII values)
 not a data type
 String ......... "Hello World" (String is a class)
 
-JAVA MAIN PROGRAM DECLARATION --------------------------------------------------
+###### JAVA MAIN PROGRAM DECLARATION
 public class Main {
     public static void main(String[] args) {
 
@@ -88,7 +87,7 @@ main ....... method name
 String[] ... method parameter data type
 args ....... method parameter data name
 
-JAVA METHOD DECLARATION --------------------------------------------------------
+###### JAVA METHOD DECLARATION
 public static void helloWorld() {
 
 }
@@ -112,7 +111,7 @@ primitive types (int, boolean, double)
 Arrays, Strings...
 void -> nothing gets returned
 
-CONDITIONAL STATEMENT ----------------------------------------------------------
+###### CONDITIONAL STATEMENT
 if (condition) {
     // executes if condition is true
 }
@@ -133,14 +132,14 @@ if (condition) {
 
 {}... scope of if statement
 
-NAMING CONVENTIONS -------------------------------------------------------------
+###### NAMING CONVENTIONS
 variables ... camelCase (helloWorld, isActive, distanceToMars)
 constants ... UPPERCASE_WITH_UNDERLINE (HOURS_PER_DAY, PI, DISTANCE_TO_DSCHIBUTI)
 class ....... PascalCase (Main, MyClass, )
 method ...... camelCase (primes, helloWorld, numberList)
 package ..... lowercase (eng, dist, src)
 
-LOOPS --------------------------------------------------------------------------
+###### LOOPS
 while (condition) {
     // executes as long as condition is true
 }
@@ -153,7 +152,7 @@ for (variable_type variable_name : iterable) {
     // executes for every element in iterable
 }
 
-TODO ---------------------------------------------------------------------------
+###### TODO
 Scope
 Wrapper classes -> extend functionality of primitive data types
 Wrapper classe is primitive data type with methods as extension. also can be 
