@@ -1,5 +1,9 @@
 package src.com.dcv.oct;
 
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.Vector;
+
 public class Day12Part02 {
     private final static String text = "Zur Zeit des Zweiten Weltkriegs waren seine großen Werke Siddhartha und Der Steppenwolf noch verboten. Heute gehört Hermann Hesse zu den bekanntesten deutschen Schriftstellern. Mehr über den Weltveränderer lest ihr hier\n"
             + "Hermann Hesse\n" + "\n" + "Hermann Hesse erhielt den Nobelpreis für Literatur\n"
@@ -48,18 +52,101 @@ public class Day12Part02 {
             + "Hermann Hesse";
 
     public static void textAnalysis() {
-        // Anzahl Characters
-        System.out.print(text.replace("\n", "").length());
+        // #1 Anzahl Characters ----------
+        System.out.println("Anzahl char: " + text.replace("\n", "").length());
 
-        // Anzahl “echte” (ausgesprochen) Characters
+        // #2 Anzahl “echte” (ausgesprochen) Characters ----------
+        int spokenChar = 0;
 
-        // Anzahl Wörter
+        for (int i = 0; i < text.length(); i++) {
 
-        // Kürzeste / Längste Wort
+            // Convert char to String in order to use String.matches
+            if (isLetter(text.charAt(i))) {
+                spokenChar++;
+            }
+        }
+        System.out.println("Anzahl \"echte\" char: " + spokenChar);
 
-        // Anzahl vorkommen von Wort “Hesse”
+        // #3 Anzahl Wörter ----------
+        Pattern pattern = Pattern.compile("[a-zA-ZäöüÄÖÜß]+");
+        Matcher wordsForCount = pattern.matcher(text);
 
-        // Anzahl Wörter mit ausschließlich klein oder GROßBUCHSTABEN
+        System.out.println("Words: " + wordsForCount.results().count());
 
+        // 4# Kürzeste / Längste Wort ----------
+        Matcher wordMatch = pattern.matcher(text);
+        Vector<String> words = new Vector<String>();
+        int longestWordLen = 0;
+        int shortestWordLen = Integer.MAX_VALUE;
+        String longestWord = "";
+        String shortestWord = "";
+
+        // Write regex matches to vector
+        while (wordMatch.find()) {
+            words.add(wordMatch.group());
+        }
+
+        // Iterate over vector
+        for (int i = 0; i < words.size(); i++) {
+            String currWord = words.get(i);
+
+            if (currWord.length() > longestWordLen) {
+                longestWordLen = currWord.length();
+                longestWord = currWord;
+            }
+
+            if (currWord.length() < shortestWordLen) {
+                shortestWordLen = currWord.length();
+                shortestWord = currWord;
+            }
+        }
+        System.out.println("Kürzestes Wort: " + shortestWord);
+        System.out.println("Längstes Wort: " + longestWord);
+
+        // #5 Anzahl vorkommen von Wort “Hesse” ----------
+        int amountWord = 0;
+
+        for (int i = 0; i < words.size(); i++) {
+            if (words.get(i).equals("Hesse")) {
+                amountWord++;
+            }
+        }
+        System.out.println("Anzahl \"Hesse\": " + amountWord);
+
+        // #6 Anzahl Wörter mit ausschließlich klein oder GROßBUCHSTABEN ----------
+        int amountWordLower = 0;
+        int amountWordUpper = 0;
+
+        for (int i = 0; i < words.size(); i++) {
+            char[] characters = words.get(i).toCharArray();
+            boolean isUpper = true;
+            boolean isLower = true;
+
+            for (char c : characters) {
+                if (Character.isUpperCase(c)) {
+                    isLower = false;
+                }
+                if (Character.isLowerCase(c)) {
+                    isUpper = false;
+                }
+            }
+
+            if (isUpper) {
+                amountWordUpper++;
+            }
+            if (isLower) {
+                amountWordLower++;
+            }
+        }
+
+        System.out.println("GROSSGESCHRIEBENE Wörter: " + amountWordUpper);
+        System.out.println("Kleingeschriebene Wörter: " + amountWordLower);
+    }
+
+    // This Method checks wheter a given character is a letter or not (own
+    // definition)
+    public static boolean isLetter(char letter) {
+        boolean isLetter = Character.toString(letter).matches("[a-zA-z0-9äöüÄÖÜß]");
+        return isLetter;
     }
 }
