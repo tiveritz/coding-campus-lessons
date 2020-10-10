@@ -1,5 +1,11 @@
 
 Welcome to Java
+Java is a object-orientated, class-based cross-platform general-purpose high-level programming language.
+object-orientated.... programming paradigm based on the concept of objects. Data in the form of properties, code in the form of methods.
+class-based.......... inheritance over classes of objects
+cross-platform....... works on multiple operating systems
+general-purpose...... used by different applications (desktop, mobile, games, web server, web applications)
+high-level........... independent of a particular type of computer, easier to understand and write because closer to human language
 
 A JAVA STATEMENT ---------------------------------------------------------------
 System.out.println("Hello World");
