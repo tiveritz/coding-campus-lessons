@@ -18,7 +18,6 @@ public class Day12Part01 {
         System.out.println((int) 'L');
     }
 
-    // Unofficial excercise:
     // Schreibe ein Funktion, welche die Funktionalität von substring(int start, int
     // end)
     // implementiert OHNE, dass substring verwendet wird.
