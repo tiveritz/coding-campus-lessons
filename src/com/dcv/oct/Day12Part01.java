@@ -18,8 +18,7 @@ public class Day12Part01 {
         System.out.println((int) 'L');
     }
 
-    // Schreibe ein Funktion, welche die Funktionalität von substring(int start, int
-    // end)
+    // Schreibe ein Funktion, welche die Funktionalität von substring(int start, int end)
     // implementiert OHNE, dass substring verwendet wird.
     // Beispiel:
     // Eingabe: meinSubstring(“Ich heiße Lukas”, 5, 2)
