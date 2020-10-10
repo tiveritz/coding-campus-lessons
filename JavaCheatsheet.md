@@ -64,7 +64,7 @@ i-- ... postfix decrease
 ! .... logical NOT
 ```
 
-#### Java Primitive Data Types
+#### Primitive Data Types
 int group:
 ```
 byte ........... 1 byte, whole numbers -128 to 127
@@ -88,6 +88,29 @@ char ........... 2 bytes, single character 'A' or 'c' (ASCII values)
 not a data type
 ```
 String ......... "Hello World" (String is a class)
+```
+
+#### Wrapper Classes
+```
+Byte........ for byte
+Short....... for short
+Integer..... for int
+Long........ for long
+Float....... for float
+Double...... for double
+Boolean..... for boolean
+Character... for char
+```
+
+#### Reference Data Types
+```
+String myString = "Hello World";
+
+String[] myStringArray = new String[length];... String array
+int[] myStringArray = new int[length];......... int array
+
+Vector<String> words = new Vector<String>();..... String vector
+Vector<Integer> words = new Vector<Integer>();... int vector
 ```
 
 #### Java Main Program Declaration
@@ -187,8 +210,4 @@ for (variable_type variable_name : iterable) {
 
 #### ToDo
     * Scope
-    * Wrapper classes -> extend functionality of primitive data types
-    * Wrapper classe is primitive data type with methods as extension. also can be 
-used in Vector <  > -> Vector = collector (not collection)
-    * Vector
     * Pattern + Matcher + match Vector
