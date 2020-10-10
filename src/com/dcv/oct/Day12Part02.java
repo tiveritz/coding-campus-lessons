@@ -52,10 +52,10 @@ public class Day12Part02 {
             + "Hermann Hesse";
 
     public static void textAnalysis() {
-        // #1 Anzahl Characters ----------
+        // #1 Anzahl Characters ------------------------------------------------
         System.out.println("Anzahl char: " + text.replace("\n", "").length());
 
-        // #2 Anzahl “echte” (ausgesprochen) Characters ----------
+        // #2 Anzahl “echte” (ausgesprochen) Characters ------------------------
         int spokenChar = 0;
 
         for (int i = 0; i < text.length(); i++) {
@@ -67,24 +67,30 @@ public class Day12Part02 {
         }
         System.out.println("Anzahl \"echte\" char: " + spokenChar);
 
-        // #3 Anzahl Wörter ----------
+        // #3 Anzahl Wörter ----------------------------------------------------
+        // Use Java Pattern / Matcher
         Pattern pattern = Pattern.compile("[a-zA-ZäöüÄÖÜß]+");
         Matcher wordsForCount = pattern.matcher(text);
 
         System.out.println("Words: " + wordsForCount.results().count());
 
-        // 4# Kürzeste / Längste Wort ----------
+        // 4# Kürzeste / Längste Wort ------------------------------------------
+        // In order to work with regex matches the maches must be written into a
+        // Vector.
+        // Do that with Matcher.group() as long as Matcher.find() is true
+
         Matcher wordMatch = pattern.matcher(text);
         Vector<String> words = new Vector<String>();
-        int longestWordLen = 0;
-        int shortestWordLen = Integer.MAX_VALUE;
-        String longestWord = "";
-        String shortestWord = "";
 
         // Write regex matches to vector
         while (wordMatch.find()) {
             words.add(wordMatch.group());
         }
+
+        int longestWordLen = 0;
+        int shortestWordLen = Integer.MAX_VALUE;
+        String longestWord = "";
+        String shortestWord = "";
 
         // Iterate over vector
         for (int i = 0; i < words.size(); i++) {
@@ -103,7 +109,7 @@ public class Day12Part02 {
         System.out.println("Kürzestes Wort: " + shortestWord);
         System.out.println("Längstes Wort: " + longestWord);
 
-        // #5 Anzahl vorkommen von Wort “Hesse” ----------
+        // #5 Anzahl vorkommen von Wort “Hesse” --------------------------------
         int amountWord = 0;
 
         for (int i = 0; i < words.size(); i++) {
@@ -113,7 +119,7 @@ public class Day12Part02 {
         }
         System.out.println("Anzahl \"Hesse\": " + amountWord);
 
-        // #6 Anzahl Wörter mit ausschließlich klein oder GROßBUCHSTABEN ----------
+        // #6 Anzahl Wörter mit ausschließlich klein oder GROßBUCHSTABEN -------
         int amountWordLower = 0;
         int amountWordUpper = 0;
 
