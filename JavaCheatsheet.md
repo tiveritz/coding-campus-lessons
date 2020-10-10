@@ -104,7 +104,7 @@ class ................. class keyword
 Main .................. class name
 
 public static void main(String[] args)...Required method of every Java program
-public ..... access modifier (or method access keyword)
+public ..... access modifier
 static ..... memory management keyword
 void ....... return type
 main ....... method name
@@ -124,7 +124,7 @@ void ......... return type (void -> returns no value)
 helloWorld ... method name
 () ........... method parameters (can be empty -> "method takes no parameters")
 
-method access keyword or access modifier
+access modifier
 private ..... access only within the class
 default ..... access only within the package
 protected ... access within the package and outside the package through child class
@@ -186,7 +186,9 @@ for (variable_type variable_name : iterable) {
 ```
 
 #### ToDo
-Scope
-Wrapper classes -> extend functionality of primitive data types
-Wrapper classe is primitive data type with methods as extension. also can be 
+    * Scope
+    * Wrapper classes -> extend functionality of primitive data types
+    * Wrapper classe is primitive data type with methods as extension. also can be 
 used in Vector <  > -> Vector = collector (not collection)
+    * Vector
+    * Pattern + Matcher + match Vector
