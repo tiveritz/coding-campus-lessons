@@ -151,6 +151,7 @@ public class Day12Part02 {
 
     // This Method checks wheter a given character is a letter or not (own
     // definition)
+    // Java methods do not consider Umlauts and ß!
     public static boolean isLetter(char letter) {
         boolean isLetter = Character.toString(letter).matches("[a-zA-z0-9äöüÄÖÜß]");
         return isLetter;
