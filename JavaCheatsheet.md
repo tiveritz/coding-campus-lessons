@@ -10,7 +10,7 @@ high-level........... independent of a particular type of computer, easier to un
 ```
 
 
-###### A JAVA STATEMENT
+#### A Java Statement
 ```
 System.out.println("Hello World");
 System ............................... class
@@ -21,7 +21,7 @@ System.out.println("Hello World"); ... statement
 int myNumber = 8; ................... statement
 ```
 
-###### PRIMITIVE OPERATORS
+#### Primitive Operators
 ```
 + ... addition
 - ... subtraction
@@ -30,7 +30,7 @@ int myNumber = 8; ................... statement
 % ... modulo
 ```
 
-###### ASSIGNMENT OPERATORS
+#### Assignment Operators
 ```
 = ........ assignment
 a += b ... a = a + b
@@ -39,7 +39,7 @@ a /= b ... a = a / b
 a %= b ... a = a % b
 ```
 
-###### UNARY OPERATORS
+#### Unary Operators
 ```
 ++i ... prefix increase
 --i ... prefix decrease
@@ -47,7 +47,7 @@ i++ ... postfix increase
 i-- ... postfix decrease
 ```
 
-###### COMPARISON OPERATOR
+#### Comparison Operator
 ```
 == ... equals to
 != ... not equals to
@@ -57,14 +57,14 @@ i-- ... postfix decrease
 > .... bigger than
 ```
 
-###### LOGICAL OPERATORS
+#### Logical Operators
 ```
 && ... logical AND
 || ... logical OR
 ! .... logical NOT
 ```
 
-###### JAVA PRIMITIVE DATA TYPES
+#### Java Primitive Data Types
 int group:
 ```
 byte ........... 1 byte, whole numbers -128 to 127
@@ -90,7 +90,7 @@ not a data type
 String ......... "Hello World" (String is a class)
 ```
 
-###### JAVA MAIN PROGRAM DECLARATION
+#### Java Main Program Declaration
 ```
 public class Main {
     public static void main(String[] args) {
@@ -112,7 +112,7 @@ String[] ... method parameter data type
 args ....... method parameter data name
 ```
 
-###### JAVA METHOD DECLARATION
+#### Java Method Declaration
 ```
 public static void helloWorld() {
 
@@ -138,7 +138,7 @@ Arrays, Strings...
 void -> nothing gets returned
 ```
 
-###### CONDITIONAL STATEMENT
+#### Conditional Statement
 ```
 if (condition) {
     // executes if condition is true
@@ -161,7 +161,7 @@ if (condition) {
 {}... scope of if statement
 ```
 
-###### NAMING CONVENTIONS
+#### Naming Conventions
 ```
 variables ... camelCase (helloWorld, isActive, distanceToMars)
 constants ... UPPERCASE_WITH_UNDERLINE (HOURS_PER_DAY, PI, DISTANCE_TO_DSCHIBUTI)
@@ -170,7 +170,7 @@ method ...... camelCase (primes, helloWorld, numberList)
 package ..... lowercase (eng, dist, src)
 ```
 
-###### LOOPS
+#### Loops
 ```
 while (condition) {
     // executes as long as condition is true
@@ -185,7 +185,7 @@ for (variable_type variable_name : iterable) {
 }
 ```
 
-###### TODO
+#### ToDo
 Scope
 Wrapper classes -> extend functionality of primitive data types
 Wrapper classe is primitive data type with methods as extension. also can be 
