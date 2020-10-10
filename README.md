@@ -36,6 +36,8 @@ public class Main {
 ###### October
 
 * Day12
+  * Day12Part02.textAnalysis();
+  * Day12Part01.substringFunction("What up my glip glops", 11, 20);
   * Day12Part01.stringOperationsRepetition();
 
 * Day11
