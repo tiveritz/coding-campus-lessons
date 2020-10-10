@@ -59,7 +59,6 @@ public class Day12Part02 {
         int spokenChar = 0;
 
         for (int i = 0; i < text.length(); i++) {
-
             // Convert char to String in order to use String.matches
             if (isLetter(text.charAt(i))) {
                 spokenChar++;
@@ -75,8 +74,7 @@ public class Day12Part02 {
         System.out.println("Words: " + wordsForCount.results().count());
 
         // 4# Kürzeste / Längste Wort ------------------------------------------
-        // In order to work with regex matches the maches must be written into a
-        // Vector.
+        // In order to work with regex matches write them into Vector.
         // Do that with Matcher.group() as long as Matcher.find() is true
 
         Matcher wordMatch = pattern.matcher(text);
