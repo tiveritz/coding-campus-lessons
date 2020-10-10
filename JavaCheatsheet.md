@@ -1,73 +1,97 @@
 # Java
 Java is a object-orientated, class-based cross-platform general-purpose high-level programming language.
+
+```
 object-orientated.... programming paradigm based on the concept of objects. Data in the form of properties, code in the form of methods.
 class-based.......... inheritance over classes of objects
 cross-platform....... works on multiple operating systems
 general-purpose...... used by different applications (desktop, mobile, games, web server, web applications)
 high-level........... independent of a particular type of computer, easier to understand and write because closer to human language
+```
+
 
 ###### A JAVA STATEMENT
+```
 System.out.println("Hello World");
 System ............................... class
 out .................................. stream
 println .............................. method
 "Hello World" ........................ method parameter
 System.out.println("Hello World"); ... statement
-
 int myNumber = 8; ................... statement
+```
 
 ###### PRIMITIVE OPERATORS
+```
 + ... addition
 - ... subtraction
 * ... multiplication
 / ... division
 % ... modulo
+```
 
 ###### ASSIGNMENT OPERATORS
+```
 = ........ assignment
 a += b ... a = a + b
 a -= b ... a = a - b
 a /= b ... a = a / b
 a %= b ... a = a % b
+```
 
 ###### UNARY OPERATORS
+```
 ++i ... prefix increase
 --i ... prefix decrease
 i++ ... postfix increase
 i-- ... postfix decrease
+```
 
 ###### COMPARISON OPERATOR
+```
 == ... equals to
 != ... not equals to
 <= ... smaller than or equal to
 >= ... bigger than or equal to
 < .... smaller than
 > .... bigger than
+```
 
 ###### LOGICAL OPERATORS
+```
 && ... logical AND
 || ... logical OR
 ! .... logical NOT
+```
 
 ###### JAVA PRIMITIVE DATA TYPES
 int group:
+```
 byte ........... 1 byte, whole numbers -128 to 127
 short .......... 2 bytes, whole numbers -32768 to 32767
 int ............ 4 bytes, whole numbers -2147483648 to 2147483647
 long ........... 8 bytes, very big whole numbers
+```
 
 float group:
+```
 float .......... 4 bytes, fractional numbers, 6 to 7 decimal digits
 double ......... 8 bytes, fractional numbers, 15 decimal digts
+```
 
 other:
+```
 boolean ........ 1 bit, true or false
 char ........... 2 bytes, single character 'A' or 'c' (ASCII values)
+```
 
 not a data type
+```
 String ......... "Hello World" (String is a class)
+```
 
 ###### JAVA MAIN PROGRAM DECLARATION
+```
 public class Main {
     public static void main(String[] args) {
 
@@ -86,8 +110,10 @@ void ....... return type
 main ....... method name
 String[] ... method parameter data type
 args ....... method parameter data name
+```
 
 ###### JAVA METHOD DECLARATION
+```
 public static void helloWorld() {
 
 }
@@ -110,8 +136,10 @@ return type
 primitive types (int, boolean, double)
 Arrays, Strings...
 void -> nothing gets returned
+```
 
 ###### CONDITIONAL STATEMENT
+```
 if (condition) {
     // executes if condition is true
 }
@@ -131,15 +159,19 @@ if (condition) {
 }
 
 {}... scope of if statement
+```
 
 ###### NAMING CONVENTIONS
+```
 variables ... camelCase (helloWorld, isActive, distanceToMars)
 constants ... UPPERCASE_WITH_UNDERLINE (HOURS_PER_DAY, PI, DISTANCE_TO_DSCHIBUTI)
 class ....... PascalCase (Main, MyClass, )
 method ...... camelCase (primes, helloWorld, numberList)
 package ..... lowercase (eng, dist, src)
+```
 
 ###### LOOPS
+```
 while (condition) {
     // executes as long as condition is true
 }
@@ -151,6 +183,7 @@ for (variable_type variable_name = variable_value; end condition; increment) {
 for (variable_type variable_name : iterable) {
     // executes for every element in iterable
 }
+```
 
 ###### TODO
 Scope
