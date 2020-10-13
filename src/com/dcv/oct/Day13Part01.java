@@ -48,7 +48,7 @@ public class Day13Part01 {
         // - mit einem Großbuchstaben anfangen 
         // 1.) Satz sauber strukturieren (Leerzeichen an der richtigen Stelle einfügen, falsche Zeichen ersetzen) 
         // 2.) Worte ermitteln 
-        // 3.) Worte zählen
+        // 3.) Worte zählen 
 
         String sentence02 = "ImWinter;trage_ich Handschuhe.";
         String sentence02Normalized = sentence02.replace(';', ' ')
