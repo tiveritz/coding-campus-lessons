@@ -16,11 +16,11 @@ public class Day13Part01 {
             }
         }
  
-        System.out.println(charCount);
+        System.out.println("Amount of \".\": " + charCount);
 
         // oder:
         // funktioniert nicht 100% (was ist, wenn nach dem letzten punkt noch etwas ist)
-        System.out.println(meinSatz.split("\\.").length);
+        // System.out.println(meinSatz.split("\\.").length);
 
         //Wie oft kommt das Wort 'Hand' vor?
 
@@ -39,7 +39,7 @@ public class Day13Part01 {
             }
         }
 
-        System.out.println(counter);
+        System.out.println("Number of \"hand\": " + counter);
 
         // Satz: ImWinter;trage_ich Handschuhe. 
         // Wie viele Worte enthält die Zeichenfolge (Wort im Sinne durch Leerzeichen getrennt). 
