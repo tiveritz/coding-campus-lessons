@@ -8,7 +8,8 @@ public class Main {
 
         // October
 
-        Day12Part02.textAnalysis();
+        Day13Part01.stringRepetition();
+        // Day12Part02.textAnalysis();
         // Day12Part01.substringFunction("What up my glip glops", 11, 20);
         // Day12Part01.stringOperationsRepetition();
         // Day11Part02.checkIBAN();
