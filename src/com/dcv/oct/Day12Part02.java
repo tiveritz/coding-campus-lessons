@@ -53,14 +53,14 @@ public class Day12Part02 {
 
     public static void textAnalysis() {
         // #1 Anzahl Characters ------------------------------------------------
-        System.out.println("Anzahl char: " + text.replace("\n", "").length());
+        System.out.println("Anzahl char: " + text.length());
 
         // #2 Anzahl “echte” (ausgesprochen) Characters ------------------------
         int spokenChar = 0;
 
         for (int i = 0; i < text.length(); i++) {
             // Convert char to String in order to use String.matches
-            if (isLetter(text.charAt(i))) {
+            if (isAlphanumeric(text.charAt(i))) {
                 spokenChar++;
             }
         }
@@ -150,8 +150,8 @@ public class Day12Part02 {
     // This Method checks wheter a given character is a letter or not (own
     // definition)
     // Java methods do not consider Umlauts and ß!
-    public static boolean isLetter(char letter) {
-        boolean isLetter = Character.toString(letter).matches("[a-zA-z0-9äöüÄÖÜß]");
+    public static boolean isAlphanumeric(char letter) {
+        boolean isLetter = Character.toString(letter).matches("[a-zA-ZäöüÄÖÜß]");
         return isLetter;
     }
 }
