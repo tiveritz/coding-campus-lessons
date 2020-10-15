@@ -58,7 +58,7 @@ public class Day14Part01 {
         // #3 Anzahl Wörter
         String cleanText = cleanText(text);
         String[] words = cleanText.split(" ");
-        //System.out.println(Arrays.toString(words));
+        System.out.println("Amount of words: " + words.length);
 
         // 4# Kürzeste / Längste Wort
         System.out.println("Shortest word: " + shortestWord(words));
@@ -72,14 +72,16 @@ public class Day14Part01 {
         System.out.println("Words in lowercase: " + occurenceLowerCase(words));
 
         // #7 Alphabetisch (nach Wörterbuch) erste Wort und letzte Wort finden
-        String[] wordsSorted = stringArrSort(words);
+        System.out.println("Alphabetically first word: " + alphabeticallyFirstWord(words));
+        System.out.println("Alphabetically last word: " + alphabeticallyLastWord(words));
         
-        System.out.println("Alphabetically last word: " + wordsSorted[wordsSorted.length-1]);
-        System.out.println("Alphabetically first word: " + wordsSorted[0]);
 
         // #8 Wörter auflisten in der Rheinfolge: Länge absteigend und
         // (innerhalb der Länge) alphabetisch aufsteigend. (Bitte um eigene
         // Implementation mit BubbleSort oder mit einem anderen Sort-Algorithmus)
+
+        String[] wordsDoubleSorted = doubleSort(words);
+        System.out.println(Arrays.toString(wordsDoubleSorted));
     }
 
     public static int allCharCount(String text) {
@@ -190,22 +192,30 @@ public class Day14Part01 {
         return amountWordLower;
     }
 
-    public static String[] stringArrSort(String[] origArr) {
-        String[] arr = Arrays.copyOf(origArr, origArr.length);
-        
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length-1-i; j++) {
-                String wordLeft = wordNormalize(arr[j]);
-                String wordRight = wordNormalize(arr[j+1]);
-                if (wordLeft.compareTo(wordRight) > 0) {
-                    String temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
+    public static String alphabeticallyFirstWord(String[] arr) {
+        String firstWord = arr[0];
+
+        for (int i = 0; i < arr.length-1; i++) {
+            if (arr[i].compareTo(firstWord) < 0) {
+                firstWord = arr[i];
             }
         }
-        return arr;
+        return firstWord;
     }
+    
+    public static String alphabeticallyLastWord(String[] arr) {
+        String lastWord = arr[0];
+
+        for (int i = 0; i < arr.length-1; i++) {
+            String left = wordNormalize(arr[i]);
+            String right = wordNormalize(lastWord);
+            if (left.compareTo(right) > 0) {
+                lastWord = arr[i];
+            }
+        }
+        return lastWord;
+    }
+
 
     public static String wordNormalize(String word) {
         String normalized = word
@@ -218,5 +228,26 @@ public class Day14Part01 {
         
         return normalized;
     }
+
+    public static String[] doubleSort(String[] origArr) {
+        String[] arr = Arrays.copyOf(origArr, origArr.length);
+        
+        for (int i = 0; i < arr.length-1; i++) {
+            for (int j = 0; j < arr.length-1-i; j++) {
+                String wordLeft = wordNormalize(arr[j]);
+                String wordRight = wordNormalize(arr[j+1]);
+                if ((arr[j].length() < arr[j+1].length()) ||
+                (arr[j].length() == arr[j+1].length() &&
+                wordLeft.compareTo(wordRight) < 0))
+                {
+                    String temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+    
     
 }
