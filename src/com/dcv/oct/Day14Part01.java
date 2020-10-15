@@ -50,20 +50,36 @@ public class Day14Part01 {
         + "Hermann Hesse";
     
     public static void betterTextAnalysis() {
-        // #1 Anzahl Characters ------------------------------------------------
-        System.out.println(allCharCount(text));
-        // #2 Anzahl “echte” (ausgesprochen) Characters ------------------------
-        System.out.println(realCharCount(text));
+        // #1 Anzahl Characters
+        System.out.println("Amount of characters: " + allCharCount(text));
+        // #2 Anzahl “echte” (ausgesprochen) Characters
+        System.out.println("Amount of real characters: " + realCharCount(text));
 
-        // #3 Anzahl Wörter ----------------------------------------------------
+        // #3 Anzahl Wörter
         String cleanText = cleanText(text);
         String[] words = cleanText.split(" ");
         //System.out.println(Arrays.toString(words));
 
-        // 4# Kürzeste / Längste Wort ------------------------------------------
-        System.out.println(shortestWord(words));
-        System.out.println(longestWord(words));
+        // 4# Kürzeste / Längste Wort
+        System.out.println("Shortest word: " + shortestWord(words));
+        System.out.println("Longest word: " + longestWord(words));
 
+        // #5 Anzahl vorkommen von Wort “Hesse”
+        System.out.println("Occurence word \"Hesse\": " + occurenceInArray(words, "Hesse"));
+        
+        // #6 Anzahl Wörter mit ausschließlich klein oder GROßBUCHSTABEN
+        System.out.println("Words in UPPERCASE: " + occurenceUpperCase(words));
+        System.out.println("Words in lowercase: " + occurenceLowerCase(words));
+
+        // #7 Alphabetisch (nach Wörterbuch) erste Wort und letzte Wort finden
+        String[] wordsSorted = stringArrSort(words);
+        
+        System.out.println("Alphabetically last word: " + wordsSorted[wordsSorted.length-1]);
+        System.out.println("Alphabetically first word: " + wordsSorted[0]);
+
+        // #8 Wörter auflisten in der Rheinfolge: Länge absteigend und
+        // (innerhalb der Länge) alphabetisch aufsteigend. (Bitte um eigene
+        // Implementation mit BubbleSort oder mit einem anderen Sort-Algorithmus)
     }
 
     public static int allCharCount(String text) {
@@ -82,15 +98,20 @@ public class Day14Part01 {
         return spokenChar;
     }
 
+    public static boolean isAlphanumeric(char letter) {
+        boolean isLetter = Character.toString(letter).matches("[a-zA-ZäöüÄÖÜß]");
+        return isLetter;
+    }
+
     public static String cleanText(String text) {
         return text
-                .replaceAll("[^a-zA-ZßäöüÄÖÜ]", " ")
+                .replaceAll("[^a-zA-ZßäÄöÖüÜ]", " ")
                 .replaceAll("[ ]+", " ");
     }
 
     public static String shortestWord(String[] words) {
         String shortestWord = "";
-        int shortestWordLen = 0;
+        int shortestWordLen = Integer.MAX_VALUE;
 
         for (int i = 0; i < words.length; i++) {
             String currWord = words[i];
@@ -103,7 +124,6 @@ public class Day14Part01 {
         return shortestWord;
     }
 
-    
     public static String longestWord(String[] words) {
         String longestWord = "";
         int longestWordLen = 0;
@@ -115,16 +135,88 @@ public class Day14Part01 {
                 longestWordLen = currWord.length();
                 longestWord = currWord;
             }
-
         }
         return longestWord;
     }
 
-    // This Method checks wheter a given character is a letter or not (own
-    // definition)
-    // Java methods do not consider Umlauts and ß!
-    public static boolean isAlphanumeric(char letter) {
-        boolean isLetter = Character.toString(letter).matches("[a-zA-ZäöüÄÖÜß]");
-        return isLetter;
-    }    
+    public static int occurenceInArray(String[] arr, String string) {
+        int amountWord = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].equals(string)) {
+                amountWord++;
+            }
+        }
+        return amountWord;
+    }
+
+    public static int occurenceLowerCase(String[] arr) {
+        int amountWordUpper = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            char[] characters = arr[i].toCharArray();
+            boolean isUpper = true;
+
+            for (char c : characters) {
+                if (Character.isLowerCase(c)) {
+                    isUpper = false;
+                }
+            }
+
+            if (isUpper) {
+                amountWordUpper++;
+            }
+        }
+        return amountWordUpper;
+    }
+
+    public static int occurenceUpperCase(String[] arr) {
+        int amountWordLower = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            char[] characters = arr[i].toCharArray();
+            boolean isLower = true;
+
+            for (char c : characters) {
+                if (Character.isUpperCase(c)) {
+                    isLower = false;
+                }
+            }
+
+            if (isLower) {
+                amountWordLower++;
+            }
+        }
+        return amountWordLower;
+    }
+
+    public static String[] stringArrSort(String[] origArr) {
+        String[] arr = Arrays.copyOf(origArr, origArr.length);
+        
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length-1-i; j++) {
+                String wordLeft = wordNormalize(arr[j]);
+                String wordRight = wordNormalize(arr[j+1]);
+                if (wordLeft.compareTo(wordRight) > 0) {
+                    String temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    public static String wordNormalize(String word) {
+        String normalized = word
+        .replace("ä", "ue")
+        .replace("Ä", "ue")
+        .replace("ö", "oe")
+        .replace("Ö", "Oe")
+        .replace("ü", "ue")
+        .replace("Ü", "Ue");
+        
+        return normalized;
+    }
+    
 }
