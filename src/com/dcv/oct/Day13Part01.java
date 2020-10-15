@@ -52,9 +52,9 @@ public class Day13Part01 {
 
         String sentence02 = "ImWinter;trage_ich Handschuhe.";
         String sentence02Normalized = sentence02.replace(';', ' ')
-                                            .replace('_', ' ')
-                                            .replace('.', ' ')
-                                            .replaceAll("(?<=[a-z])(?=[A-Z])", " ");
+                                                .replace('_', ' ')
+                                                .replace('.', ' ')
+                                                .replaceAll("(?<=[a-z])(?=[A-Z])", " ");
         String[] words02 = sentence02Normalized.split(" ");
 
         System.out.println("Clean sentence: " + sentence02Normalized);
