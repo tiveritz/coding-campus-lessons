@@ -148,12 +148,12 @@ public class Day08 {
         
         for (int i = 0; i < namesDoubleSorted.length; i++) {
             for (int j = 0; j < namesDoubleSorted.length-1-i; j++) {
-                if (namesDoubleSorted[j].length() <= namesDoubleSorted[j + 1].length()) {
-                     if (namesSorted[j].compareTo(namesSorted[j + 1]) > 0) {
-                        String temp = namesDoubleSorted[j];
-                        namesDoubleSorted[j] = namesDoubleSorted[j + 1];
-                        namesDoubleSorted[j + 1] = temp;
-                    }
+                if ((namesDoubleSorted[j].length() < namesDoubleSorted[j + 1].length()) ||
+                    (namesDoubleSorted[j].length() == namesDoubleSorted[j + 1].length() &&
+                    namesDoubleSorted[j].compareTo(namesDoubleSorted[j + 1]) > 0)) {
+                    String temp = namesDoubleSorted[j];
+                    namesDoubleSorted[j] = namesDoubleSorted[j + 1];
+                    namesDoubleSorted[j + 1] = temp;
                 }
             }
         }
