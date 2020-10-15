@@ -52,6 +52,13 @@ public class Day12Part02 {
             + "Hermann Hesse";
 
     public static void textAnalysis() {
+        /* ACHTUNG
+        *  Dieser Weg die Probleme zu lösen ist nicht effizient, es geht viel
+        *  einfacher! Das selbe Beispiel wurde zu einem späteren Zeitpunkt
+        *  besser gelöst. Siehe Inhaltsverzeichnis im Main.java
+        */
+
+
         // #1 Anzahl Characters ------------------------------------------------
         System.out.println("Anzahl char: " + text.length());
 
