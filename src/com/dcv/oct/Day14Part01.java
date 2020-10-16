@@ -51,40 +51,39 @@ public class Day14Part01 {
 
     public static void betterTextAnalysis() {
         /*
-         * Das Ziel dieser Übung ist, verschiedene String operationen zu üben
-         * und sämtliche Funktionen in eigene Methoden zu packen (Erstellung,
-         * Aufruf und Variablenübergabe)
+         * Target of this lesson is to train various String operations and to
+         * write the code functions into their own methods (creation, call,
+         * return, passing parameters
          */
 
-        // #1 Anzahl Characters
+        // #1 Count characters
         System.out.println("Amount of characters: " + allCharCount(text));
 
-        // #2 Anzahl “echte” (ausgesprochen) Characters
+        // #2 Count "real" (spoken) characters
         System.out.println("Amount of real characters: " + realCharCount(text));
 
-        // #3 Anzahl Wörter
+        // #3 Count words
         String cleanText = cleanText(text);
         String[] words = cleanText.split(" ");
         System.out.println("Amount of words: " + words.length);
 
-        // 4# Kürzeste / Längste Wort
+        // 4# Shortest / longest word
         System.out.println("Shortest word: " + shortestWord(words));
         System.out.println("Longest word: " + longestWord(words));
 
-        // #5 Anzahl vorkommen von Wort “Hesse”
+        // #5 Count appearance of "Hesse"
         System.out.println("Occurence word \"Hesse\": " + occurenceInArray(words, "Hesse"));
 
-        // #6 Anzahl Wörter mit ausschließlich klein oder GROßBUCHSTABEN
+        // #6 Count words written lowercase and UPPERCASE
         System.out.println("Words in lowercase: " + occurenceLowerCase(words));
         System.out.println("Words in UPPERCASE: " + occurenceUpperCase(words));
 
-        // #7 Alphabetisch (nach Wörterbuch) erste Wort und letzte Wort finden
+        // #7 Print alphabetically first and last word
         System.out.println("Alphabetically first word: " + alphabeticallyFirstWord(words));
         System.out.println("Alphabetically last word: " + alphabeticallyLastWord(words));
 
-        // #8 Wörter auflisten in der Rheinfolge: Länge absteigend und
-        // (innerhalb der Länge) alphabetisch aufsteigend. (Bitte um eigene
-        // Implementation mit BubbleSort oder mit einem anderen Sort-Algorithmus)
+        // #8 Sort words by length destending and within the length
+        // alphabetically ascending. Implement with own sorting algorithm
         String[] wordsDoubleSorted = doubleSort(words);
         System.out.println(Arrays.toString(wordsDoubleSorted));
     }
@@ -173,8 +172,8 @@ public class Day14Part01 {
             char[] characters = arr[i].toCharArray();
             boolean isUpper = true;
 
-            for (char c : characters) {
-                if (Character.isLowerCase(c)) {
+            for (char character : characters) {
+                if (Character.isLowerCase(character)) {
                     isUpper = false;
                 }
             }
@@ -250,7 +249,7 @@ public class Day14Part01 {
 
     /** Returns the sorted version of the passed array
       * Sorting conditions:
-      * primar length descending and secondary alphabeticall ascending
+      * Primary length descending and secondary alphabeticall ascending
       */
     public static String[] doubleSort(String[] origArr) {
         String[] arr = Arrays.copyOf(origArr, origArr.length);
@@ -269,5 +268,4 @@ public class Day14Part01 {
         }
         return arr;
     }
-
 }
