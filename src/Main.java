@@ -2,12 +2,15 @@ package src;
 
 import src.com.dcv.oct.*;
 import src.com.dcv.sep.*;
+import src.com.own.oct.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        // October
+        // Own training sessions
+        // Code01.montyHallProblem();
 
+        // October
         // Day14.betterTextAnalysis();
         // Day13.stringRepetition();
         // Day12Part02.textAnalysis();

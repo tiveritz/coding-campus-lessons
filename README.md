@@ -33,6 +33,9 @@ public class Main {
 
 ## Content
 
+* Own training sessions
+  * Code01.montyHallProblem();
+
 ###### October
 
 * Day14
