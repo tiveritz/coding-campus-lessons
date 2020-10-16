@@ -90,7 +90,7 @@ private final static String DIVIDER =   "_______________________________________
         String message = "";
 
         if ( !(currDoor >= 1 && currDoor <= 3)) {
-            message = "You didn't enter a valid number, we use door 3 instead (because I don't know how to handle exceptions yet)\n";
+            message = "You didn't enter a valid door, we use door 3 instead (because I don't know how to handle exceptions yet)\n";
             currDoor = 3;
         }
         
