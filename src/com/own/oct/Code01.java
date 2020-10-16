@@ -7,7 +7,7 @@ public class Code01 {
     /* Write a funny console application to visualize the Monty Hall Problem
      * There are three closed doors behind of which are two goats and one car
      * Goal is to win the car.
-     * After you have picked your first door the game show moderator will unveils one of
+Co     * After you have picked your first door the game show moderator unveils one of
      * the other remaining doors with a goat. Then he asks you whether you want to
      * change your current door or stay with your decision.
      * Which decision do you think has the highest probability to win a car?
