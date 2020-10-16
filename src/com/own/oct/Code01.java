@@ -199,7 +199,7 @@ private final static String DIVIDER =   "_______________________________________
         return doors;
     }
 
-    /** Takes a two-dimensional array and prints them into one line */
+    /** Takes a two-dimensional array and prints them side by side */
     public static void doorOutput(String[][] arr) {
         for (int row = 0; row < 15; row++ ) {
             for (int col = 0; col < 3; col++) {
