@@ -136,7 +136,7 @@ private final static String DIVIDER =   "_______________________________________
                            ". " +
                            "I revealed a goat for you, which was behind door " +
                            revealedDoor +
-                           ".3 Would you like to change (c) or stay (any other input) with your initial choice?");
+                           ". Would you like to change (c) or stay (any other input) with your initial choice?");
         
         char change = sc.next().charAt(0);
         sc.close();
