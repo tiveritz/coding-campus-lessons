@@ -35,6 +35,12 @@ public class Main {
 
 ###### October
 
+* Day14
+  * Day14Part01.betterTextAnalysis();
+
+* Day13
+  * Day13Part01.stringRepetition();
+
 * Day12
   * Day12Part02.textAnalysis();
   * Day12Part01.substringFunction("What up my glip glops", 11, 20);
