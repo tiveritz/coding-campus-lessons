@@ -13,20 +13,16 @@ public class Day12Part01 {
         String[] array = "das ist ein test".split(" ");
         System.out.println(Arrays.toString(array));
 
-        // Numerischen Wert von einem Buchstaben ausgeben
+        // Print numeric value of a character
         System.out.println((int) 'l');
         System.out.println((int) 'L');
     }
 
-    // Schreibe ein Funktion, welche die Funktionalität von substring(int start, int end)
-    // implementiert OHNE, dass substring verwendet wird.
-    // Beispiel:
-    // Eingabe: meinSubstring(“Ich heiße Lukas”, 5, 2)
-    // Ausgabe: he
+    // Write a function, which mirrors the functionality of substring(int start, int end)
     public static void substringFunction(String string, int start, int end) {
-        System.out.println(string);
-        System.out.println(start);
-        System.out.println(end);
+        System.out.println("String: " + string);
+        System.out.println("Start: " + start);
+        System.out.println("End: " + end);
 
         for (int i = start; i < end; i++) {
             System.out.print(string.charAt(i));

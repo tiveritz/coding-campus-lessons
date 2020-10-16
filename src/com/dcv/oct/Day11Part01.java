@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.Vector;
 
 public class Day11Part01 {
+    // Repetition wrapper classes:
+    // An example for wrapper classes -> requred for vector classes (Integer 
+    // instead of int, Character instead of char)
 
-    // Wiederholung Wrapperklassen:
-    // Ein Beispiel für Wrapperklassen -> Für Vektoren muss die Wrapperklasse
-    // Integer verwendet werden, int würde Fehler auswerfen
     public static void collectionExample() {
         // Normal integer array
         int buf [] = new int[5];
@@ -32,9 +32,9 @@ public class Day11Part01 {
         }
     }
 
-    // Berechne die Fakultät einer gegebenen Zahl
-    // Beispiel 5! sollte 120 ausgeben
-    // Mathematisches Problem: 5! = 5 * 4!
+    // Calculate the faculty of a given number
+    // Example 5! should result to 120
+    // Mathematical problem: 5! = 4!
     public static long recursionFaculty(int n) {
         System.out.println("faculty " + n + " begin");
         long result = 1;
@@ -46,7 +46,7 @@ public class Day11Part01 {
         return result;
     }
 
-    // Dieselbe Aufgabe nur ohne Rekursion:
+    // Same Example without recursion
     public static long facultyWithoutRecursion(int n) {
         long result = n;
         for (int i = n; i > 1; i--) {
@@ -55,7 +55,7 @@ public class Day11Part01 {
         return result;
     }
 
-    // Version mit steigender i Schleife
+    // Other version with rising loop
     public static long facultyWithoutRecursion2(int n) {
         long result = 1;
         for (int i = 1; i <= n; i++) {
