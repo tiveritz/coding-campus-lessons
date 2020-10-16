@@ -98,6 +98,7 @@ private final static String DIVIDER =   "_______________________________________
         // Direction of how the loops search for a goat has to be random
         Random random = new Random();
         boolean isMapRising = random.nextBoolean();
+        int revealedDoor = 0;
         
         // (search for the index which is not the user choice and no car inside)
         if (isMapRising) {
@@ -107,6 +108,7 @@ private final static String DIVIDER =   "_______________________________________
                 } else {
                     doors[i] = GOAT;
                     revealedDoors[i] = true;
+                    revealedDoor = i+1;
                     break;
                 }
             }
@@ -117,6 +119,7 @@ private final static String DIVIDER =   "_______________________________________
                 } else {
                     doors[i] = GOAT;
                     revealedDoors[i] = true;
+                    revealedDoor = i+1;
                     break;
                 }
             } 
@@ -128,8 +131,8 @@ private final static String DIVIDER =   "_______________________________________
         // Step #4 -> Ask wheter to change door or stay ------------------------
         System.out.println(message +
                            "I revealed door " +
-                           currDoor +
-                           " for you. Would you like to change (c) or stay (any char)?");
+                           revealedDoor +
+                           " for you. Would you like to change (c) or stay (any other char)?");
         
         char change = sc.next().charAt(0);
         sc.close();
