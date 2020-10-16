@@ -2,7 +2,7 @@ package src.com.dcv.oct;
 
 import java.util.Arrays;
 
-public class Day14Part01 {
+public class Day14 {
     private final static String text = "Zur Zeit des Zweiten Weltkriegs waren seine großen Werke Siddhartha und Der Steppenwolf noch verboten. Heute gehört Hermann Hesse zu den bekanntesten deutschen Schriftstellern. Mehr über den Weltveränderer lest ihr hier\n"
             + "Hermann Hesse\n" + "\n" + "Hermann Hesse erhielt den Nobelpreis für Literatur\n"
             + "Hermann Hesse: Kurz-Steckbrief\n" + "\n" + "    Vollständiger Name: Hermann Karl Hesse\n"
@@ -53,7 +53,7 @@ public class Day14Part01 {
         /*
          * Target of this lesson is to train various String operations and to
          * write the code functions into their own methods (creation, call,
-         * return, passing parameters
+         * return, passing parameters)
          */
 
         // #1 Count characters
