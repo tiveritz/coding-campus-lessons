@@ -1,6 +1,12 @@
 package src.com.own.oct;
 
 public class Code02 {
+    /*
+     * Create a program that displays a calendar. Define two variables (month,
+     * starting day) to define the amount of days of the month (30/31) and the
+     * fist day (Monday, Tuestday...)
+     */
+
     public static void calendar() {
         int daysInMonth = 31;
         int startDay = 2;
@@ -12,7 +18,6 @@ public class Code02 {
         // Initialize two dimensional array
         int[][] calendar = new int[amountOfRows][7];
         
-        // Create and print the header
         System.out.println("| MO | DI | MI | DO | FR | SA | SO |\n------------------------------------");
         
         // Fill the array with values
