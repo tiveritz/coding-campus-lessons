@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Own training sessions
+        // Code02.calendar();
         // Code01.montyHallProblem();
 
         // October
