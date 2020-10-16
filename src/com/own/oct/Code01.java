@@ -131,9 +131,12 @@ private final static String DIVIDER =   "_______________________________________
         
         // Step #4 -> Ask wheter to change door or stay ------------------------
         System.out.println(message +
-                           "I revealed door " +
+                           "You chose door " +
+                           currDoor +
+                           ". " +
+                           "I revealed a goat for you, which was behind door " +
                            revealedDoor +
-                           " for you. Would you like to change (c) or stay (any other char)?");
+                           ".3 Would you like to change (c) or stay (any other input) with your initial choice?");
         
         char change = sc.next().charAt(0);
         sc.close();
