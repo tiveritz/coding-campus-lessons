@@ -68,19 +68,19 @@ public class Day14Part01 {
         System.out.println("Amount of words: " + words.length);
 
         // 4# Shortest / longest word
-        System.out.println("Shortest word: " + shortestWord(words));
-        System.out.println("Longest word: " + longestWord(words));
+        System.out.println("Shortest word: " + getShortestWord(words));
+        System.out.println("Longest word: " + getLongestWord(words));
 
         // #5 Count appearance of "Hesse"
-        System.out.println("Occurence word \"Hesse\": " + occurenceInArray(words, "Hesse"));
+        System.out.println("Occurence word \"Hesse\": " + occurencesInArray(words, "Hesse"));
 
         // #6 Count words written lowercase and UPPERCASE
-        System.out.println("Words in lowercase: " + occurenceLowerCase(words));
-        System.out.println("Words in UPPERCASE: " + occurenceUpperCase(words));
+        System.out.println("Words in lowercase: " + countAllLowerCase(words));
+        System.out.println("Words in UPPERCASE: " + countAllUpperCase(words));
 
         // #7 Print alphabetically first and last word
-        System.out.println("Alphabetically first word: " + alphabeticallyFirstWord(words));
-        System.out.println("Alphabetically last word: " + alphabeticallyLastWord(words));
+        System.out.println("Alphabetically first word: " + getAlphabeticallyFirstWord(words));
+        System.out.println("Alphabetically last word: " + getAlphabeticallyLastWord(words));
 
         // #8 Sort words by length destending and within the length
         // alphabetically ascending. Implement with own sorting algorithm
@@ -117,7 +117,7 @@ public class Day14Part01 {
     }
 
     /** Returns any of the shortest Word from the passed String array */
-    public static String shortestWord(String[] words) {
+    public static String getShortestWord(String[] words) {
         String shortestWord = "";
         int shortestWordLen = Integer.MAX_VALUE;
 
@@ -133,7 +133,7 @@ public class Day14Part01 {
     }
 
     /** Returns any of the longest Word from the passed String array */
-    public static String longestWord(String[] words) {
+    public static String getLongestWord(String[] words) {
         String longestWord = "";
         int longestWordLen = 0;
 
@@ -151,7 +151,7 @@ public class Day14Part01 {
     /** Returns an int with the number of occurences of the passed String in the
       * passed Array
       */
-    public static int occurenceInArray(String[] arr, String string) {
+    public static int occurencesInArray(String[] arr, String string) {
         int amountWord = 0;
 
         for (int i = 0; i < arr.length; i++) {
@@ -165,7 +165,7 @@ public class Day14Part01 {
     /** Returns an int with the number of occurences of all upper case words in 
       * the passed String array 
       */
-    public static int occurenceUpperCase(String[] arr) {
+    public static int countAllUpperCase(String[] arr) {
         int amountWordUpper = 0;
 
         for (int i = 0; i < arr.length; i++) {
@@ -188,7 +188,7 @@ public class Day14Part01 {
     /** Returns an int with the number of occurences of all lower case words in 
       * the passed String array 
       */
-    public static int occurenceLowerCase(String[] arr) {
+    public static int countAllLowerCase(String[] arr) {
         int amountWordLower = 0;
 
         for (int i = 0; i < arr.length; i++) {
@@ -209,7 +209,7 @@ public class Day14Part01 {
     }
 
     /** Returns the alphabetically first word of the passed String array */
-    public static String alphabeticallyFirstWord(String[] arr) {
+    public static String getAlphabeticallyFirstWord(String[] arr) {
         String firstWord = arr[0];
 
         for (int i = 0; i < arr.length - 1; i++) {
@@ -221,12 +221,12 @@ public class Day14Part01 {
     }
 
     /** Returns the alphabetically last word of the passed String array */
-    public static String alphabeticallyLastWord(String[] arr) {
+    public static String getAlphabeticallyLastWord(String[] arr) {
         String lastWord = arr[0];
 
         for (int i = 0; i < arr.length - 1; i++) {
-            String left = wordNormalize(arr[i]);
-            String right = wordNormalize(lastWord);
+            String left = normalizeWord(arr[i]);
+            String right = normalizeWord(lastWord);
             if (left.compareTo(right) > 0) {
                 lastWord = arr[i];
             }
@@ -235,7 +235,7 @@ public class Day14Part01 {
     }
 
     /** Returns the version of the passed words with Umlauts and ß replaced */
-    public static String wordNormalize(String word) {
+    public static String normalizeWord(String word) {
         String normalized = word
                             .replace("ä", "ue")
                             .replace("Ä", "ue")
@@ -256,10 +256,14 @@ public class Day14Part01 {
 
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
-                String wordLeft = wordNormalize(arr[j]);
-                String wordRight = wordNormalize(arr[j + 1]);
-                if ((arr[j].length() < arr[j + 1].length())
-                        || (arr[j].length() == arr[j + 1].length() && wordLeft.compareTo(wordRight) < 0)) {
+                String normalizedWordLeft = normalizeWord(arr[j]);
+                String normalizedWordRight = normalizeWord(arr[j + 1]);
+                int wordLeftLength = arr[j].length();
+                int wordRightLength = arr[j + 1].length();
+
+                if ((wordLeftLength < wordRightLength)
+                            || (wordLeftLength == wordRightLength
+                            && normalizedWordLeft.compareTo(normalizedWordRight) > 0)) {
                     String temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
