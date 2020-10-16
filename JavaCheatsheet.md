@@ -212,3 +212,4 @@ for (variable_type variable_name : iterable) {
     * Scope
     * Pattern + Matcher + match Vector
     * final
+    * docstrings
