@@ -52,35 +52,37 @@ public class Day12Part02 {
             + "Hermann Hesse";
 
     public static void textAnalysis() {
-        /* ACHTUNG
-        *  Dieser Weg die Probleme zu lösen ist nicht effizient, es geht viel
-        *  einfacher! Das selbe Beispiel wurde zu einem späteren Zeitpunkt
-        *  besser gelöst. Siehe Inhaltsverzeichnis im Main.java
+
+        // =====================================================================
+        /* ATTENTION
+        * This way to solve the problem is not very efficient. There is a way
+        * easier way. The same example was solved correctly in a later session.
+        * Check table of content in Main.java
         */
+        // =====================================================================
 
 
-        // #1 Anzahl Characters ------------------------------------------------
+        // #1 Count character
         System.out.println("Anzahl char: " + text.length());
 
-        // #2 Anzahl “echte” (ausgesprochen) Characters ------------------------
+        // #2 Count "real" (spoken) characters
         int spokenChar = 0;
 
         for (int i = 0; i < text.length(); i++) {
-            // Convert char to String in order to use String.matches
             if (isAlphanumeric(text.charAt(i))) {
                 spokenChar++;
             }
         }
         System.out.println("Anzahl \"echte\" char: " + spokenChar);
 
-        // #3 Anzahl Wörter ----------------------------------------------------
+        // #3 Count words
         // Use Java Pattern / Matcher
         Pattern pattern = Pattern.compile("[a-zA-ZäöüÄÖÜß]+");
         Matcher wordsForCount = pattern.matcher(text);
 
         System.out.println("Words: " + wordsForCount.results().count());
 
-        // 4# Kürzeste / Längste Wort ------------------------------------------
+        // 4# Shortest / longest word
         // In order to work with regex matches write them into Vector.
         // Do that with Matcher.group() as long as Matcher.find() is true
 
@@ -114,7 +116,7 @@ public class Day12Part02 {
         System.out.println("Kürzestes Wort: " + shortestWord);
         System.out.println("Längstes Wort: " + longestWord);
 
-        // #5 Anzahl vorkommen von Wort “Hesse” --------------------------------
+        // #5 Count appearance of "Hesse"
         int amountWord = 0;
 
         for (int i = 0; i < words.size(); i++) {
@@ -124,7 +126,7 @@ public class Day12Part02 {
         }
         System.out.println("Anzahl \"Hesse\": " + amountWord);
 
-        // #6 Anzahl Wörter mit ausschließlich klein oder GROßBUCHSTABEN -------
+        // #6 Count words written lowercase and UPPERCASE
         int amountWordLower = 0;
         int amountWordUpper = 0;
 
@@ -154,9 +156,6 @@ public class Day12Part02 {
         System.out.println("Kleingeschriebene Wörter: " + amountWordLower);
     }
 
-    // This Method checks wheter a given character is a letter or not (own
-    // definition)
-    // Java methods do not consider Umlauts and ß!
     public static boolean isAlphanumeric(char letter) {
         boolean isLetter = Character.toString(letter).matches("[a-zA-ZäöüÄÖÜß]");
         return isLetter;
