@@ -10,7 +10,7 @@ high-level........... independent of a particular type of computer, easier to un
 ```
 
 
-#### A Java Statement
+#### A Statement
 ```
 System.out.println("Hello World");
 System ............................... class
@@ -113,7 +113,7 @@ Vector<String> words = new Vector<String>();..... String vector
 Vector<Integer> words = new Vector<Integer>();... int vector
 ```
 
-#### Java Main Program Declaration
+#### Main Program Declaration
 ```
 public class Main {
     public static void main(String[] args) {
@@ -135,7 +135,7 @@ String[] ... method parameter data type
 args ....... method parameter data name
 ```
 
-#### Java Method Declaration
+#### Method Declaration
 ```
 public static void helloWorld() {
 
@@ -208,8 +208,41 @@ for (variable_type variable_name : iterable) {
 }
 ```
 
+#### Scope
+Scope is a range of code where special rules apply. Variables declared inside the
+scope are only accessible by the code within the same scope.
+
+Examples
+```
+public static void helloWorld() {
+    // Scope is the code between { and }
+}
+
+if (condition) {
+    // Scope is the code between { and }
+}
+
+while (condition) {
+    // Scope is the code between { and }
+}
+```
+
+#### Javadoc (Doc Comments)
+```
+/** This is Javadoc
+  * You should comment your methods (what they do, author, version...). This
+  * Information will be displayed as quick tip when the method is ised (and 
+  * hovered)
+  *
+  * @author Tiveritz
+  * @version 1.0
+  * @whatever else you like
+  */
+public static void helloWorld() {
+    // Scope is the code between { and }
+}
+```
+
 #### ToDo
-    * Scope
     * Pattern + Matcher + match Vector
     * final
-    * docstrings
