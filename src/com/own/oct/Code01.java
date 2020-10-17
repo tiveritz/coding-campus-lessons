@@ -69,7 +69,8 @@ public class Code01 {
             "|_________________|"
     };
 
-    private final static String DIVIDER =   "_____________________________________________________________";
+    private final static String DIVIDER =
+            "_____________________________________________________________";
 
 
     public static void montyHallProblem() {
@@ -79,10 +80,10 @@ public class Code01 {
         String doors[][] = {DOOR, DOOR, DOOR};
         boolean[] carPosition = createGameShowCarArr();
 
-        // Step #1 -> Display empty doors --------------------------------------
+        // Step #1 -> Display empty doors ----------------------------------------------------------
         doorOutput(doorBuilder(doors, 0));
         
-        // Step #2 -> Let the user choose a door -------------------------------
+        // Step #2 -> Let the user choose a door ---------------------------------------------------
         System.out.println("Game Show Moderator: Which door to choose? (1, 2, 3)");  
         Scanner sc = new Scanner(System.in);
         int currDoor = sc.nextInt();
@@ -94,7 +95,7 @@ public class Code01 {
             currDoor = 3;
         }
         
-        // Step #3 -> Reveal a goat---------------------------------------------
+        // Step #3 -> Reveal a goat-----------------------------------------------------------------
         int slotToReveal = getSlotToReveal(currDoor, carPosition);
 
         doors[slotToReveal] = GOAT;
@@ -104,7 +105,7 @@ public class Code01 {
         clearTerminal();
         doorOutput(doorBuilder(doors, currDoor));
         
-        // Step #4 -> Ask wheter to change door or stay ------------------------
+        // Step #4 -> Ask wheter to change door or stay --------------------------------------------
         System.out.println(
                 message
                 + "You chose door "
@@ -118,7 +119,7 @@ public class Code01 {
         char change = sc.next().charAt(0);
         sc.close();
         
-        // Step #5 -> Unveil door ----------------------------------------------
+        // Step #5 -> Unveil door ------------------------------------------------------------------
         boolean hasWon = false;
 
         if (change == 'c') {
