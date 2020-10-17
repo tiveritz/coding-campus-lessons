@@ -100,10 +100,10 @@ private final static String DIVIDER =   "_______________________________________
         Random random = new Random();
         boolean isMapRising = random.nextBoolean();
         int revealedDoor = 0;
-        
+
         // (search for the index which is not the user choice and no car inside)
         if (isMapRising) {
-            for (int i = 0; i < 3 ; i++) {
+            for (int i = 0; i <= 2 ; i++) {
                 if (i+1 == currDoor || carPosition[i]) {
                     continue;
                 } else {
@@ -114,7 +114,7 @@ private final static String DIVIDER =   "_______________________________________
                 }
             }
         } else {
-            for (int i = 2; i > 0 ; i--) {
+            for (int i = 2; i >= 0 ; i--) {
                 if (i+1 == currDoor || carPosition[i]) {
                     continue;
                 } else {
