@@ -96,7 +96,7 @@ public class Code01 {
         }
         
         // Step #3 -> Reveal a goat-----------------------------------------------------------------
-        int slotToReveal = getSlotToReveal(currDoor, carPosition);
+        int slotToReveal = getGoatToUnveil(currDoor-1, carPosition);
 
         doors[slotToReveal] = GOAT;
         revealedDoors[slotToReveal] = true;
@@ -123,7 +123,7 @@ public class Code01 {
         boolean hasWon = false;
 
         if (change == 'c') {
-            currDoor = changeDoorSelection(currDoor, revealedDoors);
+            currDoor = getDoorToUnveil(currDoor-1, revealedDoors) + 1;
         }
         if (carPosition[currDoor-1]) {
             doors[currDoor-1] = CAR;
@@ -136,6 +136,43 @@ public class Code01 {
         doorOutput(doorBuilder(doors, currDoor));
         
         printWinningMessage(hasWon);
+    }
+
+    public static void montyHallProblemProof() {
+        int tests = 3000;
+        int timesWonWithChange = 0;
+        int timesWonWithoutChange = 0;
+
+        for (int test = 0; test < tests; test++) {
+            boolean revealedDoors [] = {false, false, false};
+            boolean[] carPosition = createGameShowCarArr();
+
+            // Randomly choose a door
+            Random random = new Random();
+            int door = random.nextInt(3);
+
+            // Reveal one goat
+            int slotToReveal = getGoatToUnveil(door, carPosition);
+            revealedDoors[slotToReveal] = true;
+
+            // Check for price without change
+            if (carPosition[door]) {
+                timesWonWithoutChange++;
+            }
+
+            // Change for price with change
+            door = getDoorToUnveil(door, revealedDoors);
+
+            if (carPosition[door]) {
+                timesWonWithChange++;
+            }
+        }
+
+        int probabilityWithoutChange = (int)Math.round(timesWonWithoutChange / (double)tests * 100);
+        int probabilityWithChange = (int)Math.round(timesWonWithChange / (double)tests * 100);
+
+        System.out.println("Probability of winning without change: " + probabilityWithoutChange + "%");
+        System.out.println("Probability of winning with change: " + probabilityWithChange + "%");
     }
 
 
@@ -154,20 +191,20 @@ public class Code01 {
 
     /** Returns the slot that can be revealed by the game show moderator
       */
-    public static int getSlotToReveal(int currDoor, boolean[] carPosition){
+    public static int getGoatToUnveil(int currDoorIndex, boolean[] carPosition){
         Random random = new Random();
         int slot = 0;
 
         // Randomly use the rising or falling loop to search for slots
         if (random.nextBoolean()) {
             for (int i = 0; i <= 2 ; i++) {
-                if ( !(i+1 == currDoor || carPosition[i])) {
+                if ( !(i == currDoorIndex || carPosition[i])) {
                     slot = i;
                 }
             }
         } else {
             for (int i = 2; i >= 0 ; i--) {
-                if ( !(i+1 == currDoor || carPosition[i])) {
+                if ( !(i == currDoorIndex || carPosition[i])) {
                     slot = i;
                 }
             } 
@@ -221,11 +258,11 @@ public class Code01 {
     }
 
     /** Returns the index of the door to be unveiled at the end */
-    public static int changeDoorSelection(int currDoor, boolean[] revealedDoors) {
+    public static int getDoorToUnveil(int currDoorIndex, boolean[] revealedDoors) {
         int doorToUnveil = 0;
         for (int i = 0; i < 3 ; i++) {
-            if ( !(revealedDoors[i] || i+1 == currDoor)) {
-                doorToUnveil = i+1;
+            if ( !(revealedDoors[i] || i == currDoorIndex)) {
+                doorToUnveil = i;
                 break;
             }
         }
