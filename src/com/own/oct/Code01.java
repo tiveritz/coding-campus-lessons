@@ -125,7 +125,6 @@ public class Code01 {
         if (change == 'c') {
             currDoor = changeDoorSelection(currDoor, revealedDoors);
         }
-
         if (carPosition[currDoor-1]) {
             doors[currDoor-1] = CAR;
             hasWon = true;
