@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Code01 {
     /* Write a funny console application to visualize the Monty Hall Problem
-     * There are three closed doors behind of which are two goats and one car
      * Goal is to win the car.
+     * There are three closed doors behind of which are two goats and one car
      * After you have picked your first door the game show moderator unveils one of
      * the other remaining doors with a goat. Then he asks you whether you want to
      * change your current door or stay with your decision.
@@ -16,54 +16,60 @@ public class Code01 {
      */
 
     private final static String[] GOAT = {
-                                        "                   ",
-                                        ",-----------------,",
-                                        "                   ",
-                                        "|-----------------|",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|  )_(            |",
-                                        "| ≠° °≠__ ___     |",
-                                        "|  `*´   ´    \\=, |",
-                                        "|    \\  ,---| /   |",
-                                        "|     ||    ||    |",
-                                        "|     ^^    ^^    |",
-                                        "|_________________|"};
+            "                   ",
+            ",-----------------,",
+            "                   ",
+            "|-----------------|",
+            "|                 |",
+            "|                 |",
+            "|                 |",
+            "|                 |",
+            "|  )_(            |",
+            "| ≠° °≠__ ___     |",
+            "|  `*´   ´    \\=, |",
+            "|    \\  ,---| /   |",
+            "|     ||    ||    |",
+            "|     ^^    ^^    |",
+            "|_________________|"
+    };
+    
     private final static String[] DOOR = {
-                                        "                   ",
-                                        ",-----------------,",
-                                        "                   ",
-                                        "|-----------------|",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|              O  |",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|                 |",
-                                        "|_________________|"};
+            "                   ",
+            ",-----------------,",
+            "                   ",
+            "|-----------------|",
+            "|                 |",
+            "|                 |",
+            "|                 |",
+            "|                 |",
+            "|                 |",
+            "|              O  |",
+            "|                 |",
+            "|                 |",
+            "|                 |",
+            "|                 |",
+            "|_________________|"
+    };
+        
     private final static String[] CAR = {
-                                        "                   ",
-                                        ",-----------------,",
-                                        "                   ",
-                                        "|-----------------|",
-                                        "|                 |",
-                                        "|    -------------|",
-                                        "|  `/\"\"\"\"/\"\"\"\"/|\"\"|",
-                                        "|  /    /    / |__|",
-                                        "| /----------=====|",
-                                        "| | \\  /V\\  /    _|",
-                                        "| |()\\ \\W/ /()   _|",
-                                        "| |   \\   /     / |",
-                                        "| =C========C==_| |",
-                                        "|  \\_\\_/__..  \\_\\_|",
-                                        "|_________________|"};
-private final static String DIVIDER =   "_____________________________________________________________";
+            "                   ",
+            ",-----------------,",
+            "                   ",
+            "|-----------------|",
+            "|                 |",
+            "|    -------------|",
+            "|  `/\"\"\"\"/\"\"\"\"/|\"\"|",
+            "|  /    /    / |__|",
+            "| /----------=====|",
+            "| | \\  /V\\  /    _|",
+            "| |()\\ \\W/ /()   _|",
+            "| |   \\   /     / |",
+            "| =C========C==_| |",
+            "|  \\_\\_/__..  \\_\\_|",
+            "|_________________|"
+    };
+
+    private final static String DIVIDER =   "_____________________________________________________________";
 
 
     public static void montyHallProblem() {
@@ -71,139 +77,129 @@ private final static String DIVIDER =   "_______________________________________
 
         boolean revealedDoors [] = {false, false, false};
         String doors[][] = {DOOR, DOOR, DOOR};
-        
-        // Preparations: Use pseudo random number to set car position
-        boolean[] carPosition = new boolean[3];
+        boolean[] carPosition = createGameShowCarArr();
 
-        Random randCar = new Random();
-        int randCarIndex = randCar.nextInt(3);
+        // Step #1 -> Display empty doors --------------------------------------
+        doorOutput(doorBuilder(doors, 0));
         
-        carPosition[randCarIndex] = true;
-        
-        // Step #1 -> display empty doors --------------------------------------
-        doorOutput(doorBuilder(doors[0], doors[1], doors[2], 0));
-        
-        // Step #2 -> let the user choose door ---------------------------------
+        // Step #2 -> Let the user choose a door -------------------------------
         System.out.println("Game Show Moderator: Which door to choose? (1, 2, 3)");  
         Scanner sc = new Scanner(System.in);
         int currDoor = sc.nextInt();
         String message = "";
 
         if ( !(currDoor >= 1 && currDoor <= 3)) {
-            message = "You didn't enter a valid door, we use door 3 instead (because I don't know how to handle exceptions yet)\n";
+            message = "You didn't enter a valid door, we use door 3 instead (because I don't know"
+                      + "how to handle exceptions yet)\n";
             currDoor = 3;
         }
         
-        // Step #3 -> reveal a goat---------------------------------------------
-        
-        // Direction of how the loops search for a goat has to be random
-        Random random = new Random();
-        boolean isMapRising = random.nextBoolean();
-        int revealedDoor = 0;
+        // Step #3 -> Reveal a goat---------------------------------------------
+        int slotToReveal = getSlotToReveal(currDoor, carPosition);
 
-        // (search for the index which is not the user choice and no car inside)
-        if (isMapRising) {
-            for (int i = 0; i <= 2 ; i++) {
-                if (i+1 == currDoor || carPosition[i]) {
-                    continue;
-                } else {
-                    doors[i] = GOAT;
-                    revealedDoors[i] = true;
-                    revealedDoor = i+1;
-                    break;
-                }
-            }
-        } else {
-            for (int i = 2; i >= 0 ; i--) {
-                if (i+1 == currDoor || carPosition[i]) {
-                    continue;
-                } else {
-                    doors[i] = GOAT;
-                    revealedDoors[i] = true;
-                    revealedDoor = i+1;
-                    break;
-                }
-            } 
-        }
+        doors[slotToReveal] = GOAT;
+        revealedDoors[slotToReveal] = true;
+        int revealedDoor = slotToReveal+1;
         
         clearTerminal();
-        doorOutput(doorBuilder(doors[0], doors[1], doors[2], currDoor));
+        doorOutput(doorBuilder(doors, currDoor));
         
         // Step #4 -> Ask wheter to change door or stay ------------------------
-        System.out.println(message +
-                           "You chose door " +
-                           currDoor +
-                           ". " +
-                           "I revealed a goat for you, which was behind door " +
-                           revealedDoor +
-                           ". Would you like to change (c) or stay (any other input) with your initial choice?");
+        System.out.println(
+                message
+                + "You chose door "
+                + currDoor
+                + ". "
+                + "I revealed a goat for you, which was behind door "
+                + revealedDoor
+                + ". Would you like to change (c) or stay (any other input) with your initial choice?"
+        );
         
         char change = sc.next().charAt(0);
         sc.close();
         
-        // Step #5 -> unveil door ----------------------------------------------
-        // if user stayed with door, just show dow
-        // if user wants to change: change currDoor to not unveiled and not current
-        
+        // Step #5 -> Unveil door ----------------------------------------------
         boolean hasWon = false;
 
-        // This statements are not very clear -> improve !!!
         if (change == 'c') {
-            for (int i = 0; i < 3 ; i++) {
-                if (revealedDoors[i] || i+1 == currDoor) {
-                    continue;
-                } else {
-                    currDoor = i+1;
-                    break;
-                }
-            }
-            if (carPosition[currDoor-1]) {
-                doors[currDoor-1] = CAR;
-                hasWon = true;
-            } else {
-                doors[currDoor-1] = GOAT;
-            }
-        } else {
-            if (carPosition[currDoor-1]) {
-                doors[currDoor-1] = CAR;
-                hasWon = true;
-            } else {
-                doors[currDoor-1] = GOAT;
-            }
+            currDoor = changeDoorSelection(currDoor, revealedDoors);
         }
-        
+
+        if (carPosition[currDoor-1]) {
+            doors[currDoor-1] = CAR;
+            hasWon = true;
+        } else {
+            doors[currDoor-1] = GOAT;
+        }
+
         clearTerminal();
-        doorOutput(doorBuilder(doors[0], doors[1], doors[2], currDoor));
+        doorOutput(doorBuilder(doors, currDoor));
         
         printWinningMessage(hasWon);
     }
 
 
+    /** Creates the Game Show array with length 3 where one array index is
+      * randomly set to true,
+      */
+    public static boolean[] createGameShowCarArr () {
+        boolean[] gameShowArr = new boolean[3];
+
+        Random random = new Random();
+        int randomIndex = random.nextInt(3);
+        gameShowArr[randomIndex] = true;
+
+        return gameShowArr;
+    }
+
+    /** Returns the slot that can be revealed by the game show moderator
+      */
+    public static int getSlotToReveal(int currDoor, boolean[] carPosition){
+        Random random = new Random();
+        int slot = 0;
+
+        // Randomly use the rising or falling loop to search for slots
+        if (random.nextBoolean()) {
+            for (int i = 0; i <= 2 ; i++) {
+                if ( !(i+1 == currDoor || carPosition[i])) {
+                    slot = i;
+                }
+            }
+        } else {
+            for (int i = 2; i >= 0 ; i--) {
+                if ( !(i+1 == currDoor || carPosition[i])) {
+                    slot = i;
+                }
+            } 
+        }
+        return slot;
+    }
 
     /** Prepares the arrays to be printed. Takes three arrays and the current
       * choice. If no choice markup is required use default 0. 
       */
-    public static String[][] doorBuilder(String[] door1, String[] door2, String[] door3, int currDoor) {
-        String[][] doors = new String[3][15];
+    public static String[][] doorBuilder(String[][] doors, int currDoor) {
+        String[][] renderDoor = new String[3][15];
+
+        // Copy two dimensional array (copyOf() only works on one dimensional)
+        for (int i = 0; i < doors.length; i++)
+            for (int j = 0; j < doors[i].length; j++)
+                renderDoor[i][j] = doors[i][j];
+
         String door1header =   "|     DOOR # 1    |";
         String door2header =   "|     DOOR # 2    |";
         String door3header =   "|     DOOR # 3    |";
         String doorSelection = "    YOUR CHOICE    ";
 
-        for (int row = 0; row < 15; row++ ) {
-            doors[0][row] = door1[row];
-            doors[1][row] = door2[row];
-            doors[2][row] = door3[row];
-        }
-        doors[0][2] = door1header;
-        doors[1][2] = door2header;
-        doors[2][2] = door3header;
+        renderDoor[0][2] = door1header;
+        renderDoor[1][2] = door2header;
+        renderDoor[2][2] = door3header;
 
         if (currDoor >= 1 && currDoor <= 3) {
-            doors[currDoor-1][0] = doorSelection;
+            renderDoor[currDoor-1][0] = doorSelection;
         }
 
-        return doors;
+        return renderDoor;
     }
 
     /** Takes a two-dimensional array and prints them side by side */
@@ -222,6 +218,18 @@ private final static String DIVIDER =   "_______________________________________
     /** Clears whatever was printed out before from the terminal */
     public static void clearTerminal() {
         System.out.print(String.format("\033[2J"));
+    }
+
+    /** Returns the index of the door to be unveiled at the end */
+    public static int changeDoorSelection(int currDoor, boolean[] revealedDoors) {
+        int doorToUnveil = 0;
+        for (int i = 0; i < 3 ; i++) {
+            if ( !(revealedDoors[i] || i+1 == currDoor)) {
+                doorToUnveil = i+1;
+                break;
+            }
+        }
+        return doorToUnveil;
     }
 
     /** Prints winning or loosing message depending on parameter
