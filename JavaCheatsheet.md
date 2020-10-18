@@ -21,7 +21,8 @@ System.out.println("Hello World"); ... statement
 int myNumber = 8; ................... statement
 ```
 
-#### Primitive Operators
+#### Operators
+Primitive Operators
 ```
 + ... addition
 - ... subtraction
@@ -30,7 +31,7 @@ int myNumber = 8; ................... statement
 % ... modulo
 ```
 
-#### Assignment Operators
+Assignment Operators
 ```
 = ........ assignment
 a += b ... a = a + b
@@ -39,7 +40,7 @@ a /= b ... a = a / b
 a %= b ... a = a % b
 ```
 
-#### Unary Operators
+Unary Operators
 ```
 ++i ... prefix increase
 --i ... prefix decrease
@@ -47,7 +48,7 @@ i++ ... postfix increase
 i-- ... postfix decrease
 ```
 
-#### Comparison Operator
+Comparison Operator
 ```
 == ... equals to
 != ... not equals to
@@ -57,7 +58,7 @@ i-- ... postfix decrease
 > .... bigger than
 ```
 
-#### Logical Operators
+Logical Operators
 ```
 && ... logical AND
 || ... logical OR
@@ -231,8 +232,7 @@ while (condition) {
 ```
 /** This is Javadoc
   * You should comment your methods (what they do, author, version...). This
-  * Information will be displayed as quick tip when the method is ised (and 
-  * hovered)
+  * Information will be displayed as quick tip when the method is used.
   *
   * @author Tiveritz
   * @version 1.0
