@@ -160,7 +160,7 @@ public class Code01 {
                 timesWonWithoutChange++;
             }
 
-            // Change for price with change
+            // Check for price with change
             door = getDoorToUnveil(door, revealedDoors);
 
             if (carPosition[door]) {
@@ -215,7 +215,7 @@ public class Code01 {
     /** Prepares the arrays to be printed. Takes three arrays and the current
       * choice. If no choice markup is required use default 0. 
       */
-    public static String[][] doorBuilder(String[][] doors, int currDoor) {
+    public static String[][] doorBuilder(String[][] doors, int currDoorIndex) {
         String[][] renderDoor = new String[3][15];
 
         // Copy two dimensional array (copyOf() only works on one dimensional)
@@ -223,17 +223,12 @@ public class Code01 {
             for (int j = 0; j < doors[i].length; j++)
                 renderDoor[i][j] = doors[i][j];
 
-        String door1header =   "|     DOOR # 1    |";
-        String door2header =   "|     DOOR # 2    |";
-        String door3header =   "|     DOOR # 3    |";
-        String doorSelection = "    YOUR CHOICE    ";
+        renderDoor[0][2] =   "|     DOOR # 1    |";
+        renderDoor[1][2] =   "|     DOOR # 2    |";
+        renderDoor[2][2] =   "|     DOOR # 3    |";
 
-        renderDoor[0][2] = door1header;
-        renderDoor[1][2] = door2header;
-        renderDoor[2][2] = door3header;
-
-        if (currDoor >= 1 && currDoor <= 3) {
-            renderDoor[currDoor-1][0] = doorSelection;
+        if (currDoorIndex >= 1 && currDoorIndex <= 3) {
+            renderDoor[currDoorIndex-1][0] = "    YOUR CHOICE    ";
         }
 
         return renderDoor;
