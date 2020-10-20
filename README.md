@@ -27,9 +27,8 @@ public class Main {
 ```
 
 ## More
-There is a [Java CheatSheet](https://github.com/tiveritz/coding-campus-lessons/blob/master/JavaCheatsheet.md) in this Repository
-
-List of [Lesson contents](https://github.com/tiveritz/coding-campus-lessons/blob/master/CodingCampusLessons.md) in this Repository
+  * [Java CheatSheet](https://github.com/tiveritz/coding-campus-lessons/blob/master/JavaCheatsheet.md)
+  * List of [Lesson contents](https://github.com/tiveritz/coding-campus-lessons/blob/master/CodingCampusLessons.md)
 
 ## Content
 
