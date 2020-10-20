@@ -5,7 +5,7 @@ Want to see how this looks in Python > [coding-campus-lessons-in-python](https:/
 
 ## Executing
 Use the Main.java file and call the method with Day00.methodName().
-Some methods require a method parameter.
+Some methods require method parameters.
 Some methods return a value and print method must be used.
 All the available methods are commented out in the Main.java in the src folder.
 
