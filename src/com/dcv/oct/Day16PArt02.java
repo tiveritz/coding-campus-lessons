@@ -20,7 +20,7 @@ public class Day16Part02 {
                     looping = false;
                     break;
                 default:
-                    System.out.println(randomNumber + " +");
+                    System.out.println("+ " + randomNumber);
                     sum += randomNumber;
             }
 
