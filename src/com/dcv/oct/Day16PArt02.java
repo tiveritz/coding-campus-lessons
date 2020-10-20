@@ -2,7 +2,7 @@ package src.com.dcv.oct;
 
 import java.util.Random;
 
-public class Day16PArt02 {
+public class Day16Part02 {
     public static void randomSum() {
         // Erstelle ein Programm, dass Zufallszahlen zwischen 10 und 30 generiert. Das Programm soll
         // die Zufallszahlen zusammenzählen. Sobald die Zahl 15 oder die Zahl 25 kommt, wird das
