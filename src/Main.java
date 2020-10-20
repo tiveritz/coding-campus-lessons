@@ -13,6 +13,8 @@ public class Main {
         // Code01.montyHallProblem();
 
         // October
+        // Day16Part01.currencyCalculator();
+        // Day15.helloWorld();
         // Day14.betterTextAnalysis();
         // Day13.stringRepetition();
         // Day12Part02.textAnalysis();
