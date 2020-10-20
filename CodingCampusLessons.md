@@ -1,6 +1,8 @@
 ###### Day 16 (Tue)
     * Wiederholung Versionierung, Branches, Commits, Git commands basics
     * Branches, Mergekonflikte
+    * Method overloading
+    * Pseudozufallszahlen generieren
 
 ###### Day 15 (Sat)
     * Projektstruktur, Methoden
