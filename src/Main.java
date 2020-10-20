@@ -14,7 +14,7 @@ public class Main {
 
         // October
         // Day16Part01.currencyCalculator();
-        // Day15.helloWorld();
+        // Day15.randomArrayPrint();
         // Day14.betterTextAnalysis();
         // Day13.stringRepetition();
         // Day12Part02.textAnalysis();

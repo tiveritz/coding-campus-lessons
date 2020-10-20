@@ -39,6 +39,11 @@ public class Main {
 
 ###### October
 
+* Day16
+  * Day16Part01.currencyCalculator();
+
+* Day15
+  * Day15.randomArrayPrint();
 * Day14
   * Day14Part01.betterTextAnalysis();
 
