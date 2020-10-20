@@ -8,11 +8,13 @@ public class Main {
     public static void main(String[] args) {
 
         // Own training sessions
+        // Code03.funWithFiles();
         // Code02.calendar();
         // Code01.montyHallProblemProof();
         // Code01.montyHallProblem();
 
         // October
+        // Day16PArt02.randomSum();
         // Day16Part01.currencyCalculator();
         // Day15.randomArrayPrint();
         // Day14.betterTextAnalysis();
