@@ -13,12 +13,17 @@ public class Day16Part02 {
         
         while (looping) {
             int randomNumber = randomNumberRange(10, 30);
-            System.out.println(randomNumber + " +");
-            sum += randomNumber;
 
-            if (randomNumber == 15 || randomNumber == 25) {
-                looping = false;
+            switch (randomNumber) {
+                case 15:
+                case 30:
+                    looping = false;
+                    break;
+                default:
+                    System.out.println(randomNumber + " +");
+                    sum += randomNumber;
             }
+
         }
         System.out.println("=====\n" + sum);
     }
