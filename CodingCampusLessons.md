@@ -1,52 +1,52 @@
 ###### Day 16 (Tue)
-    * Wiederholung Versionierung, Branches, Commits, Git commands basics
-    * Branches, Mergekonflikte
+    * Repetition versioning, branches, commits, git commands basics
+    * Branches, merge conflicts
     * Method overloading
-    * Pseudozufallszahlen generieren
+    * Generate pseudo random numbers
 
 ###### Day 15 (Sat)
-    * Projektstruktur, Methoden
-    * Projektplanung (händisch auf Zettel)
-    * Versionierung und Versionierungssysteme
+    * Project structure, methods
+    * Project planning (Method planning) -> by hand on paper
+    * Versioning and versioning systems
     * Installation Git
-    * Einrichtung GitHub im IntelliJ
+    * Set up Github in IntelliJ
 
 ###### Day 14 (Thu)
-    * Wiederholung String methoden
-    * Hermann Hesse Stringübungen mit etwas Regex
-    * Besonderheiten der deutschen Sprache (Umlaute) - wie damit umgehen
-    * Text normalisieren
-    * Methoden, Methodenparameter Übergabe, Arrays copyof
+    * Repetition String methods
+    * Hermann Hesse String excercise with a bit regex
+    * Special characteristics of German language (Umlauts, ß)
+    * Normalize text
+    * Methods, method parameters, parameter passing, arrays copyof
 
 ###### Day 13 (Tue)
-    * Strings, Char Arrays
-    * String normalisierung
-    * String methoden mit Regex
+    * Strings, char arrays
+    * Normalize Strings
+    * String methods
     * Character comparison vs Object comparison
 
 ###### Day 12 (Sat)
-    * Wiederholung String methods
+    * Repetition String methods
 
 ###### Day 11 (Thu)
-    * Substring, numeric value of Characters
+    * Substring, numeric value of chars
     * String methods
-    * String methods with Regex
+    * String methods with regex
 
 ###### Day 10 (Tue)
     * Rekursion
     * Caching
-    * Alltag eines Entwicklers
+    * Daily live of a developer, work live balance
 
 ###### Day 9 (Sat)
-    * Funktionen (statische Methoden)
+    * functions (static methods)
     * JavaDoc
 
 ###### Day 8 (Thu)
     * Arrays
-    * Arrays sortieren
+    * Sort arrays
 
 ###### Day 7 (Tue)
-    * Wiederholung vorherige Einheiten
+    * Repetition prior lessons
     * Logical operators
 
 ###### Day 6 (Sat)
@@ -55,24 +55,24 @@
 
 ###### Day 5 (Thu)
     * Arrays
-    * switch
+    * Switch statement
 
 ###### Day 4 (Tue)
     * Arrays
-    * Sortieralgorithmen
+    * Sorting algorithms
 
 ###### Day 3 (Sat)
-    * Schleifen
-    * Stringvergleiche
+    * Loops
+    * String comparison
     * Arrays
     * .length, .length()
 
 ###### Day 2 (Thu)
-    * for, while, Schleifen
-    * if Statement
+    * for, while, loops
+    * if statement
 
 ###### Day 1 (Tue)
     * Hello World
     * println()
-    * primitive Datentypen, Variablendeklaration
-    * Operatoren
+    * primitive datatypes, variable declaration
+    * Operators
