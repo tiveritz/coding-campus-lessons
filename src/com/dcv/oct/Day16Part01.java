@@ -31,7 +31,7 @@ public class Day16Part01 {
                 result = getConvertedCurrency(EurToSek, amount);
                 break;
             default:
-                System.out.println("Unknown currency: " + currency);
+                System.err.println("Unknown currency: " + currency);
                 break;
         }
         return result;
