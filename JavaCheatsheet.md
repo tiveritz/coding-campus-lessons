@@ -243,6 +243,18 @@ public static void helloWorld() {
 }
 ```
 
+#### Method Overloading
+Method overlowding allows to use methods with the same name but different parameters. Depending on the passed arguments when calling the methods, Java uses the matching method.
+```
+    public static int powerOf(int a) {
+        return powerOf(a, 2);
+    }
+
+    public static int powerOf(int a, int b) {
+    return a^b;
+    }
+```
+
 #### ToDo
     * Pattern + Matcher + match Vector
     * final
