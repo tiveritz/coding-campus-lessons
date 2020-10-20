@@ -8,7 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
         // Own training sessions
-        // Code03.funWithFiles();
+        Code03.readFileWithFileReader();
+        // Code03.writeFileWithFileOutputStream();
+        // Code03.writeFileWithFileWriter();
         // Code02.calendar();
         // Code01.montyHallProblemProof();
         // Code01.montyHallProblem();
