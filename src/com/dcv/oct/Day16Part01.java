@@ -1,10 +1,13 @@
 package src.com.dcv.oct;
 
+
 public class Day16Part01 {
     public static void currencyCalculator() {
         System.out.println(getConvertedCurrency(100, "EUR"));
         System.out.println(getConvertedCurrency(100, "USD"));
         System.out.println(getConvertedCurrency(100, "CHF"));
+        System.out.println(getConvertedCurrency(100, "SEK"));
+        System.out.println(getConvertedCurrency(100, "ASDF"));
         System.out.println(getConvertedCurrency(100, 1.23));
     }
     
@@ -27,6 +30,9 @@ public class Day16Part01 {
             case "SEK":
                 result = getConvertedCurrency(EurToSek, amount);
                 break;
+            default:
+                System.out.println("Unknown currency: " + currency);
+                break;
         }
         return result;
     }
@@ -34,5 +40,4 @@ public class Day16Part01 {
     public static double getConvertedCurrency(double amount, double exchangeRate) {
         return amount * exchangeRate;
     }
-
 }
