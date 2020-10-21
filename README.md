@@ -33,6 +33,9 @@ public class Main {
 ## Content
 
 * Own training sessions
+  * Code03.readFileWithFileReader();
+  * Code03.writeFileWithFileOutputStream();
+  * Code03.writeFileWithFileWriter();
   * Code02.calendar();
   * Code01.montyHallProblemProof();
   * Code01.montyHallProblem();
@@ -40,6 +43,7 @@ public class Main {
 ###### October
 
 * Day16
+  * Day16Part02.randomSum();
   * Day16Part01.currencyCalculator();
 
 * Day15
