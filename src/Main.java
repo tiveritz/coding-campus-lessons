@@ -16,7 +16,9 @@ public class Main {
         // Code01.montyHallProblem();
 
         // October
-        Day17Part01.randomRepetition();
+        Day17Part03.walkingGuy();
+        // Day17Part02.round();
+        // Day17Part01.randomRepetition();
         // Day16Part02.randomSum();
         // Day16Part01.currencyCalculator();
         // Day15.randomArrayPrint();
