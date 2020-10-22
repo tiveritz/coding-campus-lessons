@@ -19,22 +19,16 @@ public class Day17Part03 {
         boolean running = true;
 
         while (running) {
-            int chance = random.nextInt(10);
-
+            
             if (pos == 0 || pos == fieldWidth) {
                 running = false;
             }
-
-            printGuy(pos, fieldWidth);
-            System.out.println();
             
-            if (chance <= 2) {
-                pos++;
-            } else if (chance >= 7) {
-                pos--;
-            }
-
+            printGuy(pos, fieldWidth);
+            pos = newPos(pos);
+            
             timeSleep(500);
+            System.out.println();
         }
     }
 
@@ -52,6 +46,16 @@ public class Day17Part03 {
         }
     }
 
+    public static int newPos(int pos) { 
+        int chance = random.nextInt(10);
+        if (chance <= 2) {
+            pos++;
+        } else if (chance >= 7) {
+            pos--;
+        }
+        return pos;
+    }
+
     public static void timeSleep(int milliseconds) {
         try {
             Thread.sleep(milliseconds);
@@ -59,5 +63,4 @@ public class Day17Part03 {
             // I don't care about that
         }
     }
-    
 }
