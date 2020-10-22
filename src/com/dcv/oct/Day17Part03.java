@@ -20,7 +20,7 @@ public class Day17Part03 {
 
         while (running) {
 
-            if () {
+            if (pos == 0 || pos == fieldWidth) {
                 running = false;
             }
             
