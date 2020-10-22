@@ -42,6 +42,11 @@ public class Main {
 
 ###### October
 
+* Day17
+  * Day17Part03.walkingGuy();
+  * Day17Part02.round();
+  * Day17Part01.randomRepetition();
+
 * Day16
   * Day16Part02.randomSum();
   * Day16Part01.currencyCalculator();
