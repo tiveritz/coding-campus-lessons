@@ -1,6 +1,7 @@
 package src.com.dcv.oct;
 
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class Day17Part03 {
@@ -13,13 +14,13 @@ public class Day17Part03 {
                                         };
 
     public static void walkingGuy() {
-        int fieldWidth = 30;
+        int fieldWidth = userInputScanner();
         int pos = fieldWidth / 2;
         boolean running = true;
 
         while (running) {
 
-            if (pos == 0 || pos == fieldWidth) {
+            if () {
                 running = false;
             }
             
@@ -30,13 +31,24 @@ public class Day17Part03 {
         }
     }
 
+    public static int userInputScanner() {
+        System.out.println("Welcome to the walkingGuy game. Enter the fieldWidth: ");
+        Scanner sc = new Scanner(System.in);
+
+        int fieldWidth = sc.nextInt();
+
+        sc.close();
+
+        return fieldWidth;
+    }
+
     public static void printGuy(int position, int fieldWidth) {
         for (String line : GUY) {
             System.out.print("|");
             for (int i = 0; i < position; i++) {
                 System.out.print(" ");
             }
-            
+
             System.out.print(line);
 
             for (int i = 0; i < fieldWidth - position; i++) {
