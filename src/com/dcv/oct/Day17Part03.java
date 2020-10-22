@@ -3,7 +3,6 @@ package src.com.dcv.oct;
 import java.util.Random;
 
 
-
 public class Day17Part03 {
     private static Random random = new Random();
 
@@ -19,7 +18,7 @@ public class Day17Part03 {
         boolean running = true;
 
         while (running) {
-            
+
             if (pos == 0 || pos == fieldWidth) {
                 running = false;
             }
@@ -28,7 +27,6 @@ public class Day17Part03 {
             pos = newPos(pos);
             
             timeSleep(500);
-            System.out.println();
         }
     }
 
@@ -38,12 +36,15 @@ public class Day17Part03 {
             for (int i = 0; i < position; i++) {
                 System.out.print(" ");
             }
+            
             System.out.print(line);
-        for (int i = 0; i < fieldWidth - position; i++) {
-            System.out.print(" ");
+
+            for (int i = 0; i < fieldWidth - position; i++) {
+                System.out.print(" ");
+            }
+                System.out.println("|");
         }
-            System.out.println("|");
-        }
+        System.out.println();
     }
 
     public static int newPos(int pos) { 
