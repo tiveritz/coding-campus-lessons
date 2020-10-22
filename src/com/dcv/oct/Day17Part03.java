@@ -33,11 +33,27 @@ public class Day17Part03 {
 
     public static int userInputScanner() {
         System.out.println("Welcome to the walkingGuy game. Enter the fieldWidth: ");
+
+        int fieldWidth = Integer.MIN_VALUE;
         Scanner sc = new Scanner(System.in);
+        boolean looping = true;
 
-        int fieldWidth = sc.nextInt();
-
+        while (looping) {
+            try {
+                String line = sc.nextLine();
+                fieldWidth = Integer.valueOf(line.trim());
+            } catch (NumberFormatException nfe) {
+                System.out.println("Not a valid number! Try again.");
+                continue;
+            }
+            if (fieldWidth < 2 || fieldWidth > 50) {
+                System.out.println("Not within the boundries (2 - 50)");
+            } else {
+                looping = false;;
+            }
+        }
         sc.close();
+
 
         return fieldWidth;
     }
