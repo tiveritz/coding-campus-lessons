@@ -1,3 +1,7 @@
+###### Day 17 (Thu)
+    * Repetition random numbers, how are randoms generated (pseudo random)
+    * Random objects
+
 ###### Day 16 (Tue)
     * Repetition versioning, branches, commits, git commands basics
     * Branches, merge conflicts
