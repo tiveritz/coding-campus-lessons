@@ -14,7 +14,7 @@ public class Day17Part03 {
                                         };
 
     public static void walkingGuy() {
-        int fieldWidth = userInputScanner();
+        int fieldWidth = userInputScanner(2, 40);
         int pos = fieldWidth / 2;
         boolean running = true;
 
@@ -27,11 +27,17 @@ public class Day17Part03 {
             printGuy(pos, fieldWidth);
             pos = newPos(pos);
             
-            timeSleep(500);
+            timeSleep(400);
         }
     }
 
-    public static int userInputScanner() {
+    /** Asks for user input, checks if Integer and if within min an max values.
+      * 
+      * @param min Lowest possible input
+      * @param max Highest possible input
+      * @return Integer (whitespace cleaned)
+      */
+    public static int userInputScanner(int min, int max) {
         System.out.println("Welcome to the walkingGuy game. Enter the fieldWidth: ");
 
         int fieldWidth = Integer.MIN_VALUE;
@@ -46,18 +52,22 @@ public class Day17Part03 {
                 System.out.println("Not a valid number! Try again.");
                 continue;
             }
-            if (fieldWidth < 2 || fieldWidth > 50) {
-                System.out.println("Not within the boundries (2 - 50)");
+            if (fieldWidth < min || fieldWidth > max) {
+                System.out.println("Not within the boundries (" + min + " - " + max + ")");
             } else {
                 looping = false;;
             }
         }
         sc.close();
 
-
         return fieldWidth;
     }
 
+    /** Prints the Game including the wall, the guy and the whitespace.
+      * 
+      * @param position The Position where the guy stands
+      * @param fieldWidth The total width of the field
+      */
     public static void printGuy(int position, int fieldWidth) {
         for (String line : GUY) {
             System.out.print("|");
@@ -75,6 +85,11 @@ public class Day17Part03 {
         System.out.println();
     }
 
+    /** Randomly changes the position (30% left, 30% right, 40% stay)
+      * 
+      * @param pos The current position
+      * @return The new position
+      */
     public static int newPos(int pos) { 
         int chance = random.nextInt(10);
         if (chance <= 2) {
@@ -85,6 +100,10 @@ public class Day17Part03 {
         return pos;
     }
 
+    /** Pauses the execution of the program.
+      * 
+      * @param milliseconds The amount of time to pause the program in milliseconds
+      */
     public static void timeSleep(int milliseconds) {
         try {
             Thread.sleep(milliseconds);
