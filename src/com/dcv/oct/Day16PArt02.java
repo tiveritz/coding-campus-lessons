@@ -31,6 +31,5 @@ public class Day16Part02 {
     public static int randomNumberRange(int min, int max) {
         Random random = new Random();
         return random.nextInt((max - min + 1)) + min;
-
     }
 }
