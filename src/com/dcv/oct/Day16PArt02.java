@@ -23,7 +23,6 @@ public class Day16Part02 {
                     System.out.println("+ " + randomNumber);
                     sum += randomNumber;
             }
-
         }
         System.out.println("=====\n" + sum);
     }
