@@ -17,6 +17,8 @@ public class Day17Part04 {
             }
         }
         System.out.println("You " + age + " years old.");
+
+        sc.close();
     }
 }
 
