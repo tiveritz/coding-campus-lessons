@@ -42,6 +42,9 @@ public class Main {
 
 ###### October
 
+* Day18
+  * Day18Part01.functionRepetition();
+
 * Day17
   * Day17Part04.helloWorldScanner();
   * Day17Part03.walkingGuy();
