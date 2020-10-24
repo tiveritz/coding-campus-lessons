@@ -25,15 +25,7 @@ public class Day18Part02 {
 
         while (isActive) {
             printMainMenu(mainMenu);
-
-            int action = 0;
-            try {
-                String line = sc.nextLine();
-                action = Integer.valueOf(line.trim());
-            } catch (NumberFormatException nfe) {
-                System.out.println("Not a valid number! Try again.");
-                continue;
-            }
+            int action = getUserInputInt("Invalid input! Try again");
 
             switch (action) {
                 case 1:
@@ -49,8 +41,7 @@ public class Day18Part02 {
                     isActive = false;;
                     break;
                 default:
-                    System.out.println("Invalid input! Try again");
-                    break;
+                    continue;
             }
 
         }
@@ -107,7 +98,7 @@ public class Day18Part02 {
      * @return The value of the integer
      */
     public static int getUserInputInt(String error) {
-        int intInput = 0;
+        int intInput = 5;
         try {
             String line = sc.nextLine();
             intInput = Integer.valueOf(line.trim());
