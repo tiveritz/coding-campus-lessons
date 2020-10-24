@@ -8,11 +8,11 @@ public class Day18Part02 {
     
     public static void atm() {
         /* Create a program that simulates an ATM. Implement the following functions
-          * 1. Deposit
-          * 2. Withdraw
-          * 3. Account balance
-          * 4. Exit
-          */
+         * 1. Deposit
+         * 2. Withdraw
+         * 3. Account balance
+         * 4. Exit
+         */
 
         int balance = 0;
         boolean isActive = true;
@@ -49,7 +49,7 @@ public class Day18Part02 {
                     isActive = false;;
                     break;
                 default:
-                    System.out.println("Unvalid input! Try again");
+                    System.out.println("Invalid input! Try again");
                     break;
             }
 
@@ -67,35 +67,25 @@ public class Day18Part02 {
         }
     }
 
-    /** Asks the user for the amount to deposit. Checks if it is a valid number.
+    /** Handles a deposit
       * @return Amount of deposit
       */
     public static int deposit() {
         int deposit = 0;
         System.out.println("Enter the amount you want to deposit");
-        try {
-            String line = sc.nextLine();
-            deposit = Integer.valueOf(line.trim());
-        } catch (NumberFormatException nfe) {
-            System.out.println("Not a valid number! Returned to main menu.");
-        }
+        deposit = getUserInputInt("Not a valid deposit! Returned to main menu.");
+
         return deposit;
     }
     
-    /** Asks the user for the amount to withdraw. Checks if a valid number and
-      * if there is enough balance on the account.
+    /** Handles a withdraw.
       * @param balance Current balance
       * @return Amount of withdraw
       */
     public static int withdraw(int balance) {
         int withdraw = 0;
         System.out.println("Enter the amount you want to withdraw");
-        try {
-            String line = sc.nextLine();
-            withdraw = Integer.valueOf(line.trim());
-        } catch (NumberFormatException nfe) {
-            System.out.println("Not a valid number! Returned to main menu.");
-        }
+        withdraw = getUserInputInt("Not a valid withdraw! Returned to main menu.");
 
         if (withdraw > balance) {
             System.out.println("Not enough money! Returned to main menu");
@@ -110,5 +100,20 @@ public class Day18Part02 {
       */
     public static void printAccountBalance(int balance) {
         System.out.println("\n\nYour current balance is: " + balance);
+    }
+
+    /** Get user input and check if it is a integer. If not it prints a message
+     * @param error Error message that gets printed in case of non integer input
+     * @return The value of the integer
+     */
+    public static int getUserInputInt(String error) {
+        int intInput = 0;
+        try {
+            String line = sc.nextLine();
+            intInput = Integer.valueOf(line.trim());
+        } catch (NumberFormatException nfe) {
+            System.out.println(error);
+        }
+        return intInput;
     }
 }
