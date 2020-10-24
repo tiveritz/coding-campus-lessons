@@ -1,4 +1,8 @@
 ###### Day 17 (Thu)
+    * Project vs. Product
+    * Agile development
+
+###### Day 17 (Thu)
     * Repetition random numbers, how are randoms generated (pseudo random)
     * Random objects
     * Scanner

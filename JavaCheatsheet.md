@@ -21,6 +21,13 @@ System.out.println("Hello World"); ... statement
 int myNumber = 8; ................... statement
 ```
 
+#### Terminology
+```
+() ... Parentheses
+[] ... Bracket
+{} ... Curly braces
+```
+
 #### Operators
 Primitive Operators
 ```
@@ -142,11 +149,14 @@ public static void helloWorld() {
 
 }
 
+public static void helloWorld()... method signature
+
 public ....... access modifier
 static ....... memory management keyword (static -> doesn't belong to a specific object)
 void ......... return type (void -> returns no value)
 helloWorld ... method name
 () ........... method parameters (can be empty -> "method takes no parameters")
+{} ........... function body
 
 access modifier
 private ..... access only within the class
