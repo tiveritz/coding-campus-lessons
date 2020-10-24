@@ -16,8 +16,9 @@ public class Main {
         // Code01.montyHallProblem();
 
         // October
+        // Day18Part01.functionRepetition();
         // Day17Part04.helloWorldScanner();
-        Day17Part03.walkingGuy();
+        // Day17Part03.walkingGuy();
         // Day17Part02.round();
         // Day17Part01.randomRepetition();
         // Day16Part02.randomSum();
