@@ -32,6 +32,7 @@ public class Main {
 
 ## Content
 
+
 * Own training sessions
   * Code03.readFileWithFileReader();
   * Code03.writeFileWithFileOutputStream();
@@ -39,6 +40,9 @@ public class Main {
   * Code02.calendar();
   * Code01.montyHallProblemProof();
   * Code01.montyHallProblem();
+
+* Holiday lessons
+  * Holiday01.wichteln();
 
 ###### October
 

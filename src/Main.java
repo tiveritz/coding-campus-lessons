@@ -3,11 +3,13 @@ package src;
 import src.com.dcv.oct.*;
 import src.com.dcv.sep.*;
 import src.com.own.oct.*;
+import src.com.holiday.oct.*;
 
 public class Main {
     public static void main(String[] args) {
 
         // Own training sessions
+        Holiday01.wichteln();
         // Code03.readFileWithFileReader();
         // Code03.writeFileWithFileOutputStream();
         // Code03.writeFileWithFileWriter();
