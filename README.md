@@ -42,6 +42,8 @@ public class Main {
   * Code01.montyHallProblem();
 
 * Holiday lessons
+  * Holiday03.bookCipher();
+  * Holiday02.guessNumber();
   * Holiday01.wichteln();
 
 ###### October
