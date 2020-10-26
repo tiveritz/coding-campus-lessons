@@ -1,6 +1,9 @@
-###### Day 17 (Thu)
+###### Day 18(Sat)
     * Project vs. Product
     * Agile development
+    * Repetition methods and functions
+    * Repetition method parameter
+    * State machine
 
 ###### Day 17 (Thu)
     * Repetition random numbers, how are randoms generated (pseudo random)
