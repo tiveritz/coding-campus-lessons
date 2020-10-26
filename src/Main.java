@@ -9,13 +9,16 @@ public class Main {
     public static void main(String[] args) {
 
         // Own training sessions
-        Holiday01.wichteln();
         // Code03.readFileWithFileReader();
         // Code03.writeFileWithFileOutputStream();
         // Code03.writeFileWithFileWriter();
         // Code02.calendar();
         // Code01.montyHallProblemProof();
         // Code01.montyHallProblem();
+
+        // Holiday lessons
+        // Holiday02.guessNumber();
+        // Holiday01.wichteln();
 
         // October
         // Day18Part02.atm();
