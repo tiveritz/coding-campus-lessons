@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Holiday04 {
 
-private static final String TEXT = 
+public static final String TEXT = 
     /*             00000000011111111112222222222333333333344444444445555555555666666666677777777778888888888 */
     /*             12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789 */
     /* 1  */      "For instance, on the planet Earth, man had always assumed that he was more\n"
