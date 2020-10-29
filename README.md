@@ -34,7 +34,7 @@ public class Main {
 
 
 * Own training sessions
-  * Code04.graph();;
+  * Code04.graph();
   * Code03.readFileWithFileReader();
   * Code03.writeFileWithFileOutputStream();
   * Code03.writeFileWithFileWriter();
@@ -43,6 +43,7 @@ public class Main {
   * Code01.montyHallProblem();
 
 * Holiday lessons
+  * Holiday04.cipherWithString();
   * Holiday03.bookCipher();
   * Holiday02.guessNumber();
   * Holiday01.wichteln();
