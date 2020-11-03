@@ -1,5 +1,6 @@
 package src;
 
+import src.com.dcv.nov.*;
 import src.com.dcv.oct.*;
 import src.com.dcv.sep.*;
 import src.com.own.oct.*;
@@ -18,11 +19,14 @@ public class Main {
         // Code01.montyHallProblem();
 
         // Holiday lessons
-        Holiday05.helloWorldClassesAndMethods();
+        // Holiday05.helloWorldClassesAndMethods();
         // Holiday04.cipherWithString();
         // Holiday03.bookCipher();
         // Holiday02.guessNumber();
         // Holiday01.wichteln();
+
+        // November
+        Day19Part01.helloWorld();
 
         // October
         // Day18Part02.atm();
