@@ -35,6 +35,8 @@ public class Main {
 <details>
   <summary>Expand "Own Training Sessions"</summary>
 
+
+
   * Code04.graph();
   * Code03.readFileWithFileReader();
   * Code03.writeFileWithFileOutputStream();
@@ -44,19 +46,35 @@ public class Main {
   * Code01.montyHallProblem();
 </details>
 
-* Holiday lessons
+
+<details>
+  <summary>Expand "Holiday Sessions"</summary>
+
+
+
   * Holiday05.helloWorldClassesAndMethods();
   * Holiday04.cipherWithString();
   * Holiday03.bookCipher();
   * Holiday02.guessNumber();
   * Holiday01.wichteln();
+</details>
 
-###### November
+
+<details>
+  <summary>Expand "November"</summary>
+
+
+
 * Day19
   * Day19Part02.ticTacToe();
   * Day19Part01.helloWorldTwoDimensionalArray();
+</details>
 
-###### October
+
+<details>
+  <summary>Expand "October"</summary>
+
+
 
 * Day18
   * Day18Part01.functionRepetition();
@@ -103,8 +121,13 @@ public class Main {
 
 * Day08
   * Day08.sortNamesArray();
+</details>
 
-###### September
+
+<details>
+  <summary>Expand "September"</summary>
+
+
 
 * Day07
   * Day07.leapYear();
@@ -139,3 +162,4 @@ public class Main {
 * Day01
   * Day01.numberList();
   * Day01.helloWorld();
+</details>
