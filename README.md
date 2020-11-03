@@ -32,15 +32,16 @@ public class Main {
 
 ## Content
 
-
-* Own training sessions
-  * Code04.graph();
-  * Code03.readFileWithFileReader();
-  * Code03.writeFileWithFileOutputStream();
-  * Code03.writeFileWithFileWriter();
-  * Code02.calendar();
-  * Code01.montyHallProblemProof();
-  * Code01.montyHallProblem();
+<details>
+  <summary>Expand "Own Training Sessions"</summary>
+    * Code04.graph();
+    * Code03.readFileWithFileReader();
+    * Code03.writeFileWithFileOutputStream();
+    * Code03.writeFileWithFileWriter();
+    * Code02.calendar();
+    * Code01.montyHallProblemProof();
+    * Code01.montyHallProblem();
+</details>
 
 * Holiday lessons
   * Holiday05.helloWorldClassesAndMethods();
