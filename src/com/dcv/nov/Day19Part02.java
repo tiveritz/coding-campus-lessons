@@ -72,9 +72,10 @@ public class Day19Part02 {
         boolean isValidInput = false;
 
         while (!isValidInput) {
+            
             for (int i = 0; i < 2; i++) {
                 int intInput = 0;
-                
+
                 if (i == 0) {
                     System.out.println("Enter row: ");
                 } else {
@@ -88,12 +89,20 @@ public class Day19Part02 {
                     System.out.println("Not a valid input. Try again.");
                     continue;
                 }
-                coordinates[i] = intInput + 1;
+                coordinates[i] = intInput - 1;
+            }
+            
+            if (coordinates[0] < 0 || 
+                coordinates[0] > 2 || 
+                coordinates[1] < 0 ||
+                coordinates[1] > 2) {
+                System.out.println("This is not inside the game (row 1 - 3, col 1 - 3). Try again");
+                continue;
             }
 
-            // also catch IndexOutOfBounds errors!
             if (arr[coordinates[0]][coordinates[1]] != ' ') {
                 System.out.println("Already taken. Try again.");
+                continue;
             } else {
                 arr[coordinates[0]][coordinates[1]] = mark;
                 isValidInput = true;
