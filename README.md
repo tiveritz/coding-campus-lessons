@@ -2,12 +2,14 @@
 Check out all the Java training lessons of the part-time coding campus 2020/2021.
 
 Want to see how this looks in Python > [coding-campus-lessons-in-python](https://github.com/tiveritz/coding-campus-lessons-in-python)
+<br /><br />
 
 ## Executing
 Use the Main.java file and call the method with Day00.methodName().
 Some methods require method parameters.
 Some methods return a value and print method must be used.
 All the available methods are commented out in the Main.java in the src folder.
+<br /><br />
 
 ###### Example
 ```java
@@ -25,13 +27,14 @@ public class Main {
 }
 
 ```
+<br /><br />
 
 ## This Might Be Helpful
   * [Java CheatSheet](https://github.com/tiveritz/coding-campus-lessons/blob/master/JavaCheatsheet.md)
   * List of [Lesson contents](https://github.com/tiveritz/coding-campus-lessons/blob/master/CodingCampusLessons.md)
+<br /><br />
 
 ## Special Content
-
 <details>
   <summary>Expand "Own Training Sessions"</summary>
 
@@ -44,7 +47,6 @@ public class Main {
   * Code01.montyHallProblem();
 </details>
 
-
 <details>
   <summary>Expand "Holiday Sessions"</summary>
 
@@ -55,9 +57,9 @@ public class Main {
   * Holiday01.wichteln();
 </details>
 
+<br /><br />
 
 ## Coding Campus Lessons
-
 <details>
   <summary>Expand "November"</summary>
 
@@ -65,7 +67,6 @@ public class Main {
   * Day19Part02.ticTacToe();
   * Day19Part01.helloWorldTwoDimensionalArray();
 </details>
-
 
 <details>
   <summary>Expand "October"</summary>
@@ -116,7 +117,6 @@ public class Main {
 * Day08
   * Day08.sortNamesArray();
 </details>
-
 
 <details>
   <summary>Expand "September"</summary>
