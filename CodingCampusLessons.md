@@ -1,4 +1,4 @@
-###### Day 19(Tue)
+###### Day 19 (Tue)
     * Repetition of the holiday examples
     * Basic ideas of code security
     * Basic ideas of Cryptography
@@ -7,7 +7,7 @@
 
 ###### (Holidays, no campus on Tue, Thu, Sat)
 
-###### Day 18(Sat)
+###### Day 18 (Sat)
     * Project vs. Product
     * Agile development
     * Repetition methods and functions
