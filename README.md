@@ -49,6 +49,11 @@ public class Main {
   * Holiday02.guessNumber();
   * Holiday01.wichteln();
 
+###### November
+* Day19
+  * Day19Part02.ticTacToe();
+  * Day19Part01.helloWorld();
+
 ###### October
 
 * Day18
