@@ -1,4 +1,4 @@
-# coding-campus-lessons
+# Coding-Campus-Lessons
 Check out all the Java training lessons of the part-time coding campus 2020/2021.
 
 Want to see how this looks in Python > [coding-campus-lessons-in-python](https://github.com/tiveritz/coding-campus-lessons-in-python)
@@ -56,7 +56,6 @@ public class Main {
   * Holiday02.guessNumber();
   * Holiday01.wichteln();
 </details>
-
 <br /><br />
 
 ## Coding Campus Lessons
