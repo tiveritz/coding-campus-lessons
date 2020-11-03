@@ -284,3 +284,4 @@ abstract Object is to imagine:
     * Pattern + Matcher + match Vector
     * final
     * constructor (system.in???)
+    * multi dimensional arrays
