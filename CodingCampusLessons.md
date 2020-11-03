@@ -5,6 +5,8 @@
     * Hashing, Salt, Pepper
     * Introduction two dimensional arrays
 
+###### (Holidays, no campus on Tue, Thu, Sat)
+
 ###### Day 18(Sat)
     * Project vs. Product
     * Agile development
