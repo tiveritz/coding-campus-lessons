@@ -26,8 +26,8 @@ public class Main {
         // Holiday01.wichteln();
 
         // November
-        // Day19Part01.TicTacToe();
-        Day19Part01.helloWorldTwoDimensionalArray();
+        Day19Part02.ticTacToe();
+        // Day19Part01.helloWorldTwoDimensionalArray();
 
         // October
         // Day18Part02.atm();
