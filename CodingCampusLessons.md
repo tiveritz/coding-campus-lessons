@@ -1,3 +1,10 @@
+###### Day 19(Tue)
+    * Repetition of the holiday examples
+    * Basic ideas of code security
+    * Basic ideas of Cryptography
+    * Hashing, Salt, Pepper
+    * Introduction two dimensional arrays
+
 ###### Day 18(Sat)
     * Project vs. Product
     * Agile development
