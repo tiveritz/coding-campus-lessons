@@ -52,7 +52,7 @@ public class Main {
 ###### November
 * Day19
   * Day19Part02.ticTacToe();
-  * Day19Part01.helloWorld();
+  * Day19Part01.helloWorldTwoDimensionalArray();
 
 ###### October
 
