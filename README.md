@@ -30,7 +30,7 @@ public class Main {
   * [Java CheatSheet](https://github.com/tiveritz/coding-campus-lessons/blob/master/JavaCheatsheet.md)
   * List of [Lesson contents](https://github.com/tiveritz/coding-campus-lessons/blob/master/CodingCampusLessons.md)
 
-## Content
+## Special Content
 
 <details>
   <summary>Expand "Own Training Sessions"</summary>
@@ -59,6 +59,8 @@ public class Main {
   * Holiday01.wichteln();
 </details>
 
+
+## Coding Campus Lessons
 
 <details>
   <summary>Expand "November"</summary>
