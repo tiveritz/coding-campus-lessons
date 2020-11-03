@@ -34,13 +34,14 @@ public class Main {
 
 <details>
   <summary>Expand "Own Training Sessions"</summary>
-    * Code04.graph();
-    * Code03.readFileWithFileReader();
-    * Code03.writeFileWithFileOutputStream();
-    * Code03.writeFileWithFileWriter();
-    * Code02.calendar();
-    * Code01.montyHallProblemProof();
-    * Code01.montyHallProblem();
+
+  * Code04.graph();
+  * Code03.readFileWithFileReader();
+  * Code03.writeFileWithFileOutputStream();
+  * Code03.writeFileWithFileWriter();
+  * Code02.calendar();
+  * Code01.montyHallProblemProof();
+  * Code01.montyHallProblem();
 </details>
 
 * Holiday lessons
