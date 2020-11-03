@@ -26,7 +26,7 @@ public class Main {
 
 ```
 
-## More
+## This Might Be Helpful
   * [Java CheatSheet](https://github.com/tiveritz/coding-campus-lessons/blob/master/JavaCheatsheet.md)
   * List of [Lesson contents](https://github.com/tiveritz/coding-campus-lessons/blob/master/CodingCampusLessons.md)
 
@@ -34,8 +34,6 @@ public class Main {
 
 <details>
   <summary>Expand "Own Training Sessions"</summary>
-
-
 
   * Code04.graph();
   * Code03.readFileWithFileReader();
@@ -50,8 +48,6 @@ public class Main {
 <details>
   <summary>Expand "Holiday Sessions"</summary>
 
-
-
   * Holiday05.helloWorldClassesAndMethods();
   * Holiday04.cipherWithString();
   * Holiday03.bookCipher();
@@ -65,8 +61,6 @@ public class Main {
 <details>
   <summary>Expand "November"</summary>
 
-
-
 * Day19
   * Day19Part02.ticTacToe();
   * Day19Part01.helloWorldTwoDimensionalArray();
@@ -75,8 +69,6 @@ public class Main {
 
 <details>
   <summary>Expand "October"</summary>
-
-
 
 * Day18
   * Day18Part01.functionRepetition();
@@ -128,8 +120,6 @@ public class Main {
 
 <details>
   <summary>Expand "September"</summary>
-
-
 
 * Day07
   * Day07.leapYear();
