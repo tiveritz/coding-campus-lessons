@@ -4,14 +4,23 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Day19Part02 {
+
+    /* INFORMATION 
+     * It may seem a bit strange here, but I tried to use a method that returns
+     * an array with the input coordinates. This is the way you can return
+     * multiple values in Java
+     */
+
     private static Scanner sc = new Scanner(System.in);
 
     public static void ticTacToe() {
-        String[][] ticTacToe = new String[3][3];
+        char[][] ticTacToe = new char[3][3];
         fillArrWithEmpty(ticTacToe);
-        String playerOne = "X";
-        String playerTwo = "O";
+        char playerOne = 'X';
+        char playerTwo = 'O';
 
+        printArray(ticTacToe);
+        
         int round = 0;
         while (true) {
 
@@ -41,13 +50,13 @@ public class Day19Part02 {
         }
     }
 
-    public static void fillArrWithEmpty(String[][] arr) {
-        for (String[] inner : arr) {
-            Arrays.fill(inner, " ");            
+    public static void fillArrWithEmpty(char[][] arr) {
+        for (char[] inner : arr) {
+            Arrays.fill(inner, ' ');            
         }
     }
 
-    public static void printArray(String[][] arr) {
+    public static void printArray(char[][] arr) {
         System.out.println("-------------");
         for (int row = 0; row < arr.length; row++) {
             System.out.print("|");
@@ -58,7 +67,7 @@ public class Day19Part02 {
         }
     }
 
-    public static void readyPlayerOne(String[][] arr, String mark) {
+    public static void readyPlayerOne(char[][] arr, char mark) {
         int[] coordinates = new int[2];
         boolean isValidInput = false;
 
@@ -67,9 +76,9 @@ public class Day19Part02 {
                 int intInput = 0;
                 
                 if (i == 0) {
-                    System.out.println("Enter row index: ");
+                    System.out.println("Enter row: ");
                 } else {
-                    System.out.println("Enter col index: ");
+                    System.out.println("Enter col: ");
                 }
 
                 try {
@@ -79,11 +88,11 @@ public class Day19Part02 {
                     System.out.println("Not a valid input. Try again.");
                     continue;
                 }
-                coordinates[i] = intInput;
+                coordinates[i] = intInput + 1;
             }
 
             // also catch IndexOutOfBounds errors!
-            if (arr[coordinates[0]][coordinates[1]] != " ") {
+            if (arr[coordinates[0]][coordinates[1]] != ' ') {
                 System.out.println("Already taken. Try again.");
             } else {
                 arr[coordinates[0]][coordinates[1]] = mark;
@@ -92,11 +101,11 @@ public class Day19Part02 {
         }
     }
 
-    public static boolean checkFull(String[][] arr) {
+    public static boolean checkFull(char[][] arr) {
         boolean full = true;
         for (int row = 0; row < arr.length; row++) {
             for (int col = 0; col < arr[row].length; col++) {
-                if (arr[row][col] == " ") {
+                if (arr[row][col] == ' ') {
                     full = false;
                     break;
                 }
@@ -105,7 +114,7 @@ public class Day19Part02 {
     return full;
     }
 
-    public static boolean checkWin(String[][] arr, String player) {
+    public static boolean checkWin(char[][] arr, char player) {
         boolean won = false;
 
         // Horizontal check
@@ -128,7 +137,6 @@ public class Day19Part02 {
         ) {
             won = true;
         }
-
         return won;
     }
 }
