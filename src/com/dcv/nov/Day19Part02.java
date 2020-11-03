@@ -4,13 +4,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Day19Part02 {
-
-    /* INFORMATION 
-     * It may seem a bit strange here, but I tried to use a method that returns
-     * an array with the input coordinates. This is the way you can return
-     * multiple values in Java
-     */
-
     private static Scanner sc = new Scanner(System.in);
 
     public static void ticTacToe() {
@@ -50,12 +43,18 @@ public class Day19Part02 {
         }
     }
 
+    /** Fills the array with one whitespace char
+      * @param arr The array to be filled
+      */
     public static void fillArrWithEmpty(char[][] arr) {
         for (char[] inner : arr) {
             Arrays.fill(inner, ' ');            
         }
     }
 
+    /** Prints the two dimensional array Tic Tac To - like
+      * @param arr
+      */
     public static void printArray(char[][] arr) {
         System.out.println("-------------");
         for (int row = 0; row < arr.length; row++) {
@@ -67,6 +66,11 @@ public class Day19Part02 {
         }
     }
 
+    /** Takes user input and writes it into the passed array. The title is a
+      * reference to the movie with the same name :-)
+      * @param arr The array the mark is written to
+      * @param mark The mark which is written to the array
+      */
     public static void readyPlayerOne(char[][] arr, char mark) {
         int[] coordinates = new int[2];
         boolean isValidInput = false;
@@ -110,6 +114,10 @@ public class Day19Part02 {
         }
     }
 
+    /** Checks if the array is full
+      * @param arr The array to be checked
+      * @return A boolean true if the array is full
+      */
     public static boolean checkFull(char[][] arr) {
         boolean full = true;
         for (int row = 0; row < arr.length; row++) {
@@ -123,6 +131,12 @@ public class Day19Part02 {
     return full;
     }
 
+    /** Checks if a player has wone (any direction)
+      * 
+      * @param arr The array to be checked
+      * @param player The player the win is checked for
+      * @return True if the player has won
+      */
     public static boolean checkWin(char[][] arr, char player) {
         boolean won = false;
 
