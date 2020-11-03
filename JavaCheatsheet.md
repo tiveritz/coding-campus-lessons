@@ -265,6 +265,20 @@ Method overlowding allows to use methods with the same name but different parame
     }
 ```
 
+#### Multidimensional Arrays
+Multidimensional arrays are arrays that contain arrays. An easy way to graps this
+abstract Object is to imagine:
+```
+    int[][] numbers = new int[9][9]; ... a multidimensional array with 9 rows and 9 columns
+
+    * Array[] -> is a list
+    * Array[][] -> is a two coordinate system (x, y), excel sheet, table
+    * Array[][][] -> is a three dimensional coordinate system (x, y, z)
+    * Array[][][]+ -> these programs are not limited to boundries of the real world
+    this may make it hard to grasp. So it is easiest to say to imagine boxes inside
+    boxes inside boxes inside boxes...
+```
+
 #### ToDo
     * Pattern + Matcher + match Vector
     * final
