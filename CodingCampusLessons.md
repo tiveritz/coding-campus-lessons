@@ -1,3 +1,7 @@
+###### Day 20 (Thu)
+    * Repetition holiday lessons
+    * Two dimensional array
+
 ###### Day 19 (Tue)
     * Repetition of the holiday examples
     * Basic ideas of code security
