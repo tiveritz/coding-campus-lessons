@@ -63,7 +63,7 @@ public class Main {
   <summary>Expand "November"</summary>
 
 * Day20
-  * Day20Part01.twoDimensionalArray();
+  * Day20Part01.canvasShapes();
 
 * Day19
   * Day19Part02.ticTacToe();

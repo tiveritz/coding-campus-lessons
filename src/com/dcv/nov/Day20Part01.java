@@ -4,48 +4,41 @@ import java.lang.Math;
 
 
 public class Day20Part01 {
-    public static void twoDimensionalArray() {
+    public static void canvasShapes() {
+        // Prepare canvas
         int height = 20;
         int width = 20;
 
         char[][] myArray = new char[height][width];
+        fillCanvas(myArray, ' ');
 
-        fillTwoDimensionalArray(myArray, ' ');
+        // Print square with defined starting point
+        int xMinSquare = 6;
+        int yMinSquare = 4;
+        int lSquare = 6;
+        printCanvas(getSquareToCanvas(myArray, xMinSquare, yMinSquare, lSquare));
 
-        /* Print square:
-         * starting point (coordinates -> Row / Col)
-         * size (sideLength)
-         */
+        // Print square into the center of the canvas
+        printCanvas(getSquareToCanvas(myArray, lSquare));
 
-        /* Print triangle:
-         * -> to be printed in the middle!
-         * only a sideLength is required
-         */
+        // Print line
+        int xMinLine = 3;
+        int yMinLine = 2;
+        int xMaxLine = 17;
+        int yMaxLine = 15;
+        printCanvas(getLineToCanvas(myArray, xMinLine, yMinLine, xMaxLine, yMaxLine));
+        
+        // Print triangle with defined center coordinates
+        int xCenterTriangle = 8;
+        int yCenterTriangle = 6;
+        int lTriangle = 15;
+        printCanvas(getTriangleToCanvas(myArray, xCenterTriangle, yCenterTriangle, lTriangle));
 
-        int squareRow = 5;
-        int squareCol = 5;
-        int sideLength = 6;
-
-        char[][] square = getSquare(myArray, squareRow, squareCol, sideLength);
-        printTwoDimensionalArray(square);
-        System.out.println("--------------------");
-
-        // int triangleLength = 7;
-        // char[][] triangle = getTriangle(myArray, triangleLength);
-        // printTwoDimensionalArray(triangle);
-
-        int lineStartRow = 2;
-        int lineStartCol = 3;
-        int lineEndRow = 10;
-        int lineEndCol = 12;
-
-        char[][] line = getLine(myArray, lineStartRow, lineStartCol, lineEndRow, lineEndCol);
-        printTwoDimensionalArray(line);
-        System.out.println("--------------------");
-
+        // Print triangle into center of the canvas
+        printCanvas(getTriangleToCanvas(myArray, lTriangle));
     }
 
-    public static void fillTwoDimensionalArray(char[][] arr, char character) {
+    private static void fillCanvas(char[][] arr, char character) {
         for (int row = 0; row < arr.length; row++) {
             for (int col = 0; col < arr[row].length; col++) {
                 arr[row][col] = character;
@@ -53,31 +46,37 @@ public class Day20Part01 {
         }
     }
 
-    public static void printTwoDimensionalArray(char[][] arr) {
-        for (int row = 0; row < arr.length; row++) {
+    private static void printCanvas(char[][] arr) {
+        System.out.println("y");
+        System.out.println("↑");
+        for (int row = arr.length-1; row >= 0; row--) {
+            System.out.print('|');
             for (int col = 0; col < arr[row].length; col++) {
-                System.out.print(arr[row][col]);
+                System.out.print(" " + arr[row][col]);
             }
             System.out.println();
         }
+        System.out.println(" " + "-".repeat(arr[0].length * 2) + "→ x" + "\n\n");
     }
 
-    public static void addToArray(char[][]arr, int rowIndex, int colIndex, char character) {
-        arr[rowIndex][colIndex] = character;
+    private static char[][] getSquareToCanvas(char[][] arr, int length) {
+        int startRow = arr.length / 2 - length / 2;
+        int startCol = arr[0].length / 2 - length / 2;
+        return getSquareToCanvas(arr, startRow, startCol, length);
     }
 
-    public static char[][] getSquare(char[][] arr, int startRow, int startCol, int length) {
+    private static char[][] getSquareToCanvas(char[][] arr, int xMin, int yMin, int length) {
 
-        char[][] square = copyTwoDimensionalArray(arr);
+        char[][] square = copyCanvas(arr);
 
-        int rowMaxIndex = startRow + length;
-        int colMaxIndex = startCol + length;
+        int colMaxIndex = xMin + length;
+        int rowMaxIndex = yMin + length;
 
         for (int row = 0; row < square.length; row++) {
             for (int col = 0; col < square[row].length; col++) {
                 // boolean tests
-                boolean isInRow = row > startRow && row < rowMaxIndex;
-                boolean isInCol = col > startCol && col < colMaxIndex;
+                boolean isInRow = row >= yMin && row < rowMaxIndex;
+                boolean isInCol = col >= xMin && col < colMaxIndex;
 
                 if (isInRow && isInCol) {
                     square[row][col] = '·';
@@ -87,42 +86,46 @@ public class Day20Part01 {
         return square;
     }
 
-    public static char[][] getLine(char[][] arr, int intLineStartRow, int intLineStartCol, int intLineEndRow, int intLineEndCol) {
-        double lineStartRow = intLineStartRow;
-        double lineStartCol = intLineStartCol;
-        double lineEndRow = intLineEndRow;
-        double lineEndCol = intLineEndCol;
+    private static char[][] getLineToCanvas(char[][] arr, int xMin, int yMin, int xMax, int yMax) {
+        return(getLineToCanvas(arr, xMin, yMin, xMax, yMax, true));
+    }
 
-        char[][] line = copyTwoDimensionalArray(arr);
-        // linear functions: y(x) = k * x + d
-        // take care: function coordinate system and console coordinate system
-        // have their y inverted
+    private static char[][] getLineToCanvas(char[][] arr, int xMin, int yMin, int xMax, int yMax, boolean copyArray) {
+        /* linear functions: y(x) = k * x + d
+         *
+         *      y
+         *      ^    
+         *      |
+         * yMax-|       *
+         *      |    *
+         * yMin-|  *
+         *       ---------> x
+         *         |     |
+         *       xMin  xMax
+         */
+        
+        char[][] line = arr;
 
-        double k = (lineEndRow - lineStartRow) / (lineEndCol - lineStartCol);
-        //System.out.println(k);
-
-        double d = lineStartRow - k * lineStartCol;
-        //System.out.println(d);
-
-        for (int row = 0; row < line.length; row++) {
-            for (int col = 0; col < line[row].length; col++) {
-                int inRow = (int)Math.round(k * col + d);
-                int inCol = (int)Math.round((row - d) / k);
-                if (
-                    row == inRow && col == inCol &&
-                    row >= lineStartRow && row <= lineEndRow &&
-                    col >= lineStartCol && col <= lineEndCol
-                    ) {
-                    line[row][col] = '·';
-                }
-            }
+        if (copyArray) {
+            line = copyCanvas(arr);
         }
 
+        double k = 1.0 * (yMax - yMin) / (xMax - xMin);
+        double d = 1.0 * yMin - k * xMin;
+
+        // Declare loopVariables, because xMin can be higher than xMax depending
+        // on the direction of the line
+        int loopStart = Math.min(xMin, xMax);
+        int loopEnd = Math.max(xMin, xMax);
+
+        for (int x = loopStart; x < loopEnd; x++) {
+            int y = (int)Math.round(k * x + d);
+            line[y][x] = '·';
+        }
         return line;
     }
 
-    
-    public static char[][] copyTwoDimensionalArray(char[][] oldArr) {
+    private static char[][] copyCanvas(char[][] oldArr) {
         char[][] newArr = new char[oldArr.length][oldArr[0].length];
         
         for(int i = 0; i < oldArr.length; i++) {
@@ -132,50 +135,50 @@ public class Day20Part01 {
         }
         return newArr;
     }
-}
 
-/* failed triangle approach
-public static char[][] getTriangle(char[][] arr, int length) {
-
-    char[][] triangle = copyTwoDimensionalArray(arr);
-    double innerRadius = (1.0/6.0) * Math.sqrt(3) * length;
-    System.out.println(innerRadius);
-
-    int p1Row = 2;
-    int p1Col = 5;
-    int p2Row = 10;
-    int p2Col = 10;
-    int p3Row = 10;
-    int p3Col = 2;
-
-    int toCheckRow = 5;
-    int toCheckCol = 5;
-
-    float alpha = ((p2Col - p3Col)*(toCheckRow - p3Row) + (p3Row - p2Row)*(toCheckCol - p3Col)) /
-        ((p2Col - p3Col)*(p1Row - p3Row) + (p3Row - p2Row)*(p1Col - p3Col));
-    float beta = ((p3Col - p1Col)*(toCheckRow - p3Row) + (p1Row - p3Row)*(toCheckCol - p3Col)) /
-        ((p2Col - p3Col)*(p1Row - p3Row) + (p3Row - p2Row)*(p1Col - p3Col));
-    float gamma = 1.0f - alpha - beta;
-
-    if (alpha > 0 && beta > 0 && gamma > 0) {
-        System.out.println("it is inside");
-    } else {
-        System.out.println("it is not inside");
+    private static char[][] getTriangleToCanvas(char[][] arr, int length) {
+        int xCenter = arr.length / 2;
+        int yCenter = arr[0].length / 2;
+        return getTriangleToCanvas(arr, xCenter, yCenter, length);
     }
 
+    private static char[][] getTriangleToCanvas(char[][] arr, int xCenter, int yCenter, int length) {
+        char[][] triangle = copyCanvas(arr);
 
-    for (int row = 0; row < triangle.length; row++) {
-        for (int col = 0; col < triangle[row].length; col++) {
-            // boolean tests
-            boolean isInTriangleRow = false;
-            boolean isInTriangleCol = false;
+        // Actually a triangle is just 3 lines, so we use the line function for
+        // that. Some preparation is needed to get the starting and ending 
+        // coordinates for all the lines
 
-            if (isInTriangleRow && isInTriangleCol) {
-                triangle[row][col] = '·';
-            }
-        }
+        /*
+         *      y
+         *      ^    
+         *      |
+         *  p1 -|    /\
+         *      |   /  \
+         *      |  ------
+         *       ---------> x
+         *         |     |
+         *         p3   p2
+         */
+
+        double height = Math.sqrt(Math.pow(length, 2) - Math.pow((length / 2.0), 2));
+
+        int xMin = (int)Math.round(xCenter - length / 2.0);
+        int yMin = (int)Math.round(yCenter - height / 2.0);
+
+        int P3x = xMin;
+        int P3y = yMin;
+        
+        int P2x = xMin + length;
+        int P2y = yMin;
+
+        int P1x = (int)Math.round(xMin + length / 2);
+        int P1y = (int)Math.round(yMin + height);
+
+        getLineToCanvas(triangle, P1x, P1y, P2x, P2y, false);
+        getLineToCanvas(triangle, P2x, P2y, P3x, P3y, false);
+        getLineToCanvas(triangle, P3x, P3y, P1x, P1y, false);
+
+        return triangle;
     }
-
-    return triangle;
 }
-*/
