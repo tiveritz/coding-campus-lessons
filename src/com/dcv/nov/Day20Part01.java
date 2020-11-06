@@ -9,33 +9,33 @@ public class Day20Part01 {
         int height = 28;
         int width = 28;
 
-        char[][] myArray = new char[height][width];
-        fillCanvas(myArray, ' ');
+        char[][] canvas = new char[height][width];
+        fillCanvas(canvas, ' ');
 
         // Print square with defined starting point
         int xMinSquare = 6;
         int yMinSquare = 4;
         int lSquare = 6;
-        printCanvas(getSquareToCanvas(myArray, xMinSquare, yMinSquare, lSquare));
+        printCanvas(getSquareToCanvas(canvas, xMinSquare, yMinSquare, lSquare));
 
         // Print square into the center of the canvas
-        printCanvas(getSquareToCanvas(myArray, lSquare));
+        printCanvas(getSquareToCanvas(canvas, lSquare));
 
         // Print line
         int xMinLine = 3;
         int yMinLine = 2;
-        int xMaxLine = 17;
-        int yMaxLine = 15;
-        printCanvas(getLineToCanvas(myArray, xMinLine, yMinLine, xMaxLine, yMaxLine));
+        int xMaxLine = 15;
+        int yMaxLine = 19;
+        printCanvas(getLineToCanvas(canvas, xMinLine, yMinLine, xMaxLine, yMaxLine));
         
         // Print triangle with defined center coordinates
         int xCenterTriangle = 8;
         int yCenterTriangle = 6;
         int lTriangle = 14;
-        printCanvas(getTriangleToCanvas(myArray, xCenterTriangle, yCenterTriangle, lTriangle));
+        printCanvas(getTriangleToCanvas(canvas, xCenterTriangle, yCenterTriangle, lTriangle));
 
         // Print triangle into center of the canvas
-        printCanvas(getTriangleToCanvas(myArray, lTriangle));
+        printCanvas(getTriangleToCanvas(canvas, lTriangle));
     }
 
     private static void fillCanvas(char[][] arr, char character) {
