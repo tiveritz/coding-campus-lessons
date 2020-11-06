@@ -6,8 +6,8 @@ import java.lang.Math;
 public class Day20Part01 {
     public static void canvasShapes() {
         // Prepare canvas
-        int height = 20;
-        int width = 20;
+        int height = 28;
+        int width = 28;
 
         char[][] myArray = new char[height][width];
         fillCanvas(myArray, ' ');
@@ -31,7 +31,7 @@ public class Day20Part01 {
         // Print triangle with defined center coordinates
         int xCenterTriangle = 8;
         int yCenterTriangle = 6;
-        int lTriangle = 15;
+        int lTriangle = 14;
         printCanvas(getTriangleToCanvas(myArray, xCenterTriangle, yCenterTriangle, lTriangle));
 
         // Print triangle into center of the canvas
@@ -85,6 +85,17 @@ public class Day20Part01 {
         }
         return square;
     }
+    
+        private static char[][] copyCanvas(char[][] oldArr) {
+            char[][] newArr = new char[oldArr.length][oldArr[0].length];
+            
+            for(int i = 0; i < oldArr.length; i++) {
+                for(int j = 0; j < oldArr[i].length; j++) {
+                    newArr[i][j] = oldArr[i][j];
+                }
+            }
+            return newArr;
+        }
 
     private static char[][] getLineToCanvas(char[][] arr, int xMin, int yMin, int xMax, int yMax) {
         return(getLineToCanvas(arr, xMin, yMin, xMax, yMax, true));
@@ -110,7 +121,7 @@ public class Day20Part01 {
             line = copyCanvas(arr);
         }
 
-        double k = 1.0 * (yMax - yMin) / (xMax - xMin);
+        double k = 1.0 * (yMax - yMin) / (xMax-1 - xMin);
         double d = 1.0 * yMin - k * xMin;
 
         // Declare loopVariables, because xMin can be higher than xMax depending
@@ -123,17 +134,6 @@ public class Day20Part01 {
             line[y][x] = '·';
         }
         return line;
-    }
-
-    private static char[][] copyCanvas(char[][] oldArr) {
-        char[][] newArr = new char[oldArr.length][oldArr[0].length];
-        
-        for(int i = 0; i < oldArr.length; i++) {
-            for(int j = 0; j < oldArr[i].length; j++) {
-                newArr[i][j] = oldArr[i][j];
-            }
-        }
-        return newArr;
     }
 
     private static char[][] getTriangleToCanvas(char[][] arr, int length) {
@@ -150,15 +150,13 @@ public class Day20Part01 {
         // coordinates for all the lines
 
         /*
-         *      y
-         *      ^    
-         *      |
-         *  p1 -|    /\
-         *      |   /  \
-         *      |  ------
-         *       ---------> x
-         *         |     |
-         *         p3   p2
+         *   y
+         *   ^    
+         *   |     P1
+         *   |     /\
+         *   |    /  \
+         *   |P3 ------ P2
+         *    ---------> x
          */
 
         double height = Math.sqrt(Math.pow(length, 2) - Math.pow((length / 2.0), 2));
