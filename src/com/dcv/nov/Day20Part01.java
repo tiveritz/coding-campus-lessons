@@ -36,6 +36,15 @@ public class Day20Part01 {
 
         // Print triangle into center of the canvas
         printCanvas(getTriangleToCanvas(canvas, lTriangle));
+
+        // Print circle with defined center coordinates
+        int xCenterCircle = 10;
+        int yCenterCircle = 10;
+        int radius = 10;
+        printCanvas(getCircleToCanvas(canvas, xCenterCircle, yCenterCircle, radius));
+        
+        // Print circle into center of canvas
+        printCanvas(getCircleToCanvas(canvas, radius));
     }
 
     private static void fillCanvas(char[][] arr, char character) {
@@ -178,5 +187,50 @@ public class Day20Part01 {
         getLineToCanvas(triangle, P3x, P3y, P1x, P1y, false);
 
         return triangle;
+    }
+
+    private static char[][] getCircleToCanvas(char[][] arr, int r) {
+        int xCenter = arr.length / 2;
+        int yCenter = arr[0].length / 2;
+        return getCircleToCanvas(arr, xCenter, yCenter, r);
+    }
+
+    public static char[][] getCircleToCanvas(char[][] arr, int xCenter, int yCenter, int r) {
+        /*
+         *   y
+         *   ^
+         *   |    *  * 
+         *   |  *      *
+         *   |  *      *
+         *   |    *  *
+         *    -------------> x
+         * r... radius
+         * a... xCenter
+         * b... yCenterTriangle
+         * r^2 = (x-a)^2 + (y-b)^2
+         * 
+         * formular rewriten for y
+         * y(x) = ±sqrt(r^2 - (x-a)^2) + b
+         * 
+         * Actually the difficulty here is to consider that the square root
+         * in the circle formular returns + and -
+         */
+
+        char[][] circle = copyCanvas(arr);
+
+        int loopStart = xCenter - r;
+        int loopEnd = xCenter + r;
+
+        for (int x = loopStart; x < loopEnd+1; x++) {
+            double point = Math.sqrt(Math.pow(r, 2) - Math.pow((x - xCenter),2));
+
+            int yPos = (int)Math.round(point + yCenter);
+            int yNeg = (int)Math.round(-point + yCenter);
+
+            circle[yPos][x] = '·';
+            circle[yNeg][x] = '·';
+        }
+
+        return circle;
     }
 }
