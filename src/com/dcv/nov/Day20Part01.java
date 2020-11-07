@@ -260,12 +260,12 @@ public class Day20Part01 {
     }
 
   /** Returns a two dimensional array with the circle
-    * @param arr Two dimensional char[][]
-    * @param xCenter Center x coordinate of the circle
-    * @param yCenter Center y coordinate of the circle
-    * @param r Radius of the circle
-    * @return Duplicate of the array with the circle
-    */
+      * @param arr Two dimensional char[][]
+      * @param xCenter Center x coordinate of the circle
+      * @param yCenter Center y coordinate of the circle
+      * @param r Radius of the circle
+      * @return Duplicate of the array with the circle
+      */
     public static char[][] getCircleToCanvas(char[][] arr, int xCenter, int yCenter, int r) {
         /*
          *   y
