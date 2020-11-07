@@ -31,7 +31,7 @@ public class Day20Part01 {
         // Print triangle with defined center coordinates
         int xCenterTriangle = 8;
         int yCenterTriangle = 6;
-        int lTriangle = 14;
+        int lTriangle = 15;
         printCanvas(getTriangleToCanvas(canvas, xCenterTriangle, yCenterTriangle, lTriangle));
 
         // Print triangle into center of the canvas
@@ -168,24 +168,25 @@ public class Day20Part01 {
             line = copyCanvas(arr);
         }
 
-        double k = 1.0 * (yMax - yMin) / (xMax-1 - xMin);
+        double k = 1.0 * (yMax - yMin) / (xMax - xMin);
         double d = 1.0 * yMin - k * xMin;
 
         // Add points with y(x) = k * x + d
         int loopStartX = Math.min(xMin, xMax);
         int loopEndX = Math.max(xMin, xMax);
 
-        for (int x = loopStartX; x < loopEndX; x++) {
+        for (int x = loopStartX; x < loopEndX+1; x++) {
             int y = (int)Math.round(k * x + d);
             line[y][x] = '·';
         }
 
-        // Add points with x(y) = (y - d) / k 
+        // Add points with x(y) = (y - d) / k
+        
         int loopStartY = Math.min(yMin, yMax);
         int loopEndY = Math.max(yMin, yMax);
 
         for (int y = loopStartY; y < loopEndY; y++) {
-            int x = (int)Math.round((y - d) / k);
+            int x = (int)Math.round(1.0 * (y - d) / k);
             line[y][x] = '·';
         }
 
@@ -235,11 +236,11 @@ public class Day20Part01 {
         int P3x = xMin;
         int P3y = yMin;
         
-        int P2x = xMin + length;
+        int P2x = xMin + length-1;
         int P2y = yMin;
 
         int P1x = (int)Math.round(xMin + length / 2);
-        int P1y = (int)Math.round(yMin + height);
+        int P1y = (int)Math.round(yMin + height-1);
 
         getLineToCanvas(triangle, P1x, P1y, P2x, P2y, false);
         getLineToCanvas(triangle, P2x, P2y, P3x, P3y, false);
