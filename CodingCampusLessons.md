@@ -1,3 +1,6 @@
+###### Day 21 (Sat)
+    * Repetition two dimensional array
+
 ###### Day 20 (Thu)
     * Repetition holiday lessons
     * Two dimensional array
