@@ -3,7 +3,7 @@ package src.com.dcv.nov;
 import java.lang.Math;
 
 
-public class Day20Part01 {
+public class Day20Day21 {
     public static void canvasShapes() {
         // Prepare canvas
         int height = 28;

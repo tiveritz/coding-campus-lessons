@@ -62,8 +62,8 @@ public class Main {
 <details>
   <summary>Expand "November"</summary>
 
-* Day20
-  * Day20Part01.canvasShapes();
+* Day20 and Day21
+  * Day20Day21.canvasShapes();
 
 * Day19
   * Day19Part02.ticTacToe();
