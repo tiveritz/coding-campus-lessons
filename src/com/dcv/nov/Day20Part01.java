@@ -111,8 +111,7 @@ public class Day20Part01 {
     }
 
     private static char[][] getLineToCanvas(char[][] arr, int xMin, int yMin, int xMax, int yMax, boolean copyArray) {
-        /* linear functions: y(x) = k * x + d
-         *
+        /*
          *      y
          *      ^    
          *      |
@@ -122,6 +121,9 @@ public class Day20Part01 {
          *       ---------> x
          *         |     |
          *       xMin  xMax
+         *
+         * The difficulty here is, that the direction of the line matters for
+         * the loop. (xMin can be higher than xMax)
          */
         
         char[][] line = arr;
@@ -133,15 +135,24 @@ public class Day20Part01 {
         double k = 1.0 * (yMax - yMin) / (xMax-1 - xMin);
         double d = 1.0 * yMin - k * xMin;
 
-        // Declare loopVariables, because xMin can be higher than xMax depending
-        // on the direction of the line
-        int loopStart = Math.min(xMin, xMax);
-        int loopEnd = Math.max(xMin, xMax);
+        // Add points with y(x) = k * x + d
+        int loopStartX = Math.min(xMin, xMax);
+        int loopEndX = Math.max(xMin, xMax);
 
-        for (int x = loopStart; x < loopEnd; x++) {
+        for (int x = loopStartX; x < loopEndX; x++) {
             int y = (int)Math.round(k * x + d);
             line[y][x] = '·';
         }
+
+        // Add points with x(y) = (y - d) / k 
+        int loopStartY = Math.min(yMin, yMax);
+        int loopEndY = Math.max(yMin, yMax);
+
+        for (int y = loopStartY; y < loopEndY; y++) {
+            int x = (int)Math.round((y - d) / k);
+            line[y][x] = '·';
+        }
+
         return line;
     }
 
@@ -209,19 +220,17 @@ public class Day20Part01 {
          * b... yCenterTriangle
          * r^2 = (x-a)^2 + (y-b)^2
          * 
-         * formular rewriten for y
-         * y(x) = ±sqrt(r^2 - (x-a)^2) + b
-         * 
          * Actually the difficulty here is to consider that the square root
          * in the circle formular returns + and -
          */
 
         char[][] circle = copyCanvas(arr);
 
-        int loopStart = xCenter - r;
-        int loopEnd = xCenter + r;
+        // Add the points with y(x) = ±sqrt(r^2 - (x-a)^2) + b
+        int loopStartX = xCenter - r;
+        int loopEndX = xCenter + r;
 
-        for (int x = loopStart; x < loopEnd+1; x++) {
+        for (int x = loopStartX; x < loopEndX+1; x++) {
             double point = Math.sqrt(Math.pow(r, 2) - Math.pow((x - xCenter),2));
 
             int yPos = (int)Math.round(point + yCenter);
@@ -229,6 +238,20 @@ public class Day20Part01 {
 
             circle[yPos][x] = '·';
             circle[yNeg][x] = '·';
+        }
+
+        // Add the points with x(y) = ±sqrt(r^2 - (y - b)^2) + a
+        int loopStartY = yCenter - r;
+        int loopEndY = yCenter + r;
+
+        for (int y = loopStartY; y < loopEndY+1; y++) {
+            double point = Math.sqrt(Math.pow(r, 2) - Math.pow((y - yCenter), 2));
+
+            int xPos = (int)Math.round(point + yCenter);
+            int xNeg = (int)Math.round(-point + yCenter);
+
+            circle[y][xPos] = '·';
+            circle[y][xNeg] = '·';
         }
 
         return circle;
