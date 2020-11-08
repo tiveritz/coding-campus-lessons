@@ -1,4 +1,5 @@
-# Coding-Campus-Lessons
+![header image](src/img/header.png?raw=true "Coding Campus Lessons in Java")
+
 Check out all the Java training lessons of the part-time coding campus 2020/2021.
 
 Want to see how this looks in Python > [coding-campus-lessons-in-python](https://github.com/tiveritz/coding-campus-lessons-in-python)
