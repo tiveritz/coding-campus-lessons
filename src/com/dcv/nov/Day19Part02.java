@@ -154,7 +154,7 @@ public class Day19Part02 {
             }
         }
 
-        // Horizontal check
+        // Diagonal check
         if (arr[0][0] == player && arr[1][1] == player && arr[2][2] == player ||
             arr[2][0] == player && arr[1][1] == player && arr[0][2] == player
         ) {
