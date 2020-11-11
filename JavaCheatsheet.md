@@ -284,3 +284,6 @@ abstract Object is to imagine:
     * Pattern + Matcher + match Vector
     * final
     * constructor (system.in???)
+    * Collections, Map, HashMap
+    * Hashing, Salt, Pepper
+    * Lambda functions

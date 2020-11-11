@@ -26,7 +26,8 @@ public class Main {
         // Holiday01.wichteln();
 
         // November
-        Day20Day21.canvasShapes();
+        // Day22Part01.hoursList();
+        // Day20Day21.canvasShapes();
         // Day19Part02.ticTacToe();
         // Day19Part01.helloWorldTwoDimensionalArray();
 

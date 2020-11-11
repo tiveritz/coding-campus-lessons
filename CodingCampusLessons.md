@@ -1,3 +1,8 @@
+###### Day 22 (Tue)
+    * Repetition two dimensional array
+    * Web Frontend <-> Backend, REST, Database
+    * Repetition Project, Developer job, Project owner tasks
+
 ###### Day 21 (Sat)
     * Repetition two dimensional array
 

@@ -63,6 +63,9 @@ public class Main {
 <details>
   <summary>Expand "November"</summary>
 
+* Day22
+  * Day22Part01.hoursList();
+
 * Day20 and Day21
   * Day20Day21.canvasShapes();
 
