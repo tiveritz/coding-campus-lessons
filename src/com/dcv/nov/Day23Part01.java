@@ -16,6 +16,7 @@ public class Day23Part01 {
 		int loanPerHour = 8;
 		int[] salary = Day22Part01.calculateLoan(hoursSum, loanPerHour);
 		Day22Part01.printLoan(salary);
+		Day22Part01.printAverage(cleanedData, hoursSum);
 
 	}
 

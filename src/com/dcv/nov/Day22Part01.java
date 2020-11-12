@@ -31,6 +31,35 @@ public class Day22Part01 {
         System.out.println("Michael bekommt " + salary[2] + "€ ausbezahlt.");
     }
 
+    // Extensiont of Day23
+    public static void printAverage(String[][] hoursList, int[] hoursSum) {
+        int daysAlex = 0;
+        int daysDaniel = 0;
+        int daysMichael = 0;
+
+        for(String[] day : hoursList){
+            String name = day[0];
+            switch(name) {
+                case "Alex":
+                    daysAlex++;
+                    break;
+                case "Daniel":
+                    daysDaniel++;
+                    break;
+                case "Michael":
+                    daysMichael++;
+                    break;
+            }
+        }
+        
+        double averageAlex = 1.0 * hoursSum[0] / daysAlex;
+        double averageDaniel = 1.0 * hoursSum[1] / daysDaniel;
+        double averageMichael = 1.0 * hoursSum[2] / daysMichael;
+        System.out.println("Alex average hours: " + averageAlex);
+        System.out.println("Daniel average hours: " + averageDaniel);
+        System.out.println("Michael average hours: " + averageMichael);
+    }  
+
     public static int[] calculateLoan(int[] hoursSum, int loanPerHour) {
         int[] salary = new int[3];
         for (int i = 0; i < hoursSum.length; i++){
