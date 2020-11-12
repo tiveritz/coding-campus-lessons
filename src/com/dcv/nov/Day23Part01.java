@@ -8,15 +8,17 @@ import java.util.Vector;
 
 public class Day23Part01 {
 	public static void helloWorldFileReader() {
+		
 		String[][] data = readCSV("src/com/dcv/nov/data/hours.csv", ",");
 		String[][] cleanedData = getDataWithoutHeader(data);
 		
-		int[] hoursSum = Day22Part01.calculateHoursSum(cleanedData);
+		String[] names = Day22Part01.getNames(cleanedData);
+		int[] hoursSum = Day22Part01.calculateHoursSum(names, cleanedData);
 
 		int loanPerHour = 8;
-		int[] salary = Day22Part01.calculateLoan(hoursSum, loanPerHour);
-		Day22Part01.printLoan(salary);
-		Day22Part01.printAverage(cleanedData, hoursSum);
+		int[] salary = Day22Part01.calculateLoan(names, hoursSum, loanPerHour);
+		Day22Part01.printLoan(names, salary);
+		Day22Part01.printAverage(names, hoursSum, cleanedData);
 
 	}
 

@@ -2,90 +2,96 @@ package src.com.dcv.nov;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Vector;
 import java.util.stream.Collectors;
 
 
 public class Day22Part01 {
 
-    /* Achtung! 
-     * Nicht mein Code -> kopiert von Discord Gruppe
+    /* Attention! 
+     * Not entirely my code, some elements have been copied
      * 
      */
 
     public static void hoursList() {
-        String[][] hourList = getHoursList();
+        String[][] hoursList = getHoursList();
+        String[] names = getNames(hoursList);
 
-        int[] hoursSum = calculateHoursSum(hourList);
+        int[] hoursSum = calculateHoursSum(names, hoursList);
 
         int loanPerHour = 8;
-        int[] salary = calculateLoan(hoursSum, loanPerHour);
+        int[] salary = calculateLoan(names, hoursSum, loanPerHour);
 
-        printLoan(salary);
+        printLoan(names, salary);
 
-        //theLambdaWay(hourList, loanPerHour);
+        //theLambdaWay(hoursList, loanPerHour);
     }
 
-    public static void printLoan(int[] salary) {
-        System.out.println("Alex bekommt " + salary[0] + "€ ausbezahlt.");
-        System.out.println("Daniel bekommt " + salary[1] + "€ ausbezahlt.");
-        System.out.println("Michael bekommt " + salary[2] + "€ ausbezahlt.");
+    public static void printLoan(String[] names, int[] salary) {
+        for (int i = 0; i < names.length; i++) {
+            System.out.println(names[i] + " gets " + salary[i] + "€");
+        }
+    }
+
+    public static String[] getNames(String[][] arr) {
+        Vector<String> names = new Vector<String>();
+
+        for (String[] name : arr) {
+            if (!names.contains(name[0])) {
+                names.add(name[0]);
+            }
+        }
+
+        String[] namesArr = new String[names.size()];
+
+        int i = 0;
+        for (String name : names) {
+            namesArr[i] = name;
+            i++;
+        }
+
+        return namesArr;
     }
 
     // Extensiont of Day23
-    public static void printAverage(String[][] hoursList, int[] hoursSum) {
-        int daysAlex = 0;
-        int daysDaniel = 0;
-        int daysMichael = 0;
+    public static void printAverage(String[] names, int[] hoursSum, String[][] hoursList) {
 
-        for(String[] day : hoursList){
-            String name = day[0];
-            switch(name) {
-                case "Alex":
-                    daysAlex++;
-                    break;
-                case "Daniel":
-                    daysDaniel++;
-                    break;
-                case "Michael":
-                    daysMichael++;
-                    break;
-            }
+        int i = 0;
+        for (String name : names) {
+            int nameDays = 0;
+                for (String[] namesRow : hoursList) {
+                    if (namesRow[0].equals(name)) {
+                        nameDays++;
+                    }
+                }
+
+            double average = 1.0 * hoursSum[i] / nameDays;
+            System.out.println(name + " average hours: " + average);
+            i++;
         }
-        
-        double averageAlex = 1.0 * hoursSum[0] / daysAlex;
-        double averageDaniel = 1.0 * hoursSum[1] / daysDaniel;
-        double averageMichael = 1.0 * hoursSum[2] / daysMichael;
-        System.out.println("Alex average hours: " + averageAlex);
-        System.out.println("Daniel average hours: " + averageDaniel);
-        System.out.println("Michael average hours: " + averageMichael);
     }  
 
-    public static int[] calculateLoan(int[] hoursSum, int loanPerHour) {
-        int[] salary = new int[3];
-        for (int i = 0; i < hoursSum.length; i++){
+    public static int[] calculateLoan(String[] names, int[] hoursSum, int loanPerHour) {
+        int[] salary = new int[names.length];
+        for (int i = 0; i < names.length; i++){
             salary[i] = hoursSum[i] * loanPerHour;
         }
         return salary;
     }
 
-    public static int[] calculateHoursSum(String[][] hourList) {
-        int[] hoursSum = new int[3];
-        for(String[] entry : hourList){
-            String name = entry[0];
-            int hoursSumIndex = 0;
-            switch(name){
-                case "Alex":
-                    hoursSumIndex = 0;
-                    break;
-                case "Daniel":
-                    hoursSumIndex = 1;
-                    break;
-                case "Michael":
-                    hoursSumIndex = 2;
-                    break;
+    public static int[] calculateHoursSum(String[] names, String[][] hoursList) {
+        int[] hoursSum = new int[names.length];
+
+        int i = 0;
+        for (String name : names) {
+            for (String[] nameRow : hoursList) {
+                if (nameRow[0].equals(name)) {
+                    hoursSum[i] += Integer.parseInt(nameRow[1]);
+                }
             }
-            hoursSum[hoursSumIndex] = hoursSum[hoursSumIndex] + Integer.parseInt(entry[1]);
+            i++;
         }
+
         return hoursSum;
     }
 
