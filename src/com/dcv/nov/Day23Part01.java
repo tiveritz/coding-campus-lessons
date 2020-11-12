@@ -8,14 +8,15 @@ import java.util.Vector;
 
 public class Day23Part01 {
 	public static void helloWorldFileReader() {
-		String[][] data = readCSV("src/com/dcv/nov/data/addresses.csv", ",");
+		String[][] data = readCSV("src/com/dcv/nov/data/hours.csv", ",");
+		String[][] cleanedData = getDataWithoutHeader(data);
+		
+		int[] hoursSum = Day22Part01.calculateHoursSum(cleanedData);
 
-		for (String[] row : data) {
-			for (String col : row) {
-				System.out.println(col + " ");
-			}
-			System.out.println();
-		}
+		int loanPerHour = 8;
+		int[] salary = Day22Part01.calculateLoan(hoursSum, loanPerHour);
+		Day22Part01.printLoan(salary);
+
 	}
 
     public static String[][] readCSV(String filepath, String separator){
@@ -32,5 +33,23 @@ public class Day23Part01 {
         }
 
         return content.toArray(String[][]::new);
-    }
+	}
+	
+	private static void printAll(String[][] data) {
+		for (String[] row : data) {
+			for (String col : row) {
+				System.out.println(col + " ");
+			}
+			System.out.println();
+		}
+	}
+
+	private static String[][] getDataWithoutHeader(String[][] data){
+		String[][] arr = new String[data.length-1][data[0].length];
+
+		for (int row = 1; row < data.length; row++) {
+			arr[row-1] = data[row];
+		}
+		return arr;
+	};
 }

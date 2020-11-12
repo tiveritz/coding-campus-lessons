@@ -25,13 +25,13 @@ public class Day22Part01 {
         //theLambdaWay(hourList, loanPerHour);
     }
 
-    private static void printLoan(int[] salary) {
+    public static void printLoan(int[] salary) {
         System.out.println("Alex bekommt " + salary[0] + "€ ausbezahlt.");
         System.out.println("Daniel bekommt " + salary[1] + "€ ausbezahlt.");
         System.out.println("Michael bekommt " + salary[2] + "€ ausbezahlt.");
     }
 
-    private static int[] calculateLoan(int[] hoursSum, int loanPerHour) {
+    public static int[] calculateLoan(int[] hoursSum, int loanPerHour) {
         int[] salary = new int[3];
         for (int i = 0; i < hoursSum.length; i++){
             salary[i] = hoursSum[i] * loanPerHour;
@@ -39,7 +39,7 @@ public class Day22Part01 {
         return salary;
     }
 
-    private static int[] calculateHoursSum(String[][] hourList) {
+    public static int[] calculateHoursSum(String[][] hourList) {
         int[] hoursSum = new int[3];
         for(String[] entry : hourList){
             String name = entry[0];

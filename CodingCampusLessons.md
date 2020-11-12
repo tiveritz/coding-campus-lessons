@@ -1,3 +1,7 @@
+###### Day 23 (Thu)
+    * Repetition last lesson
+    * CSV files, read CSV
+
 ###### Day 22 (Tue)
     * Repetition two dimensional array
     * Web Frontend <-> Backend, REST, Database
