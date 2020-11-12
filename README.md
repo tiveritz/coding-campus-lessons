@@ -64,6 +64,9 @@ public class Main {
 <details>
   <summary>Expand "November"</summary>
 
+* Day23
+  * Day23Part01.helloWorldFileReader();
+
 * Day22
   * Day22Part01.hoursList();
 

@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Own training sessions
-        Code05.sqliteDatabase();
+        // Code05.sqliteDatabase();
         // Code04.graph();
         // Code03.readFileWithFileReader();
         // Code03.writeFileWithFileOutputStream();
@@ -28,6 +28,7 @@ public class Main {
         // Holiday01.wichteln();
 
         // November
+        Day23Part01.helloWorldFileReader();
         // Day22Part01.hoursList();
         // Day20Day21.canvasShapes();
         // Day19Part02.ticTacToe();
