@@ -86,7 +86,9 @@ public class Day22Part01 {
         for (String name : names) {
             for (String[] nameRow : hoursList) {
                 if (nameRow[0].equals(name)) {
-                    hoursSum[i] += Integer.parseInt(nameRow[1]);
+                    if (nameRow[1] != null) {
+                        hoursSum[i] += Integer.parseInt(nameRow[1]);
+                    }
                 }
             }
             i++;
