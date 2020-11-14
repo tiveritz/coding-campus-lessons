@@ -28,7 +28,8 @@ public class Main {
         // Holiday01.wichteln();
 
         // November
-        Day23Part01.helloWorldFileReader();
+        // Day24Part01.helloWorld();
+        // Day23Part01.helloWorldFileReader();
         // Day22Part01.hoursList();
         // Day20Day21.canvasShapes();
         // Day19Part02.ticTacToe();
