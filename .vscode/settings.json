@@ -1,3 +1,5 @@
+// This json describes the dependencies of referenced Java libraries
+
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
