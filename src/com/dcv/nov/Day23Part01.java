@@ -15,7 +15,6 @@ public class Day23Part01 {
 
 		//printAll(validatedData);
 		
-		
 		String[] names = Day22Part01.getNames(validatedData);
 		int[] hoursSum = Day22Part01.calculateHoursSum(names, validatedData);
 
@@ -42,7 +41,7 @@ public class Day23Part01 {
         return content.toArray(String[][]::new);
 	}
 	
-
+	/*
 	private static void printAll(String[][] data) {
 		for (String[] row : data) {
 			for (String col : row) {
@@ -51,7 +50,7 @@ public class Day23Part01 {
 			System.out.println();
 		}
 	}
-	
+	*/
 
 	private static String[][] getDataWithoutHeader(String[][] data){
 		String[][] arr = new String[data.length-1][data[0].length];
