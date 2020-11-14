@@ -314,7 +314,6 @@ public class Day20Day21 {
             circle[y][xPos] = '·';
             circle[y][xNeg] = '·';
         }
-
         return circle;
     }
 }
