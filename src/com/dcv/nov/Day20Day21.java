@@ -31,7 +31,7 @@ public class Day20Day21 {
         // Print triangle with defined center coordinates
         int xCenterTriangle = 8;
         int yCenterTriangle = 6;
-        int lTriangle = 15;
+        int lTriangle = 14;
         printCanvas(getTriangleToCanvas(canvas, xCenterTriangle, yCenterTriangle, lTriangle));
 
         // Print triangle into center of the canvas
@@ -239,7 +239,7 @@ public class Day20Day21 {
         int P2x = xMin + length-1;
         int P2y = yMin;
 
-        int P1x = (int)Math.round(xMin + length / 2);
+        int P1x = (int)Math.round(xMin + length / 2.0);
         int P1y = (int)Math.round(yMin + height-1);
 
         getLineToCanvas(triangle, P1x, P1y, P2x, P2y, false);
