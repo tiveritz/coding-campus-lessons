@@ -22,6 +22,8 @@ public class Day23Part01 {
 		int[] salary = Day22Part01.calculateLoan(names, hoursSum, loanPerHour);
 		Day22Part01.printLoan(names, salary);
 		Day22Part01.printAverage(names, hoursSum, validatedData);
+
+		Day24Part01.writeCSV("export.csv", names, salary);
 		
 	}
 
