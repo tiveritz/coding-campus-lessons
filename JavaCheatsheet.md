@@ -280,10 +280,24 @@ abstract Object is to imagine:
                        boxes inside boxes inside boxes...
 ```
 
+#### Final Keyword
+```
+final variable ... creates a CONSTANT
+final method ..... prevents method overloading
+final class ...... preventc class inheritance
+
+```
+
+
 #### ToDo
     * Pattern + Matcher + match Vector
-    * final
     * constructor (system.in???)
     * Collections, Map, HashMap
     * Hashing, Salt, Pepper
     * Lambda functions
+    * try catch
+    * ::
+    * File reading
+    * File writing
+
+

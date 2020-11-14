@@ -11,15 +11,20 @@ public class Day23Part01 {
 		
 		String[][] data = readCSV("src/com/dcv/nov/data/hours.csv", ",");
 		String[][] cleanedData = getDataWithoutHeader(data);
+		String[][] validatedData = getValidatedData(cleanedData);
+
+		//printAll(validatedData);
 		
-		String[] names = Day22Part01.getNames(cleanedData);
-		int[] hoursSum = Day22Part01.calculateHoursSum(names, cleanedData);
+		String[] names = Day22Part01.getNames(validatedData);
+		int[] hoursSum = Day22Part01.calculateHoursSum(names, validatedData);
 
 		int loanPerHour = 8;
 		int[] salary = Day22Part01.calculateLoan(names, hoursSum, loanPerHour);
 		Day22Part01.printLoan(names, salary);
-		Day22Part01.printAverage(names, hoursSum, cleanedData);
+		Day22Part01.printAverage(names, hoursSum, validatedData);
 
+		Day24Part01.writeCSV("export.csv", names, salary);
+		
 	}
 
     public static String[][] readCSV(String filepath, String separator){
@@ -38,6 +43,7 @@ public class Day23Part01 {
         return content.toArray(String[][]::new);
 	}
 	
+	/*
 	private static void printAll(String[][] data) {
 		for (String[] row : data) {
 			for (String col : row) {
@@ -46,6 +52,7 @@ public class Day23Part01 {
 			System.out.println();
 		}
 	}
+	*/
 
 	private static String[][] getDataWithoutHeader(String[][] data){
 		String[][] arr = new String[data.length-1][data[0].length];
@@ -54,5 +61,20 @@ public class Day23Part01 {
 			arr[row-1] = data[row];
 		}
 		return arr;
-	};
+	}
+
+	private static String[][] getValidatedData(String[][] arr) {
+		for (int row = 0; row < arr.length; row++) {
+			/*
+			if (!Day24Part01.isString(arr[row][])) {
+				System.out.println(arr[row][0] + "not a string");
+			}*/
+			if (!Day24Part01.isInt(arr[row][1])) {
+				int userRow = row + 2;
+				System.out.println("Warning: '" + arr[row][1] + "' in row " + userRow + " is not an int");
+				arr[row][1] = null;
+			}
+		}
+		return arr;
+	}
 }
