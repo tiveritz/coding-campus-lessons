@@ -28,8 +28,8 @@ public class Main {
         // Holiday01.wichteln();
 
         // November
-        // Day24Part01.faultTolerant();
-        Day23Part01.helloWorldFileReader();
+        // Day24Part01.additionalMethodsForDay23();
+        // Day23Part01.helloWorldFileReader();
         // Day22Part01.hoursList();
         // Day20Day21.canvasShapes();
         // Day19Part02.ticTacToe();
