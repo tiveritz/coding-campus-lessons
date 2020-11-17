@@ -1,3 +1,8 @@
+###### Day 24 (Sat)
+    * Exceptions
+    * Write files
+
+
 ###### Day 23 (Thu)
     * Repetition last lesson
     * CSV files, read CSV
