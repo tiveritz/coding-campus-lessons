@@ -52,10 +52,10 @@ public class BudgetFK {
 	private static String[][] readCSV(String filepath, char separator){
 		Vector<String[]> data = new Vector<>();
 		
-        try {
+		try {
 			BufferedReader br = new BufferedReader(new FileReader(filepath));
 			
-            while (br.ready()) {
+			while (br.ready()) {
 					String line = br.readLine();
 					if (!line.isEmpty()) {
 						data.add(line.split(Character.toString(separator)));
@@ -63,8 +63,8 @@ public class BudgetFK {
 				}
 			br.close();
 			
-        } catch (IOException ioe){
-            ioe.printStackTrace();
+		} catch (IOException ioe){
+			ioe.printStackTrace();
 		}
 		
 		String[][] dataArr = data.toArray(String[][]::new);
