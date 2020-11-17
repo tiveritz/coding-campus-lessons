@@ -45,7 +45,7 @@ public class BudgetFK {
 		double schoolPercentage = (schoolsSum / (double)totalBudget) * 100;
 		System.out.println(schoolPercentage);
 	
-		
+
 	}
 
 
