@@ -57,12 +57,13 @@ i-- ... postfix decrease
 
 Comparison Operator
 ```
-== ... equals to
-!= ... not equals to
-<= ... smaller than or equal to
->= ... bigger than or equal to
-< .... smaller than
-> .... bigger than
+== .......... equals to
+!= .......... not equals to
+<= .......... smaller than or equal to
+>= .......... bigger than or equal to
+< ........... smaller than
+> ........... bigger than
+instanceof... is the object an instance of a class
 ```
 
 Logical Operators
@@ -70,6 +71,11 @@ Logical Operators
 && ... logical AND
 || ... logical OR
 ! .... logical NOT
+```
+
+Ternary Operators
+```
+?: ... if then
 ```
 
 #### Primitive Data Types
@@ -152,7 +158,8 @@ public static void helloWorld() {
 public static void helloWorld()... method signature
 
 public ....... access modifier
-static ....... memory management keyword (static -> doesn't belong to a specific object)
+static ....... memory management keyword (static -> doesn't belong to a specific
+               object -> can be called without an instance of the object)
 void ......... return type (void -> returns no value)
 helloWorld ... method name
 () ........... method parameters (can be empty -> "method takes no parameters")
