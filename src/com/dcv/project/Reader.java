@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Vector;
 
+
 public class Reader {
 	public static String[][] readCSV(String filepath, char separator){
 		Vector<String[]> data = new Vector<>();

@@ -53,7 +53,7 @@ public class BudgetFK {
 		double kindergardenPercentage = (kindergardenSum / (double)totalBudget);
 		Printer.printFormattedPercentage("Kindergarden percentage: ", kindergardenPercentage, "\n");
 	}
-	
+
 
 	private static int getTotalBudget(String[][] data) {
 		int result = 0;
@@ -66,7 +66,6 @@ public class BudgetFK {
 			}
 			row++;
 		}
-
 		return result;
 	}
 
@@ -89,7 +88,6 @@ public class BudgetFK {
 			}
 			indexes[i] = currIndex;
 		}
-
 		return indexes;
 	}
 
@@ -112,7 +110,6 @@ public class BudgetFK {
 			}
 			indexes[i] = currIndex;
 		}
-
 		return indexes;
 	}
 

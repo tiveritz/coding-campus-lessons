@@ -9,8 +9,8 @@ public class Printer {
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append(startString)
-		.append(formatted)
-		.append(endString);
+		  .append(formatted)
+		  .append(endString);
 		
 		System.out.println(sb);
 	}
@@ -22,8 +22,8 @@ public class Printer {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append(startString)
-		.append(formatted)
-		.append(endString);
+		  .append(formatted)
+		  .append(endString);
 		
 		System.out.println(sb);
 	}
@@ -55,19 +55,12 @@ public class Printer {
 		NumberFormat nf = NumberFormat.getCurrencyInstance();
 		
 		for (int index : indexes) {
-			sb.append(String.format("%-" + firstColWidth + "s", count))
-			  .append(" | ");
-			
-			sb.append(String.format("%-" + secondColWidth + "s", content[index][0]))
-			  .append(" | ");
-			
-			sb.append(String.format("%-" + thirdColWidth + "s", content[index][1]))
-			  .append(" | ");
-			  count++;
-			
 			int value = Integer.parseInt(content[index][2]);
-			sb.append(String.format("%" + fourthColWidth + "s", nf.format(value)))
-			  .append("\n");
+			sb.append(String.format("%-" + firstColWidth + "s", count)).append(" | ");
+			sb.append(String.format("%-" + secondColWidth + "s", content[index][0])).append(" | ");
+			sb.append(String.format("%-" + thirdColWidth + "s", content[index][1])).append(" | ");
+			sb.append(String.format("%" + fourthColWidth + "s", nf.format(value))).append("\n");		
+			count++;
 			}
 		System.out.println(sb);
 	}
