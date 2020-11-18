@@ -44,7 +44,15 @@ public class BudgetFK {
 		// #5 Percentage of the Total Budget
 		double schoolPercentage = (schoolsSum / (double)totalBudget) * 100;
 		System.out.println(schoolPercentage);
-	
+		
+		// #6 Get sum of kindergarden
+		String[] kindergarden = {"Kindergarten", "Ganztagskindergarten", "Ganztageskindergarten"};
+		int kindergardenSum = getSpecificSum(kindergarden, content);
+		System.out.println(kindergardenSum);
+
+		// #7 Percentage of the Total Budget
+		double kindergardenPercentage = (kindergardenSum / (double)totalBudget) * 100;
+		System.out.println(kindergardenPercentage);
 
 	}
 
@@ -167,7 +175,7 @@ public class BudgetFK {
 		boolean contains = false;
 
 		for (String searchTerm : searchTerms) {
-			if (string.contains(searchTerm)) {
+			if (string.toLowerCase().contains(searchTerm.toLowerCase())) {
 				contains = true;
 				break;
 			}
