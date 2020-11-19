@@ -7,11 +7,16 @@ import java.util.Vector;
 
 
 public class Reader {
-	public static String[][] readCSV(String filepath, char separator){
+	/** Reads a .csv file and writes all data into two dimensional array.
+	  * @param file complete path to the file, including filename and file extension
+	  * @param separator .csv data separator
+	  * @return two dimensional array with data
+	  */
+	public static String[][] readCSV(String file, char separator){
 		Vector<String[]> data = new Vector<>();
 		
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(filepath));
+			BufferedReader br = new BufferedReader(new FileReader(file));
 			
 			while (br.ready()) {
 					String line = br.readLine();

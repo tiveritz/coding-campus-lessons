@@ -3,10 +3,17 @@ package src.com.dcv.project;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+
 public class Printer {
 	private static Locale austria = new Locale("at", "AT");
 	private static NumberFormat nf = NumberFormat.getCurrencyInstance(austria);
 	
+	/** Prints a String to the console with start, currency formatted value and end. Start and end
+	  * can be empty Strings.
+	  * @param startString start String
+	  * @param value value to be formatted as currency
+	  * @param endString end String
+	  */
 	public static void printFormattedCurrency(String startString, int value, String endString) {
 		String formatted = nf.format(value);
 		
@@ -18,6 +25,12 @@ public class Printer {
 		System.out.println(sb);
 	}
 
+	/** Prints a String to the console with start, precentage formatted value and end. Start and end
+	  * can be empty Strings.
+	  * @param startString start String
+	  * @param value value to be formatted as percentage.
+	  * @param endString end String
+	  */
 	public static void printFormattedPercentage(String startString, double value, String endString) {
 		NumberFormat nf = NumberFormat.getPercentInstance();
 		nf.setMinimumFractionDigits(2); // Set minimum not maximum, cause default minimum = 0
@@ -31,6 +44,12 @@ public class Printer {
 		System.out.println(sb);
 	}
 
+	/** Prints a formatted Table from an array of indexes. Formatting includes header, row numbering
+	  * Vertical table lines and currency formatting.
+	  * @param indexes array of indexes from the content to be printed
+	  * @param content two dimensional array with data
+	  * @param header array with the column names
+	  */
 	public static void printFormattedTable(int[] indexes, String[][] content, String[] header) {
 		int count = 1;
 		int firstColWidth = Integer.toString(indexes.length).length();

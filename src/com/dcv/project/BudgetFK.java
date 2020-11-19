@@ -11,49 +11,57 @@ public class BudgetFK {
 
 	public static void driver() {
 
+		// #1 Read CSV -----------------------------------------------------------------------------
 		String file = FILEPATH + FILENAME;
 		String[][] data = Reader.readCSV(file, ';');
+
+		// #1 Handle irrelevant data ---------------------------------------------------------------
 		String[] header = hasHeader ? data[0] : null;
 		String[][] content = hasHeader
 						   ? Arrays.copyOfRange(data, 1, data.length)
 						   : Arrays.copyOfRange(data, 0, data.length); 
 
-		// #1 Get total budget ---------------------------------------------------------------------
+		// #3 Get total budget ---------------------------------------------------------------------
 		int totalBudget = getTotalBudget(data);
-		Printer.printFormattedCurrency("Total Budget 2019: ", totalBudget, "\n");
+		Printer.printFormattedCurrency("\n\nTotal Budget 2019: ", totalBudget, "\n");
 		
 
-		// #2 Get 10 highest Items -----------------------------------------------------------------
+		// #4 Get 10 highest Items -----------------------------------------------------------------
 		Printer.printFormattedTable(getHighestItemIndexes(content, 10), content, header);
 
 
-		// #3 Get 10 Lowest Items. Only values > 0 -------------------------------------------------
+		// #5 Get 10 Lowest Items. Only values > 0 -------------------------------------------------
+		// This doesn't show good data if there are lot of items with the same vorranschlag
 		Printer.printFormattedTable(getLowestItemIndexes(content, 10), content, header);
 
 
-		// #4 Get sum of schools -------------------------------------------------------------------
+		// #6 Get sum of schools -------------------------------------------------------------------
 		String[] schools = {"Volksschule", "Mittelschule", "Polytechnische"};
 		int schoolsSum = getSpecificSum(schools, content);
 		Printer.printFormattedCurrency("Schools: ", schoolsSum, "");
 		
 
-		// #5 Percentage of the Total Budget -------------------------------------------------------
+		// #7 Percentage of the Total Budget -------------------------------------------------------
 		double schoolPercentage = (schoolsSum / (double)totalBudget);
 		Printer.printFormattedPercentage("Schools percentage: ", schoolPercentage, "\n");
 		
 
-		// #6 Get sum of kindergarden --------------------------------------------------------------
+		// #8 Get sum of kindergarden --------------------------------------------------------------
 		String[] kindergarden = {"Kindergarten", "Ganztagskindergarten", "Ganztageskindergarten"};
 		int kindergardenSum = getSpecificSum(kindergarden, content);
 		Printer.printFormattedCurrency("Kindergarden: ", kindergardenSum, "");
 		
 
-		// #7 Percentage of the Total Budget -------------------------------------------------------
+		// #9 Percentage of the Total Budget -------------------------------------------------------
 		double kindergardenPercentage = (kindergardenSum / (double)totalBudget);
 		Printer.printFormattedPercentage("Kindergarden percentage: ", kindergardenPercentage, "\n");
 	}
 
 
+	/** Returns the sum of all values in column 2.
+	  * @param data two dimensional array with data, without header
+	  * @return sum of all values in column 2
+	  */
 	private static int getTotalBudget(String[][] data) {
 		int result = 0;
 		int row =  hasHeader ? 1 : 0;
@@ -68,6 +76,11 @@ public class BudgetFK {
 		return result;
 	}
 
+	/** Returns an array with the indexes of the highest items in column 2.
+	  * @param data two dimensional array with data, without header
+	  * @param amount number of values to search
+	  * @return array with the indexes of the highest items, sorted descending
+	  */
 	private static int[] getHighestItemIndexes(String[][] data, int amount) {
 		int indexes[] = new int[amount];
 
@@ -90,6 +103,11 @@ public class BudgetFK {
 		return indexes;
 	}
 
+	/** Returns an array with the indexes of the lowest items in column 2.
+	  * @param data two dimensional array with data, without header
+	  * @param amount number of values to search
+	  * @return array with the indexes of the lowest items, sorted ascending
+	  */
 	private static int[] getLowestItemIndexes(String[][] data, int amount) {
 		int indexes[] = new int[amount];
 
@@ -112,8 +130,30 @@ public class BudgetFK {
 		return indexes;
 	}
 
-	// Helper methods ----------------------------------------------------------
+	/** Returns the sum of items in column 2 depending on search terms in column 0.
+	  * @param searchTerms array of search terms
+	  * @param arr two dimensional array with dat
+	  * @return sum of found items
+	  */
+	private static int getSpecificSum(String[] searchTerms, String[][] arr) {
+		int sum = 0;
+		
+		for (String[] row : arr) {
+			if (containsStringFromArray(row[0], searchTerms)) {
+				sum += Integer.parseInt(row[2]);
+			}
+		}
+		return sum;
+	}
+
+
+	// Helper methods ------------------------------------------------------------------------------
 	
+	/** Checks whether an int is insiede an array.
+	  * @param arr the array to be searched
+	  * @param compValue the value to check
+	  * @return true if the value is in the array, false if not
+	  */
 	private static boolean isInArray(int[] arr, int compValue) {
 		boolean inArray = false;
 
@@ -126,18 +166,12 @@ public class BudgetFK {
 		return inArray; 
 	}
 	
-	private static int getSpecificSum(String[] searchTerms, String[][] arr) {
-		int sum = 0;
-		
-		for (String[] row : arr) {
-			if (containsFromList(row[0], searchTerms)) {
-				sum += Integer.parseInt(row[2]);
-			}
-		}
-		return sum;
-	}
-	
-	private static boolean containsFromList(String string, String[] searchTerms) {
+	/** Check whether a String contains at least one String from an array.
+	  * @param string the String to check
+	  * @param searchTerms the array with the search Strings
+	  * @return true if at least one String from array is in String
+	  */
+	private static boolean containsStringFromArray(String string, String[] searchTerms) {
 		boolean contains = false;
 		
 		for (String searchTerm : searchTerms) {
@@ -149,6 +183,10 @@ public class BudgetFK {
 		return contains;
 	}
 	
+	/** Checks whether a given String can be parsed as int 
+	  * @param string String to check
+	  * @return true if String can be parsed to int, false if not
+	  */
 	private static boolean isInt(String string) {
 		boolean isInt = true;
 
