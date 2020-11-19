@@ -1,16 +1,13 @@
 package src.com.dcv.project;
 
 import java.text.NumberFormat;
-import java.util.Currency;
 import java.util.Locale;
 
 public class Printer {
 	private static Locale austria = new Locale("de", "AT");
-	private static NumberFormat nf = NumberFormat.getCurrencyInstance();
-	private static Currency currency = Currency.getInstance(austria);
+	private static NumberFormat nf = NumberFormat.getCurrencyInstance(austria);
 	
 	public static void printFormattedCurrency(String startString, int value, String endString) {
-		nf.setCurrency(currency);
 		String formatted = nf.format(value);
 		
 		StringBuilder sb = new StringBuilder();
