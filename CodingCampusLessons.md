@@ -1,6 +1,9 @@
-###### Day 25 (Tue)
-    * Start project data 
+###### Day 26 (Wed)
+    * Continue project data evaluation Feldkirch
 
+
+###### Day 25 (Tue)
+    * Start project data evalulation Feldkirch
 
 ###### Day 24 (Sat)
     * Exceptions
