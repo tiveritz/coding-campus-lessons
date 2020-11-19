@@ -31,12 +31,12 @@ public class Printer {
 		System.out.println(sb);
 	}
 
-	public static void printFormattedTable(int[] indexes, String[][] content) {
+	public static void printFormattedTable(int[] indexes, String[][] content, String[] header) {
 		int count = 1;
 		int firstColWidth = Integer.toString(indexes.length).length();
-		int secondColWidth = 0;
-		int thirdColWidth = 0;
-		int fourthColWidth = 0;
+		int secondColWidth = header[0].length();
+		int thirdColWidth = header[1].length();
+		int fourthColWidth = header[2].length();
 
 		for (int i = 0; i < indexes.length; i++) {
 			int row = indexes[i];
@@ -48,13 +48,18 @@ public class Printer {
 			}
 
 			int numberLength = content[row][2].length();
-			int formattedNumberLength = 5 + numberLength + numberLength/3; //€_00.000.000,00
+			int formattedNumberLength = 5 + numberLength + numberLength/3; // Consider formatting (€ ,.00)
 			if (formattedNumberLength > fourthColWidth) {
 				fourthColWidth = formattedNumberLength;
 			}
 		}
 
 		StringBuilder sb = new StringBuilder();
+
+		sb.append(String.format("%-" + firstColWidth + "s", "")).append("   ");
+		sb.append(String.format("%-" + secondColWidth + "s", header[0])).append("   ");
+		sb.append(String.format("%-" + thirdColWidth + "s", header[1])).append("   ");
+		sb.append(String.format("%" + fourthColWidth + "s", header[2])).append("\n");
 		
 		for (int index : indexes) {
 			int value = Integer.parseInt(content[index][2]);

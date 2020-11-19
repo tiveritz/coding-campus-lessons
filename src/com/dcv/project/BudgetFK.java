@@ -13,7 +13,7 @@ public class BudgetFK {
 
 		String file = FILEPATH + FILENAME;
 		String[][] data = Reader.readCSV(file, ';');
-		// String[] header = hasHeader ? data[0] : null; -> Preparation for later use
+		String[] header = hasHeader ? data[0] : null;
 		String[][] content = hasHeader
 						   ? Arrays.copyOfRange(data, 1, data.length)
 						   : Arrays.copyOfRange(data, 0, data.length); 
@@ -24,11 +24,11 @@ public class BudgetFK {
 		
 
 		// #2 Get 10 highest Items -----------------------------------------------------------------
-		Printer.printFormattedTable(getHighestItemIndexes(content, 10), content);
+		Printer.printFormattedTable(getHighestItemIndexes(content, 10), content, header);
 
 
 		// #3 Get 10 Lowest Items. Only values > 0 -------------------------------------------------
-		Printer.printFormattedTable(getLowestItemIndexes(content, 10), content);
+		Printer.printFormattedTable(getLowestItemIndexes(content, 10), content, header);
 
 
 		// #4 Get sum of schools -------------------------------------------------------------------
