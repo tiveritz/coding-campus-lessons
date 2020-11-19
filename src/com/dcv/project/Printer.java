@@ -2,13 +2,15 @@ package src.com.dcv.project;
 
 import java.text.NumberFormat;
 import java.util.Currency;
+import java.util.Locale;
 
 public class Printer {
+	private static Locale austria = new Locale("de", "AT");
+	private static NumberFormat nf = NumberFormat.getCurrencyInstance();
+	private static Currency currency = Currency.getInstance(austria);
+	
 	public static void printFormattedCurrency(String startString, int value, String endString) {
-		NumberFormat nf = NumberFormat.getCurrencyInstance();
-		Currency currency = Currency.getInstance("EUR");
 		nf.setCurrency(currency);
-
 		String formatted = nf.format(value);
 		
 		StringBuilder sb = new StringBuilder();
@@ -56,9 +58,6 @@ public class Printer {
 		}
 
 		StringBuilder sb = new StringBuilder();
-		NumberFormat nf = NumberFormat.getCurrencyInstance();
-		Currency currency = Currency.getInstance("EUR");
-		nf.setCurrency(currency);
 		
 		for (int index : indexes) {
 			int value = Integer.parseInt(content[index][2]);
