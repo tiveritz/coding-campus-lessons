@@ -4,7 +4,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class Printer {
-	private static Locale austria = new Locale("de", "AT");
+	private static Locale austria = new Locale("at", "AT");
 	private static NumberFormat nf = NumberFormat.getCurrencyInstance(austria);
 	
 	public static void printFormattedCurrency(String startString, int value, String endString) {
