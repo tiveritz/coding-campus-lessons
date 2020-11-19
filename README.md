@@ -62,7 +62,16 @@ public class Main {
 
 ## Coding Campus Lessons
 <details>
+  <summary>Expand "Project"</summary>
+
+  * BudgetFK.driver();
+</details>
+
+<details>
   <summary>Expand "November"</summary>
+
+* Day24
+  * Day24Part01.additionalMethodsForDay23();
 
 * Day23
   * Day23Part01.helloWorldFileReader();
