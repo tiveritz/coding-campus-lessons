@@ -18,11 +18,10 @@ public class BudgetFK {
 						   ? Arrays.copyOfRange(data, 1, data.length)
 						   : Arrays.copyOfRange(data, 0, data.length); 
 
-
 		// #1 Get total budget ---------------------------------------------------------------------
 		int totalBudget = getTotalBudget(data);
 		Printer.printFormattedCurrency("Total Budget 2019: ", totalBudget, "\n");
-
+		
 
 		// #2 Get 10 highest Items -----------------------------------------------------------------
 		Printer.printFormattedTable(getHighestItemIndexes(content, 10), content);

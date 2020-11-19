@@ -1,7 +1,10 @@
+###### Day 25 (Tue)
+    * Start project data 
+
+
 ###### Day 24 (Sat)
     * Exceptions
     * Write files
-
 
 ###### Day 23 (Thu)
     * Repetition last lesson
