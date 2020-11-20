@@ -1,4 +1,5 @@
 package src.com.dcv.project;
+package src.com.dcv.project;
 
 import java.util.Arrays;
 
@@ -15,7 +16,7 @@ public class BudgetFK {
 		String file = FILEPATH + FILENAME;
 		String[][] data = Reader.readCSV(file, ';');
 
-		// #1 Handle irrelevant data ---------------------------------------------------------------
+		// #2 Handle irrelevant data ---------------------------------------------------------------
 		String[] header = hasHeader ? data[0] : null;
 		String[][] content = hasHeader
 						   ? Arrays.copyOfRange(data, 1, data.length)
