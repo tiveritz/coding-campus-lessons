@@ -7,7 +7,7 @@ public class BudgetFK {
 
 	private static final String FILENAME = "offenerhaushalt_fk_2019.csv";
 	private static final String FILEPATH = "src/com/dcv/project/raw_data/";
-	private static Boolean hasHeader = true;
+	private static final Boolean HAS_HEADER = true;
 
 	public static void driver() {
 
@@ -16,8 +16,8 @@ public class BudgetFK {
 		String[][] data = Reader.readCSV(file, ';');
 
 		// #2 Handle irrelevant data ---------------------------------------------------------------
-		String[] header = hasHeader ? data[0] : null;
-		String[][] content = hasHeader
+		String[] header = HAS_HEADER ? data[0] : null;
+		String[][] content = HAS_HEADER
 						   ? Arrays.copyOfRange(data, 1, data.length)
 						   : Arrays.copyOfRange(data, 0, data.length); 
 
@@ -64,7 +64,7 @@ public class BudgetFK {
 	  */
 	private static int getTotalBudget(String[][] data) {
 		int result = 0;
-		int row =  hasHeader ? 1 : 0;
+		int row =  HAS_HEADER ? 1 : 0;
 		while (row < data.length) {
 			if (isInt(data[row][2])) {
 				result += Integer.parseInt(data[row][2]);
