@@ -72,7 +72,7 @@ public class Main {
 
 * Day27
   * Day27Part01.advancedChessMove();
-	* Day27Part01.simpleChessMove();
+  * Day27Part01.simpleChessMove();
 
 * Day24
   * Day24Part01.additionalMethodsForDay23();
