@@ -10,7 +10,7 @@ public class Day27Part01 {
 	static final int END_COL = 7;
 	static Random random = new Random();
 
-	// Config two nights
+	// Config two knights
 	static final int START_ROW_ONE = 0;
 	static final int START_COL_ONE = 0;
 	static final int START_ROW_TWO = 7;
