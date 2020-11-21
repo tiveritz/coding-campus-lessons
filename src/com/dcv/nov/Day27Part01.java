@@ -15,8 +15,8 @@ public class Day27Part01 {
 	static int startColOne = 0;
 	static int startRowTwo = 7;
 	static int startColTwo = 7;
-	static char playerOne = 'X';
-	static char playerTwo = 'Z';
+	static char playerOne = 'A';
+	static char playerTwo = 'B';
 
 	public static void simpleChessMove() {
 		int row = startRow;
@@ -46,7 +46,9 @@ public class Day27Part01 {
 
 		printChessField(rowOne, colOne, rowTwo, colTwo);
 
-		// This is not very beautiful, lots of duplicate stuff...
+		// This while loop is not very beautiful, lots of duplicate stuff...
+		// Also the result will be predictable (who wins) -> it would be beneficial to randomly
+		// choose who starts
 		while (!isEnd) {
 			int[] moveOne  = moveByChance(rowOne, colOne);
 			rowOne = moveOne [0];
@@ -55,11 +57,11 @@ public class Day27Part01 {
 
 			if (isEnd) {
 				printChessField(rowOne, colOne, playerOne);
-				timeSleep(400);
+				timeSleep(40);
 				break;
 			} else {
 				printChessField(rowOne, colOne, rowTwo, colTwo);
-				timeSleep(400);
+				timeSleep(40);
 			}
 
 			int[] moveTwo  = moveByChance(rowTwo, colTwo);
@@ -69,11 +71,11 @@ public class Day27Part01 {
 			
 			if (isEnd) {
 				printChessField(rowTwo, colTwo, playerTwo);
-				timeSleep(400);
+				timeSleep(40);
 				break;
 			} else {
 				printChessField(rowOne, colOne, rowTwo, colTwo);
-				timeSleep(400);
+				timeSleep(40);
 			}
 		}
 	}
