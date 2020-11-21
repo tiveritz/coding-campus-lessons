@@ -32,6 +32,7 @@ public class Main {
 		// BudgetFK.driver();
 
 		// November
+		Day27Part01.simpleChessMove();
 		// Day24Part01.additionalMethodsForDay23();
 		// Day23Part01.helloWorldFileReader();
 		// Day22Part01.hoursList();
