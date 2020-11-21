@@ -1,6 +1,8 @@
-###### Day 26 (Wed)
-    * Continue project data evaluation Feldkirch
+###### Day 27 (Sat)
+    * Chess example
 
+###### Day 26 (Thu)
+    * Continue project data evaluation Feldkirch
 
 ###### Day 25 (Tue)
     * Start project data evalulation Feldkirch

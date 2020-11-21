@@ -70,6 +70,10 @@ public class Main {
 <details>
   <summary>Expand "November"</summary>
 
+* Day27
+  * Day27Part01.advancedChessMove();
+	* Day27Part01.simpleChessMove();
+
 * Day24
   * Day24Part01.additionalMethodsForDay23();
 
