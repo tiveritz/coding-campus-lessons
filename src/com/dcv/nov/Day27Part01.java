@@ -4,23 +4,23 @@ import java.util.Random;
 
 public class Day27Part01 {
 	// Config single knight
-	static int startRow = 0;
-	static int startCol = 0;
-	static int endRow = 7;
-	static int endCol = 7;
+	static final int START_ROW = 0;
+	static final int START_COL = 0;
+	static final int END_ROW = 7;
+	static final int END_COL = 7;
 	static Random random = new Random();
 
 	// Config two nights
-	static int startRowOne = 0;
-	static int startColOne = 0;
-	static int startRowTwo = 7;
-	static int startColTwo = 7;
-	static char playerOne = 'A';
-	static char playerTwo = 'B';
+	static final int START_ROW_ONE = 0;
+	static final int START_COL_ONE = 0;
+	static final int START_ROW_TWO = 7;
+	static final int START_COL_TWO = 7;
+	static final char PLAYER_ONE = 'A';
+	static final char PLAYER_TWO = 'B';
 
 	public static void simpleChessMove() {
-		int row = startRow;
-		int col = startCol;
+		int row = START_ROW;
+		int col = START_COL;
 		char player = 'X';
 		boolean isEnd = false;
 
@@ -37,10 +37,10 @@ public class Day27Part01 {
 	}
 
 	public static void advancedChessMove() {
-		int rowOne = startRowOne;
-		int colOne = startColOne;
-		int rowTwo = startRowTwo;
-		int colTwo = startColTwo;
+		int rowOne = START_ROW_ONE;
+		int colOne = START_COL_ONE;
+		int rowTwo = START_ROW_TWO;
+		int colTwo = START_COL_TWO;
 
 		boolean isEnd = false;
 
@@ -56,12 +56,12 @@ public class Day27Part01 {
 			isEnd = checkCollision(rowOne, colOne, rowTwo, colTwo);
 
 			if (isEnd) {
-				printChessField(rowOne, colOne, playerOne);
-				timeSleep(40);
+				printChessField(rowOne, colOne, PLAYER_ONE);
+				timeSleep(300);
 				break;
 			} else {
 				printChessField(rowOne, colOne, rowTwo, colTwo);
-				timeSleep(40);
+				timeSleep(300);
 			}
 
 			int[] moveTwo  = moveByChance(rowTwo, colTwo);
@@ -70,12 +70,12 @@ public class Day27Part01 {
 			isEnd = checkCollision(rowOne, colOne, rowTwo, colTwo);
 			
 			if (isEnd) {
-				printChessField(rowTwo, colTwo, playerTwo);
-				timeSleep(40);
+				printChessField(rowTwo, colTwo, PLAYER_TWO);
+				timeSleep(300);
 				break;
 			} else {
 				printChessField(rowOne, colOne, rowTwo, colTwo);
-				timeSleep(40);
+				timeSleep(300);
 			}
 		}
 	}
@@ -88,8 +88,8 @@ public class Day27Part01 {
 
 	private static void printChessField(int rowOne, int colOne, int rowTwo, int colTwo) {
 		char[][] chessField = new char[8][8];
-		chessField[rowOne][colOne] = playerOne;
-		chessField[rowTwo][colTwo] = playerTwo;
+		chessField[rowOne][colOne] = PLAYER_ONE;
+		chessField[rowTwo][colTwo] = PLAYER_TWO;
 		printChessField(chessField);
 	}
 
@@ -174,7 +174,7 @@ public class Day27Part01 {
 	private static boolean checkEnd(int row, int col) {
 		boolean isEnd = false;
 
-		if (row == endRow && col == endCol) {
+		if (row == END_ROW && col == END_COL) {
 			isEnd = true;
 		}
 		return isEnd;
