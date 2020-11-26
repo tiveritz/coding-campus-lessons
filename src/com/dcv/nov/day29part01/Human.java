@@ -11,7 +11,7 @@ public class Human {
 	private String dateOfBirth;
 	private String placeOfBirth;
 	private String gender;
-	Date date = new Date();
+	private Date date = new Date();
 	private Calendar calendar = new GregorianCalendar();
 	
 	Human(String firstName, String lastName, String dateOfBirth, String placeOfBirth, String gender) {
