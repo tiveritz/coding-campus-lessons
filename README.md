@@ -70,6 +70,9 @@ public class Main {
 <details>
   <summary>Expand "November"</summary>
 
+* Day29
+  * day29part01 --> go to folder src/dcv/nov/day29part01 and run Main()
+
 * Day27
   * Day27Part01.advancedChessMove();
   * Day27Part01.simpleChessMove();
