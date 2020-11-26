@@ -32,7 +32,8 @@ public class Main {
 		// BudgetFK.driver();
 
 		// November
-		// Day29Part01 --> go to folder src/dcv/nov/day29part01 and run Main()
+		// day29part02 --> go to folder src/dcv/nov/day29part01 and run Main()
+		// day29part01 --> go to folder src/dcv/nov/day29part01 and run Main()
 		// Day27Part01.advancedChessMove();
 		// Day27Part01.simpleChessMove();
 		// Day24Part01.additionalMethodsForDay23();
