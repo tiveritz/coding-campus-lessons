@@ -11,24 +11,18 @@ public class Human {
 	private String dateOfBirth;
 	private String placeOfBirth;
 	private String gender;
-	private Date date;
-	private int day;
-	private int month;
-	private int year;
+	private Calendar calendar = new GregorianCalendar();
 	
 	Human(String firstName, String lastName, String dateOfBirth, String placeOfBirth, String gender) {
+		Date date = new Date();
+		
 		try {
-			this.date = new SimpleDateFormat("dd.MM.yyyy").parse(dateOfBirth);
+			date = new SimpleDateFormat("dd.MM.yyyy").parse(dateOfBirth);
 		} catch (Exception e) {
 			System.out.println("badly handled exception");
 		}
-		Calendar calendar = new GregorianCalendar();
 		calendar.setTime(date);
-		this.day = calendar.get(Calendar.DAY_OF_MONTH);
-		this.month = calendar.get(Calendar.MONTH);
-		this.year = calendar.get(Calendar.YEAR);
 
-		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
@@ -57,6 +51,20 @@ public class Human {
 	}
 
 	public int getBirthDay() {
-		return day;
+		return calendar.get(Calendar.DAY_OF_MONTH);
+	}
+
+	public int getBirthMonth() {
+		return calendar.get(Calendar.MONTH) + 1;
+	}
+
+	public int getBirthYear() {
+		return calendar.get(Calendar.YEAR);
+	}
+	
+
+	@Override
+	public String toString() {
+		return "{\"firstName\": \"" + firstName + "\", \"lastName\": \"" + lastName + "\", \"gener\": \"" + gender + "\"}";
 	}
 }
