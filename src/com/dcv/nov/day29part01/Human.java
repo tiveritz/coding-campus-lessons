@@ -11,23 +11,22 @@ public class Human {
 	private String dateOfBirth;
 	private String placeOfBirth;
 	private String gender;
+	Date date = new Date();
 	private Calendar calendar = new GregorianCalendar();
 	
 	Human(String firstName, String lastName, String dateOfBirth, String placeOfBirth, String gender) {
-		Date date = new Date();
-		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
+		this.placeOfBirth = placeOfBirth;
+		this.gender = gender;
+
 		try {
 			date = new SimpleDateFormat("dd.MM.yyyy").parse(dateOfBirth);
 		} catch (Exception e) {
 			System.out.println("badly handled exception");
 		}
 		calendar.setTime(date);
-
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.dateOfBirth = dateOfBirth;
-		this.placeOfBirth = placeOfBirth;
-		this.gender = gender;
 	}
 
 	public String getFirstName() {
