@@ -69,16 +69,18 @@ public class Camera {
 		this.owner = owner;
 	}
 
-	public void printProductSheet() {
-		System.out.println("-----------------------------------");
-		System.out.println(this.name + "\n");
-		System.out.printf("%-16s %-20s%n", "Resolution:", this.resolution);
-		System.out.printf("%-16s %-20s%n", "Focal length:", this.focalLength);
+	public String getProductSheet() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("-----------------------------------\n")
+		  .append(this.name + "\n")
+		  .append(String.format("%-16s %-20s%n", "Resolution:", this.resolution))
+		  .append(String.format("%-16s %-20s%n", "Focal length:", this.focalLength));
 
 		System.out.println("Awesome Features:");
 		for (String feature : features) {
-			System.out.printf("%-3s %-20s%n", "- ", feature);
+			sb.append(String.format("%-3s %-20s%n", "- ", feature));
 		}
+		return sb.toString();
 	}
 	
 }

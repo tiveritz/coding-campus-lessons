@@ -1,21 +1,15 @@
 package src.com.dcv.nov.day29part02;
 
 
-/* Erstellt euer eigenes FotoApparat Objekt, implementiert getter und setter für einzelne Werte.
- * z.B.
- * ● genaue Bezeichnung (set und get)
- * ● Megapixel (set und get)
- * ● Brennweite (set und get)
- * ● Herkunftsland (set und get)
- * ● Funktionen (mehrere, z.B. Selbstauslöser, Film, …) (set und get)
- * ● Besitzer (set und get)
- * ● Produktblatt (get) ⇒ konkateniert einzelne Werte zu einem schönen Produktblatt und
- * gibt den formatierten String zurück
- * ● ...
- * Googelt nach 2-3 Kameras und setzt die technischen Werte analog der
- * gegoogelten Kameras. Am Ende benötigen wir ein Produktblatt der einzelnen
- * Geräte (Konsolenausgabe).
- */
+ /* Create a camera object and implement get and set methods for the values.
+  * name (set / get)
+  * resolution (set / get)
+  * focal length (set / get)
+  * country of origin (set / get)
+  * functions (multiple) (set / get)
+  * owner (set / get)
+  * product data sheet (get) -> add values and return formatted String
+  */
 
 public class Main {
 	public static void main (String[] args) {
@@ -57,7 +51,7 @@ public class Main {
 		cam1.setResolution(55.0);
 		cam1.addFeature("8K Movie");
 		cam1.addFeature("RAW Images");
-		cam1.printProductSheet();
+		System.out.println(cam1.getProductSheet());
 
 	}
 }
