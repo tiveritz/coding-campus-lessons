@@ -14,7 +14,7 @@ public class Main {
 	public static void printHuman(Human h) {
 		System.out.printf("%-16s %-16s %-16s %-16s %-16s%n", h.getFirstName(), h.getLastName(), h.getDateOfBirth(), h.getPlaceOfBirth(), h.getGender());
 		System.out.println(h.toString());
-		System.out.println("Date Of Birth (Tag) " + h.getBirthYear());
+		System.out.println("Date Of Birth (Tag) " + h.getBirthDay());
 	}
 }
 
