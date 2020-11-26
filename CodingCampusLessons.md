@@ -1,3 +1,9 @@
+###### Day 29 (Thu)
+    * Start OOP (Object Oriented Programming)
+
+###### Day 28 (Tue)
+    * Repetition
+
 ###### Day 27 (Sat)
     * Chess example
 
