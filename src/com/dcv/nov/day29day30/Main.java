@@ -1,4 +1,4 @@
-package src.com.dcv.nov.day29part02;
+package src.com.dcv.nov.day29day30;
 
 
  /* Create a camera object and implement get and set methods for the values.

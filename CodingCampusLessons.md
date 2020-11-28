@@ -1,5 +1,12 @@
+###### Day 30 (Wed)
+    * Access modifier
+    * Final
+    * getter, setter
+
 ###### Day 29 (Thu)
     * Start OOP (Object Oriented Programming)
+    * getter, setter
+    * @Override
 
 ###### Day 28 (Tue)
     * Repetition
