@@ -6,21 +6,22 @@ import java.util.Vector;
 public class Camera {
 	private String name;
 	private double resolution;
-	private double focalLength;
+	private Lens lens;
 	private String countryOfOrigin;
 	private Vector<String> features = new Vector<String>();
 	private String owner;
 	
-	Camera(String name, double resolution, double focalLength, String countryOfOrigin,
+	Camera(String name, double resolution, Lens lens, String countryOfOrigin,
 		   String[] initFeatures, String owner) {
 		this.name = name;
 		this.resolution = resolution;
-		this.focalLength = focalLength;
+		this.lens = lens;
 		this.countryOfOrigin = countryOfOrigin;
 		Collections.addAll(features, initFeatures);
 		this.owner = owner;
 	}
 
+	// getter --------------------------------------------------------------------------------------
 	public String getName() {
 		return name;
 	}
@@ -29,8 +30,8 @@ public class Camera {
 		return resolution;
 	}
 
-	public double getFocalLength() {
-		return focalLength;
+	public String getFocalLengths() {
+		return lens.toString();
 	}
 
 	public String getCountryOfOrigin() {
@@ -45,16 +46,27 @@ public class Camera {
 		return owner;
 	}
 
+	public String getProductSheet() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("\n-----------------------------------\n")
+		  .append(this.name + "\n")
+		  .append(String.format("%-16s %-20s%n", "Resolution:", this.resolution))
+		  .append("Current lens: " + lens.toString() + "\n");
+
+		System.out.println("Awesome Features:");
+		for (String feature : features) {
+			sb.append(String.format("%-3s %-20s%n", "- ", feature));
+		}
+		return sb.toString();
+	}
+
+	// setter --------------------------------------------------------------------------------------
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	public void setResolution(double resolution) {
 		this.resolution = resolution;
-	}
-
-	public void setFocalLength(double focalLength) {
-		this.focalLength = focalLength;
 	}
 
 	public void setCountryOfOrigin(String countryOfOrigin) {
@@ -69,18 +81,7 @@ public class Camera {
 		this.owner = owner;
 	}
 
-	public String getProductSheet() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("-----------------------------------\n")
-		  .append(this.name + "\n")
-		  .append(String.format("%-16s %-20s%n", "Resolution:", this.resolution))
-		  .append(String.format("%-16s %-20s%n", "Focal length:", this.focalLength));
-
-		System.out.println("Awesome Features:");
-		for (String feature : features) {
-			sb.append(String.format("%-3s %-20s%n", "- ", feature));
-		}
-		return sb.toString();
+	public void setLens(Lens lens) {
+		this.lens = lens;
 	}
-	
 }
