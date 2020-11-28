@@ -27,30 +27,10 @@ public class Main {
 		Camera cam2 = new Camera("Sony Alpha 5100", 32, l2, "Bangladesh", cam2Features, "Markmayr");
 
 		// Test if cam1 worked
-		System.out.println("\nCam1 -------------------------------");
-		System.out.println(cam1.getName() + ", " +
-						   cam1.getResolution() + ", " +
-						   cam1.getFocalLengths() + ", " +
-						   cam1.getCountryOfOrigin() + ", " +
-						   cam1.getOwner());
-	
-		for (String feature : cam1.getFeatures()) {
-			System.out.print(feature + ", ");
-		}
-		System.out.println();
+		printCam(cam1);
 
 		// Test if cam2 worked
-		System.out.println("\nCam2 --------------------------------");
-		System.out.println(cam2.getName() + ", " +
-						   cam2.getResolution() + ", " +
-						   cam2.getFocalLengths() + ", " +
-						   cam2.getCountryOfOrigin() + ", " +
-						   cam2.getOwner());
-	
-		for (String feature : cam2.getFeatures()) {
-			System.out.print(feature + ", ");
-		}
-		System.out.println();
+		printCam(cam2);
 
 		// Change some values in cam 1 and print product sheet:
 		Lens l3 = new Lens("Ultrawide lens", 14, 25);
@@ -61,6 +41,21 @@ public class Main {
 		cam1.addFeature("RAW Images");
 
 		System.out.println(cam1.getProductSheet());
+
+	}
+
+	public static void printCam(Camera cam) {
+		System.out.println("\n-----------------------------------");
+		System.out.println(cam.getName() + ", " +
+						   cam.getResolution() + ", " +
+						   cam.getFocalLengths() + ", " +
+						   cam.getCountryOfOrigin() + ", " +
+						   cam.getOwner());
+	
+		for (String feature : cam.getFeatures()) {
+			System.out.print(feature + ", ");
+		}
+		System.out.println();
 
 	}
 }
