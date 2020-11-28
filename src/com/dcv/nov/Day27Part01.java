@@ -190,11 +190,11 @@ public class Day27Part01 {
 	}
 
 	public static void timeSleep(int milliseconds) {
-        try {
-            Thread.sleep(milliseconds);
-        } catch (InterruptedException ie) {
-            // I don't care about that
-        }
+		try {
+			Thread.sleep(milliseconds);
+		} catch (InterruptedException ie) {
+			// I don't care about that
+		}
 	}
 	
 	public static boolean checkCollision(int rowOne, int colOne, int rowTwo, int colTwo) {
