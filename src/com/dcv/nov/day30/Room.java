@@ -17,6 +17,4 @@ public final class Room {
 		String location = String.format("%s, sector %s, floor %d, room %d", building.getName(), sector, floor, roomNumber);
 		return location;
 	}
-
-	
 }

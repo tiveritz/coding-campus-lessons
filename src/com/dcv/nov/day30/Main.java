@@ -33,7 +33,5 @@ public class Main {
 
 		// Print course
 		System.out.println(codingCampus.toString());
-
 	}
-	
 }
