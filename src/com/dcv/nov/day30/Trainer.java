@@ -1,6 +1,6 @@
 package src.com.dcv.nov.day30;
 
-public class Trainer {
+public final class Trainer {
 	private String name;
 
 	Trainer(String name) {

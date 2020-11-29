@@ -1,6 +1,6 @@
 package src.com.dcv.nov.day30;
 
-public class Room {
+public final class Room {
 	private Building building;
 	private char sector;
 	private int floor;
@@ -14,7 +14,7 @@ public class Room {
 	}
 
 	public String getFullLocation() {
-		String location = String.format("%s sector %s floor %d room %d", building.getName(), sector, floor, roomNumber);
+		String location = String.format("%s, sector %s, floor %d, room %d", building.getName(), sector, floor, roomNumber);
 		return location;
 	}
 

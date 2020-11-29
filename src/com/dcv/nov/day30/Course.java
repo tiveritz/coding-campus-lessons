@@ -2,7 +2,7 @@ package src.com.dcv.nov.day30;
 
 import java.util.Vector;
 
-public class Course {
+public final class Course {
 	private String name;
 	private Room room;
 	private Vector<Participant> participants = new Vector<Participant>();
@@ -24,9 +24,9 @@ public class Course {
 	@Override
 	public String toString() {
 		String string = "Course name: " + name +
-						"\nRoom: " + room.getFullLocation() + "\n" +
+						"\nLocation: " + room.getFullLocation() + "\n" +
 						"Trainers: " + trainersToString(trainers) + "\n" +
-						"Trainers: " + participantsToString(participants) + "\n";
+						"Participants: " + participantsToString(participants) + "\n";
 		return string;
 	}
 
@@ -34,7 +34,7 @@ public class Course {
 		String p = "";
 		
 		for(Participant participant : participants) {
-			p += participant.getName() + ", ";
+			p += participant.getName() + " ";
 		}
 		return p;
 	}
@@ -43,7 +43,7 @@ public class Course {
 		String t = "";
 		
 		for(Trainer trainer : trainers) {
-			t += trainer.getName() + ", ";
+			t += trainer.getName() + " ";
 		}
 		return t;
 	}

@@ -1,6 +1,6 @@
 package src.com.dcv.nov.day30;
 
-public class Participant {
+public final class Participant {
 	private String name;
 
 	Participant(String name) {

@@ -1,6 +1,6 @@
 package src.com.dcv.nov.day30;
 
-public class Building {
+public final class Building {
 	private String name;
 	
 	Building(String name) {
