@@ -16,8 +16,7 @@ final public class Address {
 	}
 
 	public String[] getAddress() {
-		String[] fullAddress = {this.street, this.house, this.postalCode, this.city, this.country};
-		return fullAddress;
+		return new String[] {this.street, this.house, this.postalCode, this.city, this.country};
 	}
 	
 }
