@@ -1,3 +1,8 @@
+###### Day 31 (Thu)
+    * Repetition OOP
+    * Classes, Constructors
+    * getter, setter
+
 ###### Day 30 (Wed)
     * Access modifier
     * Final
