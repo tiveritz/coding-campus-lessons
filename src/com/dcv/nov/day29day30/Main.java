@@ -18,13 +18,20 @@ public class Main {
 		Lens l1 = new Lens("Big lens", 17, 30);
 		Lens l2 = new Lens("Small lens", 20, 28);
 
+		// Create Memory card
+		MemoryCard m1 = new MemoryCard("SanDisk", 128.0);
+
 		
 		// Construct Cameras
 		String[] cam1Features = {"Autofocus", "4K Video", "Nuclear Blast Protection"};
-		Camera cam1 = new Camera("Panasonic DC-LX100M2", 20, l1, "China", cam1Features, "Blassmoyr");
+		Camera cam1 = new Camera("Panasonic DC-LX100M2", 20, "China", cam1Features);
+		cam1.setMemoryCard(m1);
+		cam1.setLens(l1);
+		cam1.setOwner("Blassmoyr");
 
 		String[] cam2Features = {"Autofocus", "Roflcopter Animation", "5x Optical Zoom"};
-		Camera cam2 = new Camera("Sony Alpha 5100", 32, l2, "Bangladesh", cam2Features, "Markmayr");
+		Camera cam2 = new Camera("Sony Alpha 5100", 32, "Taiwan", cam2Features);
+		cam2.setLens(l2);
 
 		// Test if cam1 worked
 		printCam(cam1);
@@ -36,11 +43,15 @@ public class Main {
 		Lens l3 = new Lens("Ultrawide lens", 14, 25);
 		cam1.setLens(l3);
 
-		cam1.setResolution(55.0);
 		cam1.addFeature("8K Movie");
 		cam1.addFeature("RAW Images");
 
 		System.out.println(cam1.getProductSheet());
+
+		System.out.printf("%s %.1f %s%n", "Current storage", cam1.getStorage(), "MB");
+		cam1.makePicture();
+		cam1.makePicture();
+		System.out.printf("%s %.1f %s%n", "Current storage", cam1.getStorage(), "MB");
 
 	}
 

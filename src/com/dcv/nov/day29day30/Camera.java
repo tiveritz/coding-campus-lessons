@@ -9,16 +9,19 @@ public class Camera {
 	private Lens lens;
 	private String countryOfOrigin;
 	private Vector<String> features = new Vector<String>();
+	private MemoryCard memoryCard;
 	private String owner;
+	private double picSize;
 	
-	Camera(String name, double resolution, Lens lens, String countryOfOrigin,
-		   String[] initFeatures, String owner) {
+	Camera(String name, double resolution, String countryOfOrigin, String[] initFeatures) {
 		this.name = name;
 		this.resolution = resolution;
-		this.lens = lens;
+		this.lens = null;
 		this.countryOfOrigin = countryOfOrigin;
 		Collections.addAll(features, initFeatures);
-		this.owner = owner;
+		this.owner = "";
+		this.picSize = this.resolution / 4.2; // just as a example
+		this.memoryCard = null;
 	}
 
 	// getter --------------------------------------------------------------------------------------
@@ -27,7 +30,7 @@ public class Camera {
 	}
 
 	public double getResolution() {
-		return resolution;
+		return resolution; 
 	}
 
 	public String getFocalLengths() {
@@ -50,7 +53,7 @@ public class Camera {
 		StringBuilder sb = new StringBuilder();
 		sb.append("\n-----------------------------------\n")
 		  .append(this.name + "\n")
-		  .append(String.format("%-16s %-20s%n", "Resolution:", this.resolution))
+		  .append(String.format("%s %s %s%n", "Resolution:", this.resolution, "MP"))
 		  .append("Current lens: " + lens.toString() + "\n");
 
 		System.out.println("Awesome Features:");
@@ -60,19 +63,11 @@ public class Camera {
 		return sb.toString();
 	}
 
+	public double getStorage() {
+		return this.memoryCard.getStorage();
+	}
+
 	// setter --------------------------------------------------------------------------------------
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setResolution(double resolution) {
-		this.resolution = resolution;
-	}
-
-	public void setCountryOfOrigin(String countryOfOrigin) {
-		this.countryOfOrigin = countryOfOrigin;
-	}
-
 	public void addFeature(String feature) {
 		features.add(feature);
 	}
@@ -83,5 +78,18 @@ public class Camera {
 
 	public void setLens(Lens lens) {
 		this.lens = lens;
+	}
+
+	public void setMemoryCard(MemoryCard memoryCard) {
+		this.memoryCard = memoryCard;
+	}
+
+	public void makePicture() {
+		if (this.memoryCard == null) {
+			System.out.println("No memory card installed");
+		}
+		if (!this.memoryCard.save(this.picSize)) {
+			System.out.println("Storage full");
+		}
 	}
 }
