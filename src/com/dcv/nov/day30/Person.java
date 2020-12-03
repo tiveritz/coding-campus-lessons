@@ -10,7 +10,7 @@ public abstract class Person {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
-		this.type = type;
+		this.type = type; // Probably useless, but just for testing
 	}
 
 	public String getFullName() {
@@ -23,5 +23,4 @@ public abstract class Person {
 	public String getType() {
 		return this.type;
 	}
-
 }
