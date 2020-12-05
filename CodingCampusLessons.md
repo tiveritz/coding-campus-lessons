@@ -1,12 +1,20 @@
-###### Day 31 (Thu)
+###### Day 33 (Sat)
+    * Object references
+
+###### Day 32 (Thu)
     * Repetition OOP
     * Classes, Constructors
     * getter, setter
 
-###### Day 30 (Wed)
+###### Day 31 (Tue)
     * Access modifier
     * Final
     * getter, setter
+
+###### Day 30 (Sat)
+    * UML diagram
+    * Inheritance basic
+    * Abstract classes
 
 ###### Day 29 (Thu)
     * Start OOP (Object Oriented Programming)
