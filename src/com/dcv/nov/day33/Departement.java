@@ -11,6 +11,7 @@ public class Departement {
 	Departement(String depName, String boss, Departement topDepartement) {
 		this.depName = depName;
 		this.boss = boss;
+		this.topDepartement = topDepartement;
 		subDepartement = new Vector<>();
 
         if (topDepartement != null){
