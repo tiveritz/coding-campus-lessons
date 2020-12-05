@@ -29,11 +29,10 @@ public class Department {
 		}
 
 		sb.append(depName + " : " + boss + "\n");
-		identation += 4;
 
 		if (this.subDepartment != null) {
 			for (Department dep : this.subDepartment) {
-				sb.append(dep.toString(identation + 4));
+				sb.append(dep.toString(identation + 2));
 			}
 		}
 

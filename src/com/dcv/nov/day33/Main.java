@@ -9,11 +9,8 @@ public class Main {
 		Department einkaufEuropa = new Department("Einkauf Europa", "But Moritz");
 		Department einkaufKleinteile = new Department("Einkauf Kleinteile", "Leiter Friedrich Hermann");
 		
-		
-		
 		Department[] einkaufGrossteileSub = {einkaufEuropa};
 		Department einkaufGrossteile = new Department("Einkauf Großteile", "Leiterin Peter Hannelore", einkaufGrossteileSub);
-		
 		
 		Department[] einkaufMechanikSub = {einkaufKleinteile, einkaufGrossteile};
 		Department einkaufMechanik = new Department("Einkauf Mechanik", "Gunz Herlinde", einkaufMechanikSub);
