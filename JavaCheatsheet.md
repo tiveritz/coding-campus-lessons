@@ -163,7 +163,7 @@ static ....... memory management keyword (static -> doesn't belong to a specific
 void ......... return type (void -> returns no value)
 helloWorld ... method name
 () ........... method parameters (can be empty -> "method takes no parameters")
-{} ........... function body
+{} ........... method body
 
 access modifier
 private ..... access only within the class
@@ -178,6 +178,10 @@ primitive types (int, boolean, double)
 Arrays, Strings...
 void -> nothing gets returned
 ```
+
+#### Functions
+There are no functions in Java. To mimic the behaviour of functions in Java
+use static methods.
 
 #### Conditional Statement
 ```
