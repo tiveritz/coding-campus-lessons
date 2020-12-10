@@ -1,4 +1,4 @@
-package src.com.dcv.nov.day34;
+package src.com.dcv.nov.day34version2;
 
 import java.util.Vector;
 
@@ -16,15 +16,11 @@ public class Enclosure {
 		sb.append("  L ")
 		  .append("Enclosure with ")
 		  .append(fence)
-		  .append("\n")
-		  .append("    L ");
+		  .append("\n");
 		
 		if (animals != null) {
-			for (int i = 0; i < animals.size(); i++) {
-				if (i > 0) {
-					sb.append(", ");
-				}
-				sb.append(animals.get(i).toString());
+			for (Animal animal : animals) {
+				sb.append("      L ").append(animal.toString()).append("\n");
 			}
 		}
 		return sb.toString();

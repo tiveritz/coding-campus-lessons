@@ -1,4 +1,4 @@
-package src.com.dcv.nov.day34;
+package src.com.dcv.nov.day34version2;
 
 public class Food {
 	private String name;
@@ -16,8 +16,20 @@ public class Food {
 	public String toString() {
 		return amount + " " + unit + " " + name;
 	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public String getUnit() {
+		return unit;
+	}
+
+	public String getName() {
+		return name;
+	}
 	
-		public void addQuantity(int a) {
-			amount += a;
-		}
+	public void addQuantity(int a) {
+		amount += a;
+	}
 }

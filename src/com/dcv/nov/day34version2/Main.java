@@ -1,4 +1,4 @@
-package src.com.dcv.nov.day34;
+package src.com.dcv.nov.day34version2;
 
 /*
 Erstellt ein Objekt “Zoo” , dieses Objekt beinhaltet eine Vielzahl an Gehegen, welche
@@ -18,32 +18,37 @@ Arten.
 
 public class Main {
 	public static void main(String[] args) {
-		Zoo zoo = new Zoo("Awesome Zoo", "The knight who say ni");
+		Zoo zoo = new Zoo("awesome Zoo", "The knight who say ni");
+
+
+
+
+		/*
 		Enclosure lionCage = new Enclosure(zoo, "high metal fence");
 		Enclosure tigerCage = new Enclosure(zoo, "metal fence");
 		Enclosure antarctisTank = new Enclosure(zoo, "big cold water tank");
 		Enclosure meshFenceCover = new Enclosure(zoo, "5m cover thingy");
+		Enclosure winterMountain = new Enclosure(zoo, "Mountain");
 
 		Food lionAndTigerFood = new Food(zoo, "Meat", "kg");
 		Food penguinFood = new Food(zoo, "Fish", "small");
 		Food hummingbirdFood = new Food(zoo, "Sugarwater", "ml");
 
 		for (int i = 0; i < 5; i++) {
-			Animal lion = new Animal(lionCage, "lion", "lion" + i, lionAndTigerFood);
-			lion.feed(3);
-			Animal tiger = new Animal(tigerCage, "tiger", "tiger" + i, lionAndTigerFood);
-			tiger.feed(2);
-			Animal penguin = new Animal(antarctisTank, "penguine", "pinguin" + i, penguinFood);
-			penguin.feed(6);
-			Animal hummingbird = new Animal(meshFenceCover, "hummingbird", "hummbird" + i, hummingbirdFood);
-			hummingbird.feed(50);
+			Animal lion = new Animal(lionCage, "lion", "lion" + i, lionAndTigerFood, 3);
+			Animal tiger = new Animal(tigerCage, "tiger", "tiger" + i, lionAndTigerFood, 2);
+			Animal penguin = new Animal(antarctisTank, "penguine", "pinguin" + i, penguinFood, 6);
+			Animal hummingbird = new Animal(meshFenceCover, "hummingbird", "hummbird" + i, hummingbirdFood, 50);
 		}
+
+		Animal alpNashorn = new Animal(winterMountain, "AlpNashorn", "nasi das nashorn", lionAndTigerFood, 20);
 
 		System.out.println("\nprint zoo structure --------------");
 		System.out.println(zoo.getStructure());
 		System.out.println("\nprint number of animals ----------");
-		System.out.println(zoo.getNumberOfAnimals());
+		System.out.println("Zoo has " + zoo.getNumberOfAnimals() + " animals");
 		System.out.println("\nprint food demand ----------------");
 		zoo.printFoodDemand();
+		*/
 	}	
 }
