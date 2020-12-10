@@ -70,13 +70,19 @@ public class Main {
 <details>
   <summary>Expand "November"</summary>
 
+* Day34
+  * day34 --> go to folder src/dcv/nov/day34 and run main() in Main
+
+* Day33
+  * day33 --> go to folder src/dcv/nov/day33 and run main() in Main
+
 * Day30
   * day30 --> go to folder src/dcv/nov/day30 and run main() in Main
-  * day29day30 --> go to folder src/dcv/nov/day29day30 and run Main()
+  * day29day30 --> go to folder src/dcv/nov/day29day30 and run Main
 
 * Day29
   * day29day30 --> go to folder src/dcv/nov/day29day30 and run Main()
-  * day29part01 --> go to folder src/dcv/nov/day29part01 and run Main()
+  * day29part01 --> go to folder src/dcv/nov/day29part01 and run Main
 
 * Day27
   * Day27Part01.advancedChessMove();

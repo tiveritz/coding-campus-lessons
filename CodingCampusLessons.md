@@ -1,3 +1,7 @@
+###### Day 34 Wed)
+    * Object Association
+    * Object Composition
+
 ###### Day 33 (Sat)
     * Object references
 
