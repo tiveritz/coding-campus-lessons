@@ -18,12 +18,23 @@ Arten.
 
 public class Main {
 	public static void main(String[] args) {
-		Zoo zoo = new Zoo("ni ni ni zoo", "The knight who say ni");
-		Enclosure lionCage = new Enclosure(zoo, "metal fence");
+		Zoo zoo = new Zoo("Awesome Zoo", "The knight who say ni");
+		Enclosure lionCage = new Enclosure(zoo, "high metal fence");
+		Enclosure tigerCage = new Enclosure(zoo, "metal fence");
+		Enclosure antarctisTank = new Enclosure(zoo, "big cold water tank");
+		Enclosure meshFenceCover = new Enclosure(zoo, "5m cover thingy");
 
-		for (int i = 0; i < 4; i++) {
-			new Animal(lionCage, "lion");
+		for (int i = 0; i < 5; i++) {
+			new Animal(lionCage, "lion", "lion" + i, new Food(zoo, "Meat", 3, "kg"));
+			new Animal(tigerCage, "tiger", "tiger" + i, new Food(zoo, "Meat", 2, "kg"));
+			new Animal(antarctisTank, "pinguine", "pinguin" + i, new Food(zoo, "Fish", 6, "small fishes"));
+			new Animal(meshFenceCover, "hummingbird", "hummingbird" + i, new Food(zoo, "Sugarwater", 50, "ml"));
 		}
-		System.out.println(zoo);
+		System.out.println("\nprint zoo structure --------------");
+		System.out.println(zoo.getStructure());
+		System.out.println("\nprint number of animals ----------");
+		System.out.println(zoo.getNumberOfAnimals());
+		System.out.println("\nprint food demand ----------------");
+		zoo.printFoodDemand();
 	}	
 }

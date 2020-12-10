@@ -11,8 +11,7 @@ public class Enclosure {
 		zoo.addEnclosure(this);
 	}
 	
-	@Override
-	public String toString() {
+	public String getStructure() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("  L ")
 		  .append("Enclosure with ")
@@ -29,6 +28,14 @@ public class Enclosure {
 			}
 		}
 		return sb.toString();
+	}
+
+	public int getNumberOfAnimals() {
+		if (animals != null) {
+			return animals.size();
+		} else {
+			return 0;
+		}
 	}
 
 	public void addAnimal(Animal a) {
