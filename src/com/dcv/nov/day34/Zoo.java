@@ -53,7 +53,7 @@ public class Zoo {
 		public void printFoodDemand() {
 			if (food != null){
 				for (Food food : food) {
-					System.out.println(food.getAmount() + " " + food.getUnit() + " " + food.getName());
+					System.out.println(food);
 				}
 			}
 		}

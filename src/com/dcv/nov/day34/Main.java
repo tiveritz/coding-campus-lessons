@@ -24,22 +24,21 @@ public class Main {
 		Enclosure antarctisTank = new Enclosure(zoo, "big cold water tank");
 		Enclosure meshFenceCover = new Enclosure(zoo, "5m cover thingy");
 
-		Food lionFood = new Food(zoo, "Meat", "kg");
-		Food tigerFood = new Food(zoo, "Meat", "kg");
+		Food lionAndTigerFood = new Food(zoo, "Meat", "kg");
 		Food penguinFood = new Food(zoo, "Fish", "small");
 		Food hummingbirdFood = new Food(zoo, "Sugarwater", "ml");
 
-
 		for (int i = 0; i < 5; i++) {
-			Animal lion = new Animal(lionCage, "lion", "lion" + i, lionFood);
+			Animal lion = new Animal(lionCage, "lion", "lion" + i, lionAndTigerFood);
 			lion.feed(3);
-			Animal tiger = new Animal(tigerCage, "tiger", "tiger" + i, tigerFood);
+			Animal tiger = new Animal(tigerCage, "tiger", "tiger" + i, lionAndTigerFood);
 			tiger.feed(2);
 			Animal penguin = new Animal(antarctisTank, "penguine", "pinguin" + i, penguinFood);
 			penguin.feed(6);
 			Animal hummingbird = new Animal(meshFenceCover, "hummingbird", "hummbird" + i, hummingbirdFood);
 			hummingbird.feed(50);
 		}
+
 		System.out.println("\nprint zoo structure --------------");
 		System.out.println(zoo.getStructure());
 		System.out.println("\nprint number of animals ----------");

@@ -11,20 +11,13 @@ public class Food {
 		this.unit = unit;
 		zoo.addFood(this);
 	}
-
-	public String getName() {
-		return name;
+	
+	@Override
+	public String toString() {
+		return amount + " " + unit + " " + name;
 	}
-
-	public int getAmount() {
-		return amount;
-	}
-
-	public String getUnit() {
-		return unit;
-	}
-
-	public void addQuantity(int a) {
-		amount += a;
-	}
+	
+		public void addQuantity(int a) {
+			amount += a;
+		}
 }
