@@ -4,13 +4,17 @@ public class Animal {
 	private Enclosure enclosure;
 	private String species;
 	private String name;
-	private Food foodRequirenment;
+	private Food food;
 
-	public Animal(Enclosure enclosure, String species, String name, Food foodRequirenment) {
+	public Animal(Enclosure enclosure, String species, String name, Food food) {
 		enclosure.addAnimal(this);
 		this.species = species;
 		this.name = name;
-		this.foodRequirenment = foodRequirenment;
+		this.food = food;
+	}
+
+	public void feed(int quantity) {
+		food.addQuantity(quantity);
 	}
 	
 	@Override

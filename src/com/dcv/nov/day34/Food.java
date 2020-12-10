@@ -5,9 +5,9 @@ public class Food {
 	private int amount;
 	private String unit;
 
-	public Food(Zoo zoo, String name, int amount, String unit) {
+	public Food(Zoo zoo, String name, String unit) {
 		this.name = name;
-		this.amount = amount;
+		this.amount = 0;
 		this.unit = unit;
 		zoo.addFood(this);
 	}
@@ -22,5 +22,9 @@ public class Food {
 
 	public String getUnit() {
 		return unit;
+	}
+
+	public void addQuantity(int a) {
+		amount += a;
 	}
 }

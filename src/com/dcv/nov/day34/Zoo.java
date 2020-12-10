@@ -11,6 +11,7 @@ public class Zoo {
 	public Zoo(String name, String chairman) {
 		this.name = name;
 		this.chairman = chairman;
+		this.enclosures = new Vector<>();
 	}
 	
 	public String getStructure() {
