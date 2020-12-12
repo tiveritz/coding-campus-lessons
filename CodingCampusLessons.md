@@ -1,4 +1,8 @@
 ###### Day 34 Wed)
+    * OOP UML repetition
+    * OOP factory design pattern
+    
+###### Day 34 Wed)
     * Object Association
     * Object Composition
 
