@@ -1,21 +1,28 @@
-package src.com.dcv.nov.day34version2;
+package src.com.dcv.nov.day35version2;
 
 import java.util.Vector;
 
 public class Enclosure {
-	private String fence;
+	private String name;
 	private Vector<Animal> animals;
 
-	public Enclosure(Zoo zoo, String fence) {
-		this.fence = fence;
-		zoo.addEnclosure(this);
+	public Enclosure(String name) {
+		this.name = name;
+		animals = new Vector<>();
 	}
-	
+
+	public void assignAnimal(Animal animal) {
+		animals.add(animal);
+	}
+
+	public String getName() {
+		return name;
+	}
+
 	public String getStructure() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("  L ")
-		  .append("Enclosure with ")
-		  .append(fence)
+		  .append(name)
 		  .append("\n");
 		
 		if (animals != null) {
@@ -29,15 +36,7 @@ public class Enclosure {
 	public int getNumberOfAnimals() {
 		if (animals != null) {
 			return animals.size();
-		} else {
-			return 0;
 		}
-	}
-
-	public void addAnimal(Animal a) {
-		if (animals == null) {
-			this.animals = new Vector<>();
-		}
-		animals.add(a);
+		return 0;
 	}
 }
