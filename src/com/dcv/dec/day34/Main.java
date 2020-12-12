@@ -1,4 +1,4 @@
-package src.com.dcv.nov.day34version1;
+package src.com.dcv.dec.day34;
 
 /*
 Erstellt ein Objekt “Zoo” , dieses Objekt beinhaltet eine Vielzahl an Gehegen, welche

@@ -1,4 +1,4 @@
-package src.com.dcv.nov.day35version2;
+package src.com.dcv.dec.day35;
 
 public class Animal {
 	private String name;

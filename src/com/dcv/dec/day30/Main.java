@@ -1,4 +1,4 @@
-package src.com.dcv.nov.day30;
+package src.com.dcv.dec.day30;
 
 import java.util.Arrays;
 
