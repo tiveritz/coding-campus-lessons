@@ -11,6 +11,10 @@ public class Zoo {
 	private Vector<DinosaurHandler> dinosaurHandler;
 
 	public Zoo(String name, String chairman) {
+
+		// A constructor does not neccessarily always need this.something = something. It is
+		// perfectly valid to do some more interesting stuff here. Calls some helper functions,
+		// validate data, do calculations (or in this case a T-Rex String concatenation)
 		this.name =
 			" e-e\n" +
 			"(\\_/)\\\n" +
