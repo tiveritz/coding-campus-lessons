@@ -3,7 +3,6 @@ public class FoodStock {
 	private String foodType;
 	private int dailyDemand;
 	private String unit;
-	private int stock;
 
 	// Constructor ---------------------------------------------------------------------------------
 	public FoodStock(String foodType, String unit) {
@@ -24,14 +23,4 @@ public class FoodStock {
 	public String getType() {
 		return this.foodType;
 	}
-	
-	public String getStockInfo() {
-		return stock + " " + unit + " " + foodType;
-	}
-
-	// Simulation-specific -------------------------------------------------------------------------
-	public void setStartStock(int startStockFactor) {
-		this.stock = dailyDemand * startStockFactor;
-	}
-
 }

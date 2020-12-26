@@ -39,6 +39,10 @@ public class Enclosure {
 		return sb.toString();
 	}
 
+	public Vector<Animal> getAnimals() {
+		return this.animals;
+	}
+
 	public String getName() {
 		return name;
 	}

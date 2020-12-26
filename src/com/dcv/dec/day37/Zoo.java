@@ -204,23 +204,4 @@ public class Zoo {
 		}
 		return sb.toString();
 	}
-	
-		public String getFoodStock() {
-			StringBuilder sb = new StringBuilder();
-			if (foodStock != null) {
-				for (FoodStock food : foodStock) {
-					sb.append(food.getStockInfo() + "\n");
-				}
-			}
-			return sb.toString();
-		}
-
-	// Simulation-specific -------------------------------------------------------------------------
-	public void setStartStock(int startStockFactor) {
-		if (foodStock != null) {
-			for (FoodStock food : foodStock) {
-				food.setStartStock(startStockFactor);
-			}
-		}
-	}
 }

@@ -19,7 +19,11 @@ public class DinosaurHandler {
 	public void feedAnimals() {
 		if (enclosureResponsibilities != null) {
 			for (Enclosure enclosure : enclosureResponsibilities) {
-				enclosure.feedAnimals();
+				Vector<Animal> animals = enclosure.getAnimals();
+
+				for (Animal animal : animals) {
+					System.out.println(name + " feeds: " + animal.getName());
+				}
 			}
 		}
 	}
@@ -27,7 +31,15 @@ public class DinosaurHandler {
 	public void admireAnimals(double probabilityAdmireStandardAnimal, double probabilityAdmireFavouriteAnimal) {
 		if (enclosureResponsibilities != null) {
 			for (Enclosure enclosure : enclosureResponsibilities) {
-				enclosure.admireAnimals(probabilityAdmireStandardAnimal, probabilityAdmireFavouriteAnimal, favouriteAnimal);
+				Vector<Animal> animals = enclosure.getAnimals();
+
+				for (Animal animal : animals) {
+					if (animal.equals(favouriteAnimal)) {
+						System.out.println(name + " admires favourite: " + animal.getName());
+					} else {
+						System.out.println(name + " admires: " + animal.getName());
+					}
+				}
 			}
 		}
 	}

@@ -3,19 +3,17 @@ package src.com.dcv.dec.day37;
 public class Simulation {
 	private Zoo zoo;
 	private int durationInDays;
-	private int startStockFactor;
 	private double probabilityAdmireStandardAnimal;
 	private double probabilityAdmireFavouriteAnimal;
 	private double probabilityOfBite;
 
 	// Constructor ---------------------------------------------------------------------------------
 	public Simulation(
-		Zoo zoo, int durationInDays, int startStockFactor, double probabilityAdmireStandardAnimal,
+		Zoo zoo, int durationInDays, double probabilityAdmireStandardAnimal,
 		double probabilityAdmireFavouriteAnimal, double probabilityOfBite)
 		{
 		this.zoo = zoo;
 		this.durationInDays = durationInDays;
-		this.startStockFactor = startStockFactor;
 		this.probabilityAdmireStandardAnimal = probabilityAdmireStandardAnimal;
 		this.probabilityAdmireFavouriteAnimal = probabilityAdmireFavouriteAnimal;
 		this.probabilityOfBite = probabilityOfBite;
@@ -23,14 +21,10 @@ public class Simulation {
 
 	// Methods -------------------------------------------------------------------------------------
 	public void start() {
-		zoo.setStartStock(startStockFactor);
-
 		for (int day = 1; day <= durationInDays; day++) {
-			System.out.println("Day " + day);
-			System.out.println(zoo.getFoodStock());
+			System.out.println("\n\nDay " + day + " --------------------");
 			zoo.feedAnimals();
-			zoo.admireAnimals();
-
+			zoo.admireAnimals(probabilityAdmireStandardAnimal, probabilityAdmireFavouriteAnimal);
 
 			timeSleep(1000);
 		}

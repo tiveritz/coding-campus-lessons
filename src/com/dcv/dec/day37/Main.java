@@ -41,7 +41,7 @@ public class Main {
 		// Create personell
 		zoo.createVeterinary("Dr. Alan Grant");
 		zoo.createDinosaurHandler("Owen Grady", blue, new String[] {"Training cage"});
-		zoo.createDinosaurHandler("Barry", hybrid, new String[] {"Aviary", "Open area"});
+		zoo.createDinosaurHandler("Barry", hybrid, new String[] {"Research area", "Aviary", "Open area"});
 
 
 		// Instead of printing directly with the object's methods, let them build a string and 
@@ -51,7 +51,7 @@ public class Main {
 		System.out.println("Demand of food:\n" + zoo.getFoodDemand() + "\n");
 
 		// Simulation
-		Simulation simulation = new Simulation(zoo, 6, 3, .1, .5, .1);
+		Simulation simulation = new Simulation(zoo, 6, .1, .5, .1);
 		simulation.start();
 	}	
 }
