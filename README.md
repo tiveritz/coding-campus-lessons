@@ -70,6 +70,15 @@ public class Main {
 <details>
   <summary>Expand "November"</summary>
 
+* Day37
+  * day37 --> go to folder src/dcv/nov/day37 and run main() in Main
+
+* Day36
+  * day36 --> go to folder src/dcv/nov/day36 and run main() in Main
+
+* Day35
+  * day35 --> go to folder src/dcv/nov/day35 and run main() in Main
+
 * Day34
   * day34 --> go to folder src/dcv/nov/day34 and run main() in Main
 
