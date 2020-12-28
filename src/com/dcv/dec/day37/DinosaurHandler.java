@@ -1,4 +1,5 @@
 package src.com.dcv.dec.day37;
+
 import java.util.Vector;
 
 public class DinosaurHandler {
@@ -32,12 +33,17 @@ public class DinosaurHandler {
 		if (enclosureResponsibilities != null) {
 			for (Enclosure enclosure : enclosureResponsibilities) {
 				Vector<Animal> animals = enclosure.getAnimals();
-
-				for (Animal animal : animals) {
+				
+				for (Animal animal : animals) {					
+					double random = Math.random();
 					if (animal.equals(favouriteAnimal)) {
-						System.out.println(name + " admires favourite: " + animal.getName());
+						if (probabilityAdmireFavouriteAnimal > random) {
+							System.out.println(name + " admires favourite: " + animal.getName());
+						}
 					} else {
-						System.out.println(name + " admires: " + animal.getName());
+						if (probabilityAdmireStandardAnimal > random) {
+							System.out.println(name + " admires: " + animal.getName());
+						}
 					}
 				}
 			}
