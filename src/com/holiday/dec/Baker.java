@@ -15,7 +15,9 @@ public class Baker {
 				 Cookie[] producableCookies) {
 		this.name = name;
 		this.dailyBakingCapacity = dailyBakingCapacity;
+		this.bakingCapacity = dailyBakingCapacity;
 		this.dailyDeliveryCapacity = dailyDeliveryCapacity;
+		this.deliveryCapacity = dailyDeliveryCapacity;
 		this.bestCookie = bestCookie;
 		this.producableCookies = new ArrayList<>();
 		
@@ -29,9 +31,46 @@ public class Baker {
 		return name;
 	}
 
+	public int getBakingCapacity() {
+		return bakingCapacity;
+	}
+
+	public int getDeliveryCapacity() {
+		return deliveryCapacity;
+	}
+
+	public String getBestCookieName() {
+		return bestCookie.getName();
+	}
+
 	@Override
 	public String toString() {
 		return name;
 	}
+
+	// Methods -------------------------------------------------------------------------------------
+	public void produceItems(int amount) {
+		bakingCapacity -= amount;
+	}
+
+	public void deliverOrder() {
+		deliveryCapacity--;
+	}
+
+	public void resetCapacities() {
+		bakingCapacity = dailyBakingCapacity;
+		deliveryCapacity = dailyDeliveryCapacity;
+	}
 	
+	public boolean canProduce(String itemName) {
+		boolean canProduce = false;
+		
+		for (Cookie cookie : producableCookies) {
+			if (cookie.getName().equals(itemName)) {
+				canProduce = true;
+				break;
+			}
+		}
+		return canProduce;
+	}
 }

@@ -9,6 +9,10 @@ public class Customer {
 		this.address = address;
 	}
 
+	public String getName() {
+		return name;
+	}
+
 	@Override
 	public String toString() {
 		return name;

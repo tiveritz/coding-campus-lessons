@@ -4,21 +4,33 @@ import java.util.ArrayList;
 
 public class Order {
 	Customer customer;
-	ArrayList<Item> items;
+	ArrayList<Item> pendingItems;
+	ArrayList<Item> producedItems;
 
 	public Order(Customer customer) {
 		this.customer = customer;
-		this.items = new ArrayList<>();
+		this.pendingItems = new ArrayList<>();
+		this.producedItems = new ArrayList<>();
 	}
 
 	// Setter --------------------------------------------------------------------------------------
 	public void addItem(Item item) {
-		items.add(item);
+		pendingItems.add(item);
+	}
+
+	public void setItemProduced(Item item) {
+		producedItems.add(item);
+		pendingItems.remove(pendingItems.indexOf(item));
 	}
 
 	// Getter --------------------------------------------------------------------------------------
-	public ArrayList<Item> getItems() {
-		return items;
+	public ArrayList<Item> getCopyOfPendingItems() {
+		ArrayList<Item> copyOfPendingItems = new ArrayList<>();
+
+		for (Item item : pendingItems) {
+			copyOfPendingItems.add(item);
+		}
+		return copyOfPendingItems;
 	}
 
 	@Override
