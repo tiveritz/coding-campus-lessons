@@ -121,7 +121,7 @@ public class Bakery {
 	
 					for (Baker baker : bakers) {
 						int leftCapacity = baker.getBakingCapacity();
-						if (baker.getBestCookieName().equals(itemName) && leftCapacity > amount) {
+						if (baker.getBestCookieName().equals(itemName) && leftCapacity >= amount) {
 							assignedBaker = baker;
 							break;
 						} else if (leftCapacity > highestCapacity && baker.canProduce(item.getName())) {
