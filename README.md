@@ -52,6 +52,10 @@ public class Main {
 <details>
   <summary>Expand "Holiday Sessions"</summary>
 
+#### December
+  * Christmas Bakery --> go to folder src/dcv/holiday/dec and run main() in Main
+
+#### October
   * Holiday05.helloWorldClassesAndMethods();
   * Holiday04.cipherWithString();
   * Holiday03.bookCipher();
@@ -62,13 +66,13 @@ public class Main {
 
 ## Coding Campus Lessons
 <details>
-  <summary>Expand "Project"</summary>
+  <summary>Expand "Miscellaneous"</summary>
 
   * BudgetFK.driver();
 </details>
 
 <details>
-  <summary>Expand "November"</summary>
+  <summary>Expand "December"</summary>
 
 * Day37
   * day37 --> go to folder src/dcv/nov/day37 and run main() in Main
@@ -84,6 +88,11 @@ public class Main {
 
 * Day33
   * day33 --> go to folder src/dcv/nov/day33 and run main() in Main
+
+</details>
+
+<details>
+  <summary>Expand "November"</summary>
 
 * Day30
   * day30 --> go to folder src/dcv/nov/day30 and run main() in Main
