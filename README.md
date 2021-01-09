@@ -65,11 +65,6 @@ public class Main {
 <br /><br />
 
 ## Coding Campus Lessons
-<details>
-  <summary>Expand "Miscellaneous"</summary>
-
-  * BudgetFK.driver();
-</details>
 
 <details>
   <summary>Expand "December"</summary>
