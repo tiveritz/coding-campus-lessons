@@ -119,6 +119,8 @@ public class Bakery {
 					Baker assignedBaker = null;
 					int highestCapacity = 0;
 	
+					// Try to choose a baker, primary one where cookie = bestCookie, secondary who
+					// has highest capacity
 					for (Baker baker : bakers) {
 						int leftCapacity = baker.getBakingCapacity();
 						if (baker.getBestCookieName().equals(itemName) && leftCapacity >= amount) {
@@ -130,7 +132,7 @@ public class Bakery {
 						}
 					}
 					
-					if (assignedBaker != null && assignedBaker.getBakingCapacity() >= amount) {
+					if (assignedBaker != null) {
 						System.out.println("  L " + assignedBaker.getName() + " makes " + item.generateInfo());
 						assignedBaker.produceItems(amount);
 						order.setItemProduced(item);
