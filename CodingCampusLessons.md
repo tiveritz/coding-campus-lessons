@@ -1,3 +1,11 @@
+
+###### Day 40 (thu)
+	* Repetition OOP Basics
+
+###### Day 39 (Tue)
+	* Presentation holiday example
+	* Start with search algorithms
+
 ###### Day 38 (Sat)
 	* Preparation holiday example
 
