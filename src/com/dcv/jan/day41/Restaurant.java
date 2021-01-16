@@ -1,6 +1,5 @@
 package src.com.dcv.jan.day41;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.Queue;
@@ -8,20 +7,13 @@ import java.util.Queue;
 
 public class Restaurant {
 	private String name;
-	private HashMap<String, Double> drinks;
-	private HashMap<String, Double> starters;
-	private HashMap<String, Double> dishes;
-	private HashMap<String, Double> desserts;
+	private Menu menu;
 	private ArrayList<Table> tables;
 	private Queue<Group> queue;
 	private ArrayList<Group> groups;
 
 	public Restaurant(String name) {
 		this.name = name;
-		this.drinks = new HashMap<>();
-		this.starters = new HashMap<>();
-		this.dishes = new HashMap<>();
-		this.desserts = new HashMap<>();
 		this.tables = new ArrayList<>();
 		this.queue = new LinkedList<>();
 		this.groups = new ArrayList<>();
@@ -52,22 +44,10 @@ public class Restaurant {
 		return g;
 	}
 
-
-	// -- SETTER -----------------------------------------------------------------------------------
-	public void addDrink(String name, Double price) {
-		drinks.put(name, price);
-	}
-
-	public void addStarter(String name, Double price) {
-		starters.put(name, price);
-	}
-
-	public void addDish(String name, Double price) {
-		dishes.put(name, price);
-	}
-
-	public void addDessert(String name, Double price) {
-		desserts.put(name, price);
+	public Menu createMenu() {
+		Menu menu = new Menu();
+		this.menu = menu;
+		return menu;
 	}
 
 	// -- GETTER -----------------------------------------------------------------------------------
@@ -86,8 +66,30 @@ public class Restaurant {
 	
 	// -- METHODS ----------------------------------------------------------------------------------
 	public void assignTable() {
+		System.out.println("  L Checking for free tables");
 		if (isTableFree()) {
-			Group nextGroup = queue.peek();
+			System.out.println("    L At least one table free");
+			System.out.println("      L Collecting all free tables");
+			// Get an ArrayList with all free tables
+			ArrayList<Table> freeTables = new ArrayList<>();
+			for (Table table : tables) {
+				if (table.isAssigned() == false) {
+					freeTables.add(table);
+				}
+			}
+			
+			System.out.println("        L Assigning groups to tables");
+			System.out.println(freeTables);
+			/*
+			for (Group group : queue) {
+				int count = group.getCount();
+				int 
+				for (Table table : tables) {
+					if (table.getSeats())
+				}
+				System.out.println(group.getCount());
+			}
+			*/
 			
 		}
 	}
@@ -100,9 +102,9 @@ public class Restaurant {
 	private boolean isTableFree() {
 		for (Table table : tables) {
 			if (table.isAssigned() == false) {
-				return false;
+				return true;
 			};
 		}
-		return true;
+		return false;
 	}
 }

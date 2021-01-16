@@ -8,23 +8,24 @@ public class Main {
 		
 		// Create Restaurant
 		Restaurant loewe = new Restaurant("Gasthof Löwen");
-		loewe.addDrink("Draft beer", 4.5);
-		loewe.addDrink("Cola", 3.5);
-		loewe.addDrink("Apple Juice", 3.5);
-		loewe.addDrink("Sparkling Water", 1.5);
-		loewe.addDrink("Coffee", 4.5);
-		loewe.addDrink("Tea", 2.5);
-		loewe.addStarter("Salad", 5.5);
-		loewe.addStarter("Smoked salmon", 6.5);
-		loewe.addStarter("Soup", 4.5);
-		loewe.addStarter("Bred", 3.5);
-		loewe.addDish("Steak", 19.5);
-		loewe.addDish("Vienna Schnitzel", 16.5);
-		loewe.addDish("Burger", 14.5);
-		loewe.addDish("Club Sandwich", 13.5);
-		loewe.addDessert("Cheese Cake", 7.5);
-		loewe.addDessert("Chocolate Cake", 7.5);
-		loewe.addDessert("Crossaint", 4.5);
+		Menu menu = loewe.createMenu();
+		menu.addDrink("Draft beer", 4.5);
+		menu.addDrink("Cola", 3.5);
+		menu.addDrink("Apple Juice", 3.5);
+		menu.addDrink("Sparkling Water", 1.5);
+		menu.addDrink("Coffee", 4.5);
+		menu.addDrink("Tea", 2.5);
+		menu.addStarter("Salad", 5.5);
+		menu.addStarter("Smoked salmon", 6.5);
+		menu.addStarter("Soup", 4.5);
+		menu.addStarter("Bred", 3.5);
+		menu.addDish("Steak", 19.5);
+		menu.addDish("Vienna Schnitzel", 16.5);
+		menu.addDish("Burger", 14.5);
+		menu.addDish("Club Sandwich", 13.5);
+		menu.addDessert("Cheese Cake", 7.5);
+		menu.addDessert("Chocolate Cake", 7.5);
+		menu.addDessert("Crossaint", 4.5);
 
 		// Create Tables
 		loewe.createTable(13, 2);
@@ -53,6 +54,7 @@ public class Main {
 
 		// Queue operations: add(), peek(), remove()
 		// Check if queue returns the first element that was added:
+		System.out.print("Test queue peek: ");
 		loewe.peekNextGroup();
 
 		// Simulation

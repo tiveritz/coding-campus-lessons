@@ -15,8 +15,12 @@ public class Simulation {
 	public void start() {
 		boolean working = true;
 
-		System.out.println("Simulation started");
+		System.out.println("Simulation started\n");
+		int iteration = 1;
 		while(working) {
+			System.out.println("Time: " + iteration * 15 + " min");
+			iteration++;
+			
 			restaurant.assignTable();
 			restaurant.doRestaurantStuff();
 

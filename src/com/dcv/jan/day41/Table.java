@@ -15,6 +15,10 @@ public class Table {
 		return tableNumber;
 	}
 
+	public int getSeats() {
+		return seats;
+	}
+
 	public boolean isAssigned() {
 		if (assignedTo == null) {
 			return false;
