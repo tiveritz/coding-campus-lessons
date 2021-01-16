@@ -13,7 +13,8 @@ public class Restaurant {
 	private HashMap<String, Double> dishes;
 	private HashMap<String, Double> desserts;
 	private ArrayList<Table> tables;
-	private Queue<Group> groups;
+	private Queue<Group> queue;
+	private ArrayList<Group> groups;
 
 	public Restaurant(String name) {
 		this.name = name;
@@ -22,7 +23,8 @@ public class Restaurant {
 		this.dishes = new HashMap<>();
 		this.desserts = new HashMap<>();
 		this.tables = new ArrayList<>();
-		this.groups = new LinkedList<>();
+		this.queue = new LinkedList<>();
+		this.groups = new ArrayList<>();
 	}
 
 	// -- FACTORY ----------------------------------------------------------------------------------
@@ -39,14 +41,14 @@ public class Restaurant {
 	}
 
 	public Group createGroup(int id, int count) {
-		for (Group group : groups) {
-			if (group.getId() == id) {
-				return group;
+		for (Group q : queue) {
+			if (q.getId() == id) {
+				return q;
 			}
 		}
 
 		Group g = new Group(id, count);
-		groups.add(g);
+		queue.add(g);
 		return g;
 	}
 
@@ -72,9 +74,35 @@ public class Restaurant {
 	public String getInfo() {
 		return "Restaurant " + name + " with " + tables.size() + " tables";
 	}
-
+	
 	public void peekNextGroup() {
-		System.out.println(groups.peek());
+		System.out.println(queue.peek());
 	}
-
+	
+	
+	public int guestsInRestaurant() {
+		return groups.size();
+	}
+	
+	// -- METHODS ----------------------------------------------------------------------------------
+	public void assignTable() {
+		if (isTableFree()) {
+			Group nextGroup = queue.peek();
+			
+		}
+	}
+	
+	public void doRestaurantStuff() {
+		System.out.println("doing restaurant stuff");
+	}
+	
+	// -- HELPER METHODS ---------------------------------------------------------------------------
+	private boolean isTableFree() {
+		for (Table table : tables) {
+			if (table.isAssigned() == false) {
+				return false;
+			};
+		}
+		return true;
+	}
 }

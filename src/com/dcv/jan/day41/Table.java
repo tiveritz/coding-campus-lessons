@@ -14,5 +14,12 @@ public class Table {
 	public int getTableNumber() {
 		return tableNumber;
 	}
+
+	public boolean isAssigned() {
+		if (assignedTo == null) {
+			return false;
+		}
+		return true;
+	}
 	
 }

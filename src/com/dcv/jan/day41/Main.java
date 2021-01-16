@@ -1,5 +1,7 @@
 package src.com.dcv.jan.day41;
 
+import java.util.ArrayList;
+
 public class Main {
 	public static void main(String[] args) {
 		int currGroupId = 0;
@@ -52,6 +54,23 @@ public class Main {
 		// Queue operations: add(), peek(), remove()
 		// Check if queue returns the first element that was added:
 		loewe.peekNextGroup();
+
+		// Simulation
+		ArrayList<Group> simulationGroups = new ArrayList<>();
+		simulationGroups.add(new Group(currGroupId++, 3));
+		simulationGroups.add(new Group(currGroupId++, 4));
+		simulationGroups.add(new Group(currGroupId++, 5));
+		simulationGroups.add(new Group(currGroupId++, 1));
+		simulationGroups.add(new Group(currGroupId++, 2));
+		simulationGroups.add(new Group(currGroupId++, 2));
+		simulationGroups.add(new Group(currGroupId++, 2));
+		simulationGroups.add(new Group(currGroupId++, 7));
+		simulationGroups.add(new Group(currGroupId++, 2));
+		simulationGroups.add(new Group(currGroupId++, 4));
+		simulationGroups.add(new Group(currGroupId++, 3));
+
+		Simulation simulation = new Simulation(loewe, simulationGroups);
+		simulation.start();
 	}
 	
 }
