@@ -1,5 +1,9 @@
 
-###### Day 40 (thu)
+###### Day 41 (Sat)
+	* Repetition OOP Basics
+	* Docker Basics
+
+###### Day 40 (Thu)
 	* Repetition OOP Basics
 
 ###### Day 39 (Tue)
@@ -10,7 +14,7 @@
 	* Preparation holiday example
 
 ###### Day 37 (Thu)
-	* Repetition OOP
+	* Repetition OOP Basics
 
 ###### Day 36 (Tue)
 	* Association, Aggregation, Composition
@@ -27,7 +31,7 @@
 	* Object references
 
 ###### Day 32 (Thu)
-	* Repetition OOP
+	* Repetition OOP Basics
 	* Classes, Constructors
 	* getter, setter
 
