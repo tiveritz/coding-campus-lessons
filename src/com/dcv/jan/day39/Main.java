@@ -1,9 +1,15 @@
-package src.com.dcv.dec.day38;
+package src.com.dcv.jan.day39;
 
 import java.util.Arrays;
 
 
 public class Main {
+
+    	// Linear search
+
+		// Binary search
+
+		// Greedy Algorithmus
     public static void main(String args[]) {
         String[] array = new String[]{"abc", "def", "ghi", "jkl", "mno"};
         String[] array2 = new String[]{"def", "mno", "abc", "ghi", "jkl"};
