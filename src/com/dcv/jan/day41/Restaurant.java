@@ -27,7 +27,7 @@ public class Restaurant {
 			}
 		}
 
-		Table t = new Table(tableNumber, seats);
+		Table t = new Table(tableNumber, seats, this);
 		tables.add(t);
 		return t;
 	}
@@ -50,6 +50,34 @@ public class Restaurant {
 		return menu;
 	}
 
+	public Menu getMenu() {
+		return menu;
+	}
+
+	// -- SETTER -----------------------------------------------------------------------------------
+	public void raiseQueueWaitingIteration() {
+		// make a copy of the queue. Can't iterate through queue and remove elements simultaniously
+		
+		ArrayList<Group> groupsArray = new ArrayList<>();
+
+		for (Group group : queue) {
+			groupsArray.add(group);
+		}
+
+		for (Group group : groupsArray) {
+			if (group.getWaitingIteration() >= group.getMaxWaitingIteration()) {
+				Printer.print("! Group " + group.getId() + " waited too long and left", 1);
+				queue.remove(group);
+			} else {
+				group.raiseWaitingIteration();
+			}
+		}
+	}
+
+	public void addGroup(Group group) {
+		queue.add(group);
+	}
+
 	// -- GETTER -----------------------------------------------------------------------------------
 	public String getInfo() {
 		return "Restaurant " + name + " with " + tables.size() + " tables";
@@ -60,42 +88,92 @@ public class Restaurant {
 	}
 	
 	
-	public int guestsInRestaurant() {
-		return groups.size();
+	public boolean areGuestsInRestaurant() {
+		for (Table table : tables) {
+			if (table.isAssigned() == true) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	// -- METHODS ----------------------------------------------------------------------------------
 	public void assignTable() {
-		System.out.println("  L Checking for free tables");
+		ArrayList<Table> freeTables = new ArrayList<>();
+
+		Printer.print("L Checking for free tables", 1);
 		if (isTableFree()) {
-			System.out.println("    L At least one table free");
-			System.out.println("      L Collecting all free tables");
+			Printer.print("L At least one table free", 2);
+			Printer.print("L Collecting all free tables", 3);
+
 			// Get an ArrayList with all free tables
-			ArrayList<Table> freeTables = new ArrayList<>();
 			for (Table table : tables) {
 				if (table.isAssigned() == false) {
 					freeTables.add(table);
 				}
 			}
-			
-			System.out.println("        L Assigning groups to tables");
-			System.out.println(freeTables);
-			/*
-			for (Group group : queue) {
-				int count = group.getCount();
-				int 
-				for (Table table : tables) {
-					if (table.getSeats())
+		} else {
+			Printer.print("L No free tables", 2);
+			return;
+		}
+		
+		Printer.print("L Checking for groups outside restaurant", 2);
+		if (queue.size() > 0) {
+			Printer.print("L Assigning groups to tables", 3);
+	
+			// Take the table with the highest amount of seats and find the group with the most 
+			// optimal amount of people
+			// Primary take the optimal group, secondary choose groups that came first
+			// - take group with highest count but not higher than table seats
+
+			for (Table freeTable : freeTables) {
+				int seats = freeTable.getSeats();
+				int highestCount = 0;
+				Group assignedGroup = null;
+		
+				for (Group group : queue) {
+					int count = group.getCount();
+					if (count == seats) { // if count is the same as seats, immediately break
+						assignedGroup = group;
+						break;
+					} else if (count <= seats && count > highestCount) {
+						assignedGroup = group;
+						highestCount = count;
+					}
 				}
-				System.out.println(group.getCount());
+
+				if (assignedGroup != null) {
+					freeTable.assignGroup(assignedGroup);
+					queue.remove(assignedGroup);
+					Printer.print("L Assigning group "
+						+ assignedGroup.getId()
+						+ " (count: " + assignedGroup.getCount()
+						+ ") to table number "
+						+ freeTable.getTableNumber()
+						+ " (seats: " + freeTable.getSeats()
+						+ ")", 4);
+				} else {
+					Printer.print("L No group could be found for table number "
+						+ freeTable.getTableNumber()
+						+ " (seats: "
+						+ freeTable.getSeats()
+						+ ")", 4);
+				}
 			}
-			*/
-			
+		} else {
+			Printer.print("L No groups outside restaurants", 3);
 		}
 	}
 	
 	public void doRestaurantStuff() {
-		System.out.println("doing restaurant stuff");
+		Printer.print("L Serving restaurant guests ", 1);
+		for (Table table : tables) {
+			if(table.isAssigned()) {
+				Printer.print("L Serving table number " + table.getTableNumber(), 2);
+				table.serveTable();
+			}
+		}
+
 	}
 	
 	// -- HELPER METHODS ---------------------------------------------------------------------------

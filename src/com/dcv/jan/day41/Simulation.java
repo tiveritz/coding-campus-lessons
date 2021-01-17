@@ -1,36 +1,42 @@
 package src.com.dcv.jan.day41;
 
-import java.util.ArrayList;
 
 public class Simulation {
 	Restaurant restaurant;
-	ArrayList<Group> groups;
+	Group[][] groups;
 
-	public Simulation(Restaurant restaurant, ArrayList<Group> groups) {
+	public Simulation(Restaurant restaurant, Group[][] groups) {
 		this.restaurant = restaurant;
-		this.groups = new ArrayList<>();
-		this.groups.addAll(groups);
+		this.groups = groups;
 	}
 
 	public void start() {
 		boolean working = true;
 
 		System.out.println("Simulation started\n");
-		int iteration = 1;
+		int iteration = 0;
 		while(working) {
 			System.out.println("Time: " + iteration * 15 + " min");
-			iteration++;
+
+			if (iteration < groups.length) {
+				int newGroups = groups[iteration].length;
+				System.out.println(newGroups + " groups arrived at restaurant");
+				for (Group group : groups[iteration]) {
+					restaurant.addGroup(group);
+				}
+			}
 			
 			restaurant.assignTable();
+			restaurant.raiseQueueWaitingIteration();
 			restaurant.doRestaurantStuff();
-
-			if (restaurant.guestsInRestaurant() == 0) {
+			
+			if (!restaurant.areGuestsInRestaurant()) {
 				working = false;
 				System.out.println("All guests satisfied");
 			}
+
+			iteration++;
+			System.out.println();
 		}
-		// restaurant.assignTables()
-		// restaurant.doRestaurantStuff()
-		// restaurant.createGroup()
 	}
 }

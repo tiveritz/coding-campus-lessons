@@ -1,6 +1,5 @@
 package src.com.dcv.jan.day41;
 
-import java.util.ArrayList;
 
 public class Main {
 	public static void main(String[] args) {
@@ -42,6 +41,7 @@ public class Main {
 		System.out.println(loewe.getInfo());
 
 		// Now add groups to queue
+		/* deactivated for Simulation
 		loewe.createGroup(currGroupId++, 2);
 		loewe.createGroup(currGroupId++, 6);
 		loewe.createGroup(currGroupId++, 3);
@@ -51,6 +51,7 @@ public class Main {
 		loewe.createGroup(currGroupId++, 3);
 		loewe.createGroup(currGroupId++, 3);
 		loewe.createGroup(currGroupId++, 3);
+		*/
 
 		// Queue operations: add(), peek(), remove()
 		// Check if queue returns the first element that was added:
@@ -58,18 +59,20 @@ public class Main {
 		loewe.peekNextGroup();
 
 		// Simulation
-		ArrayList<Group> simulationGroups = new ArrayList<>();
-		simulationGroups.add(new Group(currGroupId++, 3));
-		simulationGroups.add(new Group(currGroupId++, 4));
-		simulationGroups.add(new Group(currGroupId++, 5));
-		simulationGroups.add(new Group(currGroupId++, 1));
-		simulationGroups.add(new Group(currGroupId++, 2));
-		simulationGroups.add(new Group(currGroupId++, 2));
-		simulationGroups.add(new Group(currGroupId++, 2));
-		simulationGroups.add(new Group(currGroupId++, 7));
-		simulationGroups.add(new Group(currGroupId++, 2));
-		simulationGroups.add(new Group(currGroupId++, 4));
-		simulationGroups.add(new Group(currGroupId++, 3));
+		Group[][] simulationGroups = {
+			{new Group(currGroupId++, 3), new Group(currGroupId++, 2), new Group(currGroupId++, 1), new Group(currGroupId++, 2)},
+			{new Group(currGroupId++, 4), new Group(currGroupId++, 4)},
+			{new Group(currGroupId++, 1), new Group(currGroupId++, 1)},
+			{new Group(currGroupId++, 7)},
+			{new Group(currGroupId++, 2), new Group(currGroupId++, 3), new Group(currGroupId++, 4), new Group(currGroupId++, 4)},
+			{new Group(currGroupId++, 2), new Group(currGroupId++, 6), new Group(currGroupId++, 3)},
+			{new Group(currGroupId++, 6), new Group(currGroupId++, 5), new Group(currGroupId++, 3)},
+			{new Group(currGroupId++, 4), new Group(currGroupId++, 2), new Group(currGroupId++, 6)},
+			{new Group(currGroupId++, 4), new Group(currGroupId++, 2), new Group(currGroupId++, 2)},
+			{new Group(currGroupId++, 5), new Group(currGroupId++, 4), new Group(currGroupId++, 7)},
+			{new Group(currGroupId++, 1), new Group(currGroupId++, 2), new Group(currGroupId++, 2)},
+			{new Group(currGroupId++, 2), new Group(currGroupId++, 2), new Group(currGroupId++, 5)},
+		};
 
 		Simulation simulation = new Simulation(loewe, simulationGroups);
 		simulation.start();

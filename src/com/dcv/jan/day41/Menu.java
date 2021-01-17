@@ -31,4 +31,21 @@ public class Menu {
 	public void addDessert(String name, Double price) {
 		desserts.put(name, price);
 	}
+
+	// -- GETTER -----------------------------------------------------------------------------------
+	public HashMap<String, Double> getDrinks() {
+		return drinks;
+	}
+
+	public HashMap<String, Double> getStarters() {
+		return starters;
+	}
+
+	public HashMap<String, Double> getDishes() {
+		return dishes;
+	}
+
+	public HashMap<String, Double> getDesserts() {
+		return desserts;
+	}
 }
