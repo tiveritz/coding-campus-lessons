@@ -2,6 +2,7 @@ package src.com.dcv.jan.day41;
 
 import java.util.HashMap;
 
+
 public class Menu {
 	private HashMap<String, Double> drinks;
 	private HashMap<String, Double> starters;

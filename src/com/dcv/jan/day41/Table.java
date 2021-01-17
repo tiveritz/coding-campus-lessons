@@ -1,5 +1,6 @@
 package src.com.dcv.jan.day41;
 
+
 public class Table {
 	private int tableNumber;
 	private int seats;
@@ -13,25 +14,28 @@ public class Table {
 		this.restaurant = restaurant;
 	}
 
+	// SETTER --------------------------------------------------------------------------------------
 	public void assignGroup(Group group) {
 		this.assignedTo = group;
 	}
 
+	// GETTER --------------------------------------------------------------------------------------
 	public int getTableNumber() {
 		return tableNumber;
 	}
-
+	
 	public int getSeats() {
 		return seats;
 	}
-
+	
 	public boolean isAssigned() {
 		if (assignedTo == null) {
 			return false;
 		}
 		return true;
 	}
-
+	
+	// METHODS --------------------------------------------------------------------------------------
 	public void serveTable() {
 		int groupState = assignedTo.getServingIteration();
 		switch (groupState) {
@@ -61,5 +65,4 @@ public class Table {
 				assignedTo.nextIteration();
 			}
 		}
-		
 	}

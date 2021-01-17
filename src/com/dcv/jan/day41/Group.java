@@ -28,38 +28,41 @@ public class Group {
 		this.servingIteration = 0;
 	}
 
+	// SETTER --------------------------------------------------------------------------------------
 	public void nextIteration() {
 		servingIteration++;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public int getWaitingIteration() {
-		return waitingIteration;
-	}
-
-	public int getMaxWaitingIteration() {
-		return maxWaitingIteration;
 	}
 
 	public void raiseWaitingIteration() {
 		waitingIteration++;
 	}
-
+	
+	// GETTER --------------------------------------------------------------------------------------
+	public int getId() {
+		return id;
+	}
+	
+	public int getCount() {
+		return count;
+	}
+	
+	public int getWaitingIteration() {
+		return waitingIteration;
+	}
+	
+	public int getMaxWaitingIteration() {
+		return maxWaitingIteration;
+	}
+	
 	public int getServingIteration() {
 		return servingIteration;
 	}
-
+	
 	public double getBill() {
 		return bill;
 	}
-
+	
+	// METHODS -------------------------------------------------------------------------------------
 	public void order(HashMap<String, Double> menu, double probability) {
 		for (int guest = 0; guest < count; guest++) {
 			if (Math.random() <= probability) {

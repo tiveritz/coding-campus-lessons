@@ -53,11 +53,6 @@ public class Main {
 		loewe.createGroup(currGroupId++, 3);
 		*/
 
-		// Queue operations: add(), peek(), remove()
-		// Check if queue returns the first element that was added:
-		System.out.print("Test queue peek: ");
-		loewe.peekNextGroup();
-
 		// Simulation
 		Group[][] simulationGroups = {
 			{new Group(currGroupId++, 3), new Group(currGroupId++, 2), new Group(currGroupId++, 1), new Group(currGroupId++, 2)},
@@ -77,5 +72,4 @@ public class Main {
 		Simulation simulation = new Simulation(loewe, simulationGroups);
 		simulation.start();
 	}
-	
 }

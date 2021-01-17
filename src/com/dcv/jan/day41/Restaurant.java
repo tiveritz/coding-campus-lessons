@@ -10,13 +10,11 @@ public class Restaurant {
 	private Menu menu;
 	private ArrayList<Table> tables;
 	private Queue<Group> queue;
-	private ArrayList<Group> groups;
 
 	public Restaurant(String name) {
 		this.name = name;
 		this.tables = new ArrayList<>();
 		this.queue = new LinkedList<>();
-		this.groups = new ArrayList<>();
 	}
 
 	// -- FACTORY ----------------------------------------------------------------------------------
@@ -50,10 +48,6 @@ public class Restaurant {
 		return menu;
 	}
 
-	public Menu getMenu() {
-		return menu;
-	}
-
 	// -- SETTER -----------------------------------------------------------------------------------
 	public void raiseQueueWaitingIteration() {
 		// make a copy of the queue. Can't iterate through queue and remove elements simultaniously
@@ -82,11 +76,10 @@ public class Restaurant {
 	public String getInfo() {
 		return "Restaurant " + name + " with " + tables.size() + " tables";
 	}
-	
-	public void peekNextGroup() {
-		System.out.println(queue.peek());
-	}
-	
+
+	public Menu getMenu() {
+		return menu;
+	}	
 	
 	public boolean areGuestsInRestaurant() {
 		for (Table table : tables) {
