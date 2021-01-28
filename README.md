@@ -67,6 +67,20 @@ public class Main {
 ## Coding Campus Lessons
 
 <details>
+  <summary>Expand "January"</summary>
+
+* Day46
+  * day46 --> go to folder src/dcv/nov/day46 and run main() in Main
+
+* Day41
+  * day41 --> go to folder src/dcv/nov/day41 and run main() in Main
+
+* Day39
+  * day39 --> go to folder src/dcv/nov/day39 and run main() in Main
+
+</details>
+
+<details>
   <summary>Expand "December"</summary>
 
 * Day37

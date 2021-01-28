@@ -1,3 +1,21 @@
+###### Day 46 (Thu)
+	* Repetition OOP Basics
+	* OOP Inheritnace
+
+###### Day 45 (Tue)
+	* Repetition OOP Basics
+	* Project preparation
+
+###### Day 44 (Sat)
+	* Repetition OOP Basics
+	* Project preparation
+
+###### Day 43 (Thu)
+	* Repetition OOP Basics
+	* Project preparation
+
+###### Day 42 (Tue)
+	* Repetition OOP Basics
 
 ###### Day 41 (Sat)
 	* Repetition OOP Basics
@@ -8,7 +26,7 @@
 
 ###### Day 39 (Tue)
 	* Presentation holiday example
-	* Start with search algorithms
+	* Search algorithms basics
 
 ###### Day 38 (Sat)
 	* Preparation holiday example
