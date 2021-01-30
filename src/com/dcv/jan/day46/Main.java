@@ -11,6 +11,5 @@ public class Main {
 		Simulation simulation = new Simulation(museum, 6, 3, 4);
 		simulation.init();
 		simulation.start();
-
 	}
 }

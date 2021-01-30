@@ -1,6 +1,7 @@
 package src.com.dcv.jan.day46.models;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import src.com.dcv.jan.day46.abstracts.Person;
 import src.com.dcv.jan.day46.enums.PersonType;
@@ -33,6 +34,12 @@ public class Room {
 
 
 	// -- SETTER -----------------------------------------------------------------------------------
+	public void addArtPieces(ArtPiece[] artPieces) {
+		for (ArtPiece artPiece : artPieces) {
+			this.artPieces.add(artPiece);
+		}
+	}
+
 	public void addPerson(Person person) {
 		persons.add(person);
 	}
@@ -68,7 +75,9 @@ public class Room {
 
 	public void stealArtPiece() {
 		for (Person person : persons) {
-			System.out.println(person.getInfo() + " steals piece of art and leaves");
+			Thief thief = (Thief) person;
+			thief.stealArtPiece();
+
 		}
 		persons.clear();
 	}
@@ -82,5 +91,10 @@ public class Room {
 				}
 			}
 		}
+	}
+
+	public ArtPiece getRandomArtPiece() {
+		Random random = new Random();
+		return artPieces.get(random.nextInt(artPieces.size()));
 	}
 }

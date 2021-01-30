@@ -6,9 +6,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Random;
 
+import src.com.dcv.jan.day46.generators.ArtPieceGenerator;
 import src.com.dcv.jan.day46.generators.RoomGenerator;
+import src.com.dcv.jan.day46.models.ArtPiece;
 import src.com.dcv.jan.day46.models.Guard;
 import src.com.dcv.jan.day46.models.Museum;
+import src.com.dcv.jan.day46.models.Room;
 import src.com.dcv.jan.day46.models.Thief;
 import src.com.dcv.jan.day46.models.Visitor;
 
@@ -26,8 +29,22 @@ public class Simulation {
 	}
 
 	public void init() {
-		museum.setRooms(RoomGenerator.createRooms(numberOfRooms));
 
+		// Generate the Rooms with initial ArtPieces
+		Room[] rooms = new Room[numberOfRooms];
+		for (int i = 0; i < numberOfRooms; i++) {
+			Random random = new Random();
+			int numberOfArtPieces = random.nextInt(5) + 4;
+			ArtPiece[] artPieces = new ArtPiece[numberOfArtPieces];
+			for (int j = 0; j < numberOfArtPieces; j++) {
+				artPieces[j] = (ArtPieceGenerator.createArtPiece());
+			}
+
+			rooms[i] = RoomGenerator.createRoom(i, artPieces);
+		}
+		museum.setRooms(rooms);
+
+		// Generate the Guards
 		System.out.println("--------------------");
 		System.out.println("Museum working day starts");
 		System.out.println("--------------------");
@@ -74,7 +91,9 @@ public class Simulation {
 
 		Visitor[] visitors = VisitorGenerator.createVisitors(random.nextInt(3));
 		for (Visitor visitor : visitors) {
-			visitor.visitRoom(museum.getRandomRoom());
+			Room room = museum.getRandomRoom();
+			visitor.visitRoom(room);
+			visitor.observeArtPiece(room.getRandomArtPiece());
 		}
 	}
 
@@ -83,7 +102,9 @@ public class Simulation {
 
 		if (random.nextInt(10) <= 2) { // random: 0...9
 			Thief thief = VisitorGenerator.createThief();
-			thief.visitRoom(museum.getRandomRoom());
+			Room room = museum.getRandomRoom();
+			thief.visitRoom(room);
+			thief.observeArtPiece(room.getRandomArtPiece());
 		}
 	}
 

@@ -12,4 +12,12 @@ public class Thief extends ExternalPerson {
 	public String getInfo() {
 		return super.getInfo();
 	}
+
+	public void stealArtPiece() {
+		System.out.println(getInfo() + " steals art: " + getArtPiece().getInfo());
+	}
+
+	public ArtPiece getArtPiece() {
+		return super.getArtPiece();
+	}
 }

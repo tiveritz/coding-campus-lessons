@@ -5,6 +5,7 @@ import src.com.dcv.jan.day46.interfaces.IVisitor;
 import src.com.dcv.jan.day46.models.ArtPiece;
 
 public abstract class ExternalPerson extends Person implements IVisitor {
+	private ArtPiece artPiece;
 
 	public ExternalPerson(PersonType personType, String firstName, String lastName, int maxSatisfactionLevel) {
 		super(personType, firstName, lastName, maxSatisfactionLevel);
@@ -17,6 +18,11 @@ public abstract class ExternalPerson extends Person implements IVisitor {
 
 	@Override
 	public void observeArtPiece(ArtPiece artPiece) {
-		//
+		System.out.println(getInfo() + " observes art: " + artPiece.getInfo());
+		this.artPiece = artPiece;
+	}
+
+	public ArtPiece getArtPiece() {
+		return artPiece;
 	}
 }
