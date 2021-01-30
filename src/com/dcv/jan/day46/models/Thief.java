@@ -1,26 +1,15 @@
 package src.com.dcv.jan.day46.models;
 
-import src.com.dcv.jan.day46.interfaces.Person;
+import src.com.dcv.jan.day46.abstracts.ExternalPerson;
+import src.com.dcv.jan.day46.enums.PersonType;
 
+public class Thief extends ExternalPerson {
 
-public class Thief extends Person {
-
-	public Thief(String firstName, String lastName) {
-		super(firstName, lastName);
+	public Thief(String firstName, String lastName, int maxSatisfactionLevel) {
+		super(PersonType.THIEF, firstName, lastName, maxSatisfactionLevel);
 	}
 
 	public String getInfo() {
-		return super.getInfo("Thief");
+		return super.getInfo();
 	}
-
-	public void visitRoom(Room room) {
-		Room currentRoom = super.getRoom();
-		if(currentRoom != null){
-			currentRoom.removeThief(this);
-		}
-		room.addThief(this);
-		super.setRoom(room);
-		System.out.println("Guard " + super.getFirstName() + " " + super.getLastName() + " moves to room " + room.getRoomNumber());
-	}
-	
 }

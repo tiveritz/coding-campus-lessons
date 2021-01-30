@@ -12,6 +12,5 @@ public class Main {
 		simulation.init();
 		simulation.start();
 
-		// museum.printStructure();
 	}
 }

@@ -2,62 +2,85 @@ package src.com.dcv.jan.day46.models;
 
 import java.util.ArrayList;
 
+import src.com.dcv.jan.day46.abstracts.Person;
+import src.com.dcv.jan.day46.enums.PersonType;
+
 
 public class Room {
 	private int roomNumber;
 	private ArrayList<ArtPiece> artPieces;
-	private ArrayList<Guard> guards;
-	private ArrayList<Visitor> visitors;
-	private ArrayList<Thief> thieves;
+	private ArrayList<Person> persons;
 
 	public Room(int roomNumber) {
 		this.roomNumber = roomNumber;
 		this.artPieces = new ArrayList<>();
-		this.guards = new ArrayList<>();
-		this.visitors = new ArrayList<>();
+		this.persons = new ArrayList<>();
 	}
 
-	public void removeVisitor(Visitor visitor) {
-		visitors.remove(visitor);
-	}
-
-	public void addVisitor(Visitor visitor) {
-		visitors.add(visitor);
-	}
-	
-	public void removeGuard(Guard guard) {
-		guards.remove(guard);
-	}
-
-	public void addGuard(Guard guard) {
-		guards.add(guard);
-	}
-
-	public void removeThief(Thief thief) {
-		thieves.remove(thief);
-	}
-
-	public void addThief(Thief thief) {
-		thieves.add(thief);
-	}
-
+	// -- GETTER -----------------------------------------------------------------------------------
 	public int getRoomNumber() {
 		return roomNumber;
 	}
 
-	public void printStructure() {
-		System.out.println("ArtPieces:");
-		for (ArtPiece artPiece : artPieces) {
-			System.out.println(artPiece.getInfo());
+	public ArrayList<Person> getCopyOfPersons() {
+		ArrayList<Person> personsCopy = new ArrayList<>();
+
+		for (Person person : persons) {
+			personsCopy.add(person);
 		}
-		System.out.println("\nGuards:");
-		for (Guard guard : guards) {
-			System.out.println(guard.getInfo());
-		}
-		System.out.println("\nVisitors:");
-		for (Visitor visitor : visitors) {
-			System.out.println(visitor.getInfo());
-		}
+		return personsCopy;
 	}
 
+
+	// -- SETTER -----------------------------------------------------------------------------------
+	public void addPerson(Person person) {
+		persons.add(person);
+	}
+
+	public void removePerson(Person person) {
+		persons.remove(person);
+	}
+
+	// -- METHODS ----------------------------------------------------------------------------------
+	public void sendPersonsHome() {
+		for (Person person : persons) {
+			if (person.getType() == PersonType.VISITOR || person.getType() == PersonType.THIEF) {
+				System.out.println(person.getInfo() + " goes home");
+			}
+		}
+		persons.clear();
+	}
+
+	public boolean onlyThievesInRoom() {
+		boolean onlyThievesInRoom = true;
+
+		for (Person person : persons) {
+			if (person.getType() != PersonType.THIEF) {
+				onlyThievesInRoom = false;
+				break;
+			}
+		}
+
+
+
+		return onlyThievesInRoom;
+	}
+
+	public void stealArtPiece() {
+		for (Person person : persons) {
+			System.out.println(person.getInfo() + " steals piece of art and leaves");
+		}
+		persons.clear();
+	}
+
+	public void releaseSatisfiedPersons() {
+		for (Person person : getCopyOfPersons()) {
+			if (person.getType() == PersonType.VISITOR || person.getType() == PersonType.THIEF) {
+				if (person.isSatisfied()) {
+					System.out.println(person.getInfo() + " is satisfied and leaves");
+					persons.remove(person);
+				}
+			}
+		}
+	}
 }

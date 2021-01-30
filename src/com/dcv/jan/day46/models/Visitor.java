@@ -1,26 +1,16 @@
 package src.com.dcv.jan.day46.models;
 
-import src.com.dcv.jan.day46.interfaces.Person;
+import src.com.dcv.jan.day46.abstracts.ExternalPerson;
+import src.com.dcv.jan.day46.enums.PersonType;
 
+public class Visitor extends ExternalPerson {
 
-public class Visitor extends Person {
-
-	public Visitor(String firstName, String lastName) {
-		super(firstName, lastName);
+	public Visitor(String firstName, String lastName, int maxSatisfactionLevel) {
+		super(PersonType.VISITOR, firstName, lastName, maxSatisfactionLevel);
 	}
 
 	public String getInfo() {
-		return super.getInfo("Visitor");
-	}
-
-	public void visitRoom(Room room) {
-		Room currentRoom = super.getRoom();
-		if(currentRoom != null){
-			currentRoom.removeVisitor(this);
-		}
-		room.addVisitor(this);
-		super.setRoom(room);
-		System.out.println("Visitor " + super.getFirstName() + " " + super.getLastName() + " moves to room " + room.getRoomNumber());
+		return super.getInfo();
 	}
 }
 
