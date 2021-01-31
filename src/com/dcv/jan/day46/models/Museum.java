@@ -10,13 +10,15 @@ import src.com.dcv.jan.day46.enums.PersonType;
 
 public class Museum {
 	private String name;
+	private Curator curator;
 	private Room[] rooms;
 	private Calendar openingTime;
 	private Calendar entryUntil;
 	private Calendar closingTime;	
 
-	public Museum(String name, int openingTime, int closingTime) {
+	public Museum(String name, Curator curator, int openingTime, int closingTime) {
 		this.name = name;
+		this.curator = curator;
 		this.openingTime = parseTime(openingTime);
 		this.closingTime = parseTime(closingTime);
 
@@ -53,6 +55,11 @@ public class Museum {
 				Visitor visitor = (Visitor) person;
 				visitor.observeArtPiece(visitor.getRoom().getRandomArtPiece());
 			}
+		}
+
+		curator.collectDonations();
+		if (curator.purchaseArtPiece()) {
+			curator.bringArtPieceToRoom(getRandomRoom());
 		}
 	}
 

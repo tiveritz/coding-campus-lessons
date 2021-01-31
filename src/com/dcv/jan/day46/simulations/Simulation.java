@@ -17,7 +17,6 @@ import src.com.dcv.jan.day46.models.Visitor;
 
 public class Simulation {
 	Museum museum;
-	
 	int numberOfRooms;
 	int numberOfGuards;
 	int maxGuestsPerTick;
@@ -54,7 +53,6 @@ public class Simulation {
 		System.out.println(totalNumberOfArtPieces + " ArtPieces created");
 
 		// Generate the Guards
-
 		Guard[] guards = PersonGenerator.createGuards(numberOfGuards);
 		for (Guard guard : guards) {
 			guard.visitRoom(museum.getRandomRoom());

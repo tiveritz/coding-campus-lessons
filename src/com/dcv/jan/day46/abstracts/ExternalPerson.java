@@ -25,7 +25,7 @@ public abstract class ExternalPerson extends Person implements IVisitor {
 	
 	@Override
 	public void observeArtPiece(ArtPiece artPiece) {
-		System.out.println(getInfo() + " observes art: " + artPiece.getInfo());
+		System.out.println(getInfo() + " observes art piece: " + artPiece.getInfo());
 		this.artPiece = artPiece;
 	}
 	

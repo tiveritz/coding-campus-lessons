@@ -3,15 +3,17 @@ package src.com.dcv.jan.day46.models;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import src.com.dcv.jan.day46.enums.ArtType;
+
 
 public class ArtPiece {
-	private String type;
+	private ArtType type;
 	private String title;
 	private String creator;
 	private Date creationDate;
 	private Integer price;
  
-	public ArtPiece(String type, String title, String creator, Date creationDate, Integer price) {
+	public ArtPiece(ArtType type, String title, String creator, Date creationDate, Integer price) {
 		this.type = type;
 		this.title = title;
 		this.creator = creator;
@@ -21,7 +23,7 @@ public class ArtPiece {
 	
 	// -- GETTER -----------------------------------------------------------------------------------
 	public String getInfo() {
-		return "ArtPiece: " + title + " from " + creator;
+		return title + " from " + creator;
 	}
 
 	public String getFullInfo() {
@@ -32,5 +34,9 @@ public class ArtPiece {
 			"Creation Date: "  + dateFormat.format(creationDate) + "\n" +
 			"Price: "  + price + "\n";
 		return fullInfo;
+	}
+
+	public int getPrice() {
+		return price;
 	}
 }

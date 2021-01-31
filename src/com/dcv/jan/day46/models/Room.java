@@ -62,6 +62,10 @@ public class Room {
 		}
 	}
 
+	public void addArtPiece(ArtPiece artPiece) {
+		artPieces.add(artPiece);
+	}
+
 	public void addPerson(Person person) {
 		persons.add(person);
 	}

@@ -1,30 +1,41 @@
 package src.com.dcv.jan.day46.enums;
 
+import java.util.Random;
 
 public enum ArtType {
-		ABSTRACT_EXPRESSIONISM,
-		ART_NOVEAU,
-		AVANT_GARDE,
-		BAROQUE,
-		CLASSICISM,
+		ABSTRACT_ART,
 		CONCEPTUAL_ART,
-		CONSTRUCTIVISM,
-		CUBISM,
-		DADAISM,
-		EXPRESSIONISM,
-		FAUVISM,
-		FUTURISM,
-		IMPRESSIONISM,
 		INSTALLATION_ART,
-		LAND_ART,
 		MINIMALISM,
 		NEO_IMPRESSIONALISM,
-		NEO_CLASICISM,
-		PERFORMANCE_ART,
-		POINTILLISM,
 		POP_ART,
-		POST_IMPRESSIONISM,
-		ROCOCO,
-		SURREALISM,
-		SUPREMATISM,
+		POST_IMPRESSIONISM;
+
+		private static final ArtType[] artTypes = values();
+		private static final Random random = new Random();
+
+		@Override
+		public String toString() {
+			switch (this) {
+				case ABSTRACT_ART :
+					return "Abstract Art";
+				case CONCEPTUAL_ART:
+					return "Conceptual Art";
+				case INSTALLATION_ART:
+					return "Installation Art";
+				case MINIMALISM:
+					return "Minimalism";
+				case NEO_IMPRESSIONALISM:
+					return "Neo Impressionalism";
+				case POP_ART:
+					return "Pop Art";
+				case POST_IMPRESSIONISM:
+					return "Post Impressionism";
+			}
+			return "Unknown";
+		}
+
+		public static ArtType getRandom() {
+			return artTypes[random.nextInt(artTypes.length)];
+		}
 	}

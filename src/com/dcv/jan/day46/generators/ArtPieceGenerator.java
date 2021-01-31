@@ -5,11 +5,11 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import src.com.dcv.jan.day46.models.ArtPiece;
+import src.com.dcv.jan.day46.enums.ArtType;
 
 
 public abstract class ArtPieceGenerator {
-	// base code von Daniel kopiert!
-	private static String[] types = new String[]{"Gemälde", "Skulptur", "Plastik", "Moderne Kunst"};
+	// Base code of this class was copied from Daniel
 	private static String[] artists = new String[]{"aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii", "jj", "kk", "ll", "mm", "nn", "oo"};
 	private static Date startDate = new Date(-11676096000L);
 	private static Date endDate = new Date(1577836800L);
@@ -17,13 +17,13 @@ public abstract class ArtPieceGenerator {
 
 	// -- METHODS ----------------------------------------------------------------------------------
 	public static ArtPiece createArtPiece() {
-		String type = types[random.nextInt(types.length-1)];
+		ArtType artType = ArtType.getRandom();
 		String title = getRandomString(5 + random.nextInt(5));
 		String artist = artists[random.nextInt(artists.length-1)];
 		Date createdDate = getRandomDate(startDate, endDate);
 		Integer price = 100 + random.nextInt(900);
 		
-		return new ArtPiece(type, title, artist, createdDate, price);
+		return new ArtPiece(artType, title, artist, createdDate, price);
 	}
 
 	// -- HELPER -----------------------------------------------------------------------------------
