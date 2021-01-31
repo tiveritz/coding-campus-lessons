@@ -6,17 +6,19 @@ import src.com.dcv.jan.day46.models.Guard;
 import src.com.dcv.jan.day46.models.Thief;
 import src.com.dcv.jan.day46.models.Visitor;
 
-public class VisitorGenerator {
+
+public abstract class PersonGenerator {
 	private static String[] firstNames = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
 	private static String[] lastNames = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-	
+
+	// -- METHODS ----------------------------------------------------------------------------------
 	public static Guard[] createGuards(int count) {
 		Guard[] guards = new Guard[count];
 		Random random = new Random();
 		for (int i = 0; i < count; i++) {
 			String firstName = firstNames[random.nextInt(firstNames.length - 1)];
 			String lastName = lastNames[random.nextInt(lastNames.length - 1)];
-			guards[i] = new Guard(firstName, lastName, random.nextInt(6) + 4);
+			guards[i] = new Guard(firstName, lastName);
 		}
 		return guards;
 	}

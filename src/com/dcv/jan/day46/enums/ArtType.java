@@ -1,5 +1,6 @@
 package src.com.dcv.jan.day46.enums;
 
+
 public enum ArtType {
 		ABSTRACT_EXPRESSIONISM,
 		ART_NOVEAU,
@@ -26,5 +27,4 @@ public enum ArtType {
 		ROCOCO,
 		SURREALISM,
 		SUPREMATISM,
-
 	}

@@ -3,6 +3,7 @@ package src.com.dcv.jan.day46.models;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class ArtPiece {
 	private String type;
 	private String title;
@@ -17,7 +18,8 @@ public class ArtPiece {
 		this.creationDate = creationDate;
 		this.price = price;
 	}
-
+	
+	// -- GETTER -----------------------------------------------------------------------------------
 	public String getInfo() {
 		return "ArtPiece: " + title + " from " + creator;
 	}

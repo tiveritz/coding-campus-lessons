@@ -6,14 +6,16 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import src.com.dcv.jan.day46.models.ArtPiece;
 
-public class ArtPieceGenerator {
+
+public abstract class ArtPieceGenerator {
 	// base code von Daniel kopiert!
 	private static String[] types = new String[]{"Gemälde", "Skulptur", "Plastik", "Moderne Kunst"};
-	private static String[] artists = new String[]{"Davinci", "Dali", "Van Gogh", "Monned"};
+	private static String[] artists = new String[]{"aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii", "jj", "kk", "ll", "mm", "nn", "oo"};
 	private static Date startDate = new Date(-11676096000L);
 	private static Date endDate = new Date(1577836800L);
 	private static Random random = new Random(System.currentTimeMillis());
 
+	// -- METHODS ----------------------------------------------------------------------------------
 	public static ArtPiece createArtPiece() {
 		String type = types[random.nextInt(types.length-1)];
 		String title = getRandomString(5 + random.nextInt(5));
@@ -24,6 +26,7 @@ public class ArtPieceGenerator {
 		return new ArtPiece(type, title, artist, createdDate, price);
 	}
 
+	// -- HELPER -----------------------------------------------------------------------------------
 	private static String getRandomString(int length){
 		String generatedString = "";
 		for (int i = 0; i < length; i++) {

@@ -18,20 +18,42 @@ public class Room {
 		this.persons = new ArrayList<>();
 	}
 
-	// -- GETTER -----------------------------------------------------------------------------------
-	public int getRoomNumber() {
-		return roomNumber;
-	}
-
-	public ArrayList<Person> getCopyOfPersons() {
-		ArrayList<Person> personsCopy = new ArrayList<>();
-
-		for (Person person : persons) {
-			personsCopy.add(person);
+	// -- METHODS ----------------------------------------------------------------------------------
+	public void releaseSatisfiedPersons() {
+		for (Person person : getCopyOfPersons()) {
+			if (person.getType() == PersonType.VISITOR) {
+				Visitor visitor = (Visitor) person;
+				if (visitor.isSatisfied()) {
+					System.out.println(visitor.getInfo() + " is satisfied and leaves");
+					persons.remove(visitor);
+				}
+			} else if (person.getType() == PersonType.THIEF) {
+				Thief thief = (Thief) person;
+				if (thief.isSatisfied()) {
+					System.out.println(thief.getInfo() + " is satisfied and leaves");
+					persons.remove(thief);
+				}
+			}
 		}
-		return personsCopy;
 	}
 
+	public void stealArtPiece() {
+		for (Person person : persons) {
+			Thief thief = (Thief) person;
+			thief.stealArtPiece();
+			artPieces.remove(thief.getArtPiece());
+		}
+		persons.clear();
+	}
+
+	public void sendPersonsHome() {
+		for (Person person : persons) {
+			if (person.getType() == PersonType.VISITOR || person.getType() == PersonType.THIEF) {
+				System.out.println(person.getInfo() + " goes home");
+			}
+		}
+		persons.clear();
+	}
 
 	// -- SETTER -----------------------------------------------------------------------------------
 	public void addArtPieces(ArtPiece[] artPieces) {
@@ -48,14 +70,9 @@ public class Room {
 		persons.remove(person);
 	}
 
-	// -- METHODS ----------------------------------------------------------------------------------
-	public void sendPersonsHome() {
-		for (Person person : persons) {
-			if (person.getType() == PersonType.VISITOR || person.getType() == PersonType.THIEF) {
-				System.out.println(person.getInfo() + " goes home");
-			}
-		}
-		persons.clear();
+	// -- GETTER -----------------------------------------------------------------------------------
+	public int getRoomNumber() {
+		return roomNumber;
 	}
 
 	public boolean onlyThievesInRoom() {
@@ -67,30 +84,16 @@ public class Room {
 				break;
 			}
 		}
-
-
-
 		return onlyThievesInRoom;
 	}
 
-	public void stealArtPiece() {
+	public ArrayList<Person> getCopyOfPersons() {
+		ArrayList<Person> personsCopy = new ArrayList<>();
+
 		for (Person person : persons) {
-			Thief thief = (Thief) person;
-			thief.stealArtPiece();
-
+			personsCopy.add(person);
 		}
-		persons.clear();
-	}
-
-	public void releaseSatisfiedPersons() {
-		for (Person person : getCopyOfPersons()) {
-			if (person.getType() == PersonType.VISITOR || person.getType() == PersonType.THIEF) {
-				if (person.isSatisfied()) {
-					System.out.println(person.getInfo() + " is satisfied and leaves");
-					persons.remove(person);
-				}
-			}
-		}
+		return personsCopy;
 	}
 
 	public ArtPiece getRandomArtPiece() {

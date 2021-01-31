@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Random;
 
 import src.com.dcv.jan.day46.abstracts.Person;
+import src.com.dcv.jan.day46.enums.PersonType;
 
 
 public class Museum {
@@ -23,6 +24,42 @@ public class Museum {
 		entryUntil.add(Calendar.HOUR, -1);
 
 		this.entryUntil = entryUntil;
+	}
+	
+	// -- METHODS -----------------------------------------------------------------------------------
+	public void simulate() {
+		ArrayList<Person> personsToSimulate = new ArrayList<>();
+
+		for (Room room : rooms) {
+			room.releaseSatisfiedPersons();
+			if (room.onlyThievesInRoom()) {
+				room.stealArtPiece();
+			} else {
+				personsToSimulate.addAll(room.getCopyOfPersons());
+			}
+		}
+
+		for (Person person : personsToSimulate) {
+			Random random = new Random();
+
+			if (random.nextInt(9) < 7) {
+				person.visitRoom(getRandomRoom());
+			}
+
+			if (person.getType() == PersonType.THIEF) {
+				Thief thief = (Thief) person;
+				thief.observeArtPiece(thief.getRoom().getRandomArtPiece());
+			} else if (person.getType() == PersonType.VISITOR) {
+				Visitor visitor = (Visitor) person;
+				visitor.observeArtPiece(visitor.getRoom().getRandomArtPiece());
+			}
+		}
+	}
+
+	public void close() {
+		for (Room room : rooms) {
+			room.sendPersonsHome();
+		}
 	}
 
 	// -- SETTER -----------------------------------------------------------------------------------
@@ -51,34 +88,6 @@ public class Museum {
 		return false;
 	}
 	
-	// -- METHODS -----------------------------------------------------------------------------------
-	public void close() {
-		for (Room room : rooms) {
-			room.sendPersonsHome();
-		}
-	}
-
-	public void simulate() {
-		ArrayList<Person> personsToSimulate = new ArrayList<>();
-
-		for (Room room : rooms) {
-			room.releaseSatisfiedPersons();
-			if (room.onlyThievesInRoom()) {
-				room.stealArtPiece();
-			} else {
-				personsToSimulate.addAll(room.getCopyOfPersons());
-			}
-		}
-
-		for (Person person : personsToSimulate) {
-			Random random = new Random();
-
-			if (random.nextInt(9) < 7) {
-				person.visitRoom(getRandomRoom());
-			}
-		}
-	}
-	
 	// -- HELPER METHODS ---------------------------------------------------------------------------
 	private Calendar parseTime(int time) {
 		Calendar dateTime = Calendar.getInstance();
@@ -87,4 +96,3 @@ public class Museum {
 		return dateTime;
 	}
 }
-

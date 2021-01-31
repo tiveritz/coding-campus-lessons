@@ -1,5 +1,6 @@
 package src.com.dcv.jan.day46.enums;
 
+
 public enum PersonType {
     GUARD, VISITOR, THIEF, CURATOR;
 
