@@ -5,7 +5,6 @@ import java.util.Calendar;
 import java.util.Random;
 
 import src.com.dcv.jan.day46.abstracts.Person;
-import src.com.dcv.jan.day46.enums.PersonType;
 
 
 public class Museum {
@@ -48,10 +47,10 @@ public class Museum {
 				person.visitRoom(getRandomRoom());
 			}
 
-			if (person.getType() == PersonType.THIEF) {
+			if (person instanceof Thief) {
 				Thief thief = (Thief) person;
 				thief.observeArtPiece(thief.getRoom().getRandomArtPiece());
-			} else if (person.getType() == PersonType.VISITOR) {
+			} else if (person instanceof Visitor) {
 				Visitor visitor = (Visitor) person;
 				visitor.observeArtPiece(visitor.getRoom().getRandomArtPiece());
 			}
