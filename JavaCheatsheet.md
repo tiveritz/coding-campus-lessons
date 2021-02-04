@@ -24,7 +24,7 @@ int myNumber = 8; ................... statement
 #### Terminology
 ```
 () ... Parentheses
-[] ... Bracket
+[] ... Brackets
 {} ... Curly braces
 ```
 
@@ -76,6 +76,12 @@ Logical Operators
 Ternary Operators
 ```
 ?: ... if then
+```
+
+Binary Operators
+Evaluates if an object is an instance of a given type
+```
+object instanceof type
 ```
 
 #### Primitive Data Types
@@ -231,8 +237,8 @@ for (variable_type variable_name : iterable) {
 ```
 
 #### Scope
-Scope is a range of code where special rules apply. Variables declared inside the
-scope are only accessible by the code within the same scope.
+Scope is a range of code where special rules apply. Variables declared inside
+the scope are only accessible by the code within the same scope.
 
 Examples
 ```
@@ -265,7 +271,9 @@ public static void helloWorld() {
 ```
 
 #### Method Overloading
-Method overlowding allows to use methods with the same name but different parameters. Depending on the passed arguments when calling the methods, Java uses the matching method.
+Method overlowding allows to use methods with the same name but different
+parameters. Depending on the passed arguments when calling the methods, Java
+uses the matching method.
 ```
     public static int powerOf(int a) {
         return powerOf(a, 2);
@@ -277,27 +285,28 @@ Method overlowding allows to use methods with the same name but different parame
 ```
 
 #### Multidimensional Arrays
-Multidimensional arrays are arrays that contain arrays. An easy way to graps this
-abstract Object is to imagine:
+Multidimensional arrays are arrays that contain arrays. An easy way to graps
+this abstract Object is to imagine:
 ```
-    int[][] numbers = new int[9][9]; ... a multidimensional array with 9 rows and 9 columns
+    int[][] numbers = new int[9][9]; ... a multidimensional array with 9 rows
+    and 9 columns
 
     * Array[] ........ imagine a list
     * Array[][] ...... imagine a two coordinate system (x, y), excel sheet, table
     * Array[][][] .... imagine a three dimensional coordinate system (x, y, z)
     * Array[][][]+ ... these programs are not limited to boundries of the real world
                        this may make it hard to grasp. So it is easiest to say to
-                       imagine boxes inside
-                       boxes inside boxes inside boxes...
+                       imagine boxes inside boxes inside boxes inside boxes...
 ```
 
 #### Final Keyword
 ```
 final variable ... creates a CONSTANT
 final method ..... prevents method overloading
-final class ...... preventc class inheritance
-
+final class ...... prevents class inheritance
 ```
+Even though often referred to as constant, when declaring something final,
+there are no constants in Java.
 
 
 #### ToDo
@@ -310,4 +319,7 @@ final class ...... preventc class inheritance
     * ::
     * File reading
     * File writing
+    * Classes
+    * Abstract Classes
+    * Interfaces
 
