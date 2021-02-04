@@ -70,13 +70,13 @@ public class Main {
   <summary>Expand "January"</summary>
 
 * Day46
-  * day46 --> go to folder src/dcv/nov/day46 and run main() in Main
+  * day46 (Museum) --> go to folder src/dcv/nov/day46 and run main() in Main
 
 * Day41
-  * day41 --> go to folder src/dcv/nov/day41 and run main() in Main
+  * day41 (Restaurant) --> go to folder src/dcv/nov/day41 and run main() in Main
 
 * Day39
-  * day39 --> go to folder src/dcv/nov/day39 and run main() in Main
+  * day39 (Search Algorithms) --> go to folder src/dcv/nov/day39 and run main() in Main
 
 </details>
 
@@ -84,19 +84,16 @@ public class Main {
   <summary>Expand "December"</summary>
 
 * Day37
-  * day37 --> go to folder src/dcv/nov/day37 and run main() in Main
-
-* Day36
-  * day36 --> go to folder src/dcv/nov/day36 and run main() in Main
+  * day37 (Zoo 2) --> go to folder src/dcv/nov/day37 and run main() in Main
 
 * Day35
-  * day35 --> go to folder src/dcv/nov/day35 and run main() in Main
+  * day35 (Zoo 1) --> go to folder src/dcv/nov/day35 and run main() in Main
 
 * Day34
-  * day34 --> go to folder src/dcv/nov/day34 and run main() in Main
+  * day34 (Zoo 0) --> go to folder src/dcv/nov/day34 and run main() in Main
 
 * Day33
-  * day33 --> go to folder src/dcv/nov/day33 and run main() in Main
+  * day33 (Departments) --> go to folder src/dcv/nov/day33 and run main() in Main
 
 </details>
 
@@ -104,8 +101,7 @@ public class Main {
   <summary>Expand "November"</summary>
 
 * Day30
-  * day30 --> go to folder src/dcv/nov/day30 and run main() in Main
-  * day29day30 --> go to folder src/dcv/nov/day29day30 and run Main
+  * day30 (Coding Campus) --> go to folder src/dcv/nov/day30 and run main() in Main
 
 * Day29
   * day29day30 --> go to folder src/dcv/nov/day29day30 and run Main()

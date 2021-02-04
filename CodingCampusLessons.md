@@ -1,6 +1,14 @@
+###### Day 48(Tue)
+	* Repetition Inheritance, Interface
+
+###### Day 47 (Sat)
+	* OOP Inheritance
+	* OOP Interfaces
+	* OOP instanceof
+
 ###### Day 46 (Thu)
 	* Repetition OOP Basics
-	* OOP Inheritnace
+	* OOP Inheritance
 
 ###### Day 45 (Tue)
 	* Repetition OOP Basics
