@@ -5,9 +5,10 @@ import java.util.Calendar;
 import java.util.Random;
 
 import src.com.dcv.jan.day46.abstracts.Person;
+import src.com.dcv.jan.day46.interfaces.IStructurePrinter;
 
 
-public class Museum {
+public class Museum implements IStructurePrinter {
 	private String name;
 	private Curator curator;
 	private Room[] rooms;
@@ -25,6 +26,21 @@ public class Museum {
 		entryUntil.add(Calendar.HOUR, -1);
 
 		this.entryUntil = entryUntil;
+	}
+	
+	// -- METHODS -----------------------------------------------------------------------------------
+	public String getStructure() {
+		return getStructure(0);
+	}
+
+	public String getStructure(int indentation) {
+		String structure = "Museum " + name + "\n";
+
+		for (Room room : rooms) {
+			structure += room.getStructure(indentation + 2);
+		}
+
+		return structure;
 	}
 	
 	// -- METHODS -----------------------------------------------------------------------------------

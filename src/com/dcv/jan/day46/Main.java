@@ -12,6 +12,10 @@ public class Main {
 
 		Simulation simulation = new Simulation(museum, 6, 3, 4);
 		simulation.init();
+
+		System.out.println();
+		System.out.println(museum.getStructure());
+
 		simulation.start();
 	}
 }

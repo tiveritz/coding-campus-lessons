@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import src.com.dcv.jan.day46.abstracts.Person;
+import src.com.dcv.jan.day46.interfaces.IStructurePrinter;
 
 
-public class Room {
+public class Room implements IStructurePrinter {
 	private int roomNumber;
 	private ArrayList<ArtPiece> artPieces;
 	private ArrayList<Person> persons;
@@ -15,6 +16,22 @@ public class Room {
 		this.roomNumber = roomNumber;
 		this.artPieces = new ArrayList<>();
 		this.persons = new ArrayList<>();
+	}
+
+	// -- METHODS ----------------------------------------------------------------------------------
+	public String getStructure(int indentation) {
+		String indentationString = "";
+		for (int i = 0; i < indentation; i++) {
+			indentationString += " ";
+		}
+
+		String structure = indentationString + "L Room " + roomNumber + "\n";
+
+		for (ArtPiece artPiece : artPieces) {
+			structure += indentationString + artPiece.getStructure(indentation + 2);
+		}
+
+		return structure;
 	}
 
 	// -- METHODS ----------------------------------------------------------------------------------

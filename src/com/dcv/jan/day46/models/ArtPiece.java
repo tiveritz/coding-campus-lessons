@@ -4,9 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import src.com.dcv.jan.day46.enums.ArtType;
+import src.com.dcv.jan.day46.interfaces.IStructurePrinter;
 
 
-public class ArtPiece {
+public class ArtPiece implements IStructurePrinter {
 	private ArtType type;
 	private String title;
 	private String creator;
@@ -20,20 +21,26 @@ public class ArtPiece {
 		this.creationDate = creationDate;
 		this.price = price;
 	}
-	
+
+	// -- INTERFACE -------------------------------------------------------------------------------
+	public String getStructure(int indentation) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+
+		String indentationString = "";
+		for (int i = 0; i < indentation; i++) {
+			indentationString += " ";
+		}
+
+		String structure = indentationString + "L Art Piece: " + title + " from " + creator + "\n" +
+			indentationString + indentationString + "Type: " + type + "\n" +
+			indentationString + indentationString + "Creation Date: "  + dateFormat.format(creationDate) + "\n" +
+			indentationString + indentationString + "Price: "  + price + "€\n";
+		return structure;
+	}
+
 	// -- GETTER -----------------------------------------------------------------------------------
 	public String getInfo() {
 		return title + " from " + creator;
-	}
-
-	public String getFullInfo() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");  
-
-		String fullInfo = "Art Piece: " + title + " from " + creator + "\n" +
-			"Type: " + type + "\n" +
-			"Creation Date: "  + dateFormat.format(creationDate) + "\n" +
-			"Price: "  + price + "\n";
-		return fullInfo;
 	}
 
 	public int getPrice() {
