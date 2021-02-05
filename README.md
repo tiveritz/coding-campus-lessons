@@ -69,6 +69,9 @@ public class Main {
 <details>
   <summary>Expand "January"</summary>
 
+* Day48
+  * day48 (Kindergarden) --> go to folder src/dcv/nov/day48 and run main() in Main
+
 * Day46
   * day46 (Museum) --> go to folder src/dcv/nov/day46 and run main() in Main
 
