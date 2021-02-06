@@ -1,3 +1,9 @@
+###### Day 50(Sat)
+	* Repetition Inheritance, Interface, ENUMs
+
+###### Day 49(Thu)
+	* Repetition Inheritance, Interface
+
 ###### Day 48(Tue)
 	* Repetition Inheritance, Interface
 
@@ -5,6 +11,7 @@
 	* OOP Inheritance
 	* OOP Interfaces
 	* OOP instanceof
+	* ENUMs
 
 ###### Day 46 (Thu)
 	* Repetition OOP Basics
