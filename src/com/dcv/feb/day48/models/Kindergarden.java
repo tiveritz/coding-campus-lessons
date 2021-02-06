@@ -28,7 +28,12 @@ public class Kindergarden {
 		}
 	}
 
-	public ArrayList<Child> getChildren() {
+	public Child[] getChildren() {
+		Child[] children = new Child[this.children.size()];
+		for (int i = 0; i < children.length; i++) {
+			children[i] = this.children.get(i);
+		}
+
 		return children;
 	}
 
@@ -38,5 +43,11 @@ public class Kindergarden {
 
 	public KindergardenTeacher[] getKindergardenTeachers() {
 		return kindergardenTeachers;
+	}
+
+	public void printChildrenHappiness() {
+		for (Child child : children) {
+			child.printHappiness();
+		}
 	}
 }

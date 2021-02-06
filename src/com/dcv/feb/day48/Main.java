@@ -17,21 +17,35 @@ public class Main {
 			"A Kindergarden", 
 			new KindergardenTeacher[]{new KindergardenTeacher("A"), new KindergardenTeacher("B")}
 		);
-		kindergarden.addChildren(new Child[]{new Child("a"), new Child("b"), new Child("c")});
+		kindergarden.addChildren(
+			new Child[]{
+				new Child("a"),
+				new Child("b"),
+				new Child("c"),
+				new Child("d"),
+				new Child("e"),
+				new Child("f")
+			}
+		);
+
 		kindergarden.addAnimal(new Fish("Dori"));
 		kindergarden.addAnimal(new Dog("Bolt"));
 		kindergarden.addAnimal(new Cat("Gazorpazorpfield"));
 
+		Child[] children = kindergarden.getChildren();
+
 		for (int i = 0; i < 10; i++) {
-			for (Child child : kindergarden.getChildren()) {
-				child.simulate();
+			System.out.println("\n--- ITERATION " + i + " ---");
+			for (Child child : children) {
+				child.simulate(children);
 			}
 			for (Animal animal : kindergarden.getAnimals()) {
-				animal.simulate();
+				animal.simulate(children);
 			}
 			for (KindergardenTeacher kT : kindergarden.getKindergardenTeachers()) {
-				kT.simulate();
+				kT.simulate(children);
 			}
+			kindergarden.printChildrenHappiness();
 		}
 	}
 }
