@@ -1,3 +1,12 @@
+###### Day 53(Sat)
+	* java.io
+
+###### Day 52(Thu)
+	* Exceptions (try, catch, finally)
+
+###### Day 51(Tue)
+	* Exceptions (try, catch, finally)
+
 ###### Day 50(Sat)
 	* Repetition Inheritance, Interface, ENUMs
 

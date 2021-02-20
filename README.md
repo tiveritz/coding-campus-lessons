@@ -69,17 +69,31 @@ public class Main {
 <details>
   <summary>Expand "January"</summary>
 
+* Day53
+  * day53 (Kindergarden) --> go to folder src/dcv/feb/day53 and run main() in Main
+
 * Day48
-  * day48 (Kindergarden) --> go to folder src/dcv/nov/day48 and run main() in Main
+  * day48 (Kindergarden) --> go to folder src/dcv/feb/day48 and run main() in Main
+
+</details>
+
+<details>
+  <summary>Expand "January"</summary>
+
+* Day53
+  * day53 (Kindergarden) --> go to folder src/dcv/jan/day53 and run main() in Main
+
+* Day48
+  * day48 (Kindergarden) --> go to folder src/dcv/jan/day48 and run main() in Main
 
 * Day46
-  * day46 (Museum) --> go to folder src/dcv/nov/day46 and run main() in Main
+  * day46 (Museum) --> go to folder src/dcv/jan/day46 and run main() in Main
 
 * Day41
-  * day41 (Restaurant) --> go to folder src/dcv/nov/day41 and run main() in Main
+  * day41 (Restaurant) --> go to folder src/dcv/jan/day41 and run main() in Main
 
 * Day39
-  * day39 (Search Algorithms) --> go to folder src/dcv/nov/day39 and run main() in Main
+  * day39 (Search Algorithms) --> go to folder src/dcv/jan/day39 and run main() in Main
 
 </details>
 
@@ -87,16 +101,16 @@ public class Main {
   <summary>Expand "December"</summary>
 
 * Day37
-  * day37 (Zoo 2) --> go to folder src/dcv/nov/day37 and run main() in Main
+  * day37 (Zoo 2) --> go to folder src/dcv/dec/day37 and run main() in Main
 
 * Day35
-  * day35 (Zoo 1) --> go to folder src/dcv/nov/day35 and run main() in Main
+  * day35 (Zoo 1) --> go to folder src/dcv/dec/day35 and run main() in Main
 
 * Day34
-  * day34 (Zoo 0) --> go to folder src/dcv/nov/day34 and run main() in Main
+  * day34 (Zoo 0) --> go to folder src/dcv/dec/day34 and run main() in Main
 
 * Day33
-  * day33 (Departments) --> go to folder src/dcv/nov/day33 and run main() in Main
+  * day33 (Departments) --> go to folder src/dcv/dec/day33 and run main() in Main
 
 </details>
 
