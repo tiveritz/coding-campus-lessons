@@ -12,23 +12,21 @@ public class Data {
 		this.countries = new Vector<CountryData>();
 	}
 
-	public void append(String[] line) {
-		CountryData countryData = getCountryData(line[6]);
+	// -- FACTORY ------------------------------------------------------
+	public void append(DailyCovidDTO dcdto) {
+		String countryName = dcdto.getCountryName();
+
+		CountryData countryData = getCountryData(countryName);
 		if (countryData == null) {
-			CountryData newCountry = new CountryData(line[6]);
-			newCountry.addData(line);
+			CountryData newCountry = new CountryData(countryName);
+			newCountry.addData(dcdto);
 			countries.add(newCountry);
 		} else {
-			countryData.addData(line);
+			countryData.addData(dcdto);
 		}
 	}
 
-	public void printCases() {
-		for (CountryData countryData : countries) {
-			System.out.println(countryData.getTotalCases());
-		}
-	}
-	
+	// -- GETTER -------------------------------------------------------
 	private CountryData getCountryData(String countryName) {
 		CountryData country = null;
 

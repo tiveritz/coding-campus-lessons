@@ -9,20 +9,24 @@ public class Main {
 
 		Data data = new Data();
 
+		long start = System.currentTimeMillis();
+		int lines = 0;
+
 		try {
 			File file = new File("src/com/dcv/feb/day54/data/covid19.csv");
 			Scanner reader = new Scanner(file);
 			boolean firstLine = true;
 
 			while (reader.hasNextLine()) {
+				lines++;
 				if (firstLine) {
 					reader.nextLine();
 					firstLine = false;
 					continue;
 				}
 
-				String[] line = reader.nextLine().split(",");
-				data.append(line);
+				DailyCovidDTO dcdto = new DailyCovidDTO(reader.nextLine().split(","));
+				data.append(dcdto);
 			}
 			reader.close();
 		} catch (FileNotFoundException e) {
@@ -30,6 +34,10 @@ public class Main {
 			e.printStackTrace();
 		}
 		data.getTopCountries();
+
+		long finish = System.currentTimeMillis();
+
+		System.out.println("processed " + lines + " lines in " + (finish - start) + "ms");
 	}
 
 }
