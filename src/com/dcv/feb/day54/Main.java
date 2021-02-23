@@ -24,8 +24,17 @@ public class Main {
 					firstLine = false;
 					continue;
 				}
+				String line = reader.nextLine();
 
-				DailyCovidDTO dcdto = new DailyCovidDTO(reader.nextLine().split(","));
+				// Workaround for Data problem:
+				line = line.replaceAll("Bonaire, ", "Bonaire ");
+				if (line.contains("Cases_on_an_international_conveyance_Japan") ||
+					line.contains("Wallis_and_Futuna")) {
+					continue;
+				}
+				// End Workaround
+
+				DailyCovidDTO dcdto = new DailyCovidDTO(line.split(","));
 				data.append(dcdto);
 			}
 			reader.close();

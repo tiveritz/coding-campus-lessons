@@ -26,7 +26,7 @@ public class CsvWriter {
 
 		for (int i = 0; i < line.length; i++) {
 			sb.append(line[i]);
-
+			
 			if (i == line.length-1) {
 				sb.append("\n");
 			} else {

@@ -16,11 +16,9 @@ public class CountryData implements Comparable<CountryData>{
 	public void addData(DailyCovidDTO dcdto) {
 		try {
 			totalCases += Integer.parseInt(dcdto.getTotalCases());
-			/*
 			if (popData == 0) {
-				popData += Integer.parseInt(line[9]);
+				popData += Integer.parseInt(dcdto.getPopData());
 			}
-			*/
 		} catch (NumberFormatException nfe) {
 			System.out.println("An error occured when parsing data");
 			nfe.printStackTrace();
