@@ -1,5 +1,6 @@
 package src.com.dcv.feb.day54;
 
+
 public class CountryData implements Comparable<CountryData>{
 	private String name;
 	private int totalCases;

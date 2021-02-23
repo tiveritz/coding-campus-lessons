@@ -33,7 +33,7 @@ public class Main {
 			System.out.println("File was not found");
 			e.printStackTrace();
 		}
-		data.getTopCountries();
+		data.csvExportTopCountries();
 
 		long finish = System.currentTimeMillis();
 

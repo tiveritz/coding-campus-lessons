@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Vector;
+import src.com.dcv.feb.day54.data.CsvWriter;
+
 
 public class Data {
 	private Vector<CountryData> countries;
@@ -38,7 +40,7 @@ public class Data {
 		return country;
 	}
 
-	public void getTopCountries() {
+	public void csvExportTopCountries() {
 		CountryData[] sortedCountries = new CountryData[countries.size()];
 
 		for (int i = 0; i < sortedCountries.length; i++) {
@@ -47,20 +49,14 @@ public class Data {
 
 		Arrays.sort(sortedCountries);
 
-		try {
-			FileWriter topCountriesFile = new FileWriter("src/com/dcv/feb/day54/output/covid-toplist.csv", true);
-			topCountriesFile.write("countryName,totalCases\n");
-			for (CountryData countryData : sortedCountries) {
-				String countryName = countryData.getCaseInfo()[0];
-				String totalCases = countryData.getCaseInfo()[1];
-				topCountriesFile.write(countryName + "," + totalCases + "\n");
-			}
-			topCountriesFile.close();
-		} catch (IOException ioe) {
-			System.out.println("IOException");
-			ioe.printStackTrace();
+		String[][] exportData = new String[sortedCountries.length][];
+
+		for (int i = 0; i < sortedCountries.length; i++) {
+			exportData[i] = sortedCountries[i].getCaseInfo();
 		}
 
+		String path = "src/com/dcv/feb/day54/output/covid-toplist.csv";
+		String[] head = new String[]{"countryName", "totalCases"};
+		CsvWriter.write(path, head, exportData);
 	}
-
 }
