@@ -1,4 +1,4 @@
-package src.com.dcv.feb.day54.data;
+package src.com.dcv.feb.day54;
 
 import java.io.FileWriter;
 import java.io.IOException;
