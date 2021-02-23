@@ -27,7 +27,7 @@ public class Logger {
 
 		System.out.println(logMessage);
 
-		try{
+		try {
 			log = new FileWriter(PATH + "log.txt", true);
 			log.write(logMessage + "\n");
 			log.close();
