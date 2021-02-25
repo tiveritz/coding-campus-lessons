@@ -6,6 +6,7 @@ import java.util.Vector;
 
 public class Data {
 	private Vector<CountryData> countries;
+	private final String EXPORT_PATH = "src/com/dcv/feb/day54/output/";
 
 	public Data() {
 		this.countries = new Vector<CountryData>();
@@ -37,23 +38,45 @@ public class Data {
 		return country;
 	}
 
+	// -- METHODS ------------------------------------------------------
+
 	public void csvExportTopCountries() {
-		CountryData[] sortedCountries = new CountryData[countries.size()];
+		CountryData[] countries = getCopyOfCountryData();
+		Arrays.sort(countries);
 
-		for (int i = 0; i < sortedCountries.length; i++) {
-			sortedCountries[i] = countries.get(i);
+		String[][] exportData = new String[countries.length][];
+
+		for (int i = 0; i < countries.length; i++) {
+			exportData[i] = countries[i].getCaseInfo();
 		}
 
-		Arrays.sort(sortedCountries);
-
-		String[][] exportData = new String[sortedCountries.length][];
-
-		for (int i = 0; i < sortedCountries.length; i++) {
-			exportData[i] = sortedCountries[i].getCaseInfo();
-		}
-
-		String path = "src/com/dcv/feb/day54/output/covid-toplist.csv";
 		String[] head = new String[]{"countryName", "totalCases"};
-		CsvWriter.write(path, head, exportData);
+		CsvWriter.write(EXPORT_PATH + "covid-toplist.csv", head, exportData);
+	}
+
+	public void csvExportAverageCasesPer100k() {
+		CountryData[] countries = getCopyOfCountryData();
+		Arrays.sort(countries, new SortByAverage100kDescending());
+
+		String[][] exportData = new String[countries.length][];
+
+		for (int i = 0; i < countries.length; i++) {
+			exportData[i] = countries[i].getAverageCasesPer100kInfo();
+		}
+
+		String[] head = new String[]{"countryName", "averageCasesPer100k"};
+		CsvWriter.write(EXPORT_PATH + "average-cases-per-100k.csv", head, exportData);
+
+	}
+
+	// -- HELPER -------------------------------------------------------
+	private CountryData[] getCopyOfCountryData() {
+		CountryData[] getCopyOfCountryData = new CountryData[countries.size()];
+
+		for (int i = 0; i < getCopyOfCountryData.length; i++) {
+			getCopyOfCountryData[i] = countries.get(i);
+		}
+
+		return getCopyOfCountryData;
 	}
 }

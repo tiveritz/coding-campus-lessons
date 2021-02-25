@@ -42,11 +42,12 @@ public class Main {
 			System.out.println("File was not found");
 			e.printStackTrace();
 		}
-		data.csvExportTopCountries();
-
 		long finish = System.currentTimeMillis();
-
 		System.out.println("processed " + lines + " lines in " + (finish - start) + "ms");
+
+		data.csvExportTopCountries();
+		data.csvExportAverageCasesPer100k();
+
 	}
 
 }
