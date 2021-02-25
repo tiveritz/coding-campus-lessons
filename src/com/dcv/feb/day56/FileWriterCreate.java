@@ -5,12 +5,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+
 public class FileWriterCreate {
 	private final static String FILEPATH = "src/com/dcv/feb/day56/data/";
 
 	public static void main(String[] args) {
-
-		
 		try {
 			Path path = Paths.get(FILEPATH + "hello_world.txt");
 			
@@ -19,7 +18,6 @@ public class FileWriterCreate {
 				path = Paths.get(FILEPATH + "hello_world_" + i + ".txt");
 				i++;
 			}
-
 			Files.write(path, "Hello World!".getBytes());
 
 		} catch (IOException ioe) {
