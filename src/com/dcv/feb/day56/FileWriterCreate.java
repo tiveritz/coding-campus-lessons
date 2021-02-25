@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class Main {
+public class FileWriterCreate {
 	private final static String FILEPATH = "src/com/dcv/feb/day56/data/";
 
 	public static void main(String[] args) {
