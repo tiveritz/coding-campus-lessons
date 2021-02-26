@@ -26,8 +26,11 @@ public class Main {
 				}
 				String line = reader.nextLine();
 
-				// Workaround for Data problem:
+
+				// Quick fix to clean data for Bonaire
 				line = line.replaceAll("Bonaire, ", "Bonaire ");
+				
+				// As a workaround just ignore countries with problematic data
 				if (line.contains("Cases_on_an_international_conveyance_Japan") ||
 					line.contains("Wallis_and_Futuna")) {
 					continue;
@@ -38,16 +41,16 @@ public class Main {
 				data.append(dcdto);
 			}
 			reader.close();
+
 		} catch (FileNotFoundException e) {
 			System.out.println("File was not found");
 			e.printStackTrace();
 		}
-		long finish = System.currentTimeMillis();
-		System.out.println("processed " + lines + " lines in " + (finish - start) + "ms");
+		
+		ConsoleLogger.logLinesAndTime("Processed", lines, System.currentTimeMillis() - start);
 
 		data.csvExportTopCountries();
 		data.csvExportAverageCasesPer100k();
-
+		data.csvExportCumulativeCasesLast14Days();
 	}
-
 }

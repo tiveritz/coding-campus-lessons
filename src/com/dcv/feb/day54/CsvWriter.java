@@ -9,7 +9,7 @@ public class CsvWriter {
 
 	public static void write(String path, String[] head, String[][] data) {
 		try {
-			FileWriter topCountriesFile = new FileWriter(path, true);
+			FileWriter topCountriesFile = new FileWriter(path);
 			CsvWriter.writeLine(topCountriesFile, head);
 			for (String[] line : data) {
 				CsvWriter.writeLine(topCountriesFile, line);

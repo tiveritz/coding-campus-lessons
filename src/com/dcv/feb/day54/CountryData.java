@@ -1,24 +1,29 @@
 package src.com.dcv.feb.day54;
 
+import java.util.ArrayList;
 
-public class CountryData implements Comparable<CountryData>{
+public class CountryData implements Comparable<CountryData> {
 	private String name;
 	private int totalCases;
 	private int popData;
 	private int recordCount;
+	private ArrayList<Integer> cases; 
 
 	public CountryData(String name) {
 		this.name = name;
 		this.totalCases = 0;
 		this.popData = 0;
 		this.recordCount = 0;
+		this.cases = new ArrayList<>();
 	}
 
 	// -- SETTER -------------------------------------------------------
 	public void addData(DailyCovidDTO dcdto) {
 		recordCount++;
 		try {
-			totalCases += Integer.parseInt(dcdto.getTotalCases());
+			int dailyCases = Integer.parseInt(dcdto.getCases());
+			cases.add(dailyCases);
+			totalCases += dailyCases;
 			if (popData == 0) {
 				popData += Integer.parseInt(dcdto.getPopData());
 			}
@@ -37,7 +42,7 @@ public class CountryData implements Comparable<CountryData>{
 		return totalCases;
 	}
 
-	public String[] getCaseInfo() {
+	public String[] getTotalCasesInfo() {
 		return new String[] {name, Integer.toString(totalCases)};
 	}
 
@@ -49,6 +54,16 @@ public class CountryData implements Comparable<CountryData>{
 	public String[] getAverageCasesPer100kInfo() {
 		double averageCasesPer100 = (totalCases / recordCount) / (popData / 100000.0);
 		return new String[] {name, Long.toString(Math.round(averageCasesPer100))};
+	}
+
+	public String[] getCumulativeCases14Days() {
+		// This is only working if original data is sorted and every country has >= 14 entries
+		int cumulativeCases = 0;
+
+		for (int i = 0; i < 14; i++) {
+			cumulativeCases += cases.get(i);
+		}
+		return new String[] {name, Integer.toString(cumulativeCases)};
 	}
 
 	// -- INTERFACE ----------------------------------------------------

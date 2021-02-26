@@ -39,22 +39,27 @@ public class Data {
 	}
 
 	// -- METHODS ------------------------------------------------------
-
 	public void csvExportTopCountries() {
+		long start = System.currentTimeMillis();
+
 		CountryData[] countries = getCopyOfCountryData();
 		Arrays.sort(countries);
 
 		String[][] exportData = new String[countries.length][];
 
 		for (int i = 0; i < countries.length; i++) {
-			exportData[i] = countries[i].getCaseInfo();
+			exportData[i] = countries[i].getTotalCasesInfo();
 		}
 
 		String[] head = new String[]{"countryName", "totalCases"};
 		CsvWriter.write(EXPORT_PATH + "covid-toplist.csv", head, exportData);
+
+		ConsoleLogger.logLinesAndTime("Wrote", exportData.length+1, System.currentTimeMillis() - start);
 	}
 
 	public void csvExportAverageCasesPer100k() {
+		long start = System.currentTimeMillis();
+
 		CountryData[] countries = getCopyOfCountryData();
 		Arrays.sort(countries, new SortByAverage100kDescending());
 
@@ -66,7 +71,23 @@ public class Data {
 
 		String[] head = new String[]{"countryName", "averageCasesPer100k"};
 		CsvWriter.write(EXPORT_PATH + "average-cases-per-100k.csv", head, exportData);
+		
+		ConsoleLogger.logLinesAndTime("Wrote", exportData.length+1, System.currentTimeMillis() - start);
+	}
 
+	public void csvExportCumulativeCasesLast14Days() {
+		long start = System.currentTimeMillis();
+
+		String[][] exportData = new String[countries.size()][];
+
+		for (int i = 0; i < countries.size(); i++) {
+			exportData[i] = countries.get(i).getCumulativeCases14Days();
+		}
+
+		String[] head = new String[]{"countryName", "cumulativeCases14Days"};
+		CsvWriter.write(EXPORT_PATH + "max-cumulative-14-days.csv", head, exportData);
+		
+		ConsoleLogger.logLinesAndTime("Wrote", exportData.length+1, System.currentTimeMillis() - start);
 	}
 
 	// -- HELPER -------------------------------------------------------
@@ -76,7 +97,6 @@ public class Data {
 		for (int i = 0; i < getCopyOfCountryData.length; i++) {
 			getCopyOfCountryData[i] = countries.get(i);
 		}
-
 		return getCopyOfCountryData;
 	}
 }

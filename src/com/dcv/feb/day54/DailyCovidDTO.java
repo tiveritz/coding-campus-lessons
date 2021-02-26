@@ -2,11 +2,11 @@ package src.com.dcv.feb.day54;
 
 public class DailyCovidDTO {
 	private String countryName;
-	private String totalCases;
+	private String cases;
 	private String popData;
 
 	public DailyCovidDTO(String[] csvLine) {
-		this.totalCases = csvLine[4];
+		this.cases = csvLine[4];
 		this.countryName = csvLine[6];
 		this.popData = csvLine[9];
 	}
@@ -16,8 +16,8 @@ public class DailyCovidDTO {
 		return countryName;
 	}
 
-	public String getTotalCases() {
-		return totalCases;
+	public String getCases() {
+		return cases;
 	}
 
 	public String getPopData() {
