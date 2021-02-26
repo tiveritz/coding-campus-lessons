@@ -69,6 +69,12 @@ public class Main {
 <details>
   <summary>Expand "February"</summary>
 
+* Day56
+  * day53 (Basic file operations with nio) --> go to folder src/dcv/feb/day56 and run main() in Main
+
+* Day54
+  * day53 (File data processing) --> go to folder src/dcv/feb/day54 and run main() in Main
+
 * Day53
   * day53 (Logging system) --> go to folder src/dcv/feb/day53 and run main() in Main
 

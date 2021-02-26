@@ -1,3 +1,9 @@
+###### Day 55(Wed)
+	* Basic file operations
+
+###### Day 54(Thu)
+	* io, nio, file processing, data transfer objects
+
 ###### Day 53(Sat)
 	* java.io
 
