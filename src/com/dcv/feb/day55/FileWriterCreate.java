@@ -1,4 +1,4 @@
-package src.com.dcv.feb.day56;
+package src.com.dcv.feb.day55;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 
 public class FileWriterCreate {
-	private final static String FILEPATH = "src/com/dcv/feb/day56/data/";
+	private final static String FILEPATH = "src/com/dcv/feb/day55/data/";
 
 	public static void main(String[] args) {
 		try {
