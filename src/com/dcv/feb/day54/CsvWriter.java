@@ -5,8 +5,6 @@ import java.io.IOException;
 
 
 public class CsvWriter {
-	
-
 	public static void write(String path, String[] head, String[][] data) {
 		try {
 			FileWriter topCountriesFile = new FileWriter(path);
