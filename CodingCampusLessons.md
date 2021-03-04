@@ -1,3 +1,9 @@
+###### Day 58 (Thu)
+	* SQL
+
+###### Day 57 (Tue)
+	* MySQL, MySQL Workbench, SQL
+
 ###### Day 56 (Sat)
 	* File operations repetition
 

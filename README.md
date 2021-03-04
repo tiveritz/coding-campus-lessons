@@ -67,13 +67,21 @@ public class Main {
 ## Coding Campus Lessons
 
 <details>
+  <summary>Expand "March"</summary>
+
+* Day58
+  * day58 (MySQL Connection) --> go to folder src/dcv/feb/day58 and run main() in Main
+
+</details>
+
+<details>
   <summary>Expand "February"</summary>
 
 * Day56
-  * day53 (Basic file operations with nio) --> go to folder src/dcv/feb/day56 and run main() in Main
+  * day56 (Basic file operations with nio) --> go to folder src/dcv/feb/day56 and run main() in Main
 
 * Day54
-  * day53 (File data processing) --> go to folder src/dcv/feb/day54 and run main() in Main
+  * day54 (File data processing) --> go to folder src/dcv/feb/day54 and run main() in Main
 
 * Day53
   * day53 (Logging system) --> go to folder src/dcv/feb/day53 and run main() in Main
@@ -85,12 +93,6 @@ public class Main {
 
 <details>
   <summary>Expand "January"</summary>
-
-* Day53
-  * day53 (Kindergarden) --> go to folder src/dcv/jan/day53 and run main() in Main
-
-* Day48
-  * day48 (Kindergarden) --> go to folder src/dcv/jan/day48 and run main() in Main
 
 * Day46
   * day46 (Museum) --> go to folder src/dcv/jan/day46 and run main() in Main
